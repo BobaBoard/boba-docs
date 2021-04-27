@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Knowledge Base
 
 This page collects terms and concepts you're likely to encounter when developing for BobaBoard.

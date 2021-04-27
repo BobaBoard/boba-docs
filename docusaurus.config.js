@@ -19,13 +19,18 @@ module.exports = {
       items: [
         {
           type: "doc",
-          docId: "intro",
+          docId: "users/welcome",
           position: "left",
-          label: "Tutorial",
+          label: "User Guide",
         },
-        { to: "/blog", label: "Blog", position: "left" },
         {
-          href: "https://github.com/facebook/docusaurus",
+          type: "doc",
+          docId: "engineering/intro",
+          position: "left",
+          label: "Engineering Guide",
+        },
+        {
+          href: "https://github.com/essential-randomness/bobadocs",
           label: "GitHub",
           position: "right",
         },
@@ -85,13 +90,13 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/",
+            "https://github.com/essential-randomness/bobaboard/edit/main/website/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/edit/master/website/blog/",
+            "https://github.com/essential-randomness/bobaboard/edit/main/website/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
