@@ -2,34 +2,56 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+# Codebase Overview
 
-Let's discover **Docusaurus in less than 5 minutes**.
+BobaBoard's codebase is split within 4 separate repositories, each with its own purpose and set of technologies: **BobaEditor**, the text editor, **BobaBoardUI**, a collection of visual components, **BobaServer**, where the processing magic happens, and (last but not least) **BobaFrontend**, which ties everything together into something _apirationally_ usable and useful.
 
-## Getting Started
+![](/img/documentation/codebase-overview.png)
 
-Get started by **creating a new site**.
+## BobaEditor
 
-Or **try Docusaurus immediately** with **[new.docusaurus.io](https://new.docusaurus.io)**.
+\[[code](https://github.com/essential-randomness/boba-editor), [demo](https://bobaeditor.netlify.app/?path=/story/editor-preview--simple-editor)]
 
-## Generate a new site
+:::tip
+**Edit this codebase if:** you want to give users more input options, including embeds, images and gifs.
+:::
 
-Generate a new Docusaurus site using the **classic template**:
+BobaEditor is BobaBoard's own extension of the [QuillJS text editor](https://quilljs.com/), and is responsible for anything related to **text formatting** and **embeds** (both in "edit" and "display" mode).
 
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
+Content created through BobaEditor is stored in the **"Quill Delta" format**, an abstract representation that can be translated into other formats, including HTML, through various parsers.
 
-## Start your site
+Since other BobaBoard codebases should not interact with this format directly, **BobaEditor also exports utilities to manipulate the Delta format itself** (e.g. extracting images for upload, removing trailing spaces, etc).
 
-Run the development server:
+## BobaBoardUI
 
-```shell
-cd my-website
+\[[code](https://github.com/essential-randomness/bobaboard-ui), [demo](https://bobaboard-ui.netlify.app/)]
 
-npx docusaurus start
-```
+:::tip
+**Edit this codebase if:** you want to improve the functionality/look of specific BobaBoard UI elements, like buttons, contributions, sidebar elements, thread stems, etc.
+:::
 
-Your site starts at `http://localhost:3000`.
+BobaBoardUI is where BobaBoard's UI pieces (components) are developed, as separate from the "frontend/server logic" as possible to facilitate reuse and (one day) ease of testing. This is made possible by using [StoryBook](https://storybook.js.org/), which you can see in action at this [demo link](https://bobaboard-ui.netlify.app/).
 
-Open `docs/getting-started.md` and edit some lines: the site **reloads automatically** and display your changes.
+## BobaFrontend
+
+[code](https://github.com/essential-randomness/boba-frontend)
+
+:::tip
+**Edit this codebase if:** you want to change how UI elements come together to create pages like boards, threads, settings and the related user flows.
+:::
+
+The BobaBoard frontend repository is in charge of managing the full BobaBoard user experience, putting together the components defined in BobaBoardUI (see above) into logical pages, and handling the communication between the user and the server. Based on [NextJS](https://nextjs.org/).
+
+## BobaServer
+
+[code](https://github.com/essential-randomness/bobaserver)
+
+:::tip
+**Edit this codebase if:** you want to add new functionality to BobaBoard that goes beyond the interaction with the user (or fix existing bugs).
+:::
+
+The BobaBoard backend repository is an [ExpressJS](https://expressjs.com/) server, communicating with the BobaFrontend through a REST API.
+
+Other than the server itself, this repository contains table definitions for BobaBoard's PostgreSQL DB.
+
+Other technologies used include a [Redis Cache](https://redis.io/) and [Mocha](https://mochajs.org/) for testing.
