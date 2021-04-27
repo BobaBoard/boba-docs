@@ -43,8 +43,12 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Tutorial",
-              to: "/docs/intro",
+              label: "User Guide",
+              to: "/docs/users/welcome",
+            },
+            {
+              label: "Engineering Guide",
+              to: "/docs/engineering/intro",
             },
           ],
         },
