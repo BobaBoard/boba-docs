@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Codebase Overview
 
-BobaBoard's codebase is split within 4 separate repositories, each with its own purpose and set of technologies: **BobaEditor**, the text editor, **BobaBoardUI**, a collection of visual components, **BobaServer**, where the processing magic happens, and (last but not least) **BobaFrontend**, which ties everything together into something _apirationally_ usable and useful.
+BobaBoard's codebase is split within 4 separate repositories, each with its own purpose and set of technologies: **BobaEditor**, the text editor, **BobaBoardUI**, a collection of visual components, **BobaServer**, where the processing magic happens, and (last but not least) **BobaFrontend**, which ties everything together into something _aspirationally_ usable and useful.
 
 ![](/img/documentation/codebase-overview.png)
 
