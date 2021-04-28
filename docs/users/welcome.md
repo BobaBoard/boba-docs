@@ -1,3 +1,6 @@
+---
+sidebar_position: 1
+---
 # Welcome Packet
 
 _"BobaBoard will move you and fill you with a feeling of deep peace. I hope your time here will be pleasant and your memories will last forever."_
