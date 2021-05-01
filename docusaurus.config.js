@@ -103,7 +103,10 @@ module.exports = {
             "https://github.com/essential-randomness/bobaboard/edit/main/website/blog/",
         },
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: [
+            require.resolve("./src/css/custom.css"),
+            require.resolve("@bobaboard/boba-editor/dist/main.css"),
+          ],
         },
       },
     ],

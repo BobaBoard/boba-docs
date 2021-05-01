@@ -14,6 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids"
   },
   "dependencies": {
+    "@bobaboard/boba-editor": "^0.0.9",
     "@docusaurus/core": "2.0.0-alpha.74",
     "@docusaurus/preset-classic": "2.0.0-alpha.74",
     "@mdx-js/react": "^1.6.21",
