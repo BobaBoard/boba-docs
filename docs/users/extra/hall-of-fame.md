@@ -16,3 +16,7 @@ Webmistress posted [a Twitter thread](https://twitter.com/BobaBoard/status/13872
 > _"father/son or uncle/nephew incest for the purpose of getting the transmasc victim pregnant"_.
 >
 > **Webmistress:** Thrown off the deep end.
+
+## I Hereby Declare You Anon & Anon
+
+On May 2nd 2021, the Webmistress officially (but privately) deanonimized and introduced the first pair of anons, after they agreed to have their identities revealed to each other.
