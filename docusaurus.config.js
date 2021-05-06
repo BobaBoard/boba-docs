@@ -21,7 +21,13 @@ module.exports = {
           type: "doc",
           docId: "users/welcome",
           position: "left",
-          label: "User Guide",
+          label: "Users Guide",
+        },
+        {
+          type: "doc",
+          docId: "product/intro",
+          position: "left",
+          label: "Product Guide",
         },
         {
           type: "doc",
@@ -31,9 +37,9 @@ module.exports = {
         },
         {
           type: "doc",
-          docId: "product/intro",
+          docId: "volunteering/intro",
           position: "left",
-          label: "Product Guide",
+          label: "Volunteering Guide",
         },
         {
           href: "https://github.com/essential-randomness/bobadocs",
