@@ -30,6 +30,12 @@ module.exports = {
           label: "Engineering Guide",
         },
         {
+          type: "doc",
+          docId: "product/intro",
+          position: "left",
+          label: "Product Guide",
+        },
+        {
           href: "https://github.com/essential-randomness/bobadocs",
           label: "GitHub",
           position: "right",
