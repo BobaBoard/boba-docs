@@ -1,12 +1,12 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "My Site",
+  title: "BobaBoard Docs",
   tagline: "Dinosaurs are cool",
   url: "https://bobadocs.netlify.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/badlyresizedab.ico",
   organizationName: "essential-randomness",
   projectName: "bobadocs",
   themeConfig: {
