@@ -46,6 +46,7 @@ You should now have a DevServer open at http://localhost:6006 that will look som
 Embeds that rely on [iFramely](https://github.com/itteco/iframely) won't work out of the box. If you're developing for embeds, you have two options:
 1. **Connect to the BobaBoard embeds service**: Given that the embeds service isn't accepting connections from localhost for security reasons, you will need to install an "Allow CORS extension" ([example for Chrome](https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en)). Once you allow CORS in your browser window, embeds should automatically start working.
 2. **Run iFramely on your own machine**: I don't see why you would want to do this, unless you're fiddling with iFramely's setup. You can run storybook pointing to a localhost instance of iFramely by using the `yarn run storybook:local-embeds` command. To run your own iFramely you can use the instructions [here](https://iframely.com/docs/host). You will also likely need BobaBoard's iframely config as a started config. You can ask the webmaster for a copy of this file.
+
 </details>
 
 <details>
@@ -99,6 +100,7 @@ yarn link @bobaboard/boba-editor
 ```
 
 If you make changes to BobaEditor and want to see them reflected in BobaBoard UI, run `yarn run build` in the boba-editor folder. BobaBoard UI should pick up the changes.
+
 </details>
 
 <details>
@@ -159,6 +161,7 @@ yarn link @bobaboard/ui-components
 ```
 
 If you make changes to BobaBoard UI and want to see them reflected in BobaFrontend run `yarn run build` in the bobaboard-ui folder. BobaFrontend should pick up the changes when the website is reloaded.
+
 </details>
 
 <details>
@@ -210,4 +213,5 @@ You can test the backend in two ways: **with [Postman](https://www.postman.com/d
 ### How to Set Up Postman
 
 TODO
+
 </details>
