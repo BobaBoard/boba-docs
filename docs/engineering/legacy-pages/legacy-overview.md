@@ -1,0 +1,89 @@
+---
+sidebar_position: 1
+---
+
+This is just notes on setup, what pages aren't included, etc.
+
+- Many of these are just copy+pasted from the original pages without any real editing. They should be okay to look at, but they still pull images from and link to the original pages. They could use some cleaning up.
+
+- Left off the backend db key in setting up your devenv
+
+- The [Codebase Overview](https://www.notion.so/Codebase-Overview-440546bbb3aa439e94cbe45d67f3217a) and [Engineering Guide](https://www.notion.so/Engineering-Guide-0d07444a2ec64a188d1725a8105e2465) main pages have been left out here because their information is already mostly covered in this site's [Codebase Overview](../intro).
+
+- BobaFrontend left off because there's nothing there.
+
+**For the rest of this page, I will just copy what was there in shorter pages.**
+
+---
+
+# FAQs and Troubleshooting
+
+### Help! I ran `git pull` and now when I go running yarn it says `[library name] not found`!
+ 
+This usually means a new library has been added to the project that you don't currently have. Try running `yarn install` again!
+
+---
+
+# QA Philosophy
+
+Write about your approach to QA and why it's critical to success. 
+
+## Processes
+
+### Making Code Changes
+
+- Test PRs rigorously before requesting review.
+- Include test cases you've checked for in your PR description.
+
+### Reviewing Code
+
+- If the change is substantial and user-facing, pull down the branch.
+- Test for cases (particularly edge cases) that the PR author may have missed.
+
+### QA
+
+- Look at the list of items going out for release the next day.
+- Go down the list one-by-one and thoroughly test changes.
+
+---
+
+# ER Notes
+
+**Threads** belong to one **board**, **posts** belong to one **thread.** The **post** with **parent_post** = NULL is the first post in a **thread**, and is the one shown in boards view. All posts belonging to the same thread have the same **parent_thread** value. The server API returns posts as a flat view with **parent_post** pointing to the string id of the parent (all numeric ids are hidden from clients). The hierarchical thread view is built client-side.
+
+**Comments** belong to one **post. Chained comments** are [x], are represented in the database as [y] and sent down to the client as [z]. **Replies** to comments.
+
+---
+
+# How to Find a Task (TODO)
+
+- If some problems disturbs you and you're like "mmmhh this bothers enough me to try and tackle it, I wonder if I could fix it" and you vaguely think you might have the skills to try and attempt it I pls come to me and I swear I'll help you get it done
+- Best way I work: I like explaining things to people, but I'm bad at writing documentation. Pls if you want to know how things work and want to help me write down stuff just let me talk about something and put stuff down in order.
+- Be clear about what you want to do, and when you will have time to work on it. Tell me a bit of what you like and I will make sure to give you something. Tell me when you plan to start working on it and what you'll need so I can make sure to prioritize getting it to you.
+
+---
+
+# Database Documentation
+
+BobaBoard uses a PostgreSQL 12 database. There is no plan to allow different types of underlying DBs, which means we can rely on PostgreSQL-only constructs. That said, for ease of onboarding of new engineers, standard SQL functionality should be preferred.
+
+### Naming & Conventions
+
+- Database tables should use plural names.
+- Words are separated by `_` (snake case).
+
+## Base Tables Structure
+
+The base tables structure is defined in `db/init/000_init.sql`. Splitting up the initialization code in logical chunks is on the TODO list.
+
+## Views
+
+Views are defined at `db/init/100_views.sql`.
+
+TODO
+
+## Queries
+
+## Test Database
+
+The test database init data is defined at  `db/test_db_init/`.
