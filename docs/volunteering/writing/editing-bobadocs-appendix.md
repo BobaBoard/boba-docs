@@ -44,6 +44,8 @@ A version of BobaDocs including the changes you made will open. You can poke aro
 
 ## "I do not want to delete my branch." OR "I am reusing / would like to reuse the same branch."
 
+~~In which the author attempts to head off problems that haven't happened yet and likely nobody will do.~~
+
 This is a really good way to make things a confusing mess.
 
 To be fair, *there are situations where this might make sense:* if all you do is fix typos, for example. It's tiny work done over and over again over a long period of time. It might make sense to keep it all in the same branch. The problems come from doing all your work in the same spot, and from never cleaning up.
