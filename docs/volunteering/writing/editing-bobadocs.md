@@ -109,7 +109,9 @@ On the top left of the editor is a "Preview" tab, which will let you look at you
 
 Use this tab often. Clicking the "Show diff" button on the top right of preview will highlight the changes you've made to the file, making it easy to see what you've done so far. Use show diff often.
 
-:::tip Notice how GitHub's preview doesn't look exactly the same as the page on Docusaurus? That's because Docusaurus makes use of tools that GitHub's editor doesn't, such as HTML or page metadata at the top of the file. If you're going to use these in GitHub's editor, take extra care and leave plenty of space between different elements to avoid errors. :::
+:::tip
+Notice how GitHub's preview doesn't look exactly the same as the page on Docusaurus? That's because Docusaurus makes use of tools that GitHub's editor doesn't, such as HTML or page metadata at the top of the file. If you're going to use these in GitHub's editor, take extra care and leave plenty of space between different elements to avoid errors.
+:::
 
 Once you're satisfied with your changes, it's time to `commit` them. Scroll down the page.
 
