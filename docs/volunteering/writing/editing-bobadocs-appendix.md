@@ -34,6 +34,14 @@ If you have a folder within the `img` folder that your images are in, you'll hav
 
 As more and more people edit BobaDocs, the main repo will be updated, including changes that your repo doesn't have. Not to worry! GitHub will prompt you when this occurs. All you need to to is click the "Fetch upstream" dropdown on your main repo page, click "Fetch and merge", and GitHub will do the rest.
 
+## Looking at the things you made after submitting a pull request
+
+Did you know that after submitting a pull request, you can check your changes in a built version of the site? On the page of your pull request, scroll down until you see the checks, and click the link shown below.
+
+![screenshot of the pull request, with an arrow pointing to the details link of "Deploy preview ready!"](/img/volunteer/bobadocsdeploypreview.jpg)
+
+A version of BobaDocs including the changes you made will open. You can poke around, admire your work, and if you're quick, maybe catch a bug and fix it with none the wiser.
+
 ## "I do not want to delete my branch." OR "I am reusing / would like to reuse the same branch."
 
 This is a really good way to make things a confusing mess.
