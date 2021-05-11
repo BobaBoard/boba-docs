@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # Editing BobaDocs
 
 Did you know that you can edit BobaDocs - the website that you're looking at *right now* - without ever having to touch a command line? This guide will walk you through it.
@@ -8,7 +12,7 @@ Did you know that you can edit BobaDocs - the website that you're looking at *ri
 
 ### Forking
 
-**If you already have a fork of BobaDocs, replace this section with "Keeping your repo updated" in the [Appendix](/editing-bobadocs-appendix).**
+**If you already have a fork of BobaDocs, replace this section with "Keeping your repo updated" in the [Appendix](./editing-bobadocs-appendix).**
 
 The files that this website runs off of (known collectively as the site's `repo`) are only allowed to be edited by the BobaLord: this prevents random people from showing up and screwing up the site. This also means that in order to make any changes, you'll need your own copy of the files, known as a `fork`.
 
