@@ -8,6 +8,8 @@ Did you know that you can edit BobaDocs - the website that you're looking at *ri
 
 ### Forking
 
+**If you already have a fork of BobaDocs, replace this section with "Keeping your repo updated" in the Appendix below.**
+
 The files that this website runs off of (known collectively as the site's `repo`) are only allowed to be edited by the BobaLord: this prevents random people from showing up and screwing up the site. This also means that in order to make any changes, you'll need your own copy of the files, known as a `fork`.
 
 First, **make sure you're logged in to GitHub.** Once you're logged in, navigate to the main repo for the site at [https://github.com/essential-randomness/bobadocs](https://github.com/essential-randomness/bobadocs). You can also get there by clicking the "GitHub" link on the top right corner of the site.
@@ -17,8 +19,6 @@ Once there, on the top right corner of the GitHub page, you should see a `Fork` 
 ![a cropped screenshot of the bobadocs github page, with a red arrow pointing to the fork button](/img/volunteer/bobadocsfork.jpg)
 
 ### Branching
-
-**If you already have a branch set up that you'd like to work in, then skip this section.**
 
 In git, a `branch` is a separate version of a repo that can be edited without affecting the main repo. It lets developers separate what they're working on, so problems that arise when working on one issue don't affect any other work that may be being done concurrently. Making good use of branches is key to keeping a project history easy to understand. It also keeps multiple people working on the same project from stepping on each other's toes.
 
@@ -133,9 +133,25 @@ There are a few things to do here:
 
 1. At the top of the form is some dropdowns for selecting which branches to use for the pull request. They  should be filled in automatically, but double-check that they're correct.
 
-2. Give your 
+2. Title your request.
+
+3. Describe the your commits in the larger textbox. We recommend at minimum a summary of what you did at the top, followed by a more detailed list. **In your description, please mention that you used this method (editing directly in GitHub, meaning that you did not use yarn to test run the site) before submitting. This will let us know to double check that everything works properly before accepting.**
+
+4. Hit submit! Your pull request is now sent!
 
 ## Step 4: Cleanup
+
+Once your changes have been accepted by the BobaLord, there's still some housekeeping to do. When the work a branch was created for is done, then it's time to delete the branch. From the main page of your repo, click the branch dropdown, go all the way to the bottom, and click "View all branches".
+
+![repo page with an arrow pointing to "View all branches" in the branches dropdown](/img/volunteer/bobadocsdelete1.jpg)
+
+On the branches page, there's a list of your branches, along with buttons to edit them. One of these is a delete button. Click it.
+
+![branches page with an arrow pointing to the delete button](/img/volunteer/bobadocsdelete2.jpg)
+
+Just in case you've made a mistake, GitHub will give you a button to restore the branch. This button disappears once you leave the page.
+
+Once your branch is deleted, you're all done. Congratulations! You've just edited BobaDocs!
 
 # Appendix
 
@@ -151,8 +167,39 @@ An aside: if any readers are interested in looking at Docusaurus and writing out
 
 ## Adding images
 
-Remember the `static` folder in the repo from earlier? You add images to your page by uploading the images there, then linking to them within the page.
+Remember the `static` folder in the repo from earlier? You add images to your page by uploading the images there (specifically within the `img` folder), then linking to them within the page. Markdown's syntax for adding images is as follows:
+
+```
+![ALT TEXT](FILEPATH)
+```
+
+Docusaurus processes the filepath given in that syntax such that it's relative to the `static` folder. Images go in the `img` folder within the `static` folder, so many images on the site are linked to with:
+
+```
+![ALTTEXT](/img/[FILENAME])
+```
+
+If you have a folder within the `img` folder that your images are in, you'll have to change the filepath accordingly. An example of this are the images on this page: they're all in a folder named `volunteer` within the `img` folder. Accordingly, the images on this page are linked to with:
+
+```
+![ALTTEXT](/img/volunteer/[FILENAME])
+```
 
 ## Keeping your repo updated
 
 As more and more people edit BobaDocs, the main repo will be updated, including changes that your repo doesn't have. Not to worry! GitHub will prompt you when this occurs. All you need to to is click the "Fetch upstream" dropdown on your main repo page, click "Fetch and merge", and GitHub will do the rest.
+
+## "I do not want to delete my branch." OR "I am reusing / would like to reuse the same branch."
+
+This is a really good way to make things a confusing mess.
+
+To be fair, *there are situations where this might make sense:* if all you do is fix typos, for example. It's tiny work done over and over again over a long period of time. It might make sense to keep it all in the same branch. The problems come from doing all your work in the same spot, and from never cleaning up.
+
+1. **Doing all your work in one branch:** The benefit of git branches is that you can have multiple works in progress for your repo without them affecting each other. Accidentally break one, and you can still continue work in the other branches because the break is isolated. This benefit goes away if you do all your work in one spot.
+    - Incidentally, this is why you don't work in main. All branches pull from and update to match main, so if you break main, then the rest of your branches are automatically broken until you can fix it.
+    - It also lets you select what changes you want to submit. If you have two projects in the same branch and finish one, submitting a pull request with the branch submits both complete AND incomplete work, because the pull request submits everything. You select what it is you want to submit at the same time by grouping it together in a branch.
+
+2. **Never deleting branches:** git doesn't care if you do this, but any humans reading your stuff do. It fills your tree with clutter and makes it harder to pick out relevant information.
+    - You can actually recreate deleted branches by singling out a commit and branching from it. Deleting a branch once the work assigned to it is done is reversible, not a big deal, and goes a long way toward keeping things well organized.
+
+It's not that you *can't* do it, it's just a bad idea.
