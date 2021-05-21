@@ -106,7 +106,7 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/essential-randomness/bobaboard/edit/main/website/",
+            "https://github.com/essential-randomness/bobadocs/edit/main/",
         },
         blog: {
           showReadingTime: true,
