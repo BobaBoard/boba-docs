@@ -25,3 +25,22 @@ As developers make changes to a **repository**, **git** keeps track of the edite
 To work on BobaBoard code, you will first need to **clone** the corresponding GitHub repository to your own machine. Every developer will **clone** the same repository, **commit** edited code on their own PC, and **push** **commits** to GitHub for storage. Periodically, you will also need to **pull** updates from GitHub to your own machine to keep the code in your **respository** up to date.
 
 If **conflicts** between separate code edits arise, these are detected and solved by git through a process called **merge**.
+
+### Git Terminology
+
+- `repo`: Short for `repository`. This refers to the project folder that git keeps track of, and all the files in it.
+- `fork`: Your own copy of a repo.
+- `branch`: A separate version of a repo that can be edited without affecting the main repo.
+- `commit`: A record of changes made to files in a git repo.
+- `pull request`: A "request" that the other person "pull" the changes from your repo into their repo. Used to merge changes from one fork of a repo into another.
+- `merge`: The process of combining changes made in two different versions of a repo (branch or fork) so that the receiving repo has all the changes made in both.
+
+### Git FAQ
+
+**Why do I have to fork to work on anything?**
+
+Only the BobaLord is allowed to edit the original copy of BobaDocs. This is good, because it prevents random people from showing up and screwing up the site. This also means that *you* can't edit them directly. Forking creates a repo that you *can* edit, from which you can send the changes you make back to the original repo.
+
+**Why are branches useful?**
+
+Brances let developers separate what they're working on, so problems that arise when working on one issue don't affect any other work that may be being done concurrently. Making good use of branches is key to keeping a project history easy to understand. It also keeps multiple people working on the same project from stepping on each other's toes.

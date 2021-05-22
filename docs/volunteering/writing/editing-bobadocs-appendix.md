@@ -30,10 +30,6 @@ If you have a folder within the `img` folder that your images are in, you'll hav
 ![ALTTEXT](/img/volunteer/[FILENAME])
 ```
 
-## Keeping your repo updated
-
-As more and more people edit BobaDocs, the main repo will be updated, including changes that your repo doesn't have. Not to worry! GitHub will prompt you when this occurs. All you need to to is click the "Fetch upstream" dropdown on your main repo page, click "Fetch and merge", and GitHub will do the rest.
-
 ## Looking at the things you made after submitting a pull request
 
 Did you know that after submitting a pull request, you can check your changes in a built version of the site? On the page of your pull request, scroll down until you see the checks, and click the link shown below.
@@ -41,20 +37,3 @@ Did you know that after submitting a pull request, you can check your changes in
 ![screenshot of the pull request, with an arrow pointing to the details link of "Deploy preview ready!"](/img/volunteer/bobadocsdeploypreview.jpg)
 
 A version of BobaDocs including the changes you made will open. You can poke around, admire your work, and if you're quick, maybe catch a bug and fix it with none the wiser.
-
-## "I do not want to delete my branch." OR "I am reusing / would like to reuse the same branch."
-
-~~In which the author attempts to head off problems that haven't happened yet and likely nobody will do.~~
-
-This is a really good way to make things a confusing mess.
-
-To be fair, *there are situations where this might make sense:* if all you do is fix typos, for example. It's tiny work done over and over again over a long period of time. It might make sense to keep it all in the same branch. The problems come from doing all your work in the same spot, and from never cleaning up.
-
-1. **Doing all your work in one branch:** The benefit of git branches is that you can have multiple works in progress for your repo without them affecting each other. Accidentally break one, and you can still continue work in the other branches because the break is isolated. This benefit goes away if you do all your work in one spot.
-    - Incidentally, this is why you don't work in main. All branches pull from and update to match main, so if you break main, then the rest of your branches are automatically broken until you can fix it.
-    - It also lets you select what changes you want to submit. If you have two projects in the same branch and finish one, submitting a pull request with the branch submits both complete AND incomplete work, because the pull request submits everything. You select what it is you want to submit at the same time by grouping it together in a branch.
-
-2. **Never deleting branches:** git doesn't care if you do this, but any humans reading your stuff do. It fills your tree with clutter and makes it harder to pick out relevant information.
-    - You can actually recreate deleted branches by singling out a commit and branching from it. Deleting a branch once the work assigned to it is done is reversible, not a big deal, and goes a long way toward keeping things well organized.
-
-It's not that you *can't* do it, it's just a bad idea.
