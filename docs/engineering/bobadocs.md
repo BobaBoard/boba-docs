@@ -1,4 +1,4 @@
-# Docusaurus
+# BobaDocs
 
 Docusaurus is the website builder that BobaDocs runs from. This page is a brief overview of how it works. More detailed information can be found in [Docusaurus' own documentation](https://docusaurus.io/docs/).
 

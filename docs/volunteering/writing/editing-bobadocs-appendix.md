@@ -37,3 +37,17 @@ Did you know that after submitting a pull request, you can check your changes in
 ![screenshot of the pull request, with an arrow pointing to the details link of "Deploy preview ready!"](/img/volunteer/bobadocsdeploypreview.jpg)
 
 A version of BobaDocs including the changes you made will open. You can poke around, admire your work, and if you're quick, maybe catch a bug and fix it with none the wiser.
+
+## Deleting a branch
+
+**If, for some reason, you have a branch that you don't need, here's how to get rid of it.**
+
+From the main page of your repo, click the branch dropdown, go all the way to the bottom, and click "View all branches".
+
+![repo page with an arrow pointing to "View all branches" in the branches dropdown](/img/volunteer/bobadocsdelete1.jpg)
+
+On the branches page, there's a list of your branches, along with buttons to edit them. One of these is a delete button. Click it.
+
+![branches page with an arrow pointing to the delete button](/img/volunteer/bobadocsdelete2.jpg)
+
+Just in case you've made a mistake, GitHub will give you a button to restore the branch. This button disappears once you leave the page.
