@@ -44,7 +44,7 @@ Now that you have your own copy of the files, all you have to do to edit the pag
 3. Edit the URL of the editor page by replacing `essential-randomness` with your GitHub username. Going to the edited URL will open the same editor, but using your copy of the files. *Use this editor.* Like before, you can tell you're in the right place if `[USERNAME]/bobadocs` appears on the top left.
 
 :::tip
-Remember how the last tip mentioned branching? That last bullet is there to keep you from accidentally creating a branch (something outside the scope of this guide). If you do create a new branch and need to delete it, see the [appendix](/docs/engineering/editing-bobadocs-appendix/) for how to do that.
+Remember how the last tip mentioned branching? That last bullet is there to keep you from accidentally creating a branch (something outside the scope of this guide). If you do create a new branch and need to delete it, see the [appendix](./editing-bobadocs-appendix/#deleting-a-branch) for how to do that.
 :::
 
 ## Step 2: Make your edits
