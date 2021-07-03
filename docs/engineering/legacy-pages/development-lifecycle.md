@@ -4,20 +4,20 @@ sidebar_position: 7
 
 # Development Lifecycle
 
-To look at/download BobaBoard's code, check out our guide to [Setting Up your Coding Environment](https://www.notion.so/Setting-Up-Your-DevEnv-f36b60bdab9140dc9602adb806a1f998).
-You might also be interested in [Git Notes](https://www.notion.so/Git-Notes-fb1a7b213fde4ef3b7558b2891d21cb7) 
+To look at/download BobaBoard's code, check out our guide to [Setting Up your Coding Environment](./setup-devenv).
+You might also be interested in [Git Notes](./git-notes) 
 
 ## 0. Create a fork
 
-If you haven't been explicitly added to the repository you're contributing to, you will need to create a "fork" you own and upload the changes there before opening a pull request (aka "please, BobaLord, merge my code into the official BobaBoard codebase", see [Git Notes](https://www.notion.so/Git-Notes-fb1a7b213fde4ef3b7558b2891d21cb7) ). Unless you know what you're doing and have forked before running `git clone`, follow these instructions to change your `clone` into `fork`.
+If you haven't been explicitly added to the repository you're contributing to, you will need to create a "fork" you own and upload the changes there before opening a pull request (aka "please, BobaLord, merge my code into the official BobaBoard codebase", see [Git Notes](./git-notes) ). Unless you know what you're doing and have forked before running `git clone`, follow these instructions to change your `clone` into `fork`.
 
 1. Go to the **github website** (you must be logged in) and click on the fork button at the top-right corner of the repository you want.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/46f333ad-f08f-403c-a6d4-eefefbbe077c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/46f333ad-f08f-403c-a6d4-eefefbbe077c/Untitled.png)
+    ![The fork button is located on the top right of the page.](./img/legacy/devenv1.png)
 
 2. Take note of the new git address of your forked repository. It should be  something like `https://github.com/YOUR-USERNAME/BOBABOARD-REPO.git`. You can find it on the main page of your new forked repo, under code.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/22ef05a2-089c-497e-a341-7c6dc609c5a1/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/22ef05a2-089c-497e-a341-7c6dc609c5a1/Untitled.png)
+    ![The URL of our new repo is under the "Code" dropdown on your repo's main page.](./img/legacy/devenv2.png)
 
 3. Run the following commands from your terminal, in the root folder of the repo that you want to upload.
 
@@ -40,7 +40,7 @@ git checkout new-feature-name
 
 Of course you can swap `new-feature-name` with whatever string represents what you're trying to do.
 
-**TIP:** if you want to work on multiple changes at the same time, you can maintain different branches with separate code (see [Git Notes](https://www.notion.so/Git-Notes-fb1a7b213fde4ef3b7558b2891d21cb7)). Just run the code above to create another branch, and you can then switch between branches using `git checkout my-branch`. Code changes aren't shared between branches.
+**TIP:** if you want to work on multiple changes at the same time, you can maintain different branches with separate code (see [Git Notes](./git-notes)). Just run the code above to create another branch, and you can then switch between branches using `git checkout my-branch`. Code changes aren't shared between branches.
 
 ## 2. Write code
 
@@ -65,7 +65,7 @@ Once you're done, it's time to open a pull request (again, also known as "please
 1. Go to your **forked repo** on the **github** website
 2. You should see a message like the one in yellow here. Click on Compare & pull request.
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/706861a1-8240-43e9-a4c8-133886c73876/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/706861a1-8240-43e9-a4c8-133886c73876/Untitled.png)
+    ![An image of the Pull Request button on the main repo page.](./img/legacy/devenv3.png)
 
 3. Write a description and click on "create pull request". Try to explain what you did and why as if the person reading it had zero context for it and was eager to go back to reading hot fanfictions. That is, try to be precise but concise.
 
