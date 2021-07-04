@@ -8,7 +8,7 @@ This is just notes on setup, what pages aren't included, etc.
 
 - Left off the backend db key in setting up your devenv
 
-- The [Codebase Overview](https://www.notion.so/Codebase-Overview-440546bbb3aa439e94cbe45d67f3217a) and [Engineering Guide](https://www.notion.so/Engineering-Guide-0d07444a2ec64a188d1725a8105e2465) main pages have been left out here because their information is already mostly covered in this site's [Codebase Overview](../intro).
+- The [Codebase Overview (Notion)](https://www.notion.so/Codebase-Overview-440546bbb3aa439e94cbe45d67f3217a) and [Engineering Guide (Notion)](https://www.notion.so/Engineering-Guide-0d07444a2ec64a188d1725a8105e2465) main pages have been left out here because their information is already mostly covered in this site's [Codebase Overview](../intro).
 
 - BobaFrontend left off because there's nothing there.
 

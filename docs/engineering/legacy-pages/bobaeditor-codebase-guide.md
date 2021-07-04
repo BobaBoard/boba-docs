@@ -17,7 +17,7 @@ There are two important folders:
 
 ### Src Folder
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/459e83cb-ddc7-4b2a-bcad-e82e3161c850/classes.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/459e83cb-ddc7-4b2a-bcad-e82e3161c850/classes.png)
+![Editor.tsx codes the editor as a whole, the custom-nodes folder contains classes for custom functionality, Tooltip.tsx codes the embeds toolbar, and TenorKeyboard.jsx codes the Tenor plugin.](/img/legacy/classes.png)
 
 The main editor component is **`Editor.tsx`**. This is a React Class Component which wraps a QuillJS editor within itself. It takes care of displaying text both in edit mode (when the **`editable`** props is true) as well as read-only mode (with **`editable`** props = false). ****Documentation for every prop is available in the comments for the TypeScript interface.
 
@@ -95,4 +95,4 @@ If you need to do this, please let me know and I will have you implement an easy
 
 ## Testing
 
-You can click around in storybook to check whether everything is working as expected. Yes, this is less than ideal. [BackstopJS](https://github.com/garris/BackstopJS) is technically set up for this codebase, but it requires manual set up for every story in storybook and that's also terrible. If this is something you'd like to tackle, [Implement Storybook Testing](https://www.notion.so/Implement-Storybook-Testing-d4d15ca68a3c4183b5cc67fcf8dd7d06) is the task for you!
+You can click around in storybook to check whether everything is working as expected. Yes, this is less than ideal. [BackstopJS](https://github.com/garris/BackstopJS) is technically set up for this codebase, but it requires manual set up for every story in storybook and that's also terrible. If this is something you'd like to tackle, [Implement Storybook Testing (Notion)](https://www.notion.so/Implement-Storybook-Testing-d4d15ca68a3c4183b5cc67fcf8dd7d06) is the task for you!

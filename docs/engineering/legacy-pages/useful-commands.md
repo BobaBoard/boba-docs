@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Useful Commands
 
-Frequently used commands. This is a helpful page to [add to your Favorites](https://www.notion.so/notion/Navigate-Notion-left-sidebar-7ef7287cee00464d9a813073b02ce24a#cb2f704bec9b420d94babc8685ea358b).
+Frequently used commands. This is a helpful page to add to your Favorites. [Here's how to do so on Notion.](https://www.notion.so/notion/Navigate-Notion-left-sidebar-7ef7287cee00464d9a813073b02ce24a#cb2f704bec9b420d94babc8685ea358b)
 
 # 🚚 Running dev env
 

@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # BobaBoard UI Codebase
 
-For installation instructions check out  [Setting Up Your DevEnv](https://www.notion.so/Setting-Up-Your-DevEnv-f36b60bdab9140dc9602adb806a1f998) 
+For installation instructions check out  [Setting Up Your DevEnv](./setup-devenv).
 
 ## Overview
 
@@ -27,7 +27,7 @@ The src folder structure is victim of some accrued tech debt and not as well-def
 
 Here is an overview of how the components in BobaBoard UI come together to compose the website structure.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88dc363c-4747-4e4e-b448-b06d011b615b/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88dc363c-4747-4e4e-b448-b06d011b615b/Untitled.png)
+![Layout.tsx covers the page as a whole, FeedWithMenu.tsc hasthe main content feed, and SideMenu.tsx controls the side menu content.](/img/legacy/ui.png)
 
 ### Layout Structure
 
@@ -39,7 +39,7 @@ Here is an overview of how the components in BobaBoard UI come together to compo
 
 The component for regular, display posts is `post/Post.tsx`, which has the following structure:
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5164b604-17b8-4b62-8950-ae9afdee05a7/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5164b604-17b8-4b62-8950-ae9afdee05a7/Untitled.png)
+![There are four sections, each named after what they control: Header.tsx, Tags.tsx, Footer.tsx, and BobaEditor (which is its own repo). Card.tsx contains the code to bring it all together.](/img/legacy/poststructure.png)
 
 The component for the post editor is `post/PostEditor.tsx` , which follows a similar structure but swaps out `Footer.tsx` for `EditableFooter.tsx`.
 
@@ -47,7 +47,7 @@ The component for the post editor is `post/PostEditor.tsx` , which follows a sim
 
 There's two types of comments: the regular, single comment, and comment chains, which are multiple comments chained one after the other. These classes could probably be merged into one, which would be a great refactoring exercise for the willing.
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/13709db9-0ad3-4b0e-bdd9-b958c8436d39/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/13709db9-0ad3-4b0e-bdd9-b958c8436d39/Untitled.png)
+![Comment.tsx controls the large post-like comments, while CommentChain.tsx covers the small comment chains below larger posts.](/img/legacy/comment.png)
 
 **Imperative Handler**
 
@@ -116,7 +116,7 @@ export default SidebarSection;
 
 ## Storybook
 
-See [How to use Storybook](https://www.notion.so/How-to-use-Storybook-522641c570bd45b68fda24282de52587) 
+See [How to use Storybook](./howtouse-storybook) 
 
 We're currently moving to Storybook 6.0's [arg-based stories](https://storybook.js.org/docs/react/writing-stories/introduction#using-args), [actions](https://storybook.js.org/docs/react/essentials/actions) & [controls](https://storybook.js.org/docs/react/essentials/controls). Any refactoring adding them in older places is appreciated. If you really want to overachieve, some Stories might also benefit from "[building pages](https://storybook.js.org/docs/react/workflows/build-pages-with-storybook)" or "[multiple components"](https://storybook.js.org/docs/react/workflows/stories-for-multiple-components).
 
@@ -136,4 +136,4 @@ localStorage.debug = "bobaui:*,-bobaui:*-verbose";
 
 ## Testing
 
-This is currently done manually. If you'd like to set up a better solution you can refer to [Implement Storybook Testing](https://www.notion.so/Implement-Storybook-Testing-d4d15ca68a3c4183b5cc67fcf8dd7d06).
+This is currently done manually. If you'd like to set up a better solution you can refer to [Implement Storybook Testing (Notion)](https://www.notion.so/Implement-Storybook-Testing-d4d15ca68a3c4183b5cc67fcf8dd7d06).
