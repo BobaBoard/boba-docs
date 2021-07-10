@@ -131,7 +131,15 @@ module.exports = {
             specUrl: "http://localhost:4200/open-api.json",
           },
         ],
-        debug: true,
+        theme: {
+          redocOptions: {
+            expandSingleSchemaField: true,
+            expandResponses: "200",
+            pathInMiddlePanel: true,
+            requiredPropsFirst: true,
+            hideHostname: true,
+          },
+        },
       },
     ],
   ],
