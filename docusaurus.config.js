@@ -95,7 +95,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} BobaBoard.`,
     },
   },
   presets: [
@@ -120,6 +120,18 @@ module.exports = {
             require.resolve("@bobaboard/boba-editor/dist/main.css"),
           ],
         },
+      },
+    ],
+    [
+      "redocusaurus",
+      {
+        specs: [
+          {
+            routePath: "/api/",
+            specUrl: "http://localhost:4200/open-api.json",
+          },
+        ],
+        debug: true,
       },
     ],
   ],
