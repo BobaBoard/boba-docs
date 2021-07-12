@@ -9,6 +9,7 @@ module.exports = {
   favicon: "img/badlyresizedab.ico",
   organizationName: "essential-randomness",
   projectName: "bobadocs",
+  plugins: ["custom-webpack-plugin"],
   themeConfig: {
     navbar: {
       title: "BobaBoard",
