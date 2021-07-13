@@ -1,4 +1,3 @@
-console.log(process.env);
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "BobaBoard Docs",
@@ -32,10 +31,10 @@ module.exports = {
           label: "Product Guide",
         },
         {
-          type: "doc",
-          docId: "engineering/intro",
+          to: "docs/engineering/intro",
           position: "left",
           label: "Engineering Guide",
+          activeBaseRegex: "docs/engineering",
         },
         {
           type: "doc",
@@ -129,7 +128,7 @@ module.exports = {
       {
         specs: [
           {
-            routePath: "/api/",
+            routePath: "docs/engineering/rest-api/",
             specUrl:
               process.env.API_SPEC ||
               "https://backend-dot-bobaboard.uc.r.appspot.com/open-api.json",
