@@ -1,3 +1,4 @@
+console.log(process.env);
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "BobaBoard Docs",
@@ -129,7 +130,9 @@ module.exports = {
         specs: [
           {
             routePath: "/api/",
-            specUrl: "http://localhost:4200/open-api.json",
+            specUrl:
+              process.env.API_SPEC ||
+              "https://backend-dot-bobaboard.uc.r.appspot.com/open-api.json",
           },
         ],
         theme: {
