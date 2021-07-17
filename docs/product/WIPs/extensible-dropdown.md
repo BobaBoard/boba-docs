@@ -4,16 +4,18 @@
 
 The current [dropdown menu component](https://github.com/essential-randomness/bobaboard-ui/blob/master/src/common/DropdownListMenu.tsx) (whose current behavior [can be seen here](https://bobaboard-ui.netlify.app/?path=/story/dropdown-preview--multiple-dropdowns)) only allows the display of "text + (optional) icon" options. In order to use it for GIF search (and, in the future, emoji/sticker selection), we need to expand it to include the ability to select between images.
 
-## Current Props and Display
+## Current Status
+
+### Component Props
 
 ```typescript
 interface DropdownProps {
   // The trigger button.
   children: React.ReactElement;
-  // Am extra component to optionally display above the set of options.
+  // An extra component to optionally display above the set of options.
   header?: React.ReactElement;
-  // An array of options to display the dropdown. If no option is present,
-  // the trigger button is displayed as it is.
+  // An array of options to display within the dropdown. If no option is present,
+  // the trigger button (children prop) is returned as is.
   options?: ({
     name: string;
     icon?: IconDefinition | string;
@@ -80,7 +82,7 @@ interface DropdownProps {
 5. Change [Editor](https://github.com/essential-randomness/boba-editor/blob/9d5a60c3c4aea14e7d1b84ec6e3391a3dda2e4c2/src/Editor.tsx) to call to an external component for GIF search.
    - [Example branch](https://github.com/essential-randomness/boba-editor/tree/context-render) of how this could be done by using context.
 
-## Proposed Prop Changes
+## Proposed Code Changes
 
 ### Current
 
