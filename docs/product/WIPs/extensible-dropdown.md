@@ -55,6 +55,8 @@ interface DropdownProps {
     spend more brainpower on how once we're closer to tying everything up together. **The initial component should not be tied to any particular image provider.** Ideally we could reuse it for Tenor, Giphy or even our own internal search.
 - **Q: Do we want it to be simply image selection or also allow selecting videos (bc of the gif size vs mp4 size issue)?**
   - I guess we'll have to support passing videos for gifs, but I'd look at what react-tenor does.
+- **Q: Do we want a masonry-style display for images or a grid-like style one?**
+  - React-tenor currently uses grid, and I'd keep it that way for now because it's easier.
 - **Q: What are the accessibility considerations for something like this?**
   - What happens if people pause automatic gif playing? Should they still be playing in the
     selector?
@@ -67,6 +69,7 @@ interface DropdownProps {
 
 - An example of a dropdown with filterable options in [BoardSelector](https://github.com/essential-randomness/bobaboard-ui/blob/master/src/tags/BoardSelector.tsx).
 - A gif search component ([Tenor Keyboard](https://github.com/essential-randomness/boba-editor/blob/master/src/TenorKeyboard.js) in the editor codebase) made by shamefully hacking [React Tenor](https://github.com/CultureHQ/react-tenor) to suit our needs.
+- If we want to have a masonry-style image layout we can reuse [MasonryView](https://github.com/essential-randomness/bobaboard-ui/blob/master/src/layout/MasonryView.tsx).
 
 ## Roadmap
 
