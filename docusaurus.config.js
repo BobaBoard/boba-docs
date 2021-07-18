@@ -135,6 +135,7 @@ module.exports = {
           },
         ],
         theme: {
+          // See options at https://github.com/Redocly/redoc#redoc-options-object
           redocOptions: {
             expandSingleSchemaField: true,
             expandResponses: "200",
