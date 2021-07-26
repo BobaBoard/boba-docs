@@ -116,7 +116,7 @@ components:
           type: string
         avatar:
           type: string
-          format: url∂
+          format: uri
       required:
         - name
         - avatar
@@ -127,12 +127,12 @@ components:
           type: string
         avatar:
           type: string
-          format: url
+          format: uri
         color:
           type: string
         accessory:
           type: string
-          format: url
+          format: uri
       required:
         - name
         - avatar
