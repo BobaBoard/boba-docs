@@ -4,7 +4,7 @@ These rules must be followed when creating new API endpoint in BobaServer. They'
 
 ## The Golden Rule
 
-1. **MUST** document every endpoint using the OpenAPI format.
+1. **MUST** document every endpoint using the OpenAPI format (see [How to Write Documentation](./API-endpoints.md#documentation)).
 
 ## Response Format
 
