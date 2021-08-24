@@ -19,8 +19,9 @@ All caches operation are definined in the `/cache` directory. Each entity (e.g. 
 
 The cache methods should use the following patterns:
 
-- **`get[entity]InCache`:** to retrieve data.
-- **`set[entity]InCache`:** to set and update data.
+- **`get[entity]InCache`:** to retrieve entity data.
+- **`set[entity]InCache`:** to update entity data.
+- **`add[entity]InCache`:** to add a new entity data.
 
 ### The Transformer Pattern
 
@@ -36,8 +37,9 @@ const set[entity]InCache = ({
 
     // Get the updated value of the old entity
     const newEntity = transform(oldEntity);
-
-    // Update the caches with the new values
+    if (newEntity !== oldEntity) {
+        // If transformer returns an updated entity, update the caches with the new values
+    }
 }
 ```
 
