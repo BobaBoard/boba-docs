@@ -9,6 +9,7 @@ These rules must be followed when creating new API endpoint in BobaServer. They'
 ## Response Format
 
 2. **MUST** use standard HTTP status codes. [(link)](https://opensource.zalando.com/restful-api-guidelines/#150)
+   - See full list at [httpstatuses.com](https://httpstatuses.com/).
 3. **MUST** always return JSON objects as top-level data structures. [(link)](https://opensource.zalando.com/restful-api-guidelines/#110)
 4. **MUST** follow all of the Zalando JSON Guidelines. [(link)](https://opensource.zalando.com/restful-api-guidelines/#json-guidelines) Particularly:
    - **SHOULD** pluralize array names.
@@ -23,7 +24,6 @@ These rules must be followed when creating new API endpoint in BobaServer. They'
 
 6. **MUST** use HTTP methods correctly. [(link)](https://opensource.zalando.com/restful-api-guidelines/#148)
    - For a more compact explanation see [this guide](https://www.restapitutorial.com/lessons/httpmethods.html).
-   - See full list at [httpstatuses.com](https://httpstatuses.com/).
 7. **MUST** avoid actions — think about resources. [(link)](https://opensource.zalando.com/restful-api-guidelines/#138)
    - See [RESTful API Design: nouns are good, verbs are bad](https://cloud.google.com/blog/products/api-management/restful-api-design-nouns-are-good-verbs-are-bad) for an explanation.
 8. **MUST** pluralize resource names. [(link)](https://opensource.zalando.com/restful-api-guidelines/#134)
