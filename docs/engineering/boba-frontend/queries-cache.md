@@ -63,7 +63,16 @@ const setBoardMutedInCache = ({
           {boardId},
           // The transformer
           (board: Board) => {
-              board.muted = true;
+              if (board.muted) {
+                  // The board value hasn't changed, so we return the same object.
+                  return board;
+              }
+              // We return a *new* object with the same property as board, but
+              // the "muted" property set to true.
+              return {
+                ...board,
+                muted: true;
+              }
           }
       })
   }
@@ -78,7 +87,16 @@ const setBoardHiddenInCache = ({
           {boardId},
           // The transformer
           (board: Board) => {
-              board.hidden = true;
+              if (board.hidden) {
+                  // The board value hasn't changed, so we return the same object.
+                  return board;
+              }
+              // We return a *new* object with the same property as board, but
+              // the "hidden" property set to true.
+              return {
+                ...board,
+                hidden: true;
+              }
           }
       })
   }
