@@ -1,6 +1,6 @@
 # Boards UUIDs
 
-[Thanks to [siotle](https://github.com/siotle)]
+[Thanks to Sel for the work!]
 
 Currently, the backend uses the board slug as a parameter to perform operations on a board.
 However, once realms are implemented, board names will no longer be unique. Instead, each board should be assigned a uuid. This uuid will be used to uniquely identify the board, regardless of what realm it may be in.
