@@ -18,12 +18,12 @@ module.exports = {
         src: "img/bobadab.png",
       },
       items: [
-        {
-          type: "doc",
-          docId: "users/welcome",
-          position: "left",
-          label: "Users Guide",
-        },
+        // {
+        //   type: "doc",
+        //   docId: "users/welcome",
+        //   position: "left",
+        //   label: "Users Guide",
+        // },
         {
           type: "doc",
           docId: "product/intro",
@@ -55,10 +55,10 @@ module.exports = {
         {
           title: "Docs",
           items: [
-            {
-              label: "User Guide",
-              to: "/docs/users/welcome",
-            },
+            // {
+            //   label: "User Guide",
+            //   to: "/docs/users/welcome",
+            // },
             {
               label: "Product Guide",
               to: "/docs/product/intro",
