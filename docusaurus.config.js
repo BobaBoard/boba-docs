@@ -1,7 +1,7 @@
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "BobaBoard Docs",
-  tagline: "Dinosaurs are cool",
+  tagline: "Welcome to BobaBoard's (very WIP) documentation!",
   url: "https://bobadocs.netlify.app",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -15,7 +15,7 @@ module.exports = {
       title: "BobaBoard",
       logo: {
         alt: "My Site Logo",
-        src: "img/logo.svg",
+        src: "img/bobadab.png",
       },
       items: [
         {
@@ -60,8 +60,16 @@ module.exports = {
               to: "/docs/users/welcome",
             },
             {
+              label: "Product Guide",
+              to: "/docs/product/intro",
+            },
+            {
               label: "Engineering Guide",
               to: "/docs/engineering/intro",
+            },
+            {
+              label: "Volunteering Guide",
+              to: "docs/volunteering/intro",
             },
           ],
         },
@@ -69,16 +77,16 @@ module.exports = {
           title: "Community",
           items: [
             {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
+              label: "Web",
+              href: "https://www.bobaboard.com/",
             },
             {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
+              label: "Tumblr",
+              href: "https://bobaboard.tumblr.com/",
             },
             {
               label: "Twitter",
-              href: "https://twitter.com/docusaurus",
+              href: "https://twitter.com/BobaBoard",
             },
           ],
         },
@@ -86,12 +94,16 @@ module.exports = {
           title: "More",
           items: [
             {
-              label: "Blog",
-              to: "/blog",
+              label: "Ms. Boba",
+              href: "https://twitter.com/essentialrandom",
+            },
+            {
+              label: "Insider Newsletter",
+              href: "https://essentialrandomness.com/",
             },
             {
               label: "GitHub",
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/essential-randomness",
             },
           ],
         },

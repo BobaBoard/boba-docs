@@ -1,45 +1,49 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./HomepageFeatures.module.css";
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Built for your passions",
+    src: require("../../static/img/bobajustright.png").default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        BobaBoard is made for and by passionate individuals that live their
+        lives on the web. No matter who you are, we want to help you build
+        communities aligned with your interests and values.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/img/undraw_docusaurus_tree.svg').default,
+    title: "Chaotic-ethical approach",
+    src: require("../../static/img/bobaburn.png").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        In a online world corrupted by those who "move fast and break things",
+        BobaBoard aims to <em>disrupt</em> but not <em>destroy</em>. So leave
+        the status quo at the door, but always remember: with great chaos comes
+        great responsibility.
       </>
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('../../static/img/undraw_docusaurus_react.svg').default,
+    title: "Judgement-free environment",
+    src: require("../../static/img/bobajuice.png").default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        BobaBoard's volunteering process aims to be friendly for beginners and
+        enriching for experts. No matter whether you're a seasoned professional
+        or are just learning new skills, we welcome you with open arms!
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ src, title, description }) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
+        <img src={src} className={styles.featureSvg} alt={title} />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

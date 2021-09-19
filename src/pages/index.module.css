@@ -6,10 +6,32 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 6rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  background-image: url("/img/bobaspark-cutout.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.heroBanner > div {
+  background-color: hsl(60deg 88% 92%);
+  border-radius: 1rem;
+  padding: 2rem 3rem;
+  border: 2px dashed #ff9b9f;
+  width: auto;
+}
+
+.heroBanner p {
+  color: black;
+}
+
+.heroBanner h1 {
+  -webkit-text-stroke: 1px #ff9b9f;
+  color: white;
+  text-shadow: 3px 3px 0 #ff9b9f, -1px -1px 0 #ff9b9f, 1px -1px 0 #ff9b9f,
+    -1px 1px 0 #ff9b9f, 1px 1px 0 #ff9b9f;
 }
 
 @media screen and (max-width: 966px) {
