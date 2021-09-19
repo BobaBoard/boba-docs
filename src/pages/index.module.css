@@ -29,9 +29,20 @@
 
 .heroBanner h1 {
   -webkit-text-stroke: 1px #ff9b9f;
-  color: white;
+  color: var(--ifm-font-color-base);
   text-shadow: 3px 3px 0 #ff9b9f, -1px -1px 0 #ff9b9f, 1px -1px 0 #ff9b9f,
     -1px 1px 0 #ff9b9f, 1px 1px 0 #ff9b9f;
+}
+
+.warning {
+  max-width: 40rem;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px dashed var(--ifm-font-color-base);
+  padding: 1.5rem 2rem;
+  border-radius: 15px;
+  margin-bottom: 3rem;
 }
 
 @media screen and (max-width: 966px) {

@@ -36,6 +36,29 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <div className={styles.warning}>
+          <h2>Warning</h2>
+          <p>
+            BobaBoard (and this documentation) are still in the{" "}
+            <em>"extreme WIP"</em> phase!{" "}
+          </p>
+          <p>
+            <strong>
+              Everything you see here might be incomplete and/or confusing to
+              outsiders.
+            </strong>{" "}
+          </p>
+          <p>
+            While we straighten things up, you can keep up to date with
+            BobaBoard's happenings by subscribing to{" "}
+            <a href="https://www.bobaboard.com/#newsletter">
+              our product newsletter
+            </a>
+            , our{" "}
+            <a href="https://essentialrandomness.com/">insiders newsletter</a>,
+            or by following us on other socials (in the footer).
+          </p>
+        </div>
       </main>
     </Layout>
   );
