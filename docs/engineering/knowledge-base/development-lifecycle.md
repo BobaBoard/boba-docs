@@ -5,7 +5,15 @@ sidebar_position: 7
 # Development Lifecycle
 
 To look at/download BobaBoard's code, check out our guide to [Setting Up your Coding Environment](./setup-devenv).
-You might also be interested in [Git Notes](./git-notes) 
+You might also be interested in [Git Notes](./git-notes)
+
+:::tip This seems scarier than it is!
+If you're new to coding and github, the following process might seem scary and overwhelming. Don't worry: it will become second nature very quickly! If you want someone to hold your hand throughout the process, contact Ms. Boba.
+:::
+
+:::note
+TODO[Ms.Boba]: Explore whether the new github command line interface can make this process less cumbersome.
+:::
 
 ## 0. Create a fork
 
@@ -13,11 +21,11 @@ If you haven't been explicitly added to the repository you're contributing to, y
 
 1. Go to the **github website** (you must be logged in) and click on the fork button at the top-right corner of the repository you want.
 
-    ![The fork button is located on the top right of the page.](/img/legacy/devenv1.png)
+   ![The fork button is located on the top right of the page.](/img/legacy/devenv1.png)
 
-2. Take note of the new git address of your forked repository. It should be  something like `https://github.com/YOUR-USERNAME/BOBABOARD-REPO.git`. You can find it on the main page of your new forked repo, under code.
+2. Take note of the new git address of your forked repository. It should be something like `https://github.com/YOUR-USERNAME/BOBABOARD-REPO.git`. You can find it on the main page of your new forked repo, under code.
 
-    ![The URL of our new repo is under the "Code" dropdown on your repo's main page.](/img/legacy/devenv2.png)
+   ![The URL of our new repo is under the "Code" dropdown on your repo's main page.](/img/legacy/devenv2.png)
 
 3. Run the following commands from your terminal, in the root folder of the repo that you want to upload.
 
@@ -65,13 +73,13 @@ Once you're done, it's time to open a pull request (again, also known as "please
 1. Go to your **forked repo** on the **github** website
 2. You should see a message like the one in yellow here. Click on Compare & pull request.
 
-    ![An image of the Pull Request button on the main repo page.](/img/legacy/devenv3.png)
+   ![An image of the Pull Request button on the main repo page.](/img/legacy/devenv3.png)
 
 3. Write a description and click on "create pull request". Try to explain what you did and why as if the person reading it had zero context for it and was eager to go back to reading hot fanfictions. That is, try to be precise but concise.
 
 ## 4. Submit for review
 
-There will be a bit of back and forth, and you might get comments requesting to change some of your code or asking clarifying questions. This is normal and expected: no engineer, no matter how senior, never gets comments and questions on their code. It's just part of the job, and not a reflection of your skills. 
+There will be a bit of back and forth, and you might get comments requesting to change some of your code or asking clarifying questions. This is normal and expected: no engineer, no matter how senior, never gets comments and questions on their code. It's just part of the job, and not a reflection of your skills.
 
 Most often, code reviews are just a matter of the maintainer enforcing consistency in the codebase, or spotting bugs you might have missed (like we all do), or asking to make code clearer for someone that has never read it before. Always feel free to ask clarifying questions, or to push back if you disagree with something.
 
