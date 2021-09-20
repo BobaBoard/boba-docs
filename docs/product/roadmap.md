@@ -17,11 +17,14 @@ sidebar_position: 1.1
 
 ## Where we're going
 
+### Current Focus Areas
+
 - **[P0]:** Volunteer processes
   - **Answering the Q:** What makes for a _great_ volunteering environment?
   - **Current WIPs:**
     - Well-defined positions and expectations.
     - This documentation.
+      - Note: documentation includes _both_ code and processes.
     - Standardization of code practices (including cleaning up our REST API).
 - **[P0]:** Realms
   - **Preliminary Phase (now)**:
@@ -40,8 +43,29 @@ sidebar_position: 1.1
     - "Feeds"
     - Cross-realms identity management
 
+### Current "As We See Fit" Areas
+
+- **[P1]:** Performance
+  - "Quick" win areas: splitting JS bundle, client-side caching, image CDN (including appropriate sizing and availability in "smaller" formats), React Concurrent Mode (when available)
+    - Note: these are quick wins in the sense that they're likely to have a disproportionate impact on performance. They're not necessarily quick to implement.
+- **[P1]:** Error Reporting, Management and Avoidance
+  - We did add observability instrumentation, though it's currently limited to the backend.
+  - _Testing testing testing_
+    - Backend testing is the most mature of the bunch (includes integration with CircleCI)
+    - We _really_ need to work on frontend testing
+      - Adding tests is a good entry point for code volunteering, as it should be fairly easy to look at what other tests are doing and copy it, even without in-depth JavaScript proficiency.
+- **[P1]:** Code clean up and modularization
+  - Create self-contained, well-standardized entry points for contributions
+    - Example: adding new types of permissions, adding new options on post/comments dropdowns, adding new features to the editor, adding more cosmetic customization on boards/realms/etc.
+    - Expansion of these features should be possible with only a superficial understanding of the codebase. Assume most volunteers will want to build a quick feature and "go on their way".
+      - Hypothesis: people are more likely to stick around for larger projects if they can get a "quick win" under their belt first.
+
+## More
+
 For the latest news on product roadmap/happenings, you can check the ["Keeping Up with Ms.Boba"](https://essentialrandomness.com/posts/tag/keeping-up-with-ms-boba/) tag on the insider newsletter.
 
 For questions, insights and objections, contact her
 
-TODO[Ms.Boba]: I really should have a "contact me" page).
+:::note
+TODO[Ms.Boba]: I really should have a "contact me" page.
+:::
