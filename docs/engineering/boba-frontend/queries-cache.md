@@ -1,12 +1,12 @@
 # Caching Queries
 
-BobaBoard's frontend uses [React Query](https://react-query.tanstack.com/) as its query caching mechanism. See our knowledge base for basic information on [caches](../knowledge-base.md#cache).
+BobaBoard's frontend uses [React Query](https://react-query.tanstack.com/) as its query caching mechanism. See our knowledge base for basic information on [caches](../knowledge-base/caching.md).
 
 ## Manual Cache Operations
 
 [React Query](https://react-query.tanstack.com/) automatically manages the caching and refetching of queries. That said, manual operations are required on occasion:
 
-1. **[Optimistic Updates](../knowledge-base.md#optimistic-updates):** we manually write the updated values in the existing cache after receiving new data from the user. This gives the illusion of an immediate update while we wait for server confirmation.
+1. **[Optimistic Updates](../knowledge-base/caching.md#optimistic-updates):** we manually write the updated values in the existing cache after receiving new data from the user. This gives the illusion of an immediate update while we wait for server confirmation.
    - **Example:** showing the updated board description in the sidebar as soon as the "save" button is clicked.
 2. **Data Preloading:** to preload the (potentially partial) result of a query when partial data exists in already-loaded ones.
    - **Example:** showing the first post in a thread (loaded from the board feed data) while waiting for the full thread to load.
@@ -34,6 +34,7 @@ const set[entity]InCache = ({
   transform: (oldEntity: EntityType) => EntityType
 }) => {
     // Find all instance of "entity" in all caches by using the given id.
+    [...]
 
     // Get the updated value of the old entity
     const newEntity = transform(oldEntity);
@@ -64,7 +65,7 @@ const setBoardMutedInCache = ({
           // The transformer
           (board: Board) => {
               if (board.muted) {
-                  // The board value hasn't changed, so we return the same object.
+                  // The board is already muted, so we return the same object.
                   return board;
               }
               // We return a *new* object with the same property as board, but
@@ -79,7 +80,7 @@ const setBoardMutedInCache = ({
 ```
 
 ```typescript
-const setBoardHiddenInCache = ({
+const setBoardVisibleInCache = ({
   queryClient: QueryClient,
   { boardId }: { boardId: string }) => {
       setBoardInCache({
@@ -87,15 +88,15 @@ const setBoardHiddenInCache = ({
           {boardId},
           // The transformer
           (board: Board) => {
-              if (board.hidden) {
-                  // The board value hasn't changed, so we return the same object.
+              if (!board.hidden) {
+                  // The board is already visible, so we return the same object.
                   return board;
               }
               // We return a *new* object with the same property as board, but
-              // the "hidden" property set to true.
+              // the "hidden" property set to false.
               return {
                 ...board,
-                hidden: true;
+                hidden: false;
               }
           }
       })
