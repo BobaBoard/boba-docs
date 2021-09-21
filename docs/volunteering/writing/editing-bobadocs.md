@@ -30,7 +30,7 @@ Here are the steps to do this:
 ![a cropped screenshot of the bobadocs github page, with a red arrow pointing to the fork button](/img/volunteer/bobadocsfork.jpg)
 
 :::tip
-By the way! To do this right, you'd also need to branch. Read our [knowledge base](/docs/engineering/knowledge-base/) to learn more about branching.
+By the way! To do this right, you'd also need to branch. Read our [knowledge base](/docs/engineering/knowledge-base/github) to learn more about branching.
 :::
 
 ### Keeping your files updated
