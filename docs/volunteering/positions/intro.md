@@ -14,7 +14,7 @@ We're currently in the process of creating a more robust volunteers management p
 
 ## Position Examples
 
-This is a running list of potential positions. Since we haven't defined actual expectations, they're not theoretically open for applications. If you believe you have the necessarily skills and drive to fill one of them, you can sign up through our forms above and esplicitly mention your interest in it.
+This is a running list of potential positions. Since we haven't defined actual expectations, they're not theoretically open for applications. If you believe you have the necessarily skills and drive to fill one of them, you can sign up through our forms above and esplicitly mention your interest in it. If you believe a position not reflected here should be added, contact Ms. Boba.
 
 - Programming-related
   - Backend/frontend engineers, DB Admins, DevOps...
@@ -27,6 +27,8 @@ This is a running list of potential positions. Since we haven't defined actual e
   - Tutorials
   - Newsletter/other comms
 - Marketing/Customer Research
+  - User surveys
+- Data Entry
 - Volunteer Manager
 - Social Media Manager
 - Community Manager
@@ -34,3 +36,4 @@ This is a running list of potential positions. Since we haven't defined actual e
 - Bugs/Feature Requests Wrangler
 - Mentor
   - For junior engineers/designers or other relevant positons.
+- Legal
