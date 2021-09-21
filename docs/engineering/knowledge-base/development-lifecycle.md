@@ -5,7 +5,7 @@ sidebar_position: 7
 # Development Lifecycle
 
 To look at/download BobaBoard's code, check out our guide to [Setting Up your Coding Environment](./setup-devenv).
-You might also be interested in [Git Notes](./git-notes)
+You might also be interested in [Git Notes](/docs/engineering/legacy-pages/git-notes)
 
 :::tip This seems scarier than it is!
 If you're new to coding and github, the following process might seem scary and overwhelming. Don't worry: it will become second nature very quickly! If you want someone to hold your hand throughout the process, contact Ms. Boba.
@@ -17,7 +17,7 @@ TODO[Ms.Boba]: Explore whether the new github command line interface can make th
 
 ## 0. Create a fork
 
-If you haven't been explicitly added to the repository you're contributing to, you will need to create a "fork" you own and upload the changes there before opening a pull request (aka "please, BobaLord, merge my code into the official BobaBoard codebase", see [Git Notes](./git-notes) ). Unless you know what you're doing and have forked before running `git clone`, follow these instructions to change your `clone` into `fork`.
+If you haven't been explicitly added to the repository you're contributing to, you will need to create a "fork" you own and upload the changes there before opening a pull request (aka "please, BobaLord, merge my code into the official BobaBoard codebase", see [Git Notes](/docs/engineering/legacy-pages/git-notes) ). Unless you know what you're doing and have forked before running `git clone`, follow these instructions to change your `clone` into `fork`.
 
 1. Go to the **github website** (you must be logged in) and click on the fork button at the top-right corner of the repository you want.
 
@@ -48,7 +48,7 @@ git checkout new-feature-name
 
 Of course you can swap `new-feature-name` with whatever string represents what you're trying to do.
 
-**TIP:** if you want to work on multiple changes at the same time, you can maintain different branches with separate code (see [Git Notes](./git-notes)). Just run the code above to create another branch, and you can then switch between branches using `git checkout my-branch`. Code changes aren't shared between branches.
+**TIP:** if you want to work on multiple changes at the same time, you can maintain different branches with separate code (see [Git Notes](/docs/engineering/legacy-pages/git-notes)). Just run the code above to create another branch, and you can then switch between branches using `git checkout my-branch`. Code changes aren't shared between branches.
 
 ## 2. Write code
 

@@ -1,6 +1,12 @@
+---
+sidebar_position: 5
+---
+
 # BobaDocs
 
-Docusaurus is the website builder that BobaDocs runs from. This page is a brief overview of how it works. More detailed information can be found in [Docusaurus' own documentation](https://docusaurus.io/docs/).
+The guide you're currently reading is called [BobaDocs](https://github.com/essential-randomness/bobadocs). It's built using [Docusaurus](https://docusaurus.io/).
+
+This page is a brief overview of how Docusaurs' filesystem works, and how that maps to this documentation. More detailed information can be found in [Docusaurus' own documentation](https://docusaurus.io/docs/).
 
 ## Docusaurus Folder Structure
 

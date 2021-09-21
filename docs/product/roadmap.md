@@ -64,7 +64,7 @@ sidebar_position: 1.1
 
 For the latest news on product roadmap/happenings, you can check the ["Keeping Up with Ms.Boba"](https://essentialrandomness.com/posts/tag/keeping-up-with-ms-boba/) tag on the insider newsletter.
 
-For questions, insights and objections, contact her
+For questions, insights and objections, contact Ms. Boba.
 
 :::note
 TODO[Ms.Boba]: I really should have a "contact me" page.

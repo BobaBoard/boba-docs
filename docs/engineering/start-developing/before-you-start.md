@@ -18,7 +18,7 @@ TODO[Ms.Boba]: Create a intro page to help people with a specific skill (or desi
 
 ## Step 0 - Sign up for a GitHub Account
 
-In order to submit code, you will need a [GitHub account](https://github.com/). You can read more about GitHub in our [Knowledge Base](../knowledge-base/github.md).
+In order to submit code, you will need a [GitHub account](https://github.com/). You can read more about GitHub in our [Knowledge Base](../knowledge-base/github).
 
 ## Step 1 - Take a look at open issues
 
@@ -46,7 +46,7 @@ TODO[Ms.Boba]: I REALLY should have a "contact me" page.
 The main thing we ask volunteers is to _**communicate, communicate, communicate**_. Unless you specifically request an "urgent" issue (which comes with different expectations), you'll most likely be assigned a long-term project. We know things can happen and that life might get in the way, and **we don't judge contributors for dropping out, or taking longer than planned. We _just need to know_, so we can plan accordingly.**
 :::
 
-Ms. Boba (or another volunteer) will periodically ping you for updates. Just let her know what's up (including "nothing") and submit a pull request when you're ready. You can [learn more about the development lifecycle](../knowledge-base/development-lifecycle.md) in our knowledge base.
+Ms. Boba (or another volunteer) will periodically ping you for updates. Just let her know what's up (including "nothing") and submit a pull request when you're ready. You can [learn more about the development lifecycle](../knowledge-base/development-lifecycle) in our knowledge base.
 
 :::tip
 The unstable and early nature of the codebase makes it even more important to break up your changes in smaller chunks! Ms. Boba can help break down tasks in manageable pieces!

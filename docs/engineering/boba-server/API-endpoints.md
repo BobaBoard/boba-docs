@@ -1,6 +1,6 @@
 # API endpoints and Routes structure
 
-API endpoints are grouped by the type of resource they refer to (e.g. boards, threads, users). Their naming and structure, which reflects their external URL, should follow the principles defined in our [API guidelines](API-guidelines.md).
+API endpoints are grouped by the type of resource they refer to (e.g. boards, threads, users). Their naming and structure, which reflects their external URL, should follow the principles defined in our [API guidelines](API-guidelines).
 
 ## Routes and endpoint structure {#structure}
 
@@ -19,7 +19,7 @@ The `server/all-routes.ts` govern the connection between endpoints and express s
    - **To create a new Route:**
      1. Create the corresponding folders and files as defined in the [structure](#structure) section. Don't forget to export an [`Express.Router`](https://expressjs.com/en/api.html#express.router) object from `routes.ts`.
      2. Add the new route to `server/all-routes.ts`.
-2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will use, according to the specs defined in our [API guidelines](API-guidelines.md).
+2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will use, according to the specs defined in our [API guidelines](API-guidelines).
 3. Add the endpoint to your chosen `routes.ts` file.
 
 ### Sample Endpoint Code

@@ -30,3 +30,4 @@ These rules must be followed when creating new API endpoint in BobaServer. They'
 9. **MUST** use lowercase separate words with hyphens for path segments. [(link)](https://opensource.zalando.com/restful-api-guidelines/#129)
 10. **MUST** use snake_case (never camelCase) for query parameters. [(link)](https://opensource.zalando.com/restful-api-guidelines/#130)
 11. **MUST** stick to conventional query parameters [(link)](https://opensource.zalando.com/restful-api-guidelines/#137). This is relevant to operations like searching, sorting, filtering, and paginating.
+    mn0

@@ -1,6 +1,6 @@
 # Caching Queries
 
-BobaBoard's frontend uses [React Query](https://react-query.tanstack.com/) as its query caching mechanism. See our knowledge base for basic information on [caches](../knowledge-base/caching.md).
+BobaBoard's frontend uses [React Query](https://react-query.tanstack.com/) as its query caching mechanism. See our knowledge base for basic information on [caches](../knowledge-base/caching).
 
 ## Manual Cache Operations
 

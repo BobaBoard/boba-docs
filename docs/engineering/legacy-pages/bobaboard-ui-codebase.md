@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # BobaBoard UI Codebase
 
-For installation instructions check out  [Setting Up Your DevEnv](./setup-devenv).
+For installation instructions check out [Setting Up Your DevEnv](/docs/engineering/start-developing/setting-up-dev-env).
 
 ## Overview
 
@@ -31,7 +31,7 @@ Here is an overview of how the components in BobaBoard UI come together to compo
 
 ### Layout Structure
 
-`layout/Layout.tsx`is the main container of the whole BobaBoard website. It includes the header, and accepts props for `sideMenuContent` and `mainContent`, as indicated in the picture above. SideMenuContent is usually an instance `layout/SideMenu.tsx`, while mainContent varies across pages. In board and thread view, `mainContent` is  an instance of `layout/FeedWithMenu.tsx`.
+`layout/Layout.tsx`is the main container of the whole BobaBoard website. It includes the header, and accepts props for `sideMenuContent` and `mainContent`, as indicated in the picture above. SideMenuContent is usually an instance `layout/SideMenu.tsx`, while mainContent varies across pages. In board and thread view, `mainContent` is an instance of `layout/FeedWithMenu.tsx`.
 
 `FeedWithMenu` is also comprised of two parts: the `sidebarContent` and the `feedContent`. It also accepts a function `onReachEnd` which is called when the feed has been scrolled to the bottom. The sidebar is automatically hidden once the mobile breakpoint is reached, and will only be displayed again when the `showSidebar` props is set to `true`.
 
@@ -71,7 +71,7 @@ TODO: write this. The threads structure right now is a bit of a mess. If you wan
 
 ### Theming
 
-Theming is... *not great*, right now. You might find some constant used throughout in `theme/default.tsx`, but this should likely be refactored to use CSS vars.
+Theming is... _not great_, right now. You might find some constant used throughout in `theme/default.tsx`, but this should likely be refactored to use CSS vars.
 
 ## How to Add a new Component
 
@@ -91,8 +91,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = (props) => {
     <div
       className={classnames("sidebar-section", { editable: props.editable })}
     >
-      Component Sample with {props.sampleProp}!
-      <style jsx>{`
+      Component Sample with {props.sampleProp}!<style jsx>{`
         .sidebar-section {
           font-size: large;
           color: red;
@@ -108,7 +107,7 @@ const SidebarSection: React.FC<SidebarSectionProps> = (props) => {
 // Types for props
 export interface SidebarSectionProps {
   sampleProp: string;
-	editable: boolean;
+  editable: boolean;
 }
 
 export default SidebarSection;
@@ -116,7 +115,7 @@ export default SidebarSection;
 
 ## Storybook
 
-See [How to use Storybook](./howtouse-storybook) 
+See [How to use Storybook](./howtouse-storybook)
 
 We're currently moving to Storybook 6.0's [arg-based stories](https://storybook.js.org/docs/react/writing-stories/introduction#using-args), [actions](https://storybook.js.org/docs/react/essentials/actions) & [controls](https://storybook.js.org/docs/react/essentials/controls). Any refactoring adding them in older places is appreciated. If you really want to overachieve, some Stories might also benefit from "[building pages](https://storybook.js.org/docs/react/workflows/build-pages-with-storybook)" or "[multiple components"](https://storybook.js.org/docs/react/workflows/stories-for-multiple-components).
 

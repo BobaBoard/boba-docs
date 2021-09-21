@@ -39,7 +39,7 @@ If you have WSL installed, you have the option of using either WSL's command pro
 
 ### Git/GitHub
 
-**You will use Git and a [GitHub](https://github.com/) account to download the BobaBoard code, make changes and send them out for review. **You can [learn more about Git and GitHub](/docs/engineering/knowledge-base/github.md) in our knowledge base.
+**You will use Git and a [GitHub](https://github.com/) account to download the BobaBoard code, make changes and send them out for review. **You can [learn more about Git and GitHub](/docs/engineering/knowledge-base/github) in our knowledge base.
 
 You can find [instruction to install git](https://github.com/git-guides/install-git) on GitHub. While this documentation assumes you're using git through the command line, using GitHub Desktop might provide a better experience for newcomers.
 
@@ -75,7 +75,7 @@ Using `npm` instead of `yarn` will result in errors. You can blame React for tha
 
 ### Redis [BobaServer Only]
 
-[**Redis**](https://redis.io/topics/quickstart) is a caching server, which saves the result of queries made to the backend's database so we can give them back to users without recalculating them over and over again. You can [learn more about caches](.../../../knowledge-base/caching.md) in our knowledge base.
+[**Redis**](https://redis.io/topics/quickstart) is a caching server, which saves the result of queries made to the backend's database so we can give them back to users without recalculating them over and over again. You can [learn more about caches](.../../../knowledge-base/caching) in our knowledge base.
 
 ## Next Steps
 
