@@ -13,9 +13,14 @@ sidebar_position: 1.1
   - Maintainance has been very hands-free (yet here we are).
 - Realms have been announced (see [website](https://www.bobaboard.com)).
 - Our [support channels](https://www.bobaboard.com/support-us) are bringing in some $$$ (or, more accurately, $).
-- We have a skeleton of a documentation website and (very early) volunteering processes.
+- We have a skeleton of a documentation website and a (very early) volunteering processes.
+  - While they've been sporadic, we've also had significant contributions made by volunteers.
 
 ## Where we're going
+
+:::info Ms. Boba's Status
+Ms. Boba is currently the only full-time staff member! However, [personal issues](https://www.bobaboard.com/blog/development-logs-7/) have forced her to reframe how she approaches the project. Given the unstable situation, we're setting aside speed of development and growth in the short term, and focusing on strengthening the long-term maintainability and sustainability of the project (especially in the case of unforeseen circumstances).
+:::
 
 ### Current Focus Areas
 
