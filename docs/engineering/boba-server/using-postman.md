@@ -25,7 +25,7 @@ Before authenticating Postman requests, you will need to set up a Postman enviro
 2. Set up a `email` variable in your environment with your BobaBoard login email
 3. Set up a `password` variable in your environment with your BobaBoard login password
 4. Set up a `firebaseApiKey` variable in your environment with value `AIzaSyAYgQGhDsBS6rDKu8PVq_sAQrxt4tIrGEI`
-   :::danger
+   :::info
    Firebase API keys are designed to be used client-side and are not used to control access to backend resources. You can learn more on the [Firebase API documentation website](https://firebase.google.com/docs/projects/api-keys).
    :::
 5. Create (and save) the following **Authentication HTTP Request**
