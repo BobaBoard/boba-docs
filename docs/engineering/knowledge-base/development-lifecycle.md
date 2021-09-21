@@ -4,7 +4,7 @@ sidebar_position: 7
 
 # Development Lifecycle
 
-To look at/download BobaBoard's code, check out our guide to [Setting Up your Coding Environment](/docs/engineering/start-developing/before-you-start.md).
+To look at/download BobaBoard's code, check out our guide to [Setting Up your Coding Environment](/docs/engineering/start-developing/before-you-start).
 You might also be interested in [Git Notes](/docs/engineering/legacy-pages/git-notes)
 
 :::tip This seems scarier than it is!
