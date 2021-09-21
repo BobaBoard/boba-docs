@@ -48,6 +48,8 @@ module.exports = {
           position: "right",
         },
       ],
+      respectPrefersColorScheme: true,
+      image: "img/preview.png",
     },
     footer: {
       style: "dark",
