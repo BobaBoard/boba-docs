@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# Before you start
+# Expectations & Code of Conduct
 
 This guide goes over the commitment requirements and code of conduct for BobaBoard's volunteers.
 
