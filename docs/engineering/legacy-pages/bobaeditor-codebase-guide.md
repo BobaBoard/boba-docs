@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # BobaEditor Codebase Guide
 
-For installation instructions check out [Setting Up Your DevEnv](./setup-devenv).
+For installation instructions check out [Setting Up Your DevEnv](/docs/engineering/start-developing/before-you-start.md).
 
 ## Overview
 
@@ -19,7 +19,7 @@ There are two important folders:
 
 ![Editor.tsx codes the editor as a whole, the custom-nodes folder contains classes for custom functionality, Tooltip.tsx codes the embeds toolbar, and TenorKeyboard.jsx codes the Tenor plugin.](/img/legacy/classes.png)
 
-The main editor component is **`Editor.tsx`**. This is a React Class Component which wraps a QuillJS editor within itself. It takes care of displaying text both in edit mode (when the **`editable`** props is true) as well as read-only mode (with **`editable`** props = false). ****Documentation for every prop is available in the comments for the TypeScript interface.
+The main editor component is **`Editor.tsx`**. This is a React Class Component which wraps a QuillJS editor within itself. It takes care of displaying text both in edit mode (when the **`editable`** props is true) as well as read-only mode (with **`editable`** props = false). \*\*\*\*Documentation for every prop is available in the comments for the TypeScript interface.
 
 Within `Editor.tsx` the `Toolbar` component, contains the options in edit mode (e.g. bold, italic, spoilers, headers and so on). This should not be confused with `Tooltip.tsx` which, instead, contains the options that are only available on empty new lines (e.g. add image, embed video, search gif and so on). The display of the Tooltip is controlled by the `maybeShowEmptyLineTooltip` method within `Editor.tsx`, which checks whether the cursor is presently on an empty line.
 
@@ -35,17 +35,17 @@ Custom elements and formatting are implemented using [Parchment](https://github.
 
 ### How Custom Nodes Work
 
-There's two types of custom nodes: `inline` and `block`. If you're familiar with [inline vs block CSS elements](https://www.samanthaming.com/pictorials/css-inline-vs-inlineblock-vs-block/), I understand these to be roughly equivalent. 
+There's two types of custom nodes: `inline` and `block`. If you're familiar with [inline vs block CSS elements](https://www.samanthaming.com/pictorials/css-inline-vs-inlineblock-vs-block/), I understand these to be roughly equivalent.
 
 **The entry point for block nodes (e.g. embeds) is the "create" method.** This is called by Quill every time an embed of the given type is added to the editor, either manually by the user or as part of loading a saved delta. In the first case the argument will be the value supplied by the user (e.g. the embed URL in case of embeds), in the latter the argument will be the value stored in the embed configuration, which you can see returned by the **"value"** method.
 
-Embeds loaded through [iFramely](http://iframely.com/) are handled by subclassing `OEmbedBase.ts` with embed-specific logic. `OEmbedBase.ts` ****also handles "best effort load" embeds.
+Embeds loaded through [iFramely](http://iframely.com/) are handled by subclassing `OEmbedBase.ts` with embed-specific logic. `OEmbedBase.ts` \*\*\*\*also handles "best effort load" embeds.
 
 **Styling for embeds** is handled by `CustomNodesStyle.tsx`. Note the `:global()` instruction wrapping class names, which will have to be cleaned up at some point (but is necessary for now).
 
 ### How to Add a New Embed Type
 
-1. After adding a new embed in `custom-nodes`,  note the `blotName` exported by the static class created (e.g. `youtube-video`, `tweet`, `oembed-embed`, etc). *NOTE: we should probably standardize these at some point*).
+1. After adding a new embed in `custom-nodes`, note the `blotName` exported by the static class created (e.g. `youtube-video`, `tweet`, `oembed-embed`, etc). _NOTE: we should probably standardize these at some point_).
 2. Add your new embed type in `tooltipConfig.ts`. The default configuration is used by the large "contributions" editor, while the single line configuration is used by comments.
 
 ### How Custom Nodes are Loaded into Quill

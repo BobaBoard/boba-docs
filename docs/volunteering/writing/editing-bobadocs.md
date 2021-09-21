@@ -4,17 +4,19 @@ sidebar_position: 1
 
 # Editing BobaDocs
 
-This guide will show you how to edit BobaDocs, the website that you're looking at *right now.*
+This guide will show you how to edit BobaDocs, the website that you're looking at _right now._
 
 You will need:
-- A [GitHub](https://github.com) account. (A brief explanation of GitHub is available in our [Knowledge Base](/docs/engineering/knowledge-base/#github). Any `git terminology` use in this guide is also explained there.)
+
+- A [GitHub](https://github.com) account. (A brief explanation of GitHub is available in our [Knowledge Base](/docs/engineering/knowledge-base/github). Any `git terminology` use in this guide is also explained there.)
 
 You will NOT need:
+
 - Any knowledge of command lines.
 
 ## Step 0: Create your own copy of BobaDocs
 
-Only the BobaLord is allowed to modify the original copy of BobaDocs. To make changes, you'll have to your own copy of the files. This process is called forking, and you can read more about it in our [knowledge base](/docs/engineering/knowledge-base/).
+Only the BobaLord is allowed to modify the original copy of BobaDocs. To make changes, you'll have to your own copy of the files. This process is called forking, and you can read more about it in our [knowledge base](/docs/engineering/knowledge-base/github).
 
 **If you already have a copy of BobaDocs, skip to [Keeping your files updated](#keeping-your-files-updated).**
 
@@ -40,8 +42,8 @@ As more and more people edit BobaDocs, the main repo will be updated, including 
 Now that you have your own copy of the files, all you have to do to edit the pages in BobaDocs is edit those files. GitHub has a built-in editor that makes this easy to do. Here's how you get to it:
 
 1. Start by opening the page you want to edit in your browser.
-2. Scoll down and click the green "Edit this page" link at the bottom of the page. An editor will open. *Do not use this editor.*
-3. Edit the URL of the editor page by replacing `essential-randomness` with your GitHub username. Going to the edited URL will open the same editor, but using your copy of the files. *Use this editor.* Like before, you can tell you're in the right place if `[USERNAME]/bobadocs` appears on the top left.
+2. Scoll down and click the green "Edit this page" link at the bottom of the page. An editor will open. _Do not use this editor._
+3. Edit the URL of the editor page by replacing `essential-randomness` with your GitHub username. Going to the edited URL will open the same editor, but using your copy of the files. _Use this editor._ Like before, you can tell you're in the right place if `[USERNAME]/bobadocs` appears on the top left.
 
 :::tip
 Remember how the last tip mentioned branching? That last bullet is there to keep you from accidentally creating a branch (something outside the scope of this guide). If you do create a new branch and need to delete it, see the [appendix](./editing-bobadocs-appendix/#deleting-a-branch) for how to do that.
@@ -87,7 +89,7 @@ GitHub lets users submit changes to the main repo through a `pull request`. Clic
 
 Here's how you submit:
 
-1. At the top of the form are some dropdowns for selecting which copies of the files to use. They  should be filled in automatically.
+1. At the top of the form are some dropdowns for selecting which copies of the files to use. They should be filled in automatically.
 
 2. Title your submission.
 
