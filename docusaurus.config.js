@@ -11,6 +11,8 @@ module.exports = {
   projectName: "bobadocs",
   plugins: ["custom-webpack-plugin"],
   themeConfig: {
+    respectPrefersColorScheme: true,
+    image: "img/preview.png",
     navbar: {
       title: "BobaBoard",
       logo: {
@@ -48,8 +50,6 @@ module.exports = {
           position: "right",
         },
       ],
-      respectPrefersColorScheme: true,
-      image: "img/preview.png",
     },
     footer: {
       style: "dark",
