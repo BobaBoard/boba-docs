@@ -19,7 +19,7 @@ TODO[Ms.Boba]: Explore whether the new github command line interface can make th
 
 At a high level, the git development lifecycle follows these steps:
 
-0. **The developer "forks" the code.** This creates a separate copy of the codebase that is owned by the developer itself. No matter what changes the developer makes, the original codebase (called `upstream`) will remain unchanged.
+0. **The developer "forks" the code.** This creates a separate copy of the codebase owned by the developer itself. No matter what changes the developer makes, the original codebase (called `upstream`) will remain unchanged.
 1. **The developer creates a "feature branch" on their "fork".** When the developer first forks the code, they are placed on the official "current version" of the codebase, called `master` (or `main`). Rather than modify `master` directly, the developer then creates a "feature branch" to make their edits on.
 
    For example, if the developer is working on adding a "read more" feature, they might create a branch called `read-more`. Creating branches allows a developer to work on many independent features at the same time.
@@ -33,11 +33,12 @@ At a high level, the git development lifecycle follows these steps:
    - Commit 2: Display read more text when button is clicked
 
 3. **The developer opens a "pull request" on the original codebase.** Once the new feature is complete, it should become part of the "official" codebase. To do so, the developer must ask the codebase owners to copy the commits made in step 2 to the `master` branch of the original `upstream` codebase. This process is called opening a "pull request".
-4. **The codebase owners review (and eventually "merge") the pull request.** Once the pull request has been submitted for review, the codebase owners will review the changes made and might request edits to the code. The review process usually entails multiple rounds of back and forth between the developer and the codebase owners, and the developer often adds new commits to the pull request with the required changes.
+4. **The codebase owners review (and eventually "merge") the pull request.** Once the pull request has been submitted for review, the codebase owners will review the changes made and might request edits to the code. The review process usually entails multiple rounds of back and forth between the developer and the codebase owners, and the developer often adds new commits to the pull request with the requested changes.
 
    Once the pull request is approved, the pull request is "merged" and then "closed". Once merged, the developer's code becomes part of the `master` branch in the original `upstream` codebase. The developer can now delete the "feature branch" created in step 1.
 
-5. **Pulling from upstream.** Now that the feature code has been merged on the `upstream master` branch, the `master` branch in the developer's fork is out of date.
+5. **Pulling from upstream.** Now that the feature code has been merged to the `upstream master` branch, the code in the `master` branch of the developer's fork (which doesn't contain the original feature) is out of date. To download the updated code, the developer "pulls" the changes from the `upstream` codebase. This copies all the new code commits in the `upstream` codebase to the developer's.
+6. **Working on a new feature.** To work on a new feature, the developer repeats the same process starting from step 1.
 
 ## 0. Create a fork
 
