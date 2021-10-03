@@ -15,6 +15,30 @@ If you're new to coding and github, the following process might seem scary and o
 TODO[Ms.Boba]: Explore whether the new github command line interface can make this process less cumbersome.
 :::
 
+### Development lifecycle overview
+
+At a high level, the git development lifecycle follows these steps:
+
+0. **The developer "forks" the code.** This creates a separate copy of the codebase that is owned by the developer itself. No matter what changes the developer makes, the original codebase (called `upstream`) will remain unchanged.
+1. **The developer creates a "feature branch" on their "fork".** When the developer first forks the code, they are placed on the official "current version" of the codebase, called `master` (or `main`). Rather than modify `master` directly, the developer then creates a "feature branch" to make their edits on.
+
+   For example, if the developer is working on adding a "read more" feature, they might create a branch called `read-more`. Creating branches allows a developer to work on many independent features at the same time.
+
+2. **The developer "commits" code changes to their "feature branch".** As the developer writes code, they will modify the code in the branch they're working on. Periodically, the developer will then "commit" the changes made. Committing creates "code checkpoints", and is helpful to split code creation in logical segment that are easier to reason about and check for correctness.
+
+   For example, when working on the `read-more` branch, the developer might create the following commits:
+
+   - Commit 1: Add read more button
+   - Commit 2: Style read more button
+   - Commit 2: Display read more text when button is clicked
+
+3. **The developer opens a "pull request" on the original codebase.** Once the new feature is complete, it should become part of the "official" codebase. To do so, the developer must ask the codebase owners to copy the commits made in step 2 to the `master` branch of the original `upstream` codebase. This process is called opening a "pull request".
+4. **The codebase owners review (and eventually "merge") the pull request.** Once the pull request has been submitted for review, the codebase owners will review the changes made and might request edits to the code. The review process usually entails multiple rounds of back and forth between the developer and the codebase owners, and the developer often adds new commits to the pull request with the required changes.
+
+   Once the pull request is approved, the pull request is "merged" and then "closed". Once merged, the developer's code becomes part of the `master` branch in the original `upstream` codebase. The developer can now delete the "feature branch" created in step 1.
+
+5. **Pulling from upstream.** Now that the feature code has been merged on the `upstream master` branch, the `master` branch in the developer's fork is out of date.
+
 ## 0. Create a fork
 
 If you haven't been explicitly added to the repository you're contributing to, you will need to create a "fork" you own and upload the changes there before opening a pull request (aka "please, BobaLord, merge my code into the official BobaBoard codebase", see [Git Notes](/docs/engineering/legacy-pages/git-notes) ). Unless you know what you're doing and have forked before running `git clone`, follow these instructions to change your `clone` into `fork`.
