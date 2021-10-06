@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # API endpoints and Routes structure
 
 API endpoints are grouped by the type of resource they refer to (e.g. boards, threads, users). Their naming and structure, which reflects their external URL, should follow the principles defined in our [API guidelines](API-guidelines).
