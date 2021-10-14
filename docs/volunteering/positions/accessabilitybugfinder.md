@@ -2,7 +2,7 @@
 This guide goes over the volunteer job of discovering, cataloguing, and fixing accessability bugs.
 
 :::note
-Please make sure you've read the [BobaCoard Code of Coduct for Volunteering](before-you-start.md) before volunteering for this position.
+Please make sure you've read the [BobaCoard Code of Coduct for Volunteering](../before-you-start.md) before volunteering for this position.
 :::
 
 ## Finding Bugs
