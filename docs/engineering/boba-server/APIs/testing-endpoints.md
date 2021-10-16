@@ -14,13 +14,13 @@ Tests are a fundamental part of creating stable, robust software, and their impo
 
 ## API testing
 
-While many [different types of tests](educative.io/blog/software-testing-types-101#functional-methods) exists, APIs are usually tested through integration tests. Integration tests ensure that multiple components (e.g. database, server) work together as expected. In the case of BobaBoard's API routes, integration tests cover the database and the server, with authentication and caching being instead [mocked](#mocking).
+While many [different types of tests](https://educative.io/blog/software-testing-types-101#functional-methods) exists, APIs are usually tested through integration tests. Integration tests ensure that multiple components (e.g. database, server) work together as expected. In the case of BobaBoard's API routes, integration tests cover the database and the server, with authentication and caching being instead [mocked](#mocking).
 
 ### Test cases
 
-Tests are divided in test cases. Each test case represents a set of actions that verify that a single behavior of the software under test is working as intended. For example, a test case might verify that a `GET` request to the `/users/@me/` endpoint returns a `401` error when no authentication data is present. Another test case might verify that a `PATCH` request to the `/posts/:post_id/contribution` endpoint containing new tags correctly updates the corresponding contribution.
+Tests are divided in test cases. Each test case represents a set of actions that verify that a single behavior of the software under test is working as intended. For example, a test case might verify that a `GET` request to the `/users/@me/` endpoint returns a `401` error when no authentication data is present. Another test case might verify that a `PATCH` request to the `/posts/:post_id/contribution` endpoint correctly updates the corresponding contribution when the `payload` includes a set of new tags.
 
-Good test cases are small, self-contained, and independent, and should follow the `Arrange-Act-Assert` pattern. This pattern divides each test case into 3 phases:
+Good test cases are small, self-contained, and independent. They should follow the `Arrange-Act-Assert` pattern., which divides each test case into 3 phases:
 
 1. **Arrange:** Set up all necessary inputs and preconditions.
 2. **Act:** Run the code under test.
@@ -31,7 +31,7 @@ Example:
 ```javascript
 test("Returns data for the logged in user", async () => {
   // ARRANGE: Set the logged in user
-  setLoggedInUser("userId");
+  setLoggedInUser("logged_in_user_id");
 
   // ACT: Call the user data endpoint
   const response = await request(server.app).get("/@me");
@@ -41,37 +41,36 @@ test("Returns data for the logged in user", async () => {
   expect(response.body).toEqual({
     avatar_url: "/user_avatar.png",
     username: "user_name",
-    pinned_boards: {},
   });
 });
 ```
 
 ### Mocking
 
-Software might sometimes rely on external, complex services or library methods that are not suited for a testing environment (which might, among other things, lack network connectivity). Rather than rely on these libraries or services, tests use _mock objects_, fake versions of these objects that stand in for the real one.
+Software might sometimes rely on external, complex services or library methods that are not suited for a testing environment (which might, for example, lack network connectivity or filesystem access). Rather than rely on these libraries or services, tests use _mock objects_, fake versions of these services and libraries that stand in for the real ones.
 
-Because `mocks` are not real implementations, tests will define (if necessary) the values returned by calls to mocked objects. Tests can also make assertions on how the test interacted with the mocks, ensuring, for example, that certain methods have been called with the right parameters.
+Because `mocks` are fake objects with no implementations, tests might need to define (if necessary) values returned by calls to mocked objects. If needed, tests can also make assertions on how the system under test interacted with the mocks, ensuring, for example, that certain methods have been called with the right parameters.
 
 ```javascript
   test("returns cached data for logged in user", async function () {
-    setLoggedInUser("fb2");
+    setLoggedInUser("logged_in_user_id");
     const cachedData = JSON.stringify({
       avatar_url: "/this_was_cached.png",
       username: "the_cached_username",
     });
-    // When the cache "hget" method is called, give back cached data
+    // When the cache "hget" method is called, the mock will give back the fake cached data
     mocked(cache().hget).mockResolvedValueOnce(cachedData));
 
     const res = await request(server.app).get("/@me");
 
     expect(res.status).toBe(200);
-    // Make sure that the returned result is equal to the cached data.
+    // Make sure that the returned result is equal to the fake cached data.
     // Note that if the cache were not called the result would be different
     expect(res.body).toEqual(cachedData);
 
     // Ensure that the cache "hget" method has been called once with the right parameters
     expect(cache().hget).toBeCalledTimes(1);
-    expect(cache().hget).toBeCalledWith(CacheKeys.USER, "fb2");
+    expect(cache().hget).toBeCalledWith(CacheKeys.USER, "logged_in_user_id");
 ```
 
 `Mocks` used in BobaServer's testing include the `cache`, network requests (i.e. the `axios` library), and the authentication service.
