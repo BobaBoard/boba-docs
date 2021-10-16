@@ -35,7 +35,7 @@ A more general explanation of Express routing is available [on MDN](https://deve
 1. Locate the `routes.ts` file corresponding to the resource you want to add an endpoint to. It will be contained within the `server/[resource_name]` directory.
 
    :::note
-   If you're adding a new top-level route, follow the instruction in the [creating a new top-level route](./creating-endpoints.md#top-level-route) section.
+   If you're adding a new top-level route, follow the instruction in the [creating a new top-level route](#top-level-route) section.
    :::
 
 2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will use. The [REST API example](./intro.md#api-example) includes examples of different methods and their semantic. You can also consult the [Zalando API guidelines](https://opensource.zalando.com/restful-api-guidelines/#148) for an in-depth explanation.
@@ -184,7 +184,7 @@ router.post("/:post_id/comment", ensureLoggedIn, async (req, res) => {
 }
 ```
 
-As you can see in the example, components are referred to through the `$ref` attribute. You can learn more about components in the [documenting components](./creating-endpoints.md#documenting-components) section.
+As you can see in the example, components are referred to through the `$ref` attribute. You can learn more about components in the [documenting components](#documenting-components) section.
 
 ### Documenting components
 
