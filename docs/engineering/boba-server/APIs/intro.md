@@ -26,7 +26,7 @@ Additional data required as part of the request or response is referred to as th
 Add a quick explanation of different type of request parameters (URL, query and body).
 :::
 
-## REST API example
+## REST API example {#api-example}
 
 :::caution
 The following is a high-level example to help understand how REST APIs work. It does not reflect how BobaServer works in practice. The source of truth for the BobaServer API is our [REST API documentation page](/docs/engineering/rest-api/).
@@ -37,7 +37,7 @@ As an example, let's define the REST API endpoint that associated with contribut
 
 Here are some operations that might be available to the client:
 
-### Fetch the data for a contribution in a thread
+### GET: Fetch the data for a contribution in a thread
 
 The client wants to **fetch** the contribution with id `contribution_123` in the thread with id `thread_456`. To achieve this, the client sends a `GET` request to the `/threads/thread_456/contributions/contribution_123` endpoint.
 
@@ -52,7 +52,7 @@ Possible responses include:
 `GET` requests are the default type of request the browser sends when you access a web page.
 :::
 
-### Create a new contribution in a thread
+### POST: Create a new contribution in a thread
 
 The client wants to **create** a contribution with id `contribution_123` in the thread with id `thread_456`. To achieve this, the client sends a `POST` request to the `/threads/thread_456/contributions/contribution_123` endpoint. The `POST` request would also include the contribution data as a `payload`.
 
@@ -71,7 +71,7 @@ Possible responses include:
 `POST` requests are most often used by browsers when submitting forms.
 :::
 
-### Update a contribution in a thread
+### PUT: Update a contribution in a thread
 
 The client wants to **update** a contribution with id `contribution_123` in the thread with id `thread_456`. To achieve this, the client sends a `PUT` request to the `/threads/thread_456/contributions/contribution_123` endpoint. The `PUT` request would also include the updated contribution data as a `payload`.
 
@@ -81,7 +81,7 @@ Possible responses include:
 - An HTTP Status Code of `403` if the user is not authorized to update the contribution.
 - An HTTP Status Code of `404` if the contribution does not exist.
 
-### Delete a contribution in a thread
+### DELETE: Delete a contribution in a thread
 
 The client wants to **delete** a contribution with id `contribution_123` in the thread with id `thread_456`. To achieve this, the client sends a `DELETE` request to the `/threads/thread_456/contributions/contribution_123` endpoint.
 
