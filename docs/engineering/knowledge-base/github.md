@@ -25,6 +25,7 @@ If **conflicts** between separate code edits arise, these are detected and solve
 ## Git Terminology
 
 - `repo`: Short for `repository`. This refers to the project folder that git keeps track of, and all the files in it.
+- `clone`: The act of copying the "remote" version of the repository on GitHub to your own machine.
 - `fork`: Your own copy of a repo.
 - `branch`: A separate version of a repo that can be edited without affecting the main repo.
 - `commit`: A record of changes made to files in a git repo.
