@@ -8,10 +8,6 @@ This is currently a private repository. Contact the BobaLord for access!
 **Make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed.** This is the only codebase that needs it.
 :::
 
-:::important
-**Make sure you have [Redis](https://redis.io/) installed.** This is the only codebase that needs it.
-:::
-
 ## Install Instructions
 
 The first time you work on BobaServer you need to copy the project to the local machine and set up the environment configuration files (`.env`, [ELI5](https://www.reddit.com/r/webdev/comments/a54pxr/what_is_a_env_file/ebjwbtr/?utm_source=reddit&utm_medium=web2x&context=3)).
@@ -64,53 +60,6 @@ Open `firebase-sdk.json` and paste the following content within it:
 }
 ```
 
-## Development Instructions
+## Start a local server
 
-To develop for BobaServer, you will need to start 3 separate components: the database, the cache, and the actual server.
-
-### Start DB
-
-In a terminal, run the following command:
-
-```
-yarn run start-db
-```
-
-### Start cache
-
-In a terminal, run the following command:
-
-```
-redis-server
-```
-
-### Run development server
-
-In a terminal, run the following command:
-
-```
-yarn run dev:watch
-```
-
-:::tip
-**The above command will automatically restart the server on any code change you make. **
-For some edits, like updates to .sql files, you might need to restart it manually.
-
-<details>
-<summary><strong>How to manually restart the development server</strong>
-</summary>
-
-Both of these actions need to be performed on the console where `yarn run dev:watch` is currently running.
-
-- **Fancy Way:** Type `rs` and press enter.
-- **Bruteforce Way:** ~~Press~~ Mash `ctrl+c` to stop the running process, then run `yarn run dev:watch` again.
-
-</details>
-
-:::
-
-You can test the server is running by opening `http://localhost:4200/realms/slug/v0` in any browser. You should now see a list of all the realm properties in [JSON format](https://developers.squarespace.com/what-is-json).
-
-:::tip
-Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](#how-to-use-postman).
-:::
+You can now [follow the instructions](/docs/engineering/boba-server/getting-started) in the bobaserver guide and start your own local server.

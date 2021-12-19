@@ -21,7 +21,6 @@ If you're intimidated, contact Ms. Boba for help! Also consider editing this pag
 - [ ] [NodeJS](#nodejs-with-nvm)
 - [ ] [Yarn](#yarn)
 - [ ] [Docker](#docker-bobaserver-only) [BobaServer Only]
-- [ ] [Redis](#redis-bobaserver-only) [BobaServer Only]
 
 ### Windows Subsystem for Linux (WSL) [Windows Only]
 
@@ -73,9 +72,7 @@ Using `npm` instead of `yarn` will result in errors. You can blame React for tha
   :::
 - **[Windows Only]** You should run docker in a WSL2 instance. There's a checkbox in Docker settings for this. (This is required if you have Windows 10 Home Edition, and only recommended for other versions of Windows 10.) If Docker is failing to start, make sure you have WSL2 installed.
 
-### Redis [BobaServer Only]
-
-[**Redis**](https://redis.io/topics/quickstart) is a caching server, which saves the result of queries made to the backend's database so we can give them back to users without recalculating them over and over again. You can [learn more about caches](.../../../knowledge-base/caching) in our knowledge base.
+Docker will be used to run BobaBoard's [**PostgreSQL**](https://www.postgresql.org/) database and [**Redis**](https://redis.io/topics/quickstart) cache without manual installation. You can [learn more about caches](.../../../knowledge-base/caching) in our knowledge base.
 
 ## Next Steps
 

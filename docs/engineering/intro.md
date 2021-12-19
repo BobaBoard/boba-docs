@@ -64,7 +64,7 @@ The BobaBoard backend repository is an [ExpressJS](https://expressjs.com/) serve
 
 Other than the server itself, this repository contains table definitions for BobaBoard's PostgreSQL DB.
 
-Other technologies used include a [Redis Cache](https://redis.io/) and [Mocha](https://mochajs.org/) for testing.
+Other technologies used include a [Redis Cache](https://redis.io/) and [Jest](https://jestjs.io/) for testing.
 
 :::tip
 **Edit this codebase if:** you want to add new functionality to BobaBoard that goes beyond the interaction with the user (or fix existing bugs).

@@ -5,7 +5,7 @@ You can send complex HTTP requests to the backend server using the [Postman API 
 To send a request through Postman, you can follow their ["Sending your first request"](https://learning.postman.com/docs/getting-started/sending-the-first-request/) tutorial.
 A sample BobaBoard URL to use is `http://localhost:4200/boards` with the `GET` HTTP method.
 
-You can find all the BobaBoard REST API endpoints in our [Rest API documentation](http://localhost:3000/docs/engineering/rest-api/).
+You can find all the BobaBoard REST API endpoints in our [Rest API documentation](/docs/engineering/rest-api/).
 
 :::important
 When using Postman, make sure that the HTTP method in the request corresponds to the one required by the API.
