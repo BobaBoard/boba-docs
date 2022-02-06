@@ -64,10 +64,10 @@ This list is non exhaustive.
 
 ### Leave RadFem/TERF talking points at the door
 
-These include:
+The BobaBoard community is a trans-inclusive, sex-positive, kink-friendly space. Its principles include:
 
 - Respect women's (and everyone else's) right to sexual freedom.
-- Sex work is work
+- Sex work is work.
 - People have the full right to self-identify as the gender they choose.
 - Don't debate who belongs or doesn't belong in the LGBT+ community: that discussion has stopped being productive years ago, and it's being co-opted to sow discord in our spaces.
 
