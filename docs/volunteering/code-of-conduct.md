@@ -4,27 +4,13 @@ sidebar_position: 2
 
 # Expectations & Code of Conduct
 
-This guide goes over the commitment requirements and code of conduct for BobaBoard's volunteers.
+This guide goes over the code of conduct for BobaBoard's volunteers.
 
 :::tip
 **This document and the surrounding processes are a living document.** Volunteers are empowered to propose changes, adjustments and additions.
 :::
 
 ## Volunteers expectations
-
-While BobaBoard strives to embody the chaotic and transgressive spirit of some corners of transformative fandom, **we expect volunteers and staff to approach their roles and tasks with seriousness and respect**.
-
-**Active and clear communication is the most important quality of a successful volunteer**. This means volunteers are expected to:
-
-- Asks questions early and often.
-- Communicate problems as soon as possible.
-- Proactively let us know how we can help make their experience better, or smooth out problems for them.
-
-:::tip
-If life gets in the way of a commitment you've made, <ins>let us know</ins>! We'll reassign the task with no judgement.
-:::
-
-**This project is fully committed to diversity, equity and inclusion.** If we can provide accommodations to improve your experience (such as breaking down tasks, or more regular check-ins), let us know. If you have concerns, you can report them to Ms. Boba.
 
 ## Code of conduct
 
