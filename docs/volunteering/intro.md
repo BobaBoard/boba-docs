@@ -52,7 +52,7 @@ We're currently focusing our efforts on improving the volunteering process **for
 :::
 
 1. **[Fill the tech volunteering form.](https://docs.google.com/forms/d/e/1FAIpQLSdCX2_fZgIYX0PXeCAA-pfQrcLw_lSp2clGHTt3uBTWgnwVSw/viewform)** to get access to our volunteers Discord server and our test community while BobaBoard is still in its closed alpha phase.
-2. **[Familiarize yourself with BobaBoard codebases.](../engineering/intro.)** BobaBoard's architecture is modular by design. If you're particularly interested in a specific area of work, follow the corresponding instructions to install a local copy.
+2. **[Familiarize yourself with BobaBoard codebases.](../engineering/intro)** BobaBoard's architecture is modular by design. If you're particularly interested in a specific area of work, follow the corresponding instructions to install a local copy.
 3. **Familiarize yourself with the current roadmap and focus areas.** Volunteering expectations may vary according to the urgency of the task. If you're an expert developer with short-term availabilty, you're welcome to help with issues in the critical path. Beginners may want to start with improvements in non-urgent areas of focus.
    :::warning
    This is an active area of development. Check back later for instructions, and contact Ms. Boba in the meanwhile!
