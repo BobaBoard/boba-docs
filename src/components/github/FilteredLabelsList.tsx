@@ -27,9 +27,14 @@ const Label = ({
   }, [name]);
 
   return (
-    <div className={styles.label} style={colorStyles} ref={labelRef}>
+    <a
+      href={`https://github.com/BobaBoard/issues/labels/${encodeURI(name)}`}
+      className={styles.label}
+      style={colorStyles}
+      ref={labelRef}
+    >
       {name}
-    </div>
+    </a>
   );
 };
 
