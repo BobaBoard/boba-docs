@@ -1,3 +1,5 @@
+const path = require("path");
+
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: "BobaBoard Docs",
@@ -9,7 +11,10 @@ module.exports = {
   favicon: "img/badlyresizedab.ico",
   organizationName: "essential-randomness",
   projectName: "bobadocs",
-  plugins: ["custom-webpack-plugin"],
+  plugins: [
+    "custom-webpack-plugin",
+    path.resolve(__dirname, "plugins/github-downloader"),
+  ],
   themeConfig: {
     respectPrefersColorScheme: true,
     image: "img/preview.png",
