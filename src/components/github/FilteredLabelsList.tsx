@@ -2,7 +2,7 @@ import { hsl, parseHex } from "culori";
 
 import React from "react";
 import type { RestEndpointMethodTypes } from "@octokit/plugin-rest-endpoint-methods";
-import labels from "../../_data/labels.json";
+import labels from "../../_generated_data/labels.json";
 import styles from "./FilteredLabelsList.module.css";
 import twemoji from "twemoji";
 
