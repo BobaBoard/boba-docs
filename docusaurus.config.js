@@ -15,6 +15,7 @@ module.exports = {
     "custom-webpack-plugin",
     path.resolve(__dirname, "plugins/github-downloader"),
   ],
+  clientModules: [require.resolve("./src/global.ts")],
   themeConfig: {
     respectPrefersColorScheme: true,
     image: "img/preview.png",
