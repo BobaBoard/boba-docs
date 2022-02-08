@@ -46,10 +46,10 @@ const FilteredLabelsList = ({ prefix }: { prefix: string }) => {
   return (
     <div className={styles.labelGrid}>
       {filteredLabels.map((label) => (
-        <>
-          <Label key={label.id} {...label} />
+        <React.Fragment key={label.id}>
+          <Label {...label} />
           <div>{label.description}</div>
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

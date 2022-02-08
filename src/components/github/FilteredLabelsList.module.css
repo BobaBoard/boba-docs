@@ -1,8 +1,10 @@
 .label {
+  --label-height: 2em;
   padding: 0 10px;
-  font-size: 12px;
+  font-size: 0.8em;
   font-weight: bold;
-  line-height: 24px !important;
+  line-height: var(--label-height);
+  height: var(--label-height);
   border: 1px solid transparent;
   border-radius: 2em;
   white-space: nowrap;
@@ -69,6 +71,25 @@ html[data-theme="light"] .label {
 
 .labelGrid {
   display: grid;
-  grid-template-columns: min(150px, 20%) 1fr;
+  grid-template-columns: min(180px, 30%) 1fr;
   grid-gap: 10px;
+  align-items: center;
+}
+
+/*
+ * TODO: swap this with container queries.
+ */
+@media screen and (max-width: 600px) {
+  .labelGrid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    grid-gap: 0;
+  }
+  .labelGrid .label {
+    margin-bottom: 8px;
+  }
+  .labelGrid .label:not(:first-child) {
+    margin-top: 15px;
+  }
 }
