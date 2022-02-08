@@ -53,5 +53,8 @@
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
     "typescript": "^4.5.5"
+  },
+  "resolutions": {
+    "prism-react-renderer": "1.2.0"
   }
 }
