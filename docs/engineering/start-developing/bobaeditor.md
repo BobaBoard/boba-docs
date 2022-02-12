@@ -2,15 +2,17 @@
 sidebar_position: 3
 ---
 
-# Install BobaEditor
+# Getting Started: BobaEditor
 
 \[[code](https://github.com/essential-randomness/boba-editor), [demo](https://bobaeditor.netlify.app/?path=/story/editor-preview--simple-editor)]
 
 BobaEditor is BobaBoard's own extension of the [QuillJS text editor](https://quilljs.com/), and is responsible for anything related to **text formatting** and **embeds** (both in "edit" and "display" mode).
 
-## Install Instructions
+## Check Out the Codebase 
 
-In a terminal, run the following commands:
+First, [fork the boba-editor repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo) in order to save a copy of the code to your own account.
+
+In a terminal on your own machine, enter the local directory where you want to keep your copy of BobaEditor, then run the following commands:
 
 ```bash
 # Clone the codebase from github
@@ -21,7 +23,9 @@ cd boba-editor
 yarn install
 ```
 
-## Development Instructions
+(If you would prefer to use a GUI with GitHub, you can [fork and clone](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) via GitHub Desktop, then enter your new directory in a terminal and run `yarn install`.)
+
+## Start a Local DevServer
 
 In a terminal, run the following command:
 
