@@ -1,6 +1,6 @@
 # Recommended Tools
 
-While there is no obligation to use these tools, here's the editor and
+While there is no obligation to use these tools, here's a rundown of the editor many contributors prefer and some resources to make it work more smoothly for you - both in general, and with BobaBoard in particular. 
 
 ## Recommended Editor
 
@@ -13,3 +13,4 @@ While there is no obligation to use these tools, here's the editor and
 - [**Styled-JSX Language Server**](https://marketplace.visualstudio.com/items?itemName=Divlo.vscode-styled-jsx-languageserver) & [**Styled-JSX Syntax Highlighting**](https://marketplace.visualstudio.com/items?itemName=Divlo.vscode-styled-jsx-syntax): Enable CSS highlighting and autocompletion for BobaBoard's CSS library.
 - [**Visual Studio Intellicode**](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode): Get good typescript code suggestions with AI.
 - [**Sort Imports**](https://marketplace.visualstudio.com/items?itemName=amatiasq.sort-imports): Automatically sorts JavaScript imports in a consistent order.
+
