@@ -3,11 +3,11 @@ id: ui-tests
 title: UI Tests with Jest and Storybook
 ---
 
-This guide will cover how to write tests for the bobaboard-ui codebase.
+This guide will cover how to write tests for the bobaboard-ui codebase. It assumes that you have some familiarity with Bobaboard as a user of the site, have taken at least a brief look at the file structure of the [bobaboard-ui codebase](https://github.com/essential-randomness/bobaboard-ui), and have a basic understanding of javascript, [Typescript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html), and React components and props. If you would like to brush up on React, the React docs offer a number of great [resources for learning](https://reactjs.org/docs/getting-started.html#learn-react).
 
 ## Tools
 
-We will use the following tools:
+We will use the following tools. We will explain more about each of them as we go, but here are links to all the docs in one place so they're easy to find:
 
 - [Jest](https://jestjs.io/) - Sets up the basic structure of our tests and lets us `expect` a thing `.to` match some other thing or condition.
 - [jest-dom](https://github.com/testing-library/jest-dom) - Extends Jest and gives us more useful `.to...` matchers.
@@ -19,7 +19,7 @@ We will use the following tools:
 
 ## Stories
 
-[Storybook](https://storybook.js.org/docs/react/get-started/introduction) lets us render and test our UI components independently from the business logic of our application. When you run Storybook from the command line (bash terminal) in your bobaboard-ui directory with `yarn run storybook`, it will open in your browser looking more or less like [this](https://bobaboard-ui.netlify.app/), but will update live with any changes you make to the src code.
+[Storybook](https://storybook.js.org/docs/react/get-started/introduction) lets us render and test our UI components independently from the business logic that weaves them together into the full site. When you run Storybook from the command line (bash terminal) in your bobaboard-ui directory with `yarn run storybook`, it will open in your browser looking more or less like [this](https://bobaboard-ui.netlify.app/), but will update live with any changes you make to the src code.
 
 :::caution Known Issue
 There is currently an issue with the bobaboard-ui codebase and Storybook where after a few minutes Storybook starts running really slowly. Ms. Boba is trying to get it figured out. In the meantime, you may need to close it (ctrl+C in your terminal) and restart it when it becomes unusable.
@@ -55,21 +55,21 @@ const ComponentTemplate: Story<ComponentProps> = (args: ComponentProps) => {
   return <Component {...args} />;
 };
 
-export const StoryOne = BoardsMenuSectionTemplate.bind({});
+export const StoryOne = ComponentTemplate.bind({});
 StoryOne.args = {
   propA: "value",
   propB: true,
   propC: ["array", "of", "values"],
 };
 
-export const StoryTwo = BoardsMenuSectionTemplate.bind({});
+export const StoryTwo = ComponentTemplate.bind({});
 StoryTwo.args = {
   propA: "different value",
   propB: false,
   propC: ["array", "with", "other", "values"],
 };
 
-export const StoryThree = BoardsMenuSectionTemplate.bind({});
+export const StoryThree = ComponentTemplate.bind({});
 StoryThree.args = {
   ...StoryOne.args,
   propA: "third value",
@@ -437,7 +437,7 @@ test("Doesn't render items in empty section", async () => {
   expect(screen.queryByRole("link")).not.toBeInTheDocument();
   expect(screen.queryByRole("button")).not.toBeInTheDocument();
   expect(
-    screen.queryByLabelText("pinned item loading")
+    screen.queryByLabelText("pinned item is loading")
   ).not.toBeInTheDocument();
   expect(screen.getByLabelText("pinned boards")).toBeVisible();
 });
