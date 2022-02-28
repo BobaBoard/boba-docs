@@ -246,7 +246,7 @@ describe("Loading", () => {
 });
 ```
 
-Similar tests are run on the Pinned Menu, and then the following tests are run of the whole Side Menu:
+Similar tests are run on the Pinned Menu, and then the following tests are run on the whole Side Menu:
 
 ```typescript title="tests/20-SideMenu/SideMenu.test.tsx"
 test("Renders pinned menu", async () => {
@@ -275,6 +275,11 @@ test("Renders board filter", async () => {
 });
 
 test("Correctly propagates filter change on text entry", async () => {
+  render(<SideMenuPreview />);
+  // Test details
+});
+
+test("Boards filter returns an empty string on text entry deletion", async () => {
   render(<SideMenuPreview />);
   // Test details
 });
@@ -459,7 +464,7 @@ Some tests require us to simulate what happens when a user interacts with a part
 Bobaboard-ui is currently using the older 13.5.0 version of user-event, the docs for which can be found [here](https://testing-library.com/docs/ecosystem-user-event), not the 14.0.0-beta version described in the rest of the User Interactions section of the Testing Library docs.
 :::
 
-Jest mock functions can do a number of things, but for UI test we most often use them to mock an action from a story, which we set up like this:
+Jest mock functions can do a number of things, but for UI tests we most often use them to mock an action from a story, which we set up like this:
 
 ```typescript
 const actionReturn = jest.fn();
