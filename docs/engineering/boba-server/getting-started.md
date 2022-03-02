@@ -49,7 +49,7 @@ Both of these actions need to be performed on the console where `yarn run dev:wa
 
 :::
 
-You can test the server is running by opening `http://localhost:4200/realms/slug/v0` in any browser. You should now see a list of all the realm properties in [JSON format](https://developers.squarespace.com/what-is-json).
+You can test the server is running by opening `http://localhost:4200/realms/slug/twisted-minds` in any browser. You should now see a list of all the realm properties in [JSON format](https://developers.squarespace.com/what-is-json).
 
 :::tip
 Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/engineering/boba-server/using-postman).
