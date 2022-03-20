@@ -82,6 +82,12 @@ If you make changes to BobaEditor and want to see them reflected in BobaComponen
 
 ## Development Instructions
 
+:::warning
+This codebase requires Node **16**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 16 by running `nvm use 16` in your terminal.
+
+You can check the current Node version by running `node -v`.
+:::
+
 In a terminal, run the following command:
 
 ```bash

@@ -1,5 +1,11 @@
 # Install BobaFrontend
 
+:::warning
+This codebase requires Node **16**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 16 by running `nvm use 16` in your terminal.
+
+You can check the current Node version by running `node -v`.
+:::
+
 :::note
 This is a legacy page imported from our old documentation.
 

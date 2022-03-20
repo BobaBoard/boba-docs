@@ -10,6 +10,12 @@ Before continuing with this section, **follow the installation instructions** in
 
 ## Development Instructions
 
+:::warning
+This codebase requires Node **16**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 16 by running `nvm use 16` in your terminal.
+
+You can check the current Node version by running `node -v`.
+:::
+
 To develop for BobaServer, you will need to start 3 separate components: the database, the cache, and the actual server.
 
 ### Start DB
