@@ -74,7 +74,7 @@ Inline formatting applies only to the text within a specific insert operation. T
 
 #### Custom inline formats
 
-For a practical example of a custom inline styles, you can refer to [InlineSpoilers.tsx](https://github.com/essential-randomness/boba-editor/blob/master/src/custom-nodes/InlineSpoilers.ts).
+For a practical example of a custom inline styles, you can refer to [InlineSpoilers.tsx](https://github.com/BobaBoard/boba-editor/blob/master/src/custom-nodes/InlineSpoilers.ts).
 
 The `InlineSpoilers` class extends the `blots/inline` class from Quill. This is used for inline text that can accept further formatting.
 
@@ -125,7 +125,7 @@ Embeds are complex, non-textual elements. In the case of embeds, the value of th
 
 #### Custom embeds
 
-For an example of how to implement a custom embed, you can look at [BlockImage.tsx](https://github.com/essential-randomness/boba-editor/blob/master/src/custom-nodes/BlockImage.ts). This, like other embeds, extends the `blots/block/embed` class from Quill. The important methods to implement are:
+For an example of how to implement a custom embed, you can look at [BlockImage.tsx](https://github.com/BobaBoard/boba-editor/blob/master/src/custom-nodes/BlockImage.ts). This, like other embeds, extends the `blots/block/embed` class from Quill. The important methods to implement are:
 
 - **`create`**: the entry point of embed rendering. Its only argument is the value of the embed attribute specified by the `blotName` property (`block-image` in the previous example).
 

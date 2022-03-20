@@ -2,7 +2,7 @@
 
 ## Problem Summary
 
-The current [dropdown menu component](https://github.com/essential-randomness/bobaboard-ui/blob/master/src/common/DropdownListMenu.tsx) (whose current behavior [can be seen here](https://bobaboard-ui.netlify.app/?path=/story/dropdown-preview--multiple-dropdowns)) only allows the display of "text + (optional) icon" options. In order to use it for GIF search (and, in the future, emoji/sticker selection), we need to expand it to include the ability to select between images.
+The current [dropdown menu component](https://github.com/BobaBoard/boba-components/blob/master/src/common/DropdownListMenu.tsx) (whose current behavior [can be seen here](https://bobaboard-ui.netlify.app/?path=/story/dropdown-preview--multiple-dropdowns)) only allows the display of "text + (optional) icon" options. In order to use it for GIF search (and, in the future, emoji/sticker selection), we need to expand it to include the ability to select between images.
 
 ## Current Status
 
@@ -69,18 +69,18 @@ interface DropdownProps {
 
 ## What We Have
 
-- An example of a dropdown with filterable options in [BoardSelector](https://github.com/essential-randomness/bobaboard-ui/blob/master/src/tags/BoardSelector.tsx).
-- A gif search component ([Tenor Keyboard](https://github.com/essential-randomness/boba-editor/blob/master/src/TenorKeyboard.js) in the editor codebase) made by shamefully hacking [React Tenor](https://github.com/CultureHQ/react-tenor) to suit our needs.
-- If we want to have a masonry-style image layout we can reuse [MasonryView](https://github.com/essential-randomness/bobaboard-ui/blob/master/src/layout/MasonryView.tsx).
+- An example of a dropdown with filterable options in [BoardSelector](https://github.com/BobaBoard/boba-components/blob/master/src/tags/BoardSelector.tsx).
+- A gif search component ([Tenor Keyboard](https://github.com/BobaBoard/boba-editor/blob/master/src/TenorKeyboard.js) in the editor codebase) made by shamefully hacking [React Tenor](https://github.com/CultureHQ/react-tenor) to suit our needs.
+- If we want to have a masonry-style image layout we can reuse [MasonryView](https://github.com/BobaBoard/boba-components/blob/master/src/layout/MasonryView.tsx).
 
 ## Roadmap
 
-1. Change [DropdownListMenu](https://github.com/essential-randomness/bobaboard-ui/blob/master/src/common/DropdownListMenu.tsx) to allow a series of images as a potential option.
+1. Change [DropdownListMenu](https://github.com/BobaBoard/boba-components/blob/master/src/common/DropdownListMenu.tsx) to allow a series of images as a potential option.
 2. Create an `ImageSearch` component that wraps a DropdownList + a filter, and potentially allows choosing between a changing list of suggestions (like in react-tenor).
 3. Decide the data flow from user input to the display of the correct list of images for GIF search.
 4. Implement the right calls to the Tenor API.
-5. Change [Editor](https://github.com/essential-randomness/boba-editor/blob/9d5a60c3c4aea14e7d1b84ec6e3391a3dda2e4c2/src/Editor.tsx) to call to an external component for GIF search.
-   - [Example branch](https://github.com/essential-randomness/boba-editor/tree/context-render) of how this could be done by using context.
+5. Change [Editor](https://github.com/BobaBoard/boba-editor/blob/9d5a60c3c4aea14e7d1b84ec6e3391a3dda2e4c2/src/Editor.tsx) to call to an external component for GIF search.
+   - [Example branch](https://github.com/BobaBoard/boba-editor/tree/context-render) of how this could be done by using context.
 
 ## Proposed Code Changes
 

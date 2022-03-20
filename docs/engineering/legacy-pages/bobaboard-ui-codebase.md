@@ -2,13 +2,13 @@
 sidebar_position: 4
 ---
 
-# BobaBoard UI Codebase
+# BobaComponents Codebase
 
 For installation instructions check out [Setting Up Your DevEnv](/docs/engineering/start-developing/setting-up-dev-env).
 
 ## Overview
 
-The BobaBoard UI Codebase contains all the code pertaining to the BobaBoard UI component ([demo](https://bobaboard-ui.netlify.app/)). It's written in Typescript and React.
+The BobaComponents Codebase contains all the code pertaining to the BobaComponents component ([demo](https://bobaboard-ui.netlify.app/)). It's written in Typescript and React.
 
 There are two important folders:
 
@@ -25,7 +25,7 @@ The src folder structure is victim of some accrued tech debt and not as well-def
 
 ## Components Overview
 
-Here is an overview of how the components in BobaBoard UI come together to compose the website structure.
+Here is an overview of how the components in BobaComponents come together to compose the website structure.
 
 ![Layout.tsx covers the page as a whole, FeedWithMenu.tsc hasthe main content feed, and SideMenu.tsx controls the side menu content.](/img/legacy/ui.png)
 
@@ -121,7 +121,7 @@ We're currently moving to Storybook 6.0's [arg-based stories](https://storybook.
 
 ## Debugging
 
-BobaBoard UI uses the [debug](https://www.npmjs.com/package/debug) JS library. To trigger debugging in the JavaScript console, you must set the value of the corresponding flag in localStorage by using one of the following commands within the console itself:
+BobaComponents uses the [debug](https://www.npmjs.com/package/debug) JS library. To trigger debugging in the JavaScript console, you must set the value of the corresponding flag in localStorage by using one of the following commands within the console itself:
 
 ```jsx
 // Print all the debug logs related to the ui

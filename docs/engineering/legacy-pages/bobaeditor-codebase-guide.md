@@ -8,7 +8,7 @@ For installation instructions check out [Setting Up Your DevEnv](/docs/engineeri
 
 ## Overview
 
-The [BobaEditor Codebase](https://github.com/essential-randomness/boba-editor) contains all code pertaining to BobaBoard's text editing capabilities ([see demo](https://bobaeditor.netlify.app/)). It's written in Typescript and React.
+The [BobaEditor Codebase](https://github.com/BobaBoard/boba-editor) contains all code pertaining to BobaBoard's text editing capabilities ([see demo](https://bobaeditor.netlify.app/)). It's written in Typescript and React.
 
 There are two important folders:
 

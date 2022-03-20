@@ -8,7 +8,7 @@ Frequently used commands. This is a helpful page to add to your Favorites. [Here
 
 # 🚚 Running dev env
 
-For `BobaEditor` and `BobaBoard UI` run (in the corresponding folders):
+For `BobaEditor` and `BobaComponents` run (in the corresponding folders):
 
 ```bash
 yarn run storybook

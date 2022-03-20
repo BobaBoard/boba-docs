@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Install BobaEditor
 
-\[[code](https://github.com/essential-randomness/boba-editor), [demo](https://bobaeditor.netlify.app/?path=/story/editor-preview--simple-editor)]
+\[[code](https://github.com/BobaBoard/boba-editor), [demo](https://bobaeditor.netlify.app/?path=/story/editor-preview--simple-editor)]
 
 BobaEditor is BobaBoard's own extension of the [QuillJS text editor](https://quilljs.com/), and is responsible for anything related to **text formatting** and **embeds** (both in "edit" and "display" mode).
 
@@ -14,7 +14,7 @@ In a terminal, run the following commands:
 
 ```bash
 # Clone the codebase from github
-git clone https://github.com/essential-randomness/boba-editor.git
+git clone https://github.com/BobaBoard/boba-editor.git
 # Enter the codebase directory
 cd boba-editor
 # Install all necessary code
