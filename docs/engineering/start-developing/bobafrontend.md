@@ -67,3 +67,15 @@ yarn link @bobaboard/ui-components
 ```
 
 If you make changes to BobaComponents and want to see them reflected in BobaFrontend run `yarn run build` in the bobaboard-ui folder. BobaFrontend should pick up the changes when the website is reloaded.
+
+### Running BobaFrontend
+
+:::warning
+Since Realms became a thing, BobaFrontend uses [the Bonjour protocol](https://softwarekeep.com/help-center/what-is-bonjour-service-on-windows-10) to create fake `localhost` addresses in your local network. This allows us to use `http://REALM_NAME_boba.local` addresses to get the Realm name from the
+subdomain like in production.
+
+Do ask for help if you encounter problems!
+:::
+
+1. Run `yarn run dev:bonjour`
+2. Go to `http://twisted-minds_boba.local:3000` in your browser.
