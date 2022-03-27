@@ -16,14 +16,16 @@ In a terminal on your own machine, enter the local directory where you want to k
 
 ```bash
 # Clone the codebase from github
-git clone https://github.com/essential-randomness/boba-editor.git
+git clone https://github.com/[YOUR GITHUB USERNAME HERE]/boba-editor.git
 # Enter the codebase directory
 cd boba-editor
 # Install all necessary code
 yarn install
 ```
 
-(If you would prefer to use a GUI with GitHub, you can [fork and clone](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) via GitHub Desktop, then enter your new directory in a terminal and run `yarn install`.)
+:::tip
+If you would prefer to use a GUI with GitHub, you can [fork and clone](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) via GitHub Desktop, then enter your new directory in a terminal and run `yarn install`.
+:::
 
 ## Start a Local DevServer
 
