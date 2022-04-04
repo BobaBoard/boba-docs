@@ -1,16 +1,18 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
-# GitHub
+# Understanding GitHub
 
-[GitHub](https://github.com/) is a code collaboration website, that leverages a tool called **git** to more easily manage different versions of a codebase (**version control**). Git organizes code into **repositories** (also called **repos**), which include all the files for a given project.
+[GitHub](https://github.com/) is a code collaboration website, that leverages a tool called **git** to more easily manage different versions of a codebase (a.k.a. **version control**). Git organizes code into **repositories** (ak.a. **repos**). Each repo contains the files for a given project.
 
-> **Version control is like a savings program for your project.** By tracking and logging the changes you make to your file or file sets over time, a version-control system gives you the power to review or even restore earlier versions. Version control takes snapshots of every revision to your project. You can then access these versions to compare or restore them as needed.
+> **Version control is like a "save" program for your project.** By tracking and logging the changes you make to your file or file sets over time, a version-control system gives you the power to review or even restore earlier versions. Version control takes snapshots of every revision to your project, and you can then access these versions to compare or restore them as needed.
 
 You can [learn more about Git, GitHub and Version Control](https://blog.devmountain.com/git-vs-github-whats-the-difference) in this article.
 
 For GitHub tutorials, check out the [GitHub Learning Lab](https://lab.github.com/).
+
+For instructions on installing git, head to the [Setup Your Development Environment](/docs/engineering/start-developing/setting-up-dev-env#gitgithub) guide.
 
 ## How Git[Hub] Works
 
