@@ -33,7 +33,7 @@ If the route has no `:thread_id` param, the `withThreadPermissions` handler will
 
 ### Generic permission checkers
 
-Handlers named `ensure[Entity]Permission` (e.g. `ensureThreadPermission`, `ensureBoardPermission`) are generic permission checkers. Each of this handlers takes a permission as an argument, and checks that the user has the permission for the given entity. If the permission is not found, the appropriate `UNAUTHORIZED` status code is automatically returned.
+Handlers named `ensure[Entity]Permission` (e.g. `ensureThreadPermission`, `ensureBoardPermission`) are generic permission checkers. Each of these handlers takes a permission as an argument, and checks that the user has the permission for the given entity. If the permission is not found, the appropriate `UNAUTHORIZED` status code is automatically returned.
 
 Like permission fetchers, permission checkers add a list of the user's permissions to the request object under the key `current[Entity]Permissions`.
 
