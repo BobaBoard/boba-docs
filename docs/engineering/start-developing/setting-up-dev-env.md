@@ -17,7 +17,7 @@ If you're intimidated, contact Ms. Boba for help! Also consider editing this pag
 ### Install Checklist
 
 - [ ] [Windows Subsystem for Linux (WSL)](#windows-subsystem-for-linux-wsl-windows-only) [Windows Only]
-- [ ] [Git](#git)
+- [ ] [Git](#gitgithub)
 - [ ] [NodeJS](#nodejs-with-nvm)
 - [ ] [Yarn](#yarn)
 - [ ] [Docker](#docker-bobaserver-only) [BobaServer Only]
