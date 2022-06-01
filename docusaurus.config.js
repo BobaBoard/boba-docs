@@ -50,6 +50,12 @@ module.exports = {
           position: "left",
           label: "Volunteering Guide",
         },
+        // {
+        //   type: "doc",
+        //   docId: "users/intro",
+        //   position: "left",
+        //   label: "User Guide",
+        // },
         {
           href: "https://github.com/essential-randomness/bobadocs",
           label: "GitHub",
@@ -65,7 +71,7 @@ module.exports = {
           items: [
             // {
             //   label: "User Guide",
-            //   to: "/docs/users/welcome",
+            //   to: "/docs/users/intro",
             // },
             {
               label: "Product Guide",
@@ -77,7 +83,7 @@ module.exports = {
             },
             {
               label: "Volunteering Guide",
-              to: "docs/volunteering/intro",
+              to: "/docs/volunteering/intro",
             },
           ],
         },
