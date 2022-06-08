@@ -4,4 +4,25 @@ sidebar_position: 2
 ---
 
 # Development Status
-BobaBoard is currently underdevelopment by Ms. Boba full-time and a small team of volunteers as they're available. That means there's **a lot** of work left to do before BobaBoard is ready for a full release. Many features are not fully realized, and there's a lot of brainstorming, testing, decision making, and input needed before BobaBoard is "done".
+The first BobaBoard Realm was *quickly* prototyped by Ms. Boba as a proof of concept. Because of this, a lot of BobaBoard's features and design elements are still rough around the edges. We're currently working to build a core team, including volunteers, to bring the project to the next level. We're also in the process of straightening up our bug tracking, and clarify our roadmap.
+
+When in doubt, please err on the side of reporting clearly non-functional items, obvious error messages, or things that just don't "seem right". 
+
+At the present moment, we're particularly interested in:
+- (something i'll make up) <!-- halp??????-->
+
+While we appreciate all reports, here's some stuff that we're currently putting on the back-burner:
+- (something i'll make up) <!-- BEEP BOPP STUFF GOES HERE-->
+
+Please remember that BobaBoard is still in its inception. While we foresee our broad concepts (e.g. Realms, boards, contributions/comments, tags,  roles) to be here for the long run, we're open to thoughtful suggestions and opinions.
+
+## Feedback
+As mentioned above, we like to hear what's working with BobaBoard and what isn't. Below are the easiest ways for you to submit feedback.
+
+We do ask, no matter what method you use to submit feedback or whether your feedback is positive or negative, that you keep in mind real volunteers who you are probably sharing BobaBoard with are working hard to develop the site. Please try to open issues, report bugs, and make feature suggestions and requests respectfully, no matter how frustrating a situation might be.
+
+You can provide feedback by:
+
+- posting in the **!bobaland** Board for your Realm
+- opening a Github Issue <!-- where do I link for Issues? -->
+- Volunteer <!-- should I linkt to the volunteer portion of the guide? -->

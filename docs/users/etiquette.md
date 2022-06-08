@@ -50,6 +50,6 @@ Please keep in mind that as more Realms open, each Realm will have the opportuni
 ## Posting Guidlines
 - **There is no such thing as necroposting!** Feel free to comment on threads no  matter their age. You're not bothering anyone with notifications or by giving them someone to talk to.
 
-- **Please do not continue pressing an issue after someone has asked you to stop.** This aligns with our respect value. It's simply not a good way to de-escalate conflict and is not courteous.
+- **Respect the OP's wishes.** In threads, *OP has final saying on what is allowed on their thread*. Making a different thread to discuss something OP would rather not touch upon is allowed, but avoid "subtle" jabs at the previous OP (trust us, they're never subtle). 
 
-- **Respect the OP's wishes.** In threads, *OP has final saying on what is allowed on their thread*. Making a different thread to discuss something OP would rather not touch upon is allowed, but avoid "subtle" jabs at the previous OP (trust us, they're never subtle).
+- **Please do not continue pressing an issue after someone has asked you to stop.** This aligns with our respect value. It's simply not a good way to de-escalate conflict and is not courteous. *Reminder:* please also be respectful when requesting someone drop an conversation or leave a thread.
