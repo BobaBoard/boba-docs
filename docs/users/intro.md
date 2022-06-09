@@ -24,7 +24,7 @@ Realms are a recent step in BobaBoard's journey! Our current vision is explained
 
 BobaBoard's philosophy is to leave, within reasonable limits, ample freedom to each Realm in terms of organization and management. Realms may differ from each other in rules, culture, goals, and user-acceptance criteria; they may have different approaches to tagging, content moderation, and organization, or they may host Realm-only events or contests.
 
-The structure of BobaBoard Realms calls back to various aspects of other platforms. Going down memory lane, each Realm can be thought of as its own **forum**, with Boards in place of *subforums*; as a more modern comparison, Discord hosts a multitude of independent communities (servers) which closely parallel Realms; if you've been in fandom a long time, the communities structures might also remind you of Livejournal, Dreamwidth, or other such clones (but without personal blogs). Despite these similarities, however, BobaBoard also features many features more closely associated with modern social networks.
+The structure of BobaBoard Realms calls back to various aspects of other platforms. Going down memory lane, each Realm can be thought of as its own **forum**, with Boards in place of *subforums*; as a more modern comparison, Discord hosts a multitude of independent communities (servers) which closely parallel Realms; if you've been in fandom a long time, the communities structures might also remind you of LiveJournal, Dreamwidth, or other such clones (but without personal blogs). Despite these similarities, however, BobaBoard also features many features more closely associated with modern social networks.
 
 There are currently two Realms making up BobaBoard:
 - V0: The Alpha
@@ -44,7 +44,7 @@ In our current culture, we care more about you posting than *where* you post. If
 
 _"The boards are more what you'd call guidelines than actual rules."_
 
-At this stage, there's no personal "blog" or "page" on BobaBoard. There's no user address that you can give someone so that they can see all your posts. We're focused on building a better fandom community experience first, but personal solutions might be incorportated in the future. 
+At this stage, there's no personal "blog" or "page" on BobaBoard. There's no user address that you can give someone so that they can see all your posts. We're focused on building a better fandom community experience first, but personal solutions might be incorporated in the future. 
 
 # Using This Guide
 BobaBoard's two Realms currently have more in common than not. The information outside of a section dedicated to a Realm pertains to BobaBoard as a whole: shared features, etiquette, and information. For things specific to each Realm (such as Rules), you can find more detailed information in their individual sections.
