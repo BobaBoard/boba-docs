@@ -9,14 +9,14 @@ The first BobaBoard Realm was *quickly* prototyped by Ms. Boba as a proof of con
 When in doubt, please err on the side of reporting clearly non-functional items, obvious error messages, or things that just don't "seem right". 
 
 At the present moment, we're particularly interested in:
-1) anything that makes you go "aaargh" at least 3x per visit
-2) when you feel dumb because you can't understand something
-3) when you wish a feature was more like one on [*that other website that does it better*]
-4) when you give up trying to do something or find something
-5) things that you enjoy, feel intuitive, or overall good impressions
+- anything that makes you go "aaargh" at least 3x per visit
+- when you feel dumb because you can't understand something
+- when you wish a feature was more like one on [*that other website that does it better*]
+- when you give up trying to do something or find something
+- things that you enjoy, feel intuitive, or overall good impressions
 
 While we appreciate all reports, here's some stuff that we're currently putting on the back burner:
-1) BobaBoard editor changes/updates
+- BobaBoard editor changes/updates
 
 Please remember that BobaBoard is still in its inception. While we foresee our broad concepts (e.g. Realms, boards, contributions/comments, tags,  roles) to be here for the long run, we're open to thoughtful suggestions and opinions.
 
