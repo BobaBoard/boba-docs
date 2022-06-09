@@ -65,7 +65,7 @@ Contributions are like sub-threads, intended to be used for larger ideas, posts 
 ## Badges
 Threads (and comments) have two identifying badges to help you identify certain types of posts.
 
-- **OP** - the blue OP badge identifies the OP of the thread. This is especially useful in situations where the OP may be asking for certain conversations to stop or for certain content not to be placed in their thread. Please see [Etiquette: Posting Guidelines](/docs/users/etiquette.md#posting-guidelines) for more information.
+- **OP** - the blue OP badge identifies the OP of the thread. This is especially useful in situations where the OP may be asking for certain conversations to stop or for certain content not to be placed in their thread. Please see [Etiquette: Posting Guidelines](/docs/users/etiquette#posting-guidelines) for more information.
 
 - **New** - the red NEW badge identifies new threads, comments, and contributions since your last visit.
     - When viewing a long thread with **New** comments, you can click the starburst symbol in the bottom right of the screen to automatically jump you to the first new comment in the thread that you haven't seen.
