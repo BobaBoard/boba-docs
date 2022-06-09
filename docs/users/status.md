@@ -16,7 +16,7 @@ At the present moment, we're particularly interested in:
 5) things that you enjoy, feel intuitive, or overall good impressions
 
 While we appreciate all reports, here's some stuff that we're currently putting on the back burner:
-- (something i'll make up) <!-- BEEP BO0P STUFF GOES HERE-->
+1) BobaBoard editor changes/updates
 
 Please remember that BobaBoard is still in its inception. While we foresee our broad concepts (e.g. Realms, boards, contributions/comments, tags,  roles) to be here for the long run, we're open to thoughtful suggestions and opinions.
 
@@ -28,5 +28,5 @@ We do ask, no matter what method you use to submit feedback or whether your feed
 You can provide feedback by:
 
 - posting in the **!bobaland** Board for your Realm
-- opening a Github Issue <!-- where do I link for Issues? -->
-- becoming a [volunteer](/docs/volunteering/intro)<!-- should I linkt to the volunteer portion of the guide? -->
+- opening a [Github Issue](https://github.com/BobaBoard/issues/issues)
+- becoming a [volunteer](/docs/volunteering/intro)
