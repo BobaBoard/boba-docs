@@ -5,9 +5,9 @@ sidebar_position: 1
 # Boards and Feeds
 
 ## Boards
-As mentioned in [BobaBoard Basics: Boards](/docs/users/intro#boards), Realms are made up of Boards that define the broad topics of conversation within the Realm. The sidebar of each Board contains the Board cover image, name, description, canonical tags, and additional relevant information (if any). <!-- ADD LINK: canonical tags -->
+As mentioned in [BobaBoard Basics: Boards](/docs/users/intro#boards), Realms are made up of Boards that define the broad topics of conversation within the Realm. The sidebar of each Board contains the Board cover image, name, description, canonical tags, and additional relevant information (if any). <!-- ADD LINK: canonical tags --> On desktop, the sidebar is to the left of the screen. On mobile, you can find the Board's sidebar by clicking the navigation symbol in the top right of your screen.
 
-On desktop, the sidebar is to the left of the screen. On mobile, you can find the Board's sidebar by clicking the navigation symbol in the top right of your screen.
+Boards update chronologically, moving the most recent activity to the top for easy identification.
 
 ### The Board Menu
 Once you've clicked into a board from the main menu, you can find a Board menu with options for the board, by clicking the triangle in the top right corner of the cover image. This allows you to control the settings for the individual board. Within that menu you can:
