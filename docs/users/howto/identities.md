@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # Identities
 
-BobaBoard assigns random identities from a shared pool of identities known as the **Bobadex** (more info below) to its users. The identities are assigned when you create a thread or when you make your first contribution or comment to a thread. Each identity consists of an avatar and a pseudonym.
+BobaBoard assigns random identities from a shared pool of identities known as the [**Bobadex**](#the-bobadex) to its users. The identities are assigned when you create a thread or when you make your first contribution or comment to a thread. Each identity consists of an avatar and a pseudonym.
 
 For example, when you post to a Board, you could be assigned the identity "Outdated Meme". Every time you reply to a comment or contribution to your post, you will remain as "Outdated Meme".
 
@@ -14,7 +14,7 @@ If you comment on someone else's post, you may see that "Outdated Meme" was assi
 
 <cite>- Lavender Town Resident</cite></blockquote>
 
-These identities remain anonymous publicly. No user can click through the pseudonym or avatar to a profile, nor can they connect any specific posts, comments, or contributions to your account. However, you remain identifiable within the thread; there's no need for awkward "same anon" identifiers or "OP here" work arounds. 
+These identities remain anonymous publicly. No user can click through the pseudonym or avatar to a profile, nor can they connect any specific posts, comments, or contributions to your account. However, you remain identifiable within the thread; there's no need for awkward "same anon" identifiers or "OP here" work arounds. Not only does having anonymity in a fandom space allow you to be as weird as you want, but it also allows you to post without anxiety about being *too active* or *not active enough*. If you post hundreds of times in a day or disappear for three months, people won't necessarily know.
 
 :::caution
 
