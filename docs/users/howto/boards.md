@@ -25,7 +25,7 @@ Notifications alert you to updated content in a board, whether that's a new thre
 ## Feeds
 Feeds allow you to track and follow conversations that you've started or joined without having to go to a specific board. They're similar to a timeline view which you may be familiar with on other websites. Feeds update chronologically, so that the post with the newest activity is moved to the top.
 
-## Personal Feed
+### Personal Feed
 The Personal Feed shows you all threads you've posted, joined, or commented on in the Realm you're in. To access your personal feed, click the inbox tray icon in the pinned bar. To filter your feed, you can click the buttons on the left sidebar to see specific threads. An explanation for the filter combinations is below.
 
 - **updated** **own** - all threads you've started in the Realm that have been updated with a new comment or contribution.
