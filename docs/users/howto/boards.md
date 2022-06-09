@@ -9,8 +9,14 @@ As mentioned in [BobaBoard Basics: Boards](/docs/users/intro#boards), Realms are
 
 Boards update chronologically, moving the most recent activity to the top for easy identification.
 
+There are two ways to access boards:
+- from the landing page, click on the board cover
+- click the Board link in the sidebar menu
+
+To access the sidebar menu, click the hamburger (three horizonal line) menu on the left side of the screen.
+
 ### The Board Menu
-Once you've clicked into a board from the main menu, you can find a Board menu with options for the board, by clicking the triangle in the top right corner of the cover image. This allows you to control the settings for the individual board. Within that menu you can:
+Once you've clicked into a Board, you can find a menu with options for the board, by clicking the triangle in the top right corner of the cover image. This allows you to control the settings for the individual board. Within that menu you can:
 
 - **Mute/Unmute** - toggle notifications for the Board.
     - Muted boards will not show up on the **Recent Unreads** section of the menu.
