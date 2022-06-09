@@ -1,4 +1,7 @@
 # Rules
+More detailed information on the rules and posting guidelines is forthcoming! For now, please play by the Fandom Coder Discord server rules when testing out the new Realm.
+
+<!-- COMMMENTED OUT SO WE CAN MAKE LIKE ELSA ON 6/9
 For the rules and culture stuff that are specific to Fandom Coders, including posting guidelines.
 
 - Rules
@@ -8,4 +11,4 @@ For the rules and culture stuff that are specific to Fandom Coders, including po
         - not ascribing motives
 - Posting Guidelines
     - Content Notices - Mods can add tags. Please don't be mad if we add them. If you think something needs a CN, please let the mods know here.
-- Attention Expert Coders
+- Attention Expert Coders -->
