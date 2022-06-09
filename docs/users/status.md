@@ -4,15 +4,19 @@ sidebar_position: 2
 ---
 
 # Development Status
-The first BobaBoard Realm was *quickly* prototyped by Ms. Boba as a proof of concept. Because of this, a lot of BobaBoard's features and design elements are still rough around the edges. We're currently working to build a core team, including volunteers, to bring the project to the next level. We're also in the process of straightening up our bug tracking, and clarify our roadmap.
+The first BobaBoard Realm was *quickly* prototyped by Ms. Boba as a proof of concept. Because of this, a lot of BobaBoard's features and design elements are still rough around the edges. We're currently working to build a core team, including volunteers, to bring the project to the next level. We're also in the process of straightening up our bug tracking and clarifing our roadmap.
 
 When in doubt, please err on the side of reporting clearly non-functional items, obvious error messages, or things that just don't "seem right". 
 
 At the present moment, we're particularly interested in:
-- (something i'll make up) <!-- halp??????-->
+1) anything that makes you go "aaargh" at least 3x per visit
+2) when you feel dumb because you can't understand something
+3) when you wish a feature was more like one on [*that other website that does it better*]
+4) when you give up trying to do something or find something
+5) things that you enjoy, feel intuitive, or overall good impressions
 
-While we appreciate all reports, here's some stuff that we're currently putting on the back-burner:
-- (something i'll make up) <!-- BEEP BOPP STUFF GOES HERE-->
+While we appreciate all reports, here's some stuff that we're currently putting on the back burner:
+- (something i'll make up) <!-- BEEP BO0P STUFF GOES HERE-->
 
 Please remember that BobaBoard is still in its inception. While we foresee our broad concepts (e.g. Realms, boards, contributions/comments, tags,  roles) to be here for the long run, we're open to thoughtful suggestions and opinions.
 
@@ -25,4 +29,4 @@ You can provide feedback by:
 
 - posting in the **!bobaland** Board for your Realm
 - opening a Github Issue <!-- where do I link for Issues? -->
-- Volunteer <!-- should I linkt to the volunteer portion of the guide? -->
+- becoming a [volunteer](/docs/volunteering/intro)<!-- should I linkt to the volunteer portion of the guide? -->

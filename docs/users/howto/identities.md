@@ -26,15 +26,23 @@ For more info, please see When and How We Deanon.
 
 You may be wondering "**How do I keep track of who I am if my identity changes all the time?**" When you look at a post or comment you make, you will see both the assigned anonymous identity and your actual account avatar; that way you can keep track of who you are in the thread with a quick glance.
 
-<img src="\img\userguide\youridentity.png" />
+<figure><img src="\img\userguide\youridentity.png" />
+<figcaption>Your View</figcaption>
+</figure>
+
+<figure><img src="\img\userguide\otherusers.png" />
+<figcaption>Another User's View</figcaption>
+</figure>
 
 ## Maintaining Your Anonymity
 If you'd like to share a screenshot from BobaBoard with someone but don't want them to be able to identify that you made the post or specific comments or simply don't want them to see your account information, you can **Force hide identity**. This will *remove* the references to your actual account name and the avatar you've uploaded.
 
 To use this feature:
 
-- **On Desktop:** click on your avatar in the top right of the screen to bring down the user menu, and selecte "Force hide identity".
+- **On Desktop:** click on your avatar in the top right of the screen to bring down the user menu, and select "Force hide identity".
 - **On Mobile:** Open the BobaBoard by tapping the menu button on the top left, tap your avatar on the top right of the menu that slides out, and click "Force hide identity".
+
+Please note that this option is a toggle. You can easily redisplay your account information by following the process again to show "Display identity".
 
 ## Exceptions to Anonymity
 In addition to the caution note above, there are a few exceptions to anonymous identities:
