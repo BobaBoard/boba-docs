@@ -16,7 +16,9 @@ At the present moment, we're particularly interested in:
 - things that you enjoy, feel intuitive, or overall good impressions
 
 While we appreciate all reports, here's some stuff that we're currently putting on the back burner:
-- BobaBoard editor changes/updates
+- Issues with performance or JavaScript bundle size
+- Visual improvements (unless particularly *rage*-inducing)
+- Must-haves for a polished, production website that current users can still work around (e.g. unreadable, too-deeply nested comments, inability to delete posts)
 
 Please remember that BobaBoard is still in its inception. While we foresee our broad concepts (e.g. Realms, boards, contributions/comments, tags,  roles) to be here for the long run, we're open to thoughtful suggestions and opinions.
 
