@@ -51,7 +51,7 @@ Since BobaBoard Threads cannot be edited, you may be wondering how you can delet
 
 <img src="/img/userguide/youdon't.png" alt="That's the neat thing: you don't." />
 
-Right now if you'd like to have a thread (or comment or contribution) deleted, please post to that effect in the thread (or underneat the comment/contribution), and reach out to Ms. Boba. You can do so via the anonymous feedback form for your realm.
+Right now if you'd like to have a thread (or comment or contribution) deleted, please post to that effect in the thread (or underneath the comment/contribution), and reach out to Ms. Boba. You can do so via the anonymous feedback form for your realm.
 
 - [v0 Realm](https://docs.google.com/forms/d/e/1FAIpQLSfyMENg9eDNmRj-jIvIG5_ElJFwpGZ_VPvzAskarqu5kf0MSA/viewform)
 - Fandom Coders *coming soon!*  <!-- ADD LINK -->
