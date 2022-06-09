@@ -9,6 +9,7 @@ Threads are the posts you make to a Board and all of the comments and contributi
 The thread menu allows you to update the options for the thread. To access the thread menu, click on the meatball (three dots) menu in the upper right of the thread. Each option is described briefly below:
 
 - **Copy thread link** - allows you to grab a link to share the thread with someone.
+    - **Copy link** (*Contributions Only*) - allows you to grab a link for a specific contribution under a main thread.
 - **Mark read** - dismisses the notifications for this thread.
 - **Mute thread** - turns off notifications for this thread.
 - **Hide thread** - allows you to collapse the thread so that you can't see it any long.
