@@ -65,7 +65,10 @@ The more you post, comment, or contribute, the more likely you are to complete y
 In addition to the "main" Realm BobaDex, Realms can have limited time or seasonal BobaDexes whose identities are only used during certain time periods. For example, the V0 realm has a *Spooky Scary Anons* Dex which is only available around Halloween.
 
 # When and How We Deanon
-**Ms. Boba Explanation Here**
+In extreme cases, Ms. Boba (and in the future others with moderation abilities) may force deanon certain comments or exchanges as part of moderation. More information concerning this process, when it is enacted, and how it is done will be coming soon.
 
 # Reporting Bad Behavior
-**Things and stuff**
+If there is an interaction which is concerning or may need the attention of a moderator, please complete the below Anonymous Feedback Form for the Realm where the interaction took place. Be sure to select the "I'd like to report a post/interaction" option.
+
+- [v0 Realm](https://docs.google.com/forms/d/e/1FAIpQLSfyMENg9eDNmRj-jIvIG5_ElJFwpGZ_VPvzAskarqu5kf0MSA/viewform)
+- Fandom Coders *coming soon!*  <!-- ADD LINK -->
