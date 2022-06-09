@@ -26,12 +26,6 @@ module.exports = {
         src: "img/bobadab.png",
       },
       items: [
-        // {
-        //   type: "doc",
-        //   docId: "users/welcome",
-        //   position: "left",
-        //   label: "Users Guide",
-        // },
         {
           type: "doc",
           docId: "product/intro",
@@ -50,12 +44,12 @@ module.exports = {
           position: "left",
           label: "Volunteering Guide",
         },
-        // {
-        //   type: "doc",
-        //   docId: "users/intro",
-        //   position: "left",
-        //   label: "User Guide",
-        // },
+        {
+          type: "doc",
+          docId: "users/intro",
+          position: "left",
+          label: "User Guide",
+        },
         {
           href: "https://github.com/essential-randomness/bobadocs",
           label: "GitHub",
@@ -69,10 +63,6 @@ module.exports = {
         {
           title: "Docs",
           items: [
-            // {
-            //   label: "User Guide",
-            //   to: "/docs/users/intro",
-            // },
             {
               label: "Product Guide",
               to: "/docs/product/intro",
@@ -84,6 +74,10 @@ module.exports = {
             {
               label: "Volunteering Guide",
               to: "/docs/volunteering/intro",
+            },
+            {
+              label: "User Guide",
+              to: "/docs/users/intro",
             },
           ],
         },
