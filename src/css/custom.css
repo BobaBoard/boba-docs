@@ -7,6 +7,7 @@
 
 /* You can override the default Infima variables here. */
 :root {
+  --ifm-background-color: #fff;
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: rgb(33, 175, 144);
   --ifm-color-primary-darker: rgb(31, 165, 136);
@@ -15,6 +16,10 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+}
+
+html[data-theme='dark'] {
+  --ifm-background-color: #000;
 }
 
 .docusaurus-highlight-code-line {
@@ -37,4 +42,82 @@ img.emoji {
 
 html {
   font-size: 100%;
+}
+
+blockquote {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  background: var(--ifm-color-primary-lightest);
+  padding: 40px 30px 30px 60px;
+  border-radius: 10px;
+  color: var(--ifm-background-color);
+  text-align: left;
+  box-shadow: 1px 1px 1px var(--ifm-color-primary-darkest),
+              2px 2px 1px var(--ifm-color-primary-darkest),
+              3px 3px 1px var(--ifm-color-primary-darkest);
+  border-color: unset;
+}
+
+blockquote::before {
+  font-family: sans-serif;
+  display: block;
+  position: absolute;
+  top: -20px;
+  left: 10px;
+  content: "\"";
+  font-size: 120px;
+  color: var(--ifm-color-primary);
+}
+
+cite {
+  position: relative;
+  display: block;
+  text-align: right;
+  margin-top: 5px;
+  color: var(--ifm-background-color);
+  width: 100%;
+  border-top: 1px solid var(--ifm-color-primary);
+  padding-top: 2px;
+}
+
+.sidebyside {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+}
+
+figure {
+  display: flex;
+  flex-flow: column;
+  margin: 5px;
+}
+
+figure img {
+  padding: 0px;
+  margin: 0px;
+  border-radius: 5px 5px 0px 0px;
+}
+
+figcaption {
+  margin: 0px;
+  background-color: var(--ifm-color-primary-lightest);
+  color: var(--ifm-background-color);
+  border-radius: 5px;
+  text-align: center;
+  font-style: italic;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.compare {
+  width: 40%;
+}
+
+.loneimage {
+  display: block;
+  margin: auto;
+  padding-bottom: 15px;
+  border-radius: 5px;
+  width: 650px;
+  max-width: 85%;
 }

@@ -12,7 +12,7 @@ If you comment on someone else's post, you may see that "Outdated Meme" was assi
 
 <blockquote>You do a one pull gacha per thread from a specific pool of names.
 
-<cite>- Lavender Town Resident</cite></blockquote>
+<cite>Lavender Town Resident</cite></blockquote>
 
 These identities remain anonymous publicly. No user can click through the pseudonym or avatar to a profile, nor can they connect any specific posts, comments, or contributions to your account. However, you remain identifiable within the thread; there's no need for awkward "same anon" identifiers or "OP here" work arounds. Not only does having anonymity in a fandom space allow you to be as weird as you want, but it also allows you to post without anxiety about being *too active* or *not active enough*. If you post hundreds of times in a day or disappear for three months, people won't necessarily know.
 
@@ -26,13 +26,15 @@ For more info, please see [When and How We Deanon](#when-and-how-we-deanon).
 
 You may be wondering "**How do I keep track of who I am if my identity changes all the time?**" When you look at a post or comment you make, you will see both the assigned anonymous identity and your actual account avatar; that way you can keep track of who you are in the thread with a quick glance.
 
-<figure><img src="\img\userguide\youridentity.png" />
+<div class="sidebyside">
+<figure class="compare"><img src="\img\userguide\youridentity.png" />
 <figcaption>Your View</figcaption>
 </figure>
 
-<figure><img src="\img\userguide\otherusers.png" />
+<figure class="compare"><img src="\img\userguide\otherusers.png" />
 <figcaption>Another User's View</figcaption>
 </figure>
+</div>
 
 ## Maintaining Your Anonymity
 If you'd like to share a screenshot from BobaBoard with someone but don't want them to be able to identify that you made the post or specific comments or simply don't want them to see your account information, you can **Force hide identity**. This will *remove* the references to your actual account name and the avatar you've uploaded.

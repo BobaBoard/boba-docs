@@ -44,12 +44,13 @@ BobaBoard has four types of tags for threads. Each type of tag allows you to com
 - **whisper tags** - entered into the tag field without any prefix, whisper tags allow you to make additional commentary on your post. They aren't searchable and don't clog up organizational tags. Feel free to write as much as you want in the tags without "bothering" anyone.
 - **hashtags** - set by putting *#* at the beginning of a tag, these identify additional topics that are in the post.
 - **categories** - categories are like "canonical tags" established for a specific board. Set by putting *+* at the beginning of a tag, they can be used to filter for all posts that have that tag. Categories are set by the development team currently.
-- **content notices** - set by putting *cn:* at the beginning of a tag, content notices are moved above the thread  to give people a warning about potentially nsfw, triggering, or upsetting content that are in the thread, it's comments, or contributions so that they can skip it or be better prepared.
+- **content notices** - set by putting *cn:* at the beginning of a tag, content notices are moved above the thread to give people a warning about potentially nsfw, triggering, or upsetting content that are in the thread, it's comments, or contributions so that they can skip it or be better prepared.
+    - **Note:** you cannot filter out content notices yet, but you can use the **Hide Thread** option from the [Thread Menu](#thread-menu).
 
 ## Deleting a Thread
 Since BobaBoard Threads cannot be edited, you may be wondering how you can delete a thread.
 
-<img src="/img/userguide/youdon't.png" alt="That's the neat thing: you don't." />
+<img src="/img/userguide/youdon't.png" alt="That's the neat thing: you don't." class="loneimage"/>
 
 Right now if you'd like to have a thread (or comment or contribution) deleted, please post to that effect in the thread (or underneath the comment/contribution), and reach out to Ms. Boba. You can do so via the anonymous feedback form for your realm.
 
@@ -59,7 +60,7 @@ Right now if you'd like to have a thread (or comment or contribution) deleted, p
 ## Comments and Contributions
 When replying to a thread you have two options for how to reply: *comment* or *contribute*.
 
-Comments allow minimal formatting and are useful for quick replies and communications. Comments have a 420 character limit, but you can post multiple comments at one time by clicking the + button on the bottom right of the editor.
+Comments allow minimal formatting and are useful for quick replies and communications. Comments have a 420 character limit, but you can post multiple comments at one time by clicking the + button on the bottom left of the editor.
 
 Contributions are like sub-threads, intended to be used for larger ideas, posts that need more complex formatting, or posts that could spin off into another conversation. 
 

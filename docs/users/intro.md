@@ -3,7 +3,7 @@ sidebar_position: 1
 ---
 # BobaBoard Basics
 
-_"BobaBoard will move you and fill you with a feeling of deep peace. I hope your time here will be pleasant and your memories will last forever."_
+<blockquote>BobaBoard will move you and fill you with a feeling of deep peace. I hope your time here will be pleasant and your memories will last forever.</blockquote>
 
 ## What is BobaBoard?
 **The Simple Answer:** A website featuring a collection of communities, made for fandom by people in fandom.
@@ -28,10 +28,12 @@ The structure of BobaBoard Realms calls back to various aspects of other platfor
 
 There are currently two Realms making up BobaBoard:
 - V0: The Alpha
-  > The OG BobaBoard. A closed Alpha for Ms. Boba's friends, Boba volunteers, and early adopters.
+  
+  *The OG BobaBoard. A closed Alpha for Ms. Boba's friends, Boba volunteers, and early adopters.*
 
 - Fandom Coders
-  > The first official "Realm". It's a community of fandom people who also code or want to learn to code, particularly if they use coding in their fandom activities!
+  
+  *The first official "Realm". It's a community of fandom people who also code or want to learn to code, particularly if they use coding in their fandom activities!*
 
 For more information on each Realm, visit their sections in the guide.
 
@@ -42,7 +44,7 @@ Each Realm can contain multiple **Boards**. Boards are similar to forum sections
 
 In our current culture, we care more about you posting than *where* you post. If something might fit in more than one place, choose the one that's most appropriate according to your own nebulous criteria.
 
-_"The boards are more what you'd call guidelines than actual rules."_
+<blockquote>The boards are more what you'd call guidelines than actual rules.</blockquote>
 
 At this stage, there's no personal "blog" or "page" on BobaBoard. There's no user address that you can give someone so that they can see all your posts. We're focused on building a better fandom community experience first, but personal solutions might be incorporated in the future. 
 
