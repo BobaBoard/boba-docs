@@ -6,7 +6,7 @@ sidebar_position: 2
 
 ## On the server
 
-[Permission handlers](https://github.com/essential-randomness/bobaserver/blob/main/handlers/permissions.ts) are a type of custom [Express middleware](https://expressjs.com/en/guide/using-middleware.html). They fetch permissions from the database and add them to the incoming request. Optionally, they check whether a specific permissions is present, and automatically return the `UNAUTHORIZED` status code in the negative case.
+[Permission handlers](https://github.com/BobaBoard/boba-backend/blob/main/handlers/permissions.ts) are a type of custom [Express middleware](https://expressjs.com/en/guide/using-middleware.html). They fetch permissions from the database and add them to the incoming request. Optionally, they check whether a specific permissions is present, and automatically return the `UNAUTHORIZED` status code in the negative case.
 
 ### Permissions fetchers
 

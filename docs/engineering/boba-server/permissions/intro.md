@@ -13,9 +13,9 @@ Permissions control which user(s) can execute specific actions, usually scoped t
 
 The following permissions are granted by default:
 
-- **Post owner permissions:** default permissions associated with the user who created a post (see: [`POST_OWNER_PERMISSIONS`](https://github.com/essential-randomness/bobaserver/blob/main/types/permissions.ts#L66)).
-- **Thread owner permissions:** default permissions associated with the user who created a thread (see: [`THREAD_OWNER_PERMISSIONS`](https://github.com/essential-randomness/bobaserver/blob/main/types/permissions.ts#L76)).
+- **Post owner permissions:** default permissions associated with the user who created a post (see: [`POST_OWNER_PERMISSIONS`](https://github.com/BobaBoard/boba-backend/blob/main/types/permissions.ts#L66)).
+- **Thread owner permissions:** default permissions associated with the user who created a thread (see: [`THREAD_OWNER_PERMISSIONS`](https://github.com/BobaBoard/boba-backend/blob/main/types/permissions.ts#L76)).
 
 Administrators can grant non-default permissions through roles. When a user is assigned a role, they automatically inherit the permissions associated with the role.
 
-A full list of permissions is available in the `DbRolePermissions` enum at [`/types/permissions.ts`](https://github.com/essential-randomness/bobaserver/blob/main/types/permissions.ts).
+A full list of permissions is available in the `DbRolePermissions` enum at [`/types/permissions.ts`](https://github.com/BobaBoard/boba-backend/blob/main/types/permissions.ts).
