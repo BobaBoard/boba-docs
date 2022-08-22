@@ -58,7 +58,7 @@ The BobaBoard frontend repository is in charge of managing the full BobaBoard us
 
 ## boba-server
 
-[code](https://github.com/essential-randomness/bobaserver)
+[code](https://github.com/BobaBoard/boba-backend)
 
 The BobaBoard backend repository is an [ExpressJS](https://expressjs.com/) server, communicating with the boba-frontend through a REST API.
 

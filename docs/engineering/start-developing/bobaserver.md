@@ -18,7 +18,7 @@ In a terminal, run the following commands:
 
 ```bash
 # Clone the codebase from github
-git clone https://github.com/essential-randomness/bobaserver.git
+git clone https://github.com/BobaBoard/boba-backend.git
 # Enter the codebase directory
 cd bobaserver
 # Install all necessary code

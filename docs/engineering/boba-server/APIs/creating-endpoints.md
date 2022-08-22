@@ -14,7 +14,7 @@ You can learn more in our [intro to APIs](./API-guidelines.md).
 
 ## Routes and endpoint structure {#structure}
 
-Each subfolder in the [`server/` directory](https://github.com/essential-randomness/bobaserver/tree/master/server) defines the endpoints associated with the corresponding resource (e.g. boards, threads, users). For example, files in the `server/boards/` directory define the endpoints at the `[server_adress]/boards/*` URLs. In Express, the server framework BobaBoard uses, endpoints are defined through [Routes](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
+Each subfolder in the [`server/` directory](https://github.com/BobaBoard/boba-backend/tree/master/server) defines the endpoints associated with the corresponding resource (e.g. boards, threads, users). For example, files in the `server/boards/` directory define the endpoints at the `[server_adress]/boards/*` URLs. In Express, the server framework BobaBoard uses, endpoints are defined through [Routes](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
 
 Each subfolder in the `server/` directory contains at least the following files:
 
