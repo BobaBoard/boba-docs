@@ -8,7 +8,7 @@ BobaBoard's codebase is split within 4 separate repositories, each with its own 
 
 - [**boba-editor**](#bobaeditor): our text editor.
 - [**boba-components**](#boba-components): our "design system".
-- [**boba-server**](#boba-server): "makes the magic happen" (i.e. saves and processes data).
+- [**boba-backend**](#boba-backend): "makes the magic happen" (i.e. saves and processes data).
 - [**boba-frontend**](#boba-frontend): ties verything together into something _aspirationally_ usable and useful.
 
 ![An overview of how BobaBoard's components fit together](/img/documentation/codebase-overview.png)
@@ -56,7 +56,7 @@ The BobaBoard frontend repository is in charge of managing the full BobaBoard us
 **Edit this codebase if:** you want to change how UI elements come together to create pages like boards, threads, settings and the related user flows.
 :::
 
-## boba-server
+## boba-backend
 
 [code](https://github.com/BobaBoard/boba-backend)
 

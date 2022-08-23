@@ -5,7 +5,7 @@ sidebar_position: 1
 # Getting Started
 
 :::important
-Before continuing with this section, **follow the installation instructions** in our [Contribute section](/docs/engineering/start-developing/bobaserver).
+Before continuing with this section, **follow the installation instructions** in our [Contribute section](/docs/engineering/start-developing/bobabackend).
 :::
 
 ## Development Instructions
@@ -16,7 +16,7 @@ This codebase requires Node **16**. If you're using [Node Version Manager](https
 You can check the current Node version by running `node -v`.
 :::
 
-To develop for BobaServer, you will need to start 3 separate components: the database, the cache, and the actual server.
+To develop for BobaBackend, you will need to start 3 separate components: the database, the cache, and the actual server.
 
 ### Start DB
 
@@ -58,5 +58,5 @@ Both of these actions need to be performed on the console where `yarn run dev:wa
 You can test the server is running by opening `http://localhost:4200/realms/slug/twisted-minds` in any browser. You should now see a list of all the realm properties in [JSON format](https://developers.squarespace.com/what-is-json).
 
 :::tip
-Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/engineering/boba-server/using-postman).
+Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/engineering/boba-backend/using-postman).
 :::

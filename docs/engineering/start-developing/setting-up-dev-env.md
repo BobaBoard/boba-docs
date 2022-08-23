@@ -20,7 +20,7 @@ If you're intimidated, contact Ms. Boba for help! Also consider editing this pag
 - [ ] [Git](#git)
 - [ ] [NodeJS](#nodejs-with-nvm)
 - [ ] [Yarn](#yarn)
-- [ ] [Docker](#docker-bobaserver-only) [BobaServer Only]
+- [ ] [Docker](#docker-bobabackend-only) [BobaBackend Only]
 
 ### Windows Subsystem for Linux (WSL) [Windows Only]
 
@@ -62,7 +62,7 @@ While NVM isn't natively supported on Windows, you can get access to it through 
 Using `npm` instead of `yarn` will result in errors. You can blame React for that.
 :::
 
-### Docker [BobaServer Only]
+### Docker [BobaBackend Only]
 
 [**Docker**](https://www.docker.com/products/docker-desktop) runs applications in containers. [I literally had to Google an ELI5.](https://www.reddit.com/r/docker/comments/9xwlg6/can_anyone_eli5_what_docker_is_and_its_practical/) Trust me, you don't need to understand Docker to use it.
 

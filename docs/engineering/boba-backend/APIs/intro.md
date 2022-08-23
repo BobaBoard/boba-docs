@@ -8,11 +8,11 @@ APIs allow applications (clients) to interact with another application (server) 
 
 :::note
 
-You can explore the full BobaServer API on the [REST API documentation page](/docs/engineering/rest-api/).
+You can explore the full BobaBackend API on the [REST API documentation page](/docs/engineering/rest-api/).
 
 :::
 
-While there are no enforced rules about how APIs should be defined, BobaServer's API implements [a special set of API guidelines](https://www.redhat.com/en/topics/api/what-is-a-rest-api) called REST. Among the advantages of adhering to REST principles, is that REST APIs are easier to reason about, define, and scale. You can read about the REST principles followed by BobaServer in the [API guidelines](./API-guidelines) page.
+While there are no enforced rules about how APIs should be defined, BobaBackend's API implements [a special set of API guidelines](https://www.redhat.com/en/topics/api/what-is-a-rest-api) called REST. Among the advantages of adhering to REST principles, is that REST APIs are easier to reason about, define, and scale. You can read about the REST principles followed by BobaBackend in the [API guidelines](./API-guidelines) page.
 
 ## How a REST API works
 
@@ -29,7 +29,7 @@ Add a quick explanation of different type of request parameters (URL, query and 
 ## REST API example {#api-example}
 
 :::caution
-The following is a high-level example to help understand how REST APIs work. It does not reflect how BobaServer works in practice. The source of truth for the BobaServer API is our [REST API documentation page](/docs/engineering/rest-api/).
+The following is a high-level example to help understand how REST APIs work. It does not reflect how BobaBackend works in practice. The source of truth for the BobaBackend API is our [REST API documentation page](/docs/engineering/rest-api/).
 
 :::
 

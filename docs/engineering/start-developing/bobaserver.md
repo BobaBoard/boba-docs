@@ -1,4 +1,4 @@
-# Install BobaServer
+# Install BobaBackend
 
 :::warning
 This is currently a private repository. Contact the BobaLord for access!
@@ -10,7 +10,7 @@ This is currently a private repository. Contact the BobaLord for access!
 
 ## Install Instructions
 
-The first time you work on BobaServer you need to copy the project to the local machine and set up the environment configuration files (`.env`, [ELI5](https://www.reddit.com/r/webdev/comments/a54pxr/what_is_a_env_file/ebjwbtr/?utm_source=reddit&utm_medium=web2x&context=3)).
+The first time you work on BobaBackend you need to copy the project to the local machine and set up the environment configuration files (`.env`, [ELI5](https://www.reddit.com/r/webdev/comments/a54pxr/what_is_a_env_file/ebjwbtr/?utm_source=reddit&utm_medium=web2x&context=3)).
 
 ### 1 – Clone project and create configuration files
 
@@ -20,7 +20,7 @@ In a terminal, run the following commands:
 # Clone the codebase from github
 git clone https://github.com/BobaBoard/boba-backend.git
 # Enter the codebase directory
-cd bobaserver
+cd bobabackend
 # Install all necessary code
 yarn install
 # Create the .env files containing the secrets for our test DB
@@ -62,4 +62,4 @@ Open `firebase-sdk.json` and paste the following content within it:
 
 ## Start a local server
 
-You can now [follow the instructions](/docs/engineering/boba-server/getting-started) in the bobaserver guide and start your own local server.
+You can now [follow the instructions](/docs/engineering/boba-backend/getting-started) in the bobabackend guide and start your own local server.

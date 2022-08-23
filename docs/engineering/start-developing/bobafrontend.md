@@ -32,7 +32,7 @@ yarn run dev:stage
 > The above command (`yarn run dev:stage`) connects to the real server and database. Any post you make on your local machine will be reflected on the real server! Yes, this means you can make people have a really bad time if you want.
 > Do not make me revoke your access!
 
-If you want (or need) to run the frontend connected to a local DB/server, follow the instructions to launch BobaServer and then run `yarn run dev`.
+If you want (or need) to run the frontend connected to a local DB/server, follow the instructions to launch BobaBackend and then run `yarn run dev`.
 
 ### Installing BobaFrontend, fetching BobaComponents through yarn
 
