@@ -73,9 +73,9 @@ Because `mocks` are fake objects with no implementations, tests might need to de
     expect(cache().hget).toBeCalledWith(CacheKeys.USER, "logged_in_user_id");
 ```
 
-`Mocks` used in BobaServer's testing include the `cache`, network requests (i.e. the `axios` library), and the authentication service.
+`Mocks` used in BobaBackend's testing include the `cache`, network requests (i.e. the `axios` library), and the authentication service.
 
-## Testing BobaServer's API Routes
+## Testing BobaBackend's API Routes
 
 TODO
 

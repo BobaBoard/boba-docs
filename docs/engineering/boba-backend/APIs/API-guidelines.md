@@ -1,6 +1,6 @@
 # API guidelines
 
-These rules must be followed when creating new API endpoint in BobaServer. They're a subset of the excellent [Zalando RESTful API guidelines](https://opensource.zalando.com/restful-api-guidelines/).
+These rules must be followed when creating new API endpoint in BobaBackend. They're a subset of the excellent [Zalando RESTful API guidelines](https://opensource.zalando.com/restful-api-guidelines/).
 
 ## The Golden Rule
 

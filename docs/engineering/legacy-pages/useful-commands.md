@@ -17,14 +17,14 @@ yarn run storybook
 For `BobaFrontend` run:
 
 ```bash
-# Start instance connected to local server (BobaServer must be running)
+# Start instance connected to local server (BobaBackend must be running)
 yarn run dev
 
 # Start instance connected to staging server (note: changes go to prod DB)
 yarn run dev:stage
 ```
 
-For `BobaServer` run:
+For `BobaBackend` run:
 
 ```bash
 yarn run start-db
