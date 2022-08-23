@@ -5,7 +5,7 @@ sidebar_position: 1
 # Getting Started
 
 :::important
-Before continuing with this section, **follow the installation instructions** in our [Contribute section](/docs/engineering/start-developing/bobabackend).
+Before continuing with this section, **follow the installation instructions** in our [Contribute section](/docs/engineering/start-developing/boba-backend).
 :::
 
 ## Development Instructions
