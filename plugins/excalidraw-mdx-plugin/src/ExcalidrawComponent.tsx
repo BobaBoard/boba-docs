@@ -20,7 +20,6 @@ export const ExcalidrawComponent = (props: { fileContent: string }) => {
                   ...JSON.parse(props.fileContent),
                   appState: {
                     theme: THEME.DARK,
-                    viewBackgroundColor: "transparent",
                     exportWithDarkMode: true,
                   },
                   type: "png",
