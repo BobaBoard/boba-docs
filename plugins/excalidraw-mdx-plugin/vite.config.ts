@@ -11,7 +11,7 @@ export default defineConfig({
         transformer: path.resolve(__dirname, "src/index.ts"),
         component: path.resolve(__dirname, "src/ExcalidrawComponent.tsx"),
       },
-      external: ["react", "react-dom", "fs"],
+      external: ["react", "react-dom", "fs", "@docusaurus/BrowserOnly"],
       output: [
         {
           globals: {
