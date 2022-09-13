@@ -1,5 +1,5 @@
 # Dependencies
-/node_modules
+node_modules/
 
 # Production
 /build
@@ -21,3 +21,4 @@ yarn-debug.log*
 yarn-error.log*
 src/_generated_data*
 plugins/*/dist*
+.turbo

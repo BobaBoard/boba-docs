@@ -2,5 +2,13 @@
   "name": "github-downloader",
   "version": "0.0.0",
   "private": true,
-  "main": "dist/index.js"
+  "scripts": {
+    "build": "tsc"
+  },
+  "main": "dist/index.js",
+  "dependencies": {
+    "@octokit/core": "^4.0.5",
+    "@octokit/plugin-paginate-rest": "^4.3.0",
+    "typescript": "^4.8.3"
+  }
 }

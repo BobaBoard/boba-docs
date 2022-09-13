@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkbobadocs=self.webpackChunkbobadocs||[]).push([[9031],{2427:o=>{o.exports=JSON.parse('{"specUrl":"https://backend-dot-bobaboard.uc.r.appspot.com/open-api.json","type":"url","content":"https://backend-dot-bobaboard.uc.r.appspot.com/open-api.json"}')}}]);
