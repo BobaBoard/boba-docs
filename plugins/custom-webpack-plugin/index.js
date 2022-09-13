@@ -1,7 +1,8 @@
 module.exports = function () {
   return {
-    name: "cusotm-webpack-plugin",
+    name: "custom-webpack-plugin",
     configureWebpack(config) {
+      console.log(config);
       return {
         module: {
           rules: [
@@ -18,6 +19,14 @@ module.exports = function () {
               options: {
                 exposes: "ReactDOM",
               },
+            },
+            {
+              test: /\.excalidraw$/,
+              use: [
+                {
+                  loader: "raw-loader",
+                },
+              ],
             },
           ],
         },

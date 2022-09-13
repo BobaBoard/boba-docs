@@ -1,4 +1,6 @@
 const path = require("path");
+const excalidrawMdxPlugin = require("excalidraw-mdx-plugin");
+const customWebpackPlugin = require("custom-webpack-plugin");
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -12,8 +14,8 @@ module.exports = {
   organizationName: "essential-randomness",
   projectName: "bobadocs",
   plugins: [
-    "custom-webpack-plugin",
-    path.resolve(__dirname, "plugins/github-downloader"),
+    path.resolve(__dirname, "plugins/custom-webpack-plugin"),
+    // path.resolve(__dirname, "plugins/github-downloader"),
   ],
   clientModules: [require.resolve("./src/global.ts")],
   themeConfig: {
@@ -150,6 +152,7 @@ module.exports = {
               },
             },
           },
+          // beforeDefaultRehypePlugins: [excalidrawMdxPlugin],
         },
         blog: {
           showReadingTime: true,
