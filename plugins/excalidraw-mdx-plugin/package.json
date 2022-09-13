@@ -13,9 +13,12 @@
     "canvas": "^2.10.1",
     "puppeteer": "^17.1.3",
     "unist-util-visit": "^4.1.1",
+    "unist-util-visit-parents": "^5.1.1",
     "vite-plugin-dts": "^1.5.0"
   },
   "devDependencies": {
+    "@docusaurus/types": "^2.1.0",
+    "raw-loader": "^4.0.2",
     "remark": "^14.0.2",
     "to-vfile": "^7.2.3",
     "typescript": "^4.8.3",
@@ -25,8 +28,17 @@
   },
   "exports": {
     ".": {
-      "import": "./dist/excalidraw-mdx-plugin.es.js",
-      "require": "./dist/excalidraw-mdx-plugin.cjs.js"
-    }
+      "import": "./dist/excalidraw-mdx-plugin.transformer.es.js",
+      "require": "./dist/excalidraw-mdx-plugin.transformer.cjs.js"
+    },
+    "./plugin": {
+      "import": "./dist/excalidraw-mdx-plugin.plugin.es.js",
+      "require": "./dist/excalidraw-mdx-plugin.plugin.cjs.js"
+    },
+    "./component": {
+      "import": "./dist/excalidraw-mdx-plugin.component.es.js",
+      "require": "./dist/excalidraw-mdx-plugin.component.cjs.js"
+    },
+    "./package.json": "./package.json"
   }
 }

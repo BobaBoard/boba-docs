@@ -1,23 +1,39 @@
-const path = require("path");
-const { defineConfig } = require("vite");
-const dts = require("vite-plugin-dts");
+import { defineConfig } from "vite";
+import dts from "vite-plugin-dts";
+import path from "path";
 
-module.exports = defineConfig({
+export default defineConfig({
   build: {
-    lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
-      formats: ["es", "cjs"],
-      fileName: (format: string) => `excalidraw-mdx-plugin.${format}.js`,
-    },
+    outDir: path.resolve(__dirname, "dist/"),
     rollupOptions: {
-      external: ["react", "react-dom"],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-        },
+      input: {
+        plugin: path.resolve(__dirname, "src/plugin.ts"),
+        transformer: path.resolve(__dirname, "src/index.ts"),
+        component: path.resolve(__dirname, "src/ExcalidrawComponent.tsx"),
       },
+      external: ["react", "react-dom", "fs"],
+      output: [
+        {
+          globals: {
+            react: "React",
+            "react-dom": "ReactDOM",
+          },
+          format: "es",
+          entryFileNames: (chunk) =>
+            `excalidraw-mdx-plugin.${chunk.name}.es.js`,
+        },
+        {
+          globals: {
+            react: "React",
+            "react-dom": "ReactDOM",
+          },
+          format: "cjs",
+          entryFileNames: (chunk) =>
+            `excalidraw-mdx-plugin.${chunk.name}.cjs.js`,
+        },
+      ],
+      preserveEntrySignatures: "exports-only",
     },
-    plugins: [dts()],
   },
+  plugins: [dts()],
 });
