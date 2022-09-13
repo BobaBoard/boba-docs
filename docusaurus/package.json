@@ -20,7 +20,6 @@
     "@docusaurus/core": "^2.0.0-beta.15",
     "@docusaurus/preset-classic": "^2.0.0-beta.15",
     "@mdx-js/react": "^1.6.21",
-    "@octokit/plugin-paginate-rest": "^2.17.0",
     "clsx": "^1.1.1",
     "container-query-polyfill": "^0.1.2",
     "culori": "^2.0.3",
@@ -44,15 +43,14 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-beta.15",
-    "@octokit/core": "^3.5.1",
-    "@octokit/plugin-rest-endpoint-methods": "^5.13.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "docusaurus-plugin-remote-content": "^2.1.0",
     "expose-loader": "^3.0.0",
     "github-downloader": "*",
     "patch-package": "^6.4.7",
     "postinstall-postinstall": "^2.1.0",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "excalidraw-mdx-plugin": "*"
   },
   "resolutions": {
     "prism-react-renderer": "1.2.0"
