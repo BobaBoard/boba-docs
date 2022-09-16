@@ -1,262 +1,109 @@
 [
   {
-    "id": 2690807762,
-    "node_id": "MDU6TGFiZWwyNjkwODA3NzYy",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9A%99%EF%B8%8F%20task",
-    "name": "⚙️ task",
-    "color": "A7F3D0",
-    "default": false,
-    "description": "Engineering things that need to be done"
-  },
-  {
-    "id": 3904369366,
-    "node_id": "LA_kwDOE8ugM87ot_LW",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9B%94%EF%B8%8F%20blocked",
-    "name": "⛔️ blocked",
-    "color": "60AFA3",
-    "default": false,
-    "description": ""
-  },
-  {
-    "id": 3018419157,
-    "node_id": "MDU6TGFiZWwzMDE4NDE5MTU3",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/backend",
-    "name": "backend",
-    "color": "ededed",
-    "default": false,
-    "description": null
-  },
-  {
-    "id": 3158065122,
-    "node_id": "MDU6TGFiZWwzMTU4MDY1MTIy",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/Embeds",
-    "name": "Embeds",
-    "color": "ededed",
-    "default": false,
-    "description": null
-  },
-  {
-    "id": 2680258770,
-    "node_id": "MDU6TGFiZWwyNjgwMjU4Nzcw",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/good%20first%20issue",
-    "name": "good first issue",
-    "color": "6EE7B7",
-    "default": true,
-    "description": "Good for newcomers to the project"
-  },
-  {
-    "id": 3155557832,
-    "node_id": "MDU6TGFiZWwzMTU1NTU3ODMy",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/ig%20Boobie%20%E2%80%94%20Today%20at%203:37%20PM%20[Server",
-    "name": "ig Boobie — Today at 3:37 PM [Server",
-    "color": "ededed",
-    "default": false,
-    "description": null
-  },
-  {
     "id": 2680332580,
     "node_id": "MDU6TGFiZWwyNjgwMzMyNTgw",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/level:%20advanced",
-    "name": "level: advanced",
-    "color": "EDE9FE",
-    "default": false,
-    "description": ""
-  },
-  {
-    "id": 2680331127,
-    "node_id": "MDU6TGFiZWwyNjgwMzMxMTI3",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/level:%20learning",
-    "name": "level: learning",
-    "color": "D1FAE5",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%98%81%EF%B8%8F%20Avarage",
+    "name": "☁️ Avarage",
+    "color": "cccccc",
     "default": false,
     "description": ""
   },
   {
     "id": 2680331200,
     "node_id": "MDU6TGFiZWwyNjgwMzMxMjAw",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/level:%20proficient",
-    "name": "level: proficient",
-    "color": "DBEAFE",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9B%88%EF%B8%8F%20Hard",
+    "name": "⛈️ Hard",
+    "color": "cccccc",
     "default": false,
     "description": ""
   },
   {
-    "id": 2680273614,
-    "node_id": "MDU6TGFiZWwyNjgwMjczNjE0",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/needs%20triage",
-    "name": "needs triage",
-    "color": "F9A8D4",
+    "id": 3904369366,
+    "node_id": "LA_kwDOE8ugM87ot_LW",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9B%94%EF%B8%8F%20Blocked",
+    "name": "⛔️ Blocked",
+    "color": "f57e67",
     "default": false,
-    "description": "Auto-added to all issues; remove after assigning priority"
+    "description": ""
   },
   {
-    "id": 2981237721,
-    "node_id": "MDU6TGFiZWwyOTgxMjM3NzIx",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/Oekaki",
-    "name": "Oekaki",
-    "color": "ededed",
+    "id": 4542532527,
+    "node_id": "LA_kwDOE8ugM88AAAABDsGLrw",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9B%B5%EF%B8%8F%20Medium",
+    "name": "⛵️ Medium",
+    "color": "cccccc",
     "default": false,
-    "description": null
-  },
-  {
-    "id": 3158072361,
-    "node_id": "MDU6TGFiZWwzMTU4MDcyMzYx",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/ormat%20to%20file%20bugs:%20%20[tag",
-    "name": "ormat to file bugs:  [tag",
-    "color": "ededed",
-    "default": false,
-    "description": null
-  },
-  {
-    "id": 2680321362,
-    "node_id": "MDU6TGFiZWwyNjgwMzIxMzYy",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/skill:%20API",
-    "name": "skill: API",
-    "color": "D1D5DB",
-    "default": false,
-    "description": "Can design a new REST API endpoint for BobaBoard's backend"
-  },
-  {
-    "id": 2680322403,
-    "node_id": "MDU6TGFiZWwyNjgwMzIyNDAz",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/skill:%20Architecture%20Design",
-    "name": "skill: Architecture Design",
-    "color": "D1D5DB",
-    "default": false,
-    "description": "Some expertise in Architecture Design required; might need to write an actual design doc"
-  },
-  {
-    "id": 2680321213,
-    "node_id": "MDU6TGFiZWwyNjgwMzIxMjEz",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/skill:%20React",
-    "name": "skill: React",
-    "color": "D1D5DB",
-    "default": false,
-    "description": "Is familiar with the React Framework"
-  },
-  {
-    "id": 2680320967,
-    "node_id": "MDU6TGFiZWwyNjgwMzIwOTY3",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/skill:%20SQL",
-    "name": "skill: SQL",
-    "color": "D1D5DB",
-    "default": false,
-    "description": "Needs to know how to deal with Postgres table design or query writing"
-  },
-  {
-    "id": 2680322990,
-    "node_id": "MDU6TGFiZWwyNjgwMzIyOTkw",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/skill:%20Throwing%20Eggs%20at%20the%20Wall",
-    "name": "skill: Throwing Eggs at the Wall",
-    "color": "D1D5DB",
-    "default": false,
-    "description": "A problem whose solution might involve just trying a bunch of things and seeing what works"
-  },
-  {
-    "id": 2680321848,
-    "node_id": "MDU6TGFiZWwyNjgwMzIxODQ4",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/skill:%20UX%20Design",
-    "name": "skill: UX Design",
-    "color": "D1D5DB",
-    "default": false,
-    "description": "Make it look (& interact) good"
-  },
-  {
-    "id": 3158072362,
-    "node_id": "MDU6TGFiZWwzMTU4MDcyMzYy",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/tag",
-    "name": "tag",
-    "color": "ededed",
-    "default": false,
-    "description": null
-  },
-  {
-    "id": 2956888387,
-    "node_id": "MDU6TGFiZWwyOTU2ODg4Mzg3",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/to%20sort",
-    "name": "to sort",
-    "color": "BA0940",
-    "default": false,
-    "description": "An issue the webmistress still needs to take a look at and properly classify."
-  },
-  {
-    "id": 2680326846,
-    "node_id": "MDU6TGFiZWwyNjgwMzI2ODQ2",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/volunteer%20friendly",
-    "name": "volunteer friendly",
-    "color": "D1FAE5",
-    "default": false,
-    "description": "Can easily be broken down in a way in which a volunteer should have a easy way taking care of it"
+    "description": ""
   },
   {
     "id": 3904397541,
     "node_id": "LA_kwDOE8ugM87ouGDl",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20stage:%20awaiting%20reproduction",
-    "name": "⏩ stage: awaiting reproduction",
-    "color": "8554B6",
-    "default": false,
-    "description": ""
-  },
-  {
-    "id": 3904366811,
-    "node_id": "LA_kwDOE8ugM87ot-jb",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20stage:%20blocked",
-    "name": "⏩ stage: blocked",
-    "color": "BD1B05",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20Awaiting%20reproduction",
+    "name": "⏩ Awaiting reproduction",
+    "color": "8db4e2",
     "default": false,
     "description": ""
   },
   {
     "id": 3895339704,
     "node_id": "LA_kwDOE8ugM87oLiq4",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20stage:%20design",
-    "name": "⏩ stage: design",
-    "color": "006b75",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20Design",
+    "name": "⏩ Design",
+    "color": "8db4e2",
     "default": false,
     "description": "Open issues need deliberation before implementation can proceed"
   },
   {
+    "id": 3901237196,
+    "node_id": "LA_kwDOE8ugM87oiCfM",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20Implementation",
+    "name": "⏩ Implementation",
+    "color": "8db4e2",
+    "default": false,
+    "description": "A feature that's currently being implemented"
+  },
+  {
     "id": 3904368038,
     "node_id": "LA_kwDOE8ugM87ot-2m",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20stage:%20ready%20to%20implement",
-    "name": "⏩ stage: ready to implement",
-    "color": "3774DD",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20Ready%20to%20implement",
+    "name": "⏩ Ready to implement",
+    "color": "8db4e2",
     "default": false,
     "description": ""
   },
   {
     "id": 3901582742,
     "node_id": "LA_kwDOE8ugM87ojW2W",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20stage:%20UX%20design",
-    "name": "⏩ stage: UX design",
-    "color": "278119",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9%20UX%20design",
+    "name": "⏩ UX design",
+    "color": "8db4e2",
     "default": false,
     "description": "The issue is currently undergoing interface/interaction desing."
   },
   {
-    "id": 3901237196,
-    "node_id": "LA_kwDOE8ugM87oiCfM",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%8F%A9stage:%20implementation",
-    "name": "⏩stage: implementation",
-    "color": "c2e0c6",
-    "default": false,
-    "description": "A feature that's currently being implemented"
-  },
-  {
     "id": 3904344781,
     "node_id": "LA_kwDOE8ugM87ot5LN",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8C%9F%20Ms.%20Boba's%20Fave",
-    "name": "🌟 Ms. Boba's Fave",
-    "color": "10E43C",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8C%9F%20Ms.%20Boba's%20fave",
+    "name": "🌟 Ms. Boba's fave",
+    "color": "cccccc",
     "default": false,
     "description": "A task Ms. Boba would *love* to get done"
+  },
+  {
+    "id": 2680331127,
+    "node_id": "MDU6TGFiZWwyNjgwMzMxMTI3",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8C%A4%20Easy",
+    "name": "🌤 Easy",
+    "color": "cccccc",
+    "default": false,
+    "description": ""
   },
   {
     "id": 2956995357,
     "node_id": "MDU6TGFiZWwyOTU2OTk1MzU3",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Accessibility",
     "name": "🎨 Accessibility",
-    "color": "146CCE",
+    "color": "91e463",
     "default": false,
     "description": "Let's make BobaBoard more accessible!"
   },
@@ -265,7 +112,7 @@
     "node_id": "LA_kwDOE8ugM87i-nvn",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Community",
     "name": "🎨 Community",
-    "color": "D3024C",
+    "color": "91e463",
     "default": false,
     "description": "Tools to improve BobaBoard's communities experience."
   },
@@ -274,7 +121,7 @@
     "node_id": "LA_kwDOE8ugM87i-oQW",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Customization",
     "name": "🎨 Customization",
-    "color": "F20A61",
+    "color": "91e463",
     "default": false,
     "description": "Personalizing BobaBoard for personal or community use."
   },
@@ -283,7 +130,7 @@
     "node_id": "LA_kwDOE8ugM87i0CyQ",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Decentralization",
     "name": "🎨 Decentralization",
-    "color": "fbca04",
+    "color": "91e463",
     "default": false,
     "description": "Look, ma! No NFTs."
   },
@@ -292,7 +139,7 @@
     "node_id": "LA_kwDOE8ugM87i-pDv",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Frustration%20busters",
     "name": "🎨 Frustration busters",
-    "color": "01D542",
+    "color": "91e463",
     "default": false,
     "description": "Make BobaBoard a pleasure to use"
   },
@@ -301,7 +148,7 @@
     "node_id": "LA_kwDOE8ugM87i-mvj",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Integrations",
     "name": "🎨 Integrations",
-    "color": "7414A9",
+    "color": "91e463",
     "default": false,
     "description": "Anything related to the ability to exchange data with 3rd party software."
   },
@@ -310,7 +157,7 @@
     "node_id": "LA_kwDOE8ugM87i-nbo",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Moderation",
     "name": "🎨 Moderation",
-    "color": "0BA01E",
+    "color": "91e463",
     "default": false,
     "description": "Anything to do with content moderation, both community and personal."
   },
@@ -319,52 +166,43 @@
     "node_id": "LA_kwDOE8ugM87i-l_v",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8E%A8%20Privacy",
     "name": "🎨 Privacy",
-    "color": "006b75",
+    "color": "91e463",
     "default": false,
     "description": "Ensure everyone's privacy is respected."
   },
   {
-    "id": 2680258762,
-    "node_id": "MDU6TGFiZWwyNjgwMjU4NzYy",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%90%9E%20bug",
-    "name": "🐞 bug",
-    "color": "FECACA",
+    "id": 2680258768,
+    "node_id": "MDU6TGFiZWwyNjgwMjU4NzY4",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%90%9E%20Feature",
+    "name": "🐞 Feature",
+    "color": "cccccc",
     "default": false,
-    "description": "Something isn't working as expected"
+    "description": "Add a new feature or improve an existing one"
   },
   {
-    "id": 3904338190,
-    "node_id": "LA_kwDOE8ugM87ot3kO",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%92%AA%20self-contained",
-    "name": "💪 self-contained",
-    "color": "916D43",
+    "id": 4542494056,
+    "node_id": "LA_kwDOE8ugM88AAAABDsD1aA",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%92%AA%20Self-contained",
+    "name": "💪 Self-contained",
+    "color": "cccccc",
     "default": false,
     "description": "The task doesn't have broad repercussions on the BobaBoard codebase"
   },
   {
-    "id": 3904343296,
-    "node_id": "LA_kwDOE8ugM87ot40A",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%92%AA%20volunteer-friendly",
-    "name": "💪 volunteer-friendly",
-    "color": "CC92DD",
+    "id": 4542493385,
+    "node_id": "LA_kwDOE8ugM88AAAABDsDyyQ",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%92%AA%20Volunteer-friendly",
+    "name": "💪 Volunteer-friendly",
+    "color": "cccccc",
     "default": false,
-    "description": "This tasks is approachable to volunteers!"
-  },
-  {
-    "id": 2680317353,
-    "node_id": "MDU6TGFiZWwyNjgwMzE3MzUz",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%96%20documentation",
-    "name": "📖 documentation",
-    "color": "BFDBFE",
-    "default": false,
-    "description": "Need to update docs somewhere"
+    "description": "Can easily be broken down in a way in which a volunteer should have a easy way taking care of it"
   },
   {
     "id": 3832963560,
     "node_id": "LA_kwDOE8ugM87kdmHo",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%A6%20%20meta",
-    "name": "📦  meta",
-    "color": "A94B0F",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%A6%20%20Meta",
+    "name": "📦  Meta",
+    "color": "fcb760",
     "default": false,
     "description": "Meta issues about improving BobaBoard community & processes"
   },
@@ -373,7 +211,7 @@
     "node_id": "MDU6TGFiZWwyNjgwMzMwODc1",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%A6%20boba-backend",
     "name": "📦 boba-backend",
-    "color": "DE8F13",
+    "color": "fcb760",
     "default": false,
     "description": "An issue that involves the boba-backend repository"
   },
@@ -382,7 +220,7 @@
     "node_id": "MDU6TGFiZWwyNjgwMzMwNzA5",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%A6%20boba-components",
     "name": "📦 boba-components",
-    "color": "BE8DC7",
+    "color": "fcb760",
     "default": false,
     "description": "An issue that involves the boba-components repository"
   },
@@ -391,7 +229,7 @@
     "node_id": "MDU6TGFiZWwyNjgwMzMxMDA5",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%A6%20boba-editor",
     "name": "📦 boba-editor",
-    "color": "F4AAB8",
+    "color": "fcb760",
     "default": false,
     "description": "An issue that involves the boba-editor repository"
   },
@@ -400,7 +238,7 @@
     "node_id": "MDU6TGFiZWwyNjgwMzMwNzgz",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%A6%20boba-frontend",
     "name": "📦 boba-frontend",
-    "color": "9C3066",
+    "color": "fcb760",
     "default": false,
     "description": "An issue that involves the boba-frontend repository"
   },
@@ -450,57 +288,156 @@
     "description": "Priority CRITICAL: Drop everything to work on this"
   },
   {
-    "id": 2680258768,
-    "node_id": "MDU6TGFiZWwyNjgwMjU4NzY4",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%98%8E%20enhancement",
-    "name": "😎 enhancement",
-    "color": "DDD6FE",
+    "id": 4542483721,
+    "node_id": "LA_kwDOE8ugM88AAAABDsDNCQ",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%95%B7%20Tests",
+    "name": "🕷 Tests",
+    "color": "cccccc",
     "default": false,
-    "description": "Add a new feature or improve an existing one"
+    "description": ""
+  },
+  {
+    "id": 4542532749,
+    "node_id": "LA_kwDOE8ugM88AAAABDsGMjQ",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9A%A2%20Large",
+    "name": "🚢 Large",
+    "color": "cccccc",
+    "default": false,
+    "description": ""
+  },
+  {
+    "id": 2680273614,
+    "node_id": "MDU6TGFiZWwyNjgwMjczNjE0",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9A%A7%20To%20sort",
+    "name": "🚧 To sort",
+    "color": "cccccc",
+    "default": false,
+    "description": "Auto-added to all issues; removed after issues have been reviewed and classified"
   },
   {
     "id": 2680325633,
     "node_id": "MDU6TGFiZWwyNjgwMzI1NjMz",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9A%A8%20critical%20path",
-    "name": "🚨 critical path",
-    "color": "FCD34D",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9A%A8%20Time%20sensitive",
+    "name": "🚨 Time sensitive",
+    "color": "cccccc",
     "default": false,
     "description": "Gotta get it done within a reasonable amount of time. If you commit, please be mindful of time!"
+  },
+  {
+    "id": 2680321362,
+    "node_id": "MDU6TGFiZWwyNjgwMzIxMzYy",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20API",
+    "name": "🛠 API",
+    "color": "d899cf",
+    "default": false,
+    "description": "Can design a new REST API endpoint for BobaBoard's backend"
+  },
+  {
+    "id": 2680322403,
+    "node_id": "MDU6TGFiZWwyNjgwMzIyNDAz",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20Architecture%20Design",
+    "name": "🛠 Architecture Design",
+    "color": "d899cf",
+    "default": false,
+    "description": "Some expertise in Architecture Design required; might need to write an actual design doc"
   },
   {
     "id": 3904351427,
     "node_id": "LA_kwDOE8ugM87ot6zD",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20DevOps",
     "name": "🛠 DevOps",
-    "color": "D3160B",
+    "color": "d899cf",
     "default": false,
     "description": ""
-  },
-  {
-    "id": 3904381044,
-    "node_id": "LA_kwDOE8ugM87ouCB0",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20Documentation%20(reading)",
-    "name": "🛠 Documentation (reading)",
-    "color": "B94F57",
-    "default": false,
-    "description": "Requires the ability to read and understand (sometimes poorly written) documentation"
   },
   {
     "id": 2680321612,
     "node_id": "MDU6TGFiZWwyNjgwMzIxNjEy",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20JavaScript",
     "name": "🛠 JavaScript",
-    "color": "D6DD61",
+    "color": "d899cf",
     "default": false,
     "description": "This task requires an understanding of JavaScript"
+  },
+  {
+    "id": 2680321213,
+    "node_id": "MDU6TGFiZWwyNjgwMzIxMjEz",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20React",
+    "name": "🛠 React",
+    "color": "d899cf",
+    "default": false,
+    "description": "Is familiar with the React Framework"
+  },
+  {
+    "id": 2680320967,
+    "node_id": "MDU6TGFiZWwyNjgwMzIwOTY3",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20SQL",
+    "name": "🛠 SQL",
+    "color": "d899cf",
+    "default": false,
+    "description": "Needs to know how to deal with Postgres table design or query writing"
+  },
+  {
+    "id": 2680322990,
+    "node_id": "MDU6TGFiZWwyNjgwMzIyOTkw",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20Throwing%20eggs%20at%20the%20wall",
+    "name": "🛠 Throwing eggs at the wall",
+    "color": "d899cf",
+    "default": false,
+    "description": "A problem whose solution might involve just trying a bunch of things and seeing what works"
+  },
+  {
+    "id": 2680321848,
+    "node_id": "MDU6TGFiZWwyNjgwMzIxODQ4",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20UX%20design",
+    "name": "🛠 UX design",
+    "color": "d899cf",
+    "default": false,
+    "description": "Make it look (& interact) good"
   },
   {
     "id": 3904329542,
     "node_id": "LA_kwDOE8ugM87ot1dG",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20WebDev",
     "name": "🛠 WebDev",
-    "color": "67A43F",
+    "color": "d899cf",
     "default": false,
     "description": "Requires an understanding of broad web development technologies"
+  },
+  {
+    "id": 4542532230,
+    "node_id": "LA_kwDOE8ugM88AAAABDsGKhg",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%B6%20Small",
+    "name": "🛶 Small",
+    "color": "cccccc",
+    "default": false,
+    "description": ""
+  },
+  {
+    "id": 2680258770,
+    "node_id": "MDU6TGFiZWwyNjgwMjU4Nzcw",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%A6%B5%20Good%20first%20issue",
+    "name": "🦵 Good first issue",
+    "color": "cccccc",
+    "default": false,
+    "description": "Good for newcomers to the project"
+  },
+  {
+    "id": 4542482822,
+    "node_id": "LA_kwDOE8ugM88AAAABDsDJhg",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%AA%B2%20Behind%20the%20scenes",
+    "name": "🪲 Behind the scenes",
+    "color": "cccccc",
+    "default": false,
+    "description": ""
+  },
+  {
+    "id": 2680258762,
+    "node_id": "MDU6TGFiZWwyNjgwMjU4NzYy",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%AA%B3%20Bug",
+    "name": "🪳 Bug",
+    "color": "cccccc",
+    "default": false,
+    "description": "Something isn't working as expected"
   }
 ]

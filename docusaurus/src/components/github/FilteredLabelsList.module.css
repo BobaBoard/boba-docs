@@ -93,3 +93,7 @@ html[data-theme="light"] .label {
     margin-top: 15px;
   }
 }
+
+.labelGrid + .labelGrid {
+  margin-top: 10px;
+}
