@@ -22,3 +22,4 @@ yarn-error.log*
 src/_generated_data*
 plugins/*/dist*
 .turbo
+.env

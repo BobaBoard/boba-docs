@@ -1,0 +1,790 @@
+[
+  {
+    "id": "PVT_kwDOBKDHhM4AGIzL",
+    "title": "The annoyances-be-gone sprint (🛫October 1st)",
+    "shortDescription": "To get back into the swing of things, we're fixing smaller annoyances of BobaBoard users and developers!",
+    "readme": "[October-ish 2022 sprint]\nTo get back into the swing of things, we're fixing smaller annoyances of BobaBoard users and developers!",
+    "url": "https://github.com/orgs/BobaBoard/projects/5",
+    "items": {
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5SDSaI",
+            "title": "Change disabled buttons to look grayed out ",
+            "body": "## Context\r\nOur [Button component](https://github.com/BobaBoard/boba-components/blob/main/src/buttons/Button.tsx) has a `disabled` mode, which disables the action currently assigned to it. It is however hard to visually distinguish between disabled and active buttons.\r\n\r\n## Tasks\r\n- [ ] Decide the look of disabled button components *\r\n- [ ] Code the look\r\n\r\n\\* if you can't (or don't want to) think of anything better, it _may_ be fine to just add a [grayscale CSS filter](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/grayscale) on top ",
+            "url": "https://github.com/BobaBoard/boba-components/issues/70",
+            "createdAt": "2022-09-16T23:49:23Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/70#issue-1376593544"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5SFle2",
+            "title": "Fix warning about `useLayout` in SSR mode",
+            "body": "## How to reproduce\r\n\r\nRefresh any(?) page on `boba-frontend`, and look at the console.\r\n\r\n## How to fix\r\n\r\nThis should be due to the 'loading bar' component, and the fix should be to use `useLayoutEffect` instead or `useLayout`.",
+            "url": "https://github.com/BobaBoard/boba-components/issues/72",
+            "createdAt": "2022-09-18T22:26:03Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/72#issue-1377195958"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85SFnEt",
+            "title": "Add thread status indicators within threads",
+            "body": "This is a combination of 2 requests:\r\n\r\n- [ ] Display whether a thread is muted or hidden from within the thread\r\n- [ ] Display whether a thread has been updated while the user is within the thread\r\n\r\nThese should likely be designed together. ",
+            "url": "https://github.com/BobaBoard/issues/issues/96",
+            "createdAt": "2022-09-18T22:50:01Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/96#issue-1377202477"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5SFo1M",
+            "title": "Add some type of typescript check for stories",
+            "body": "We're currently in a situation where storybook stories are using outdated or non-existing props of the components they represent. This could have been mitigated by running typescript checks when building/developing storybook (that is, having some way to surface typescript compilation errors of stories somewhere we can see them).\r\n\r\n### Tasks\r\n\r\n- [ ] Research how to run typescript checks for all the defined stories\r\n- [ ] Decide whether to prevent building storybook (that is, blocking deployment) or e.g. failing an integration test\r\n- [ ] Implement whatever we decide",
+            "url": "https://github.com/BobaBoard/boba-components/issues/73",
+            "createdAt": "2022-09-18T23:16:58Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/73#issue-1377209676"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5SFpZr",
+            "title": "Update storybook stories to latest story format",
+            "body": "Starting with Storybook v6, it is recommended to write stories using [Component Story Format](https://storybook.js.org/docs/react/api/csf). Most (if not all) of our stories are using an outdated format, and we should change them.",
+            "url": "https://github.com/BobaBoard/boba-components/issues/74",
+            "createdAt": "2022-09-18T23:24:29Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/74#issue-1377212011"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/riazaia"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5SFp_m",
+            "title": "Primary action buttons should use the corresponding color",
+            "body": "Buttons that represent an action should be colored.\r\n\r\nFor example, the `Exterminate!` button in the post deletion confirmation dialogue should be white.\r\n![image](https://user-images.githubusercontent.com/42520601/190932489-3c8a6f0b-cb0a-48ed-8747-b1f9811607cf.png)\r\n\r\nButtons that need to be updated include:\r\n- [ ] Login dialogue > Cancel/Login\r\n- [ ] Logout dialogue > Cancel/Logout\r\n- [ ] Edit board sidebar > Back/Save\r\n- [ ] User Settings > Edit Information > Cancel/Save\r\n- [ ] Delete post confirmation dialogue > Nervermind/Exterminate!\r\n- [ ] New post dialogue > Cancel/Post\r\n\r\n(though there might be others I'm missing)",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/78",
+            "createdAt": "2022-09-18T23:34:21Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/78#issue-1377214438"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5SFput",
+            "title": "Fix storybook stories using outdated props",
+            "body": "Related: #73 (but can be tackled first/after).\r\n\r\nSome stories are passing outdated props. This should be fixed.",
+            "url": "https://github.com/BobaBoard/boba-components/issues/75",
+            "createdAt": "2022-09-18T23:29:33Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/75#issue-1377213357"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85QA7VT",
+            "title": "[BUG] v0 Subscription block links point to wrong realm",
+            "body": "The links on the subscription block are hard-coded to point at the fandom-coders realm rather than the realm and board they actually belong to.",
+            "url": "https://github.com/BobaBoard/issues/issues/92",
+            "createdAt": "2022-08-18T00:50:14Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/92#issue-1342420307"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5ScQlK",
+            "title": "Allow see/hide password toggle in login popup",
+            "body": "",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/79",
+            "createdAt": "2022-09-23T00:04:32Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/79#issue-1383139658"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5ScRk5",
+            "title": "Allow ctrl+enter to submit the password on the login screen",
+            "body": "**Note:** I think the \"right\" way to do this is to change the login popup to use a `<form>` tag and have the Login button be \"`type=\"submit\"`\" (we also probably need to `preventDefault` on the form submit event). We haven't done this before (my bad for bad development practices), so I _might_ be wrong, but we should attempt to get it to work that way. \r\n\r\nI swear this is less complex than it sounds.",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/80",
+            "createdAt": "2022-09-23T00:12:41Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/80#issue-1383143737"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5ScWYt",
+            "title": "Long board titles overflow their background in narrow screens and overlap the compass icon",
+            "body": "See !miscellaneous and !monsterfucking for examples",
+            "url": "https://github.com/BobaBoard/boba-components/issues/76",
+            "createdAt": "2022-09-23T00:53:15Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/76#issue-1383163437"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5ScW0q",
+            "title": "Comments lack contrast between link colors and the background",
+            "body": "We have in the past tried to find a color that fit accessibility standards and failed. Regardless let's make the situation better and reevaluate our whole theme color scheme at some point in the future.",
+            "url": "https://github.com/BobaBoard/boba-components/issues/77",
+            "createdAt": "2022-09-23T00:56:01Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/77#issue-1383165226"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5ScXJc",
+            "title": "Hover state for board name in sidebar looks ugly",
+            "body": "Right now, the hover state is just a really ugly black color. Unsure what the right solution is, but go to town!",
+            "url": "https://github.com/BobaBoard/boba-components/issues/78",
+            "createdAt": "2022-09-23T00:58:51Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/78#issue-1383166556"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5Scfo6",
+            "title": "Boards filters are removed on refresh",
+            "body": "To reproduce:\r\n\r\n1. go to board\r\n2. filter by category (url should display the current filter)\r\n3. refresh\r\n\r\nThe url should be back to not having a filter. This is wrong, the filter should stay.",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/81",
+            "createdAt": "2022-09-23T02:06:07Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/81#issue-1383201338"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5Scjpd",
+            "title": "Trigger \"onCancel\" when user presses esc while editing Post/Comment",
+            "body": "",
+            "url": "https://github.com/BobaBoard/boba-components/issues/79",
+            "createdAt": "2022-09-23T02:35:12Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/79#issue-1383217757"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDODzMBe85SisHA",
+            "title": "Turn `ensureNoIdentityLeakage` into a middleware",
+            "body": "",
+            "url": "https://github.com/BobaBoard/boba-backend/issues/94",
+            "createdAt": "2022-09-24T22:07:07Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-backend/issues/94#issue-1384825280"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD4rRLs5SisL8",
+            "title": "Improve structure of Storybook tests",
+            "body": "Some stories are in folders and some are not + the numbering is weird. Let's figure out a more intentional structure!",
+            "url": "https://github.com/BobaBoard/boba-components/issues/80",
+            "createdAt": "2022-09-24T22:08:51Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-components/issues/80#issue-1384825596"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5SisRN",
+            "title": "Add ability to link to specific comments",
+            "body": "",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/82",
+            "createdAt": "2022-09-24T22:10:27Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/82#issue-1384825933"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5SisqE",
+            "title": "Category suggestions don't work on thread edit",
+            "body": "Reproduction:\r\n\r\n1. Create a thread in a board with \"canonical categories\"\r\n2. Edit the thread, and enter `+` in the tags input to bring up the category selector\r\n3. Notice no categories are suggested",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/84",
+            "createdAt": "2022-09-24T22:18:37Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/84#issue-1384827524"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5SisZe",
+            "title": "Threads cannot be filtered by category when category includes emoji",
+            "body": "Reproduction:\r\n\r\n1. Go to `/!bobaland`\r\n2. Try to filter by `👀 ack` label\r\n3. Notice no post is returned\r\n\r\n(Fairly sure there are _some_ posts labeled 👀 ack, but it might be appropriate to make another one to double-check).",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/83",
+            "createdAt": "2022-09-24T22:13:20Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/83#issue-1384826462"
+          }
+        }
+      ]
+    },
+    "repositories": {
+      "nodes": []
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4AGIzLzgAoahA",
+          "name": "By repo",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AGIzLzgAriUw",
+          "name": "Good first issues",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AGIzLzgAriWc",
+          "name": "Small ones",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AGIzLzgAr49g",
+          "name": "By assignee",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PVT_kwDOBKDHhM4AGB_5",
+    "title": "Move to the New BobaEditor",
+    "shortDescription": null,
+    "readme": null,
+    "url": "https://github.com/orgs/BobaBoard/projects/4",
+    "items": {
+      "nodes": []
+    },
+    "repositories": {
+      "nodes": []
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4AGB_5zgAnv2E",
+          "name": "View 1",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PVT_kwDOBKDHhM4ACJfi",
+    "title": "Ms Boba's Crimes",
+    "shortDescription": null,
+    "readme": null,
+    "url": "https://github.com/orgs/BobaBoard/projects/3",
+    "items": {
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Completely rework the AuthContext on the frontend",
+            "body": "The AuthContext sucks. Some improvements:\n1) Move it in the contexts folder\n2) Use `react-query`\n3) Follow this guide to allow the frontend server(?) to know the logged in status: https://firebase.google.com/docs/auth/admin/manage-sessions\n4) Clean up the AuthContext interface"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Look over existing SQL queries and clean up crimes",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "We don't talk about the Tag component",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Layout.tsx should really be done with CSS grid",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "What even is this color scheme? Why are we not using CSS variables?",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Bundle sizes are bad and you (I) should feel bad",
+            "body": ""
+          }
+        }
+      ]
+    },
+    "repositories": {
+      "nodes": []
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4ACJfizgAQDko",
+          "name": "View 1",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PVT_kwDOBKDHhM4AA4qf",
+    "title": "Realms Release Roadmap",
+    "shortDescription": "Realms are the next step in BobaBoard's Road to Existence. They allow multiple communities, independently managed, to exist in the same server.",
+    "readme": "\"**Must have by**\" semantics:\n\n- **Pre-beta sprint:** Items to complete for the Fandom Coders Realm launch on 6/9.\n- **Launch:** Realms cannot launch without this feature.\n- **Soon after launch:** Feature can be (reasonably) worked around by manually querying the database or other means.\n- **Nice to have:** Good for governance, but not urgent.\n- - **Disturbs me personally:** What I'd like to be there at the Realms stage that isn't there yet.",
+    "url": "https://github.com/orgs/BobaBoard/projects/2",
+    "items": {
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85Na-zQ",
+            "title": "Gate posting permissions to Realm access",
+            "body": "Ensure only users who are members of a given realm can post, reply, and access member-locked boards\r\n\r\nWhat we need:\r\n\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/89\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/90\r\n- [x] https://github.com/essential-randomness/boba-frontend/issues/70",
+            "url": "https://github.com/BobaBoard/issues/issues/91",
+            "createdAt": "2022-07-08T11:53:24Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/91#issue-1298918608"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Thread locking",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Bobadex management",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Boards management",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Accept rules when joining",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Webhooks setup",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Image service with proper resizing",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Click on image to enlarge",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85FaRvW",
+            "title": "Server API refactoring (UUID + REST semantics)",
+            "body": "_Mostly_ done. I just need to review everything we have, and ensure that our endpoints do indeed (finally) match our High Standards of coding. There also might be a couple files still missing.",
+            "url": "https://github.com/BobaBoard/issues/issues/83",
+            "createdAt": "2022-03-09T22:36:54Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/83#issue-1164516310"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85SEeMI",
+            "title": "Allow calling mod attention to a thread",
+            "body": "## Problem description\r\nWe currently use an external google form for people to report issues. Before doing a broader release of Realms, we should consider enabling users to call mod attention to a specific thread, contribution or comment directly from the UI.\r\n\r\n## Proposed solution\r\n\r\nThe ideal way of doing this would be for the flow to exist 100% inside of BobaBoard. But given that we don't really have a \"personal notifications\" system and won't have it for a while, I'd propose tying this functionality to a webhook, which can then be used to trigger notifications/actions on any system that supports them (including Discord or any Pipedream script).\r\n\r\n### Flow\r\n\r\n1. User opens the contextual dropdown for a thread/contribution/or comment\r\n2. User clicks on the \"signal to mod\" option\r\n3. An explanatory popup is opened, asking the user for more details on the issue\r\n4. When the user confirms the input, a request is sent to a server endpoint (TBD)\r\n5. The server endpoint checks whether a webhook is associated with the (current realm? action?), sends the request, and communicates back to the user whether the webhook triggering was successful \r\n\r\n## Deliberations needed\r\n\r\n-  [ ] Decide how specific the API endpoint should be. Is it specific to reporting threads/comments/posts, a generic way to contact mods, or an even more generic trigger for webhook actions? *(note: this will influence most other decisions)*\r\n- [ ] We already have a `webhooks` SQL table, which supports `rest` and `discord` as triggers. Do we support both types of webhooks for this feature?\r\n- [ ] Currently `webhooks` are always associated with subscriptions. What do we associate this `webhook` with? Is it a generic \"contact-a-mod webhook\" setting for the realm?\r\n- [ ] What happens if no webhook is set for this feature? Does the option disappear?\r\n\r\n## Other notes\r\n\r\nWe should have all the components needed for this feature, but we have not assembled this type of non-post input on the frontend before. In an ideal world, we'd just reuse the regular editor and restrict the inputs to the ones that we're able to translate to a discord format.  Until the new editor lands though, we can simply use a `textarea` input and only allow unformatted text.",
+            "url": "https://github.com/BobaBoard/issues/issues/93",
+            "createdAt": "2022-09-18T00:20:46Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/93#issue-1376903944"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85LQR4m",
+            "title": "Ensure user gets error if they attempt to see a thread in the wrong board/realm",
+            "body": "Possible error states\n- [x] User tries entering a non-existing board in a Realm (server side)\n- [ ] User tries entering a non-existing board in a Realm (client side)\n- [ ] User tries entering a non-existing thread in a Realm (server side)\n- [ ] User tries entering a non-existing thread in a Realm (client side)\n- [ ] User tries entering an existing thread the wrong board of a Realm (server side)\n- [ ] User tries entering an existing thread the wrong board of a Realm (client side)\n- [ ] User tries entering an existing thread  in the wrong Realm (server side)\n- [ ] User tries entering an existing thread  in the wrong Realm (client side)",
+            "url": "https://github.com/BobaBoard/issues/issues/90",
+            "createdAt": "2022-06-07T00:01:52Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/90#issue-1262558758"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM848jUPy",
+            "title": "[Implementation Roadmap] Star Feed",
+            "body": "# Star Feed\r\n\r\nWe want users to be able to add threads to their Star Feed. After starring a thread, users can go to their Star Feed to see a list of their starred threads. The star feed also shows a notification whenever a starred thread is updated.\r\n\r\n> Side note: at some point, we'll likely have a \"Bookmark Feed\" that allows you to bookmark threads without getting a notification each time they update. More general \"custom feeds\" with various property settings and configurations are on the roadmap, but we aren't considering them at the moment to avoid over-engineering at a too early stage.\r\n\r\n## Backend Design\r\n\r\nAt the moment, this design only includes backend functionality. This is because Ms. Boba will implement the frontend, and she doesn't have time to write down unneeded details.\r\n\r\n### Functionality Breakdown\r\n1. User can add a thread to their Star Feed\r\n2. User can remove a thread from their Star Feed\r\n3. Users can fetch all the threads in their Star Feed, with pagination.\r\n4. Information on whether the thread is starred is returned with thread data.\r\n5. A notification is shown when a thread in the Star Feed updates\r\n    -  **Q:** Does the Star Feed notification also dim when you've visited the Star Feed _after_ the latest update (but have not cleared all notifications)? \r\n    **Ms. Boba's take:** Yes.\r\n    -  **Q:** Should we have a \"clear all notifications for threads in the star feed\" button? \r\n    **Ms. Boba's take:** Likely, but not right now. Let's see how people use it.\r\n\r\n### Database Changes\r\n\r\nA new table will need to be added to the Database. Since this is a built-in feeds (and since we're not going to over-engineer), we can skip making a `Feeds` table and simply make a `user_starred_threads` table. This should have the following columns:\r\n\r\n1. **thread_id**: the id of the starred thread.\r\n2. **user_id**: the id of the user that did the starring.\r\n\r\nThe same thread cannot be starred twice, so we should create a `UNIQUE INDEX` on the combination of these two columns.\r\n\r\n### New API endpoints\r\n\r\n#### 1. User can add a thread to their Star Feed \r\n**Endpoint:** `/threads/:thread_id/stars` with `POST` method\r\n**Return type:** see e.g. \"mute thread\"\r\n#### 2. User can remove a thread from their Star Feed\r\n**Endpoint:** `/threads/:thread_id/stars` with `DELETE` method\r\n**Return type:** see e.g. \"mute thread\"\r\n#### 3. Users can fetch all the threads in their Star Feed \r\n**Endpoint:** `/feeds/users/@me/stars` with `GET` method\r\n**Return type:** `FeedActivity` (see `/feeds/users/@me` endpoint)\r\n\r\nNote: all API endpoints require authentication.\r\n\r\n**Relevant documentation:**\r\n - [Adding API endpoints](https://bobadocs.netlify.app/docs/engineering/boba-server/API-endpoints)\r\n - [API guidelines](https://bobadocs.netlify.app/docs/engineering/boba-server/API-guidelines)\r\n\r\n### API endpoints updates\r\n\r\n#### 4. Information on whether the thread is starred is returned with thread data.\r\n- Anything that returns a data type of `ThreadSummary` or `Thread` will need to be updated. \r\n- Add a `starred` (`type: boolean`) property to `ThreadSummary` (in `/types/open-api/thread.yaml`)\r\n    -  Very much feel free to ask questions about this/point out sources of confusion cause it needs heavy documenting.\r\n\r\n#### 5. A notification is shown when a thread in the Star Feed updates\r\n\r\nFor this, we need to update the `/users/@me/notifications` endpoint. The response data type is defined directly in the JsonDoc. You might want it to be extracted to its own `NotificationsResponse` component  in `/types/open-api/notifications.yaml` (again, I need to document this, so feel free to ask when you get here).\r\n\r\nChanges: \r\n- (Optional) Extract `NotificationsResponse`.\r\n- Rename `BoardNotifications` OpenAPI data type to `ActivityNotifications` (of `FeedNotifications`).\r\n- Add a `feeds` property as a map from `feed id` to `ActivityNotifications` (the `feed id` of the Star Feed will be fixed, and likely a simple \"starred\").\r\n\r\n## Roadmap\r\n- [ ] User can add a thread to their Star Feed\r\n- [ ] User can remove a thread from their Star Feed\r\n- [ ] Users can fetch all the threads in their Star Feed, with pagination.\r\n- [ ] Information on whether the thread is starred is returned with thread data.\r\n- [ ] A notification is shown when a thread in the Star Feed updates",
+            "url": "https://github.com/BobaBoard/issues/issues/74",
+            "createdAt": "2021-10-05T05:05:43Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/74#issue-1015890930"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Figure out notifications across Realms",
+            "body": "Should we give the user any indication that they have notifications on another Realm when they're visiting their current one?"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85EwExw",
+            "title": "Invites flow for Realms",
+            "body": "MVP:\r\n- [ ] Admin can create invite for specific Realm (fixed expiration, single use, tied to email)\r\n- [ ] User **with pre-existing** account can accept invite and is added to the specific Realm.\r\n- [ ] User **without pre-existing account** can create an account and is added to the specific Realm\r\n- [ ] State of the invite (pending/declined/accepted) is visible in the Admin UI\r\n\r\nPotential future extensions:\r\n- Flexible expirations\r\n- Remove dependency on user email\r\n- Multi use link\r\n- Revoke invite\r\n- Enable gating invites to people in e.g. a specific Discord server \r\n\r\n---\r\n\r\nWhat we have:\r\n- [x] Admin can create invite via REST API\r\n- [x] User can signup to BobaBoard using invite (but are not assigned to specific Realm)\r\n\r\nWhat we need\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/43\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/44\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/45\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/46\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/48\r\n- [ ] https://github.com/essential-randomness/bobaboard-ui/issues/52\r\n- [x] https://github.com/essential-randomness/boba-frontend/issues/47\r\n- [x] https://github.com/essential-randomness/boba-frontend/issues/48\r\n- [x] https://github.com/essential-randomness/boba-frontend/issues/49",
+            "url": "https://github.com/BobaBoard/issues/issues/80",
+            "createdAt": "2022-02-27T23:53:17Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/80#issue-1153453168"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85Jrmnz",
+            "title": "Allow to divide boards in categories",
+            "body": "## Current status\r\nIn the sidemenu UI we have the ability to [display boards divided in categories](https://bobaboard-ui.netlify.app/?path=/story/side-menu-side-menu--side-menu-preview), but we don't have any such division on the server. \r\n![image](https://user-images.githubusercontent.com/47095486/168492747-1ca99417-be70-450e-a845-770fc369f62e.png)\r\n\r\n## Goal\r\nMake it possible to add this categorization in the database (with direct queries, rather than through the UI), and have it surfaced in this menu (as well as in future contexts, like the main-page board display redesign).\r\n\r\n## MVP\r\n- [ ] Add categories table in the database, and update db queries to return the information (@MsMadGirl)\r\n- [ ] Define extension to current REST API endpoints to return category information (@essential-randomness)\r\n- [ ] Surface category information in the sidemenu UI (@essential-randomness)\r\n\r\n## Stretch goal\r\n- [ ] Surface category information as part of main page redesign (see: #86)\r\n \r\n",
+            "url": "https://github.com/BobaBoard/issues/issues/87",
+            "createdAt": "2022-05-15T02:19:13Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/87#issue-1236167155"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85J3U7g",
+            "title": "Ensure user is only getting notifications for the realm they're in",
+            "body": "",
+            "url": "https://github.com/BobaBoard/issues/issues/89",
+            "createdAt": "2022-05-17T22:55:28Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/89#issue-1239240416"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85Jshpj",
+            "title": "Create guide to Boba & the beta",
+            "body": "We need to write a guide to BobaBoard for newcomers before we can launch the pre-beta. There's two main aspects to focus on:\r\n\r\n1) Guide to the website itself (tag system, thread display types, how anonymity and bobadex work...)\r\n2) Guide to the ore-beta (how to report bugs, known issues, what we're focusing on improving at this stage, what we know is a pain in the ass but don't plan to fix right now, how to get involved with volunteering, how to support the project)\r\n\r\nPreliminary stages we should get done ASAP:\r\n- [x] Decide the sections of the guide we want to have\n- [x] Decide which ones we absolutely must have\n- [x] Make sure we can cover the fundamental ones by 6/9",
+            "url": "https://github.com/BobaBoard/issues/issues/88",
+            "createdAt": "2022-05-15T21:10:34Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/88#issue-1236408931"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85JrllW",
+            "title": "Redesign the landing page for a Realm",
+            "body": "We converged to a \"blocks\" design for the Realm landing page. Note that this is similar to the sidebar sections design (and indeed the Text block will be shared across both).\r\n![image](https://user-images.githubusercontent.com/47095486/168453893-82baa23b-5c60-4329-a16d-b98da045cc22.png)\r\n\r\nSee: https://app.excalidraw.com/s/AWH4aJGGt8v/Ar8nCjAhwK\r\n\r\nMVP:\r\n- [x] Can display different content according to the current Realm\r\n- [ ] Can display a different \"last update\" thread according to the current Realm\r\n- [x] Can display a Rules block\r\n\r\nVery nice to have:\r\n- [ ] Boards display is divided by category (blocked on receiving categories from server)\r\n- [ ] Board display is cuter & allows hiding/muting/seeing details without having to enter the board itself\r\n- [x] Information about the blocks to display is returned by the server with finalized REST API design, even if hardcoded (as opposed to hardcoded on the client)\r\n\r\nStretch goals:\r\n- [ ] Update the current \"Post Quote\" display in the main page\r\n- [ ] \"Pinned links\" block\r\n- [x] Information about the blocks to display is returned from the DB\r\n\r\nNon-goal for 6/9:\r\n- [ ] Allowing frontend-side customization of the blocks\r\n\r\n",
+            "url": "https://github.com/BobaBoard/issues/issues/86",
+            "createdAt": "2022-05-15T01:52:39Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/86#issue-1236162902"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85JfsNo",
+            "title": "Figure out updates thread flow for fandom coder",
+            "body": "## Problem\r\nWe need to communicate updates to the BobaBoard software to the new Fandom Coders Realm\r\n\r\n## Current status\r\nThese updates are currently communicated to v0 through a thread, which allows users to comment on them. The latest update is then surfaced to the main page as part of a subscription to the `+release` category in the specific thread. Updates to the subscription also trigger Discord webhooks that update both the v0 and volunteers server.\r\n\r\n## Long-term solution\r\nWe have discussed potentially sharing the updates thread across Realms (or even the full !bobaland board). But this would require too many architectural decisions for the 6/9 launch, and is better left at another time.\r\n\r\n## Stopgap solution\r\nExpand our current thread-updates webhook solution to surface the contribution content upon update to the v0 board, then use Pipedream to crosspost that content to a pre-determined thread in fandom coders.\r\n\r\n- [x] Update subscription webhook to include full content\n- [ ] Create BobaBoard users with Fandom Coders-posting privileges and a specific role for updates. \r\n- [x] Ensure Pipedream can log in as the \"updates bot\" and post to Boba\n- [x] Write Pipedream code to do the automated crosspost.",
+            "url": "https://github.com/BobaBoard/issues/issues/85",
+            "createdAt": "2022-05-11T18:39:55Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/85#issue-1233044328"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Decide Realm structure",
+            "body": ""
+          }
+        }
+      ]
+    },
+    "repositories": {
+      "nodes": [
+        {
+          "name": "issues",
+          "url": "https://github.com/BobaBoard/issues"
+        }
+      ]
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4AA4qfzgAHmQk",
+          "name": "Roadmap",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  },
+  {
+    "id": "PVT_kwDOBKDHhM4AAwxe",
+    "title": "Roadmap to Seriousness",
+    "shortDescription": "Make BobaBoard a serious open source project that is friendly to volunteers.",
+    "readme": null,
+    "url": "https://github.com/orgs/BobaBoard/projects/1",
+    "items": {
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85DqXT9",
+            "title": "Make BobaBoard's READ MEs sparkle ✨",
+            "body": "- [ ] boba-editor: https://github.com/BobaBoard/boba-editor/issues/50\r\n- [ ] boba-components\r\n- [ ] boba-server\r\n- [ ] boba-frontend",
+            "url": "https://github.com/BobaBoard/issues/issues/76",
+            "createdAt": "2022-02-13T04:40:02Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/76#issue-1135179005"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85D1Loy",
+            "title": "Move BobaBoard's codebases to this org",
+            "body": "- [x] boba-editor\r\n- [x] boba-components\r\n  - [x] rename\r\n  - [x] move\r\n  - [x] update NPM name\n- [x] boba-frontend\n  - [x] check for data leaks\n  - [x] change visibility\n  - [x] rename\n  - [x] move\n- [x] boba-server\n  - [x] check for data leaks\n  - [x] change visibility\n  - [x] rename\n  - [x] move",
+            "url": "https://github.com/BobaBoard/issues/issues/77",
+            "createdAt": "2022-02-15T00:37:30Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/77#issue-1138014770"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85D1MWX",
+            "title": "Straighten up release process for editor/components",
+            "body": "- [ ] Look into using GitHub releases to automate deployment\n- [ ] Figure out whether to use GitHub actions (?) to automatically update boba-components upon editor release (Q: how do we lock version?)\n- [ ] Ensure that boba-components preview does indeed update with each release.\n- [ ] (stretch) Simplify frontend tests build in CI",
+            "url": "https://github.com/BobaBoard/issues/issues/78",
+            "createdAt": "2022-02-15T00:42:14Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/78#issue-1138017687"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Document tech contributor onboarding process",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Improve structure of volunteers' Discord server",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Create \"getting started\" knowledge base for testers",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Create \"getting started\" knowledge base for tech writers",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Update BobaFrontend installation instructions",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Update package names to be consistent with new codebase names",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Add instructions for WSL and Bonjour",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Define best practices in term of coding style and add linting checks on submission",
+            "body": ""
+          }
+        }
+      ]
+    },
+    "repositories": {
+      "nodes": [
+        {
+          "name": "issues",
+          "url": "https://github.com/BobaBoard/issues"
+        }
+      ]
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4AAwxezgAGltI",
+          "name": "View 1",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  }
+]
