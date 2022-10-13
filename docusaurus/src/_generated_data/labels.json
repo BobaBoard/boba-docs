@@ -2,8 +2,8 @@
   {
     "id": 2680332580,
     "node_id": "MDU6TGFiZWwyNjgwMzMyNTgw",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%98%81%EF%B8%8F%20Avarage",
-    "name": "☁️ Avarage",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%98%81%EF%B8%8F%20Average",
+    "name": "☁️ Average",
     "color": "cccccc",
     "default": false,
     "description": ""
@@ -349,6 +349,15 @@
     "color": "d899cf",
     "default": false,
     "description": ""
+  },
+  {
+    "id": 4565890309,
+    "node_id": "LA_kwDOE8ugM88AAAABECX1BQ",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%9B%A0%20HTML/CSS",
+    "name": "🛠 HTML/CSS",
+    "color": "d899cf",
+    "default": false,
+    "description": "Requires experience writing HTML/CSS"
   },
   {
     "id": 2680321612,
