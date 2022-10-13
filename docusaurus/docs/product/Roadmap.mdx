@@ -2,9 +2,15 @@
 sidebar_position: 1.1
 ---
 
-# Roadmap
+import ProjectCard, {
+  getProjectsByTag,
+} from "@site/src/components/github/ProjectCard";
 
-**Last Updated:** 9/18/2021
+export const Projects = (props) => {
+  return getProjectsByTag(props.tag).map((projectData) => (
+    <ProjectCard {...projectData} />
+  ));
+};
 
 ## Where we are
 
@@ -23,6 +29,8 @@ Ms. Boba is currently the only full-time staff member! However, [personal issues
 :::
 
 ### Current Focus Areas
+
+<Projects tag="" />
 
 - **[P0]:** Volunteer processes
   - **Answering the Q:** What makes for a _great_ volunteering environment?
