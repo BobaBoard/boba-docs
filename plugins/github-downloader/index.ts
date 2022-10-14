@@ -28,18 +28,19 @@ export default function githubDownloader(context, options) {
   return {
     name: "github-downloader",
     async loadContent() {
-      const labels = await octokit.paginate(
-        "GET /repos/{owner}/{repo}/labels",
-        {
-          owner: "BobaBoard",
-          repo: "issues",
-        },
-        (response) => response.data
-      );
+      try {
+        const labels = await octokit.paginate(
+          "GET /repos/{owner}/{repo}/labels",
+          {
+            owner: "BobaBoard",
+            repo: "issues",
+          },
+          (response) => response.data
+        );
 
-      let projects = null;
-      if (authenticatedGraphqlClient) {
-        const projectsResponse = await authenticatedGraphqlClient(`
+        let projects = null;
+        if (authenticatedGraphqlClient) {
+          const projectsResponse = await authenticatedGraphqlClient(`
         {
           organization(login: "bobaboard") {
             projectsV2(first: 20) {
@@ -94,21 +95,31 @@ export default function githubDownloader(context, options) {
             }
           }
         }`);
-        // @ts-expect-error
-        projects = projectsResponse.organization.projectsV2.nodes;
-      } else {
-        console.log(
-          "No authenticated GraphQL client found. Skipping projects update."
+          // @ts-expect-error
+          projects = projectsResponse.organization.projectsV2.nodes;
+        } else {
+          console.log(
+            "No authenticated GraphQL client found. Skipping projects update."
+          );
+        }
+        return { labels, projects };
+      } catch (e) {
+        console.log("Couldn't update GitHub data.");
+        return null;
+      }
+    },
+    async contentLoaded({ content }) {
+      if (content == null) {
+        console.log("No content found. Skipping update.");
+        return;
+      }
+      await mkdir(DATA_PATH, { recursive: true });
+      if (content.labels) {
+        writeFile(
+          path.resolve(DATA_PATH, "labels.json"),
+          JSON.stringify(content.labels, null, 2)
         );
       }
-      return { labels, projects };
-    },
-    async contentLoaded({ content, actions }) {
-      await mkdir(DATA_PATH, { recursive: true });
-      writeFile(
-        path.resolve(DATA_PATH, "labels.json"),
-        JSON.stringify(content.labels, null, 2)
-      );
       if (content.projects) {
         writeFile(
           path.resolve(DATA_PATH, "projects.json"),
