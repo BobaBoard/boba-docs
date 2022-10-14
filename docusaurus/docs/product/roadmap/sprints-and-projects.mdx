@@ -1,36 +1,42 @@
 ---
-sidebar_position: 1.1
+sidebar_position: 2
 ---
+
+# Sprints and projects
 
 import ProjectCard, {
   getProjectsByTag,
 } from "@site/src/components/github/ProjectCard";
 
 export const Projects = (props) => {
-  return getProjectsByTag(props.tag).map((projectData) => (
-    <ProjectCard {...projectData} />
+  return getProjectsByTag({ tag: props.tag }).map((projectData) => (
+    <ProjectCard key={projectData.id} {...projectData} />
   ));
 };
 
-## Where we are
+BobaBoard's work is currently organized in a series of thematic sprints (e.g. "beta realm launch", "ui polish").
 
-- Alpha community chugging along for 1+ years!
-  - Incidents have been rare, and resolved succesfully.
-  - Maintainance has been very hands-free (yet here we are).
-- Realms have been announced (see [website](https://www.bobaboard.com)).
-- Our [support channels](https://www.bobaboard.com/support-us) are bringing in some $$$ (or, more accurately, $).
-- We have a skeleton of a documentation website and a (very early) volunteering processes.
-  - While they've been sporadic, we've also had significant contributions made by volunteers.
+:::warning
 
-## Where we're going
-
-:::info Ms. Boba's Status
-Ms. Boba is currently the only full-time staff member! However, [personal issues](https://www.bobaboard.com/blog/development-logs-7/) have forced her to reframe how she approaches the project. Given the unstable situation, we're setting aside speed of development and growth in the short term, and focusing on strengthening the long-term maintainability and sustainability of the project (especially in the case of unforeseen circumstances).
+I have just thrown a bunch of stuff we had pending here. This page is being worked on right now, and it's not
+yet ready for review.
 :::
 
-### Current Focus Areas
+### Current sprints
 
-<Projects tag="" />
+We're currently working on a schedule of (~6-weeks long) thematic sprints. Here you can see what we're currently working on,
+what we have upcoming, and what we're doing later on.
+
+<Projects tag="sprint" />
+
+### Overarching projects
+
+These are big stuff we have ongoing, that don't fit neatly into a single sprint.
+
+<Projects tag="sprint" />
+<Projects tag="sprint" />
+
+---
 
 - **[P0]:** Volunteer processes
   - **Answering the Q:** What makes for a _great_ volunteering environment?
@@ -72,13 +78,3 @@ Ms. Boba is currently the only full-time staff member! However, [personal issues
     - Example: adding new types of permissions, adding new options on post/comments dropdowns, adding new features to the editor, adding more cosmetic customization on boards/realms/etc.
     - Expansion of these features should be possible with only a superficial understanding of the codebase. Assume most volunteers will want to build a quick feature and "go on their way".
       - Hypothesis: people are more likely to stick around for larger projects if they can get a "quick win" under their belt first.
-
-## More
-
-For the latest news on product roadmap/happenings, you can check the ["Keeping Up with Ms.Boba"](https://essentialrandomness.com/posts/tag/keeping-up-with-ms-boba/) tag on the insider newsletter.
-
-For questions, insights and objections, contact Ms. Boba.
-
-:::note
-TODO[Ms.Boba]: I really should have a "contact me" page.
-:::
