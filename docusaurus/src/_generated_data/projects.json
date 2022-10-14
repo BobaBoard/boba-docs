@@ -1,9 +1,123 @@
 [
   {
+    "id": "PVT_kwDOBKDHhM4AHLRP",
+    "title": "Realms beta(ish) sprint (🛬June 9th)",
+    "shortDescription": null,
+    "readme": null,
+    "url": "https://github.com/orgs/BobaBoard/projects/6",
+    "items": {
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85EwExw",
+            "title": "Invites flow for Realms",
+            "body": "MVP:\r\n- [ ] Admin can create invite for specific Realm (fixed expiration, single use, tied to email)\r\n- [ ] User **with pre-existing** account can accept invite and is added to the specific Realm.\r\n- [ ] User **without pre-existing account** can create an account and is added to the specific Realm\r\n- [ ] State of the invite (pending/declined/accepted) is visible in the Admin UI\r\n\r\nPotential future extensions:\r\n- Flexible expirations\r\n- Remove dependency on user email\r\n- Multi use link\r\n- Revoke invite\r\n- Enable gating invites to people in e.g. a specific Discord server \r\n\r\n---\r\n\r\nWhat we have:\r\n- [x] Admin can create invite via REST API\r\n- [x] User can signup to BobaBoard using invite (but are not assigned to specific Realm)\r\n\r\nWhat we need\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/43\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/44\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/45\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/46\r\n- [x] https://github.com/essential-randomness/bobaserver/issues/48\r\n- [ ] https://github.com/essential-randomness/bobaboard-ui/issues/52\r\n- [x] https://github.com/essential-randomness/boba-frontend/issues/47\r\n- [x] https://github.com/essential-randomness/boba-frontend/issues/48\r\n- [x] https://github.com/essential-randomness/boba-frontend/issues/49",
+            "url": "https://github.com/BobaBoard/issues/issues/80",
+            "createdAt": "2022-02-27T23:53:17Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/80#issue-1153453168"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85J3U7g",
+            "title": "Ensure user is only getting notifications for the realm they're in",
+            "body": "",
+            "url": "https://github.com/BobaBoard/issues/issues/89",
+            "createdAt": "2022-05-17T22:55:28Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/89#issue-1239240416"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85Jshpj",
+            "title": "Create guide to Boba & the beta",
+            "body": "We need to write a guide to BobaBoard for newcomers before we can launch the pre-beta. There's two main aspects to focus on:\r\n\r\n1) Guide to the website itself (tag system, thread display types, how anonymity and bobadex work...)\r\n2) Guide to the ore-beta (how to report bugs, known issues, what we're focusing on improving at this stage, what we know is a pain in the ass but don't plan to fix right now, how to get involved with volunteering, how to support the project)\r\n\r\nPreliminary stages we should get done ASAP:\r\n- [x] Decide the sections of the guide we want to have\n- [x] Decide which ones we absolutely must have\n- [x] Make sure we can cover the fundamental ones by 6/9",
+            "url": "https://github.com/BobaBoard/issues/issues/88",
+            "createdAt": "2022-05-15T21:10:34Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/88#issue-1236408931"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85JrllW",
+            "title": "Redesign the landing page for a Realm",
+            "body": "We converged to a \"blocks\" design for the Realm landing page. Note that this is similar to the sidebar sections design (and indeed the Text block will be shared across both).\r\n![image](https://user-images.githubusercontent.com/47095486/168453893-82baa23b-5c60-4329-a16d-b98da045cc22.png)\r\n\r\nSee: https://app.excalidraw.com/s/AWH4aJGGt8v/Ar8nCjAhwK\r\n\r\nMVP:\r\n- [x] Can display different content according to the current Realm\r\n- [ ] Can display a different \"last update\" thread according to the current Realm\r\n- [x] Can display a Rules block\r\n\r\nVery nice to have:\r\n- [ ] Boards display is divided by category (blocked on receiving categories from server)\r\n- [ ] Board display is cuter & allows hiding/muting/seeing details without having to enter the board itself\r\n- [x] Information about the blocks to display is returned by the server with finalized REST API design, even if hardcoded (as opposed to hardcoded on the client)\r\n\r\nStretch goals:\r\n- [ ] Update the current \"Post Quote\" display in the main page\r\n- [ ] \"Pinned links\" block\r\n- [x] Information about the blocks to display is returned from the DB\r\n\r\nNon-goal for 6/9:\r\n- [ ] Allowing frontend-side customization of the blocks\r\n\r\n",
+            "url": "https://github.com/BobaBoard/issues/issues/86",
+            "createdAt": "2022-05-15T01:52:39Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/86#issue-1236162902"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85JfsNo",
+            "title": "Figure out updates thread flow for fandom coder",
+            "body": "## Problem\r\nWe need to communicate updates to the BobaBoard software to the new Fandom Coders Realm\r\n\r\n## Current status\r\nThese updates are currently communicated to v0 through a thread, which allows users to comment on them. The latest update is then surfaced to the main page as part of a subscription to the `+release` category in the specific thread. Updates to the subscription also trigger Discord webhooks that update both the v0 and volunteers server.\r\n\r\n## Long-term solution\r\nWe have discussed potentially sharing the updates thread across Realms (or even the full !bobaland board). But this would require too many architectural decisions for the 6/9 launch, and is better left at another time.\r\n\r\n## Stopgap solution\r\nExpand our current thread-updates webhook solution to surface the contribution content upon update to the v0 board, then use Pipedream to crosspost that content to a pre-determined thread in fandom coders.\r\n\r\n- [x] Update subscription webhook to include full content\n- [ ] Create BobaBoard users with Fandom Coders-posting privileges and a specific role for updates. \r\n- [x] Ensure Pipedream can log in as the \"updates bot\" and post to Boba\n- [x] Write Pipedream code to do the automated crosspost.",
+            "url": "https://github.com/BobaBoard/issues/issues/85",
+            "createdAt": "2022-05-11T18:39:55Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/85#issue-1233044328"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85T97ke",
+            "title": "Decide Realm structure",
+            "body": "",
+            "url": "https://github.com/BobaBoard/issues/issues/109",
+            "createdAt": "2022-10-14T04:25:10Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/109#issue-1408743710"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85T97nT",
+            "title": "Figure out og:card, title and favicon for Realms",
+            "body": "",
+            "url": "https://github.com/BobaBoard/issues/issues/110",
+            "createdAt": "2022-10-14T04:25:26Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/110#issue-1408743891"
+          }
+        }
+      ]
+    },
+    "repositories": {
+      "nodes": []
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4AHLRPzgAu-CQ",
+          "name": "View 1",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  },
+  {
     "id": "PVT_kwDOBKDHhM4AGIzL",
-    "title": "The annoyances-be-gone sprint (🛫October 1st)",
-    "shortDescription": "To get back into the swing of things, we're fixing smaller annoyances of BobaBoard users and developers!",
-    "readme": "[October-ish 2022 sprint]\nTo get back into the swing of things, we're fixing smaller annoyances of BobaBoard users and developers!",
+    "title": "The annoyances-be-gone sprint (🛫October 1st 🛬November 14th)",
+    "shortDescription": "To get back into the swing of things after our forced break, we're fixing the small (and big) annoyances of BobaBoard's users and developers!",
+    "readme": "What it says on the tin.\n\n#sprint\n\n---MACHINE DATA---\n```\nstatus: active\ntype: sprint\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/5",
     "items": {
       "nodes": [
@@ -624,8 +738,12 @@
             "url": "https://github.com/essential-randomness"
           },
           "content": {
+            "id": "I_kwDOE8ugM85T97ke",
             "title": "Decide Realm structure",
-            "body": ""
+            "body": "",
+            "url": "https://github.com/BobaBoard/issues/issues/109",
+            "createdAt": "2022-10-14T04:25:10Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/109#issue-1408743710"
           }
         }
       ]
