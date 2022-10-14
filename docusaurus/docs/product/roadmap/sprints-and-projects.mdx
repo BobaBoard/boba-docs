@@ -14,7 +14,8 @@ export const Projects = (props) => {
   ));
 };
 
-BobaBoard's work is currently organized in a series of thematic sprints (e.g. "beta realm launch", "ui polish").
+BobaBoard's work is currently organized in a series of time-bound thematic sprints (e.g. "beta realm launch", "ui polish")
+during which volunteers collaborate
 
 :::warning
 
@@ -22,19 +23,31 @@ I have just thrown a bunch of stuff we had pending here. This page is being work
 yet ready for review.
 :::
 
+## Sprints
+
+We're currently working on a schedule of (~6-weeks long) thematic sprints. Sprints are usually meant to advance [overarching projects](#projects),
+and may share issues with them.
+
+Here you can see what we're currently working on, what we have upcoming, and what we're doing later on. The data is pulled directly from
+our GitHub repository, and is automatically updated.
+
 ### Current sprints
 
-We're currently working on a schedule of (~6-weeks long) thematic sprints. Here you can see what we're currently working on,
-what we have upcoming, and what we're doing later on.
+<Projects tags={["sprint", "active"]} />
 
-<Projects tag="sprint" />
+### Future sprints
 
-### Overarching projects
+<Projects tags={["sprint", "upcoming"]} />
+
+### Closed sprints
+
+<Projects tags={["sprint", "closed"]} />
+
+## Projects
 
 These are big stuff we have ongoing, that don't fit neatly into a single sprint.
 
-<Projects tag="sprint" />
-<Projects tag="sprint" />
+<Projects tags={["project"]} />
 
 ---
 
