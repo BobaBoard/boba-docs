@@ -2,7 +2,7 @@
   {
     "id": "PVT_kwDOBKDHhM4AHLRP",
     "title": "Realms beta(ish) sprint (🛬June 9th)",
-    "shortDescription": null,
+    "shortDescription": "Let's sprint to a new 6/9 by launching our first (second) Realm!",
     "readme": "---MACHINE DATA---\n```\ntype: sprint\nstatus: closed\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/6",
     "items": {
@@ -414,7 +414,7 @@
   {
     "id": "PVT_kwDOBKDHhM4AGB_5",
     "title": "Move to the New BobaEditor",
-    "shortDescription": null,
+    "shortDescription": "Our current iteration of boba-editor is based on QuillJS, which is currently unmaintained. We should move to our new in-progress version, based on TipTap.",
     "readme": "---MACHINE DATA---\n```\ntype: project\nstatus: active\npriority: 3\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/4",
     "items": {
@@ -769,7 +769,7 @@
   {
     "id": "PVT_kwDOBKDHhM4AAwxe",
     "title": "Roadmap to Seriousness",
-    "shortDescription": "Make BobaBoard a serious open source project that is friendly to volunteers.",
+    "shortDescription": "Make BobaBoard a serious open source project that is friendly to volunteers and follows all current best practices for open source software development.",
     "readme": "---MACHINE DATA---\n```\ntype: project\nstatus: active\npriority: 2\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/1",
     "items": {
