@@ -1,12 +1,25 @@
+import { Project, getProjectData } from "./ProjectsList";
+
 import React from "react";
-import projects from "../../_generated_data/projects.json";
+import cx from "classnames";
 import styles from "./Projects.module.css";
 
-const ProjectCard = ({ title, shortDescription, url }: typeof projects[0]) => {
+const ProjectCard = ({ id, title, shortDescription, url }: Project) => {
+  const projectData = getProjectData({ id });
   return (
-    <div className={styles.container}>
+    <div
+      className={cx(styles.container, {
+        [styles.closed]: projectData.status === "closed",
+      })}
+    >
       <h3>{title}</h3>
       <div>
+        {projectData.priority && (
+          <div>
+            Priority level {projectData.priority}{" "}
+            {"🔥".repeat(5 - projectData.priority)}
+          </div>
+        )}
         <div>{shortDescription}</div>
         <a href={url}>learn more</a>
       </div>

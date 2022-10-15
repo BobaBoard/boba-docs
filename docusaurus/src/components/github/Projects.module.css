@@ -48,3 +48,12 @@
   padding-inline: var(--padding-inline);
   padding-block: var(--padding-block);
 }
+
+.closed {
+  filter: grayscale();
+  transition: all 0.5s;
+}
+
+.container.closed:hover {
+  filter: none;
+}

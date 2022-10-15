@@ -28,8 +28,9 @@ export default function githubDownloader(context, options) {
   return {
     name: "github-downloader",
     async loadContent() {
+      let labels = null;
       try {
-        const labels = await octokit.paginate(
+        labels = await octokit.paginate(
           "GET /repos/{owner}/{repo}/labels",
           {
             owner: "BobaBoard",
@@ -37,10 +38,13 @@ export default function githubDownloader(context, options) {
           },
           (response) => response.data
         );
+      } catch (e) {
+        console.log("Couldn't update labels data.");
+      }
 
-        let projects = null;
-        if (authenticatedGraphqlClient) {
-          const projectsResponse = await authenticatedGraphqlClient(`
+      let projects = null;
+      if (authenticatedGraphqlClient) {
+        const projectsResponse = await authenticatedGraphqlClient(`
         {
           organization(login: "bobaboard") {
             projectsV2(first: 20) {
@@ -95,18 +99,14 @@ export default function githubDownloader(context, options) {
             }
           }
         }`);
-          // @ts-expect-error
-          projects = projectsResponse.organization.projectsV2.nodes;
-        } else {
-          console.log(
-            "No authenticated GraphQL client found. Skipping projects update."
-          );
-        }
-        return { labels, projects };
-      } catch (e) {
-        console.log("Couldn't update GitHub data.");
-        return null;
+        // @ts-expect-error
+        projects = projectsResponse.organization.projectsV2.nodes;
+      } else {
+        console.log(
+          "No authenticated GraphQL client found. Skipping projects update."
+        );
       }
+      return { labels, projects };
     },
     async contentLoaded({ content }) {
       if (content == null) {

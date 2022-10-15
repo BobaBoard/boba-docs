@@ -3,7 +3,7 @@
     "id": "PVT_kwDOBKDHhM4AHLRP",
     "title": "Realms beta(ish) sprint (🛬June 9th)",
     "shortDescription": null,
-    "readme": null,
+    "readme": "---MACHINE DATA---\n```\ntype: sprint\nstatus: closed\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/6",
     "items": {
       "nodes": [
@@ -415,7 +415,7 @@
     "id": "PVT_kwDOBKDHhM4AGB_5",
     "title": "Move to the New BobaEditor",
     "shortDescription": null,
-    "readme": null,
+    "readme": "---MACHINE DATA---\n```\ntype: project\nstatus: active\npriority: 3\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/4",
     "items": {
       "nodes": []
@@ -514,7 +514,7 @@
     "id": "PVT_kwDOBKDHhM4AA4qf",
     "title": "Realms Release Roadmap",
     "shortDescription": "Realms are the next step in BobaBoard's Road to Existence. They allow multiple communities, independently managed, to exist in the same server.",
-    "readme": "\"**Must have by**\" semantics:\n\n- **Pre-beta sprint:** Items to complete for the Fandom Coders Realm launch on 6/9.\n- **Launch:** Realms cannot launch without this feature.\n- **Soon after launch:** Feature can be (reasonably) worked around by manually querying the database or other means.\n- **Nice to have:** Good for governance, but not urgent.\n- - **Disturbs me personally:** What I'd like to be there at the Realms stage that isn't there yet.",
+    "readme": "\"**Must have by**\" semantics:\n\n- **Pre-beta sprint:** Items to complete for the Fandom Coders Realm launch on 6/9.\n- **Launch:** Realms cannot launch without this feature.\n- **Soon after launch:** Feature can be (reasonably) worked around by manually querying the database or other means.\n- **Nice to have:** Good for governance, but not urgent.\n- **Disturbs me personally:** What I'd like to be there at the Realms stage that isn't there yet.\n\n---MACHINE DATA---\n```\ntype: project\nstatus: active\npriority: 1\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/2",
     "items": {
       "nodes": [
@@ -770,7 +770,7 @@
     "id": "PVT_kwDOBKDHhM4AAwxe",
     "title": "Roadmap to Seriousness",
     "shortDescription": "Make BobaBoard a serious open source project that is friendly to volunteers.",
-    "readme": null,
+    "readme": "---MACHINE DATA---\n```\ntype: project\nstatus: active\npriority: 2\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/1",
     "items": {
       "nodes": [
