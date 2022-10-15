@@ -2,9 +2,12 @@
   --padding-block: 12px;
   --padding-inline: 16px;
   --border-radius: 10px;
-  border: 1px solid var(--ifm-color-gray-300);
+  border: 2px solid #ff9b9f25;
   border-radius: var(--border-radius);
   padding-top: 0px;
+}
+.container:not(.empty) {
+  background-color: #ff9b9f08;
 }
 
 .container h3 {
