@@ -117,7 +117,7 @@
     "id": "PVT_kwDOBKDHhM4AGIzL",
     "title": "The annoyances-be-gone sprint (🛫October 1st 🛬November 14th)",
     "shortDescription": "To get back into the swing of things after our forced break, we're fixing the small (and big) annoyances of BobaBoard's users and developers!",
-    "readme": "What it says on the tin.\n\n#sprint\n\n---MACHINE DATA---\n```\nstatus: active\ntype: sprint\n```",
+    "readme": "What it says on the tin.\n\n---MACHINE DATA---\n```\nstatus: active\ntype: sprint\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/5",
     "items": {
       "nodes": [

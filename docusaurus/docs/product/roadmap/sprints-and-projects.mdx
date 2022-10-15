@@ -4,90 +4,35 @@ sidebar_position: 2
 
 # Sprints and projects
 
-import ProjectCard, {
-  getProjectsByTag,
-} from "@site/src/components/github/ProjectCard";
+import ProjectsList from "@site/src/components/github/ProjectsList";
 
-export const Projects = (props) => {
-  return getProjectsByTag({ tag: props.tag }).map((projectData) => (
-    <ProjectCard key={projectData.id} {...projectData} />
-  ));
-};
-
-BobaBoard's work is currently organized in a series of time-bound thematic sprints (e.g. "beta realm launch", "ui polish")
-during which volunteers collaborate
-
-:::warning
-
-I have just thrown a bunch of stuff we had pending here. This page is being worked on right now, and it's not
-yet ready for review.
+:::note
+The following data is pulled [from our GitHub organization](https://github.com/orgs/BobaBoard), and is automatically updated.
 :::
 
 ## Sprints
 
-We're currently working on a schedule of (~6-weeks long) thematic sprints. Sprints are usually meant to advance [overarching projects](#projects),
-and may share issues with them.
+We're currently scheduling (~6-weeks long) thematic sprints, during which volunteers get together to work on a series of
+related bugs and features. Sprints are most often meant to advance [overarching projects](#projects), and may share issues with them.
 
-Here you can see what we're currently working on, what we have upcoming, and what we're doing later on. The data is pulled directly from
-our GitHub repository, and is automatically updated.
+If you're interested in officially joining a current or future sprint, contact Ms Boba.
 
 ### Current sprints
 
-<Projects tags={["sprint", "active"]} />
+<ProjectsList type="sprint" status="active" />
 
 ### Future sprints
 
-<Projects tags={["sprint", "upcoming"]} />
+<ProjectsList type="sprint" status="upcoming" />
 
 ### Closed sprints
 
-<Projects tags={["sprint", "closed"]} />
+<ProjectsList type="sprint" status="closed" />
 
 ## Projects
 
-These are big stuff we have ongoing, that don't fit neatly into a single sprint.
+Projects capture overarching goals of BobaBoard, and track both completed and missing items currently on their
+roadmap. Not all BobaBoard's features and issues are captured in a project, and projects might be worked on during
+[one or more sprints](#sprints) (or outside them as we see fit).
 
-<Projects tags={["project"]} />
-
----
-
-- **[P0]:** Volunteer processes
-  - **Answering the Q:** What makes for a _great_ volunteering environment?
-  - **Current WIPs:**
-    - Well-defined positions and expectations.
-    - This documentation.
-      - Note: documentation includes _both_ code and processes.
-    - Standardization of code practices (including cleaning up our REST API).
-- **[P0]:** Realms
-  - **Preliminary Phase (now)**:
-    - Update BobaBoard's REST API (and DB schema) to support multiple communities coexisting on the same instance (Galaxy).
-  - **Building Phase (soon)**:
-    - Add administration features needed for admins without access to underlying DB.
-      - TODO: define features needed -> figure out open UX questions -> figure out base components to build out -> figure out new REST API endpoints -> figure out frontend changes -> parallelize building/solving these as much as possible -> ??? -> profit.
-    - Figure out recruitement strategy/selection process.
-      - What do we want to learn?
-      - Which guarantees do we offer in terms of availability/reliability/ability to help solve conflicts or issues?
-        - Share detailed product roadmaps with stakeholders to help make informed choice.
-      - What is our responsibility? What is the Realm's admin responsibility?
-        - This phase of growth must really stress the _allies_ part of the whole deal.
-  - **Explorative Phase (god, i wish i knew)**:
-    - Discoverability
-    - "Feeds"
-    - Cross-realms identity management
-
-### Current "As We See Fit" Areas
-
-- **[P1]:** Performance
-  - "Quick" win areas: splitting JS bundle, client-side caching, image CDN (including appropriate sizing and availability in "smaller" formats), React Concurrent Mode (when available)
-    - Note: these are quick wins in the sense that they're likely to have a disproportionate impact on performance. They're not necessarily quick to implement.
-- **[P1]:** Error Reporting, Management and Avoidance
-  - We did add observability instrumentation, though it's currently limited to the backend.
-  - _Testing testing testing_
-    - Backend testing is the most mature of the bunch (includes integration with CircleCI)
-    - We _really_ need to work on frontend testing
-      - Adding tests is a good entry point for code volunteering, as it should be fairly easy to look at what other tests are doing and copy it, even without in-depth JavaScript proficiency.
-- **[P1]:** Code clean up and modularization
-  - Create self-contained, well-standardized entry points for contributions
-    - Example: adding new types of permissions, adding new options on post/comments dropdowns, adding new features to the editor, adding more cosmetic customization on boards/realms/etc.
-    - Expansion of these features should be possible with only a superficial understanding of the codebase. Assume most volunteers will want to build a quick feature and "go on their way".
-      - Hypothesis: people are more likely to stick around for larger projects if they can get a "quick win" under their belt first.
+<ProjectsList type="project" status="active" />

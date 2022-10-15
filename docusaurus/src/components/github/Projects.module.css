@@ -42,3 +42,9 @@
 .container + .container {
   margin-top: 20px;
 }
+
+.empty {
+  border: 1px dashed var(--ifm-color-gray-700);
+  padding-inline: var(--padding-inline);
+  padding-block: var(--padding-block);
+}
