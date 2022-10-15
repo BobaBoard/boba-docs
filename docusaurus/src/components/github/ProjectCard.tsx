@@ -12,16 +12,16 @@ const ProjectCard = ({ id, title, shortDescription, url }: Project) => {
         [styles.closed]: projectData.status === "closed",
       })}
     >
-      <h3>{title}</h3>
-      <div>
+      <h3>
+        <a href={url}>{title}</a>
         {projectData.priority && (
           <div>
-            Priority level {projectData.priority}{" "}
             {"🔥".repeat(5 - projectData.priority)}
           </div>
         )}
+      </h3>
+      <div>
         <div>{shortDescription}</div>
-        <a href={url}>learn more</a>
       </div>
     </div>
   );
