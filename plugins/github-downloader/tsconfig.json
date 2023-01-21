@@ -4,7 +4,8 @@
     "esModuleInterop": true,
     "jsx": "react-jsx",
     "resolveJsonModule": true,
-    "baseUrl": ".",
-    "outDir": "./dist"
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "strict": true
   }
 }
