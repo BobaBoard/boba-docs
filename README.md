@@ -1,33 +1,43 @@
-# Website
+# BobaDocs
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+A monorepo containing the documentation for [BobaBoard](https://www.bobaboard.com), as well as some docusaurus plugins
+we use to pull some of our data directly from our [GitHub organization](https://github.com/BobaBoard).
 
-## Installation
+The monorepo aspect is managed through [Turborepo](https://turbo.build/), with yarn workspaces handling each "sub-package".
 
-```console
+## How to run
+
+```
 yarn install
+yarn run start
 ```
 
-## Local Development
+## Workspaces
 
-```console
-yarn start
+We currently have 2 groups of workspaces:
+
+- **docusaurus/**: contains our docusaurus installation
+- **plugins/\***: contains a subfolder for each docusaurus plugin maintained as part of this monorepo
+
+## How to install packages in a specific workspace
+
+Choose your poison:
+
+### Install packages through yarn workspace (from `root`)
+
+This is similar to running `yarn add`, but slightly longer: `yarn workspace [workspacename-name] add`.
+
+For example, you can run: `yarn workspace docusaurus add @package/name`.
+
+Documentation is on the [Turborepo website](https://turbo.build/repo/docs/handbook/package-installation).
+
+### Install packages from within the workspace
+
+Run the regular `yarn add` command from within the workspace folder
+
+```
+cd workspace/folder
+yarn add @package/name`
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-## Build
-
-```console
-yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-```console
-GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Remeber to still run `yarn run start` from the root directory.
