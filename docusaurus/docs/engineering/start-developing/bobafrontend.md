@@ -12,13 +12,11 @@ This is a legacy page imported from our old documentation.
 TODO[Ms.Boba]: Update to new format.
 :::
 
-> This is currently a private repository. Contact the BobaLord for access!
-
 BobaBoard Frontend depends on BobaComponents.
 
-```
+```bash
 # First installation only:
-git clone https://github.com/essential-randomness/boba-frontend.git
+git clone https://github.com/BobaBoard/boba-frontend.git
 cd boba-frontend
 yarn install
 
@@ -42,7 +40,7 @@ You should follow these instructions if you don't intend to make changes to Boba
 
 The easiest way to install BobaEditor is to run `yarn install @bobaboard/ui-components`. This will install the latest "released" version of BobaComponents in your codebase.
 
-```
+```bash
 ### Run the "first installation instructions" above. ###
 
 yarn install @bobaboard/ui-components
@@ -54,9 +52,9 @@ yarn install @bobaboard/ui-components
 
 You should follow these instructions if you want to make parallel changes to BobaComponents as part of updating BobaFrontend.
 
-```
-### Run the "BobaComponents first installation instructions" above. ###
-### You should now be in the bobaboard-ui folder. ###
+```bash
+### Run the "BobaComponents first installation instructions" first. ###
+### You should now be in the boba-components folder. ###
 yarn run build
 yarn link
 cd ..
@@ -66,7 +64,7 @@ yarn link @bobaboard/ui-components
 ### You can now continue with the rest of the instructions. ###
 ```
 
-If you make changes to BobaComponents and want to see them reflected in BobaFrontend run `yarn run build` in the bobaboard-ui folder. BobaFrontend should pick up the changes when the website is reloaded.
+If you make changes to BobaComponents and want to see them reflected in BobaFrontend run `yarn run build` in the boba-frontend folder. BobaFrontend should pick up the changes when the website is reloaded.
 
 ### Running BobaFrontend
 
