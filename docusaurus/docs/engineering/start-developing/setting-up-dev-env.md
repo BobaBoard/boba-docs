@@ -51,7 +51,7 @@ You can also install NodeJS directly through the installer, but you won't be abl
 :::
 
 :::tip
-While NVM isn't natively supported on Windows, you can get access to it through [WSL](#windows-subsystem-for-linux-wsl-windows-only).
+While NVM isn't natively supported on Windows, you can get access to it through [WSL](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
 :::
 
 ### Yarn
