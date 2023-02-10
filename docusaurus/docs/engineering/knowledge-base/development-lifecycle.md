@@ -54,7 +54,7 @@ If you haven't been explicitly added to the repository you're contributing to, y
 
 3. Run the following commands from your terminal, in the root folder of the repo that you want to upload.
 
-```bash
+```bash   showLineNumbers
 git config --get remote.origin.url | xargs git remote add upstream
 git remote set-url origin YOUR_NEW_REMOTE_URL_HERE
 git fetch
@@ -71,7 +71,7 @@ At this point, you can proceed with the regular flow for a pull request.
 
 In the folder for your **forked** repository (see step 0) run
 
-```bash
+```bash   showLineNumbers
 git branch -f new-feature-name
 git checkout new-feature-name
 ```
@@ -84,7 +84,7 @@ Of course you can swap `new-feature-name` with whatever string represents what y
 
 Write the most revolutionary piece of code the world has ever seen. Once you're done, commit it (basically, create a checkpoint) to your repository by running:
 
-```bash
+```bash   showLineNumbers
 # Add all the modified files to the present commit
 git add .
 # Actually commit all the added files
@@ -123,7 +123,7 @@ When changes are requested, you will likely see comments on the pull request you
 
 When you go back to the codebase, it's likely that more changes will have been made on the original BobaBoard codebase your code is forked from. To update your git fork to reflect the changes of "upstream" (aka the original codebase) run the following command.
 
-```bash
+```bash   showLineNumbers
 git pull upstream master
 ```
 
@@ -141,7 +141,7 @@ This is the folder you're going to `clone` the BobaBoard repositories in.
 
 In your new folder, run the following commands to set up the new user:
 
-```bash
+```bash   showLineNumbers
 git config user.name YOUR_BOBABOARD_GITHUB_USERNAME_HERE
 git config user.email YOUR_BOBABOARD_GITHUB_EMAIL_HERE
 ```

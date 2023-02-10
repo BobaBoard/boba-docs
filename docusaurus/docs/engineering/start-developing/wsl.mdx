@@ -1,0 +1,300 @@
+---
+sidebar_position: 3
+---
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWindows, faLinux } from "@fortawesome/free-brands-svg-icons";
+
+# The BobaBoard Guide to Installing WSL
+
+## Guide Introduction
+
+This guide is designed to gather the best resources on setting up WSL to make it
+as painless as possible, including explicit instructions for what to install and
+where to install it. If you've never used WSL and don't have a current Linux
+distro set-up we recommend you follow the guide in order.
+
+If you currently have WSL feel free to skip around as needed. We recommend
+running WSL2 with an Ubuntu distro. You can upgrade to WSL2 by following the
+[instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2).
+If you're using another Linux distro you can add a second distro by
+[following these instructions](https://learn.microsoft.com/en-us/windows/wsl/install#change-the-default-linux-distribution-installed).
+
+:::note
+
+The guide uses the Windows logo <FontAwesomeIcon icon={faWindows} /> to indicate
+items that should be installed directly to Windows, while the Linux logo
+<FontAwesomeIcon icon={faLinux} /> indicates items that should be installed into
+your chosen Linux distro (Ubuntu).
+
+:::
+
+## What Is WSL?
+
+Windows Subsystem for Linux (WSL) lets you run a Linux environment directly on
+Windows, unmodified, without a traditional virtual machine or dualboot setup.
+Simply put, WSL creates a Linux subdirectory on your system that you can use to
+develop software just like you could if you were running Linux.
+
+## WSL Set-up
+
+:::tip
+
+Before you start, we recommend that you install the latest version of Windows
+Powershell and Windows Terminal. Windows Terminal automatically integrates with
+WSL and offers a command prompt in your Linux distro. The most recent version
+should be Powershell 7.x. Follow
+[these instructions](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
+to install the most recent version. If you also have Powershell 5 installed, we
+recommend that you uninstall it, as Windows occasionally gets confused
+concerning your default terminal.
+
+After that's complete,
+[install Terminal](https://learn.microsoft.com/en-us/windows/terminal/install)
+and follow the instructions to set Powershell 7 as your default profile.
+
+:::
+
+1. Complete the instructions in the
+   [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
+   section.
+
+2. Set-up your Linux username and password by
+   [following these instructions](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password).
+
+3. Follow the
+   [instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2)
+   to upgrade from WSL to WSL2.
+
+4. [Upgrade and update Ubuntu packages](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#update-and-upgrade-packages).
+
+**Congrats! You've now installed WSL2 with an Ubuntu distro!**
+
+:::tip
+
+You might need to restart so that Windows fully recognizes your WSL. If at any
+point, your WSL behaves strangely by not recognizing that
+languages/packages/programs have been installed, a restart usually fixes that.
+
+:::
+
+## Installing BobaBoard Pre-requisites
+
+:::caution
+
+**DO NOT** skip over installing a pre-requisite listed below just because it is
+installed on your Windows side. WSL will not be able to access things like git,
+NodeJS, etc, if they are only installed on Windows. Please follow the
+instructions below _carefully_.
+
+:::
+
+### <FontAwesomeIcon icon={faLinux} /> Installing Git
+
+1. Open your Linux distro (Ubuntu) from the Start Menu, or if you're already in
+   Windows Terminal, open a Linux (Ubuntu) profile shell.
+
+2. If you updated your Ubuntu packages by following the install instructions
+   above, you can skip this step. Otherwise run:
+
+   ```bash   showLineNumbers
+   sudo apt-get update
+   ```
+
+3. Once your updates are complete, install Git by running:
+
+   ```bash   showLineNumbers
+   sudo apt-get install git-all
+   ```
+
+4. Verify the install with:
+   ```bash   showLineNumbers
+   git version
+   ```
+
+### <FontAwesomeIcon icon={faLinux} /> Installing nvm and NodeJS
+
+We highly recommend installing nvm (node version manager), which allows you to
+install and use multiple versions of NodeJS in various environments without
+issue.
+
+1. In your Linux shell, run the below command to install nvm.
+
+   ```bash   showLineNumbers
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+   ```
+
+2. Use the below command to install the latest version of Node 16, which is
+   required by the BobaBoard codebase.
+
+   ```bash   showLineNumbers
+   nvm install 16.19.0
+   ```
+
+:::tip
+
+If your terminal doesn't recognize the nvm command, try closing your terminal
+and reopening it. If that fails, you may need to restart Windows.
+
+:::
+
+### <FontAwesomeIcon icon={faLinux} /> Installing yarn
+
+Yarn is a package installer and manager for projects. Now that you have NodeJS
+you can install yarn using npm.
+
+1. In your Linux shell, run:
+
+   ```bash   showLineNumbers
+   npm install --global yarn
+   ```
+
+### <FontAwesomeIcon icon={faWindows} /> Installing Docker
+
+Docker runs programs in containers and is used by BobaBackend to run the
+database on your local server. Docker should be installed on **Windows** and not
+on WSL. Please be sure to install via the link below, to ensure you are
+installing the correct version of Docker.
+
+1. Follow the Windows instructions for installing Docker for WSL
+   [here](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#install-docker-desktop).
+
+**Congrats! You've installed all the BobaBoard pre-requisites!**
+
+## Prepping to Set-up the BobaBoard Environment
+
+Before you begin to set-up the local BobaBoard environment, you'll need to
+create a folder on your WSL to use for your repos.
+
+:::caution
+
+WSL does not like it if you create or delete folders using file explorer. The
+majority of your navigation through the WSL file tree will be done via the
+terminal. For help with useful terminal commands see the
+[Quick Command Line Guide](#quick-command-line-guide) below.
+
+:::
+
+1. In your Linux shell type:
+
+   ```bash   showLineNumbers
+   mkdir [repo_folder]
+   ```
+
+   where `[repo_folder]` is replaced with the name of your folder. You can
+   choose whatever you'd like. For example, to name your folder BobaRepos you'd
+   type:
+
+   ```bash   showLineNumbers
+   mkdir BobaRepos
+   ```
+
+2. To move to your new folder type:
+
+   ```bash   showLineNumbers
+   cd [repo_folder]
+   ```
+
+Now that you've navigated into your directory, you're ready to start cloning the
+various BobaBoard repos. See
+[Install BobaFrontend](/docs/engineering/start-developing/bobafrontend),
+[Install BobaBackend](/docs/engineering/start-developing/boba-backend), or
+[Install BobaComponents](/docs/engineering/start-developing/boba-components) for
+more details.
+
+:::note
+
+If you're unsure which repos you should install, feel free to reach out to Ms.
+Boba or another volunteer in the volunteer server for more guidance!
+
+:::
+
+## Other WSL Tools
+
+The list of tools and extensions below are not required, but will make your life
+_much easier_ or more fun when it comes to working with the BobaBoard codebase
+and WSL.
+
+- [Visual Studio Code](https://code.visualstudio.com/)<br />If you already have
+  a code editor you use, you're more than welcome to continue using it. However,
+  if you're not married to another code editor, we highly recommend VS Code. It
+  has robust Github support, a vast extension library, and works well with WSL
+  by recognizing projects which are stored in your WSL directory and
+  automatically using a Linux terminal inside the editor (if you use the
+  extension below).
+
+  :::info
+
+  When prompted to **Select Additional Tasks** during installation, be sure to
+  check the **Add to PATH** option so you can easily open a folder in WSL using
+  the `code` command.
+
+  :::
+
+  :::tip
+
+  If you have extensions you like to use in Windows which you would like to use
+  in WSL, navigate to the Extensions panel, and click the cloud download next to
+  the `WSL: Ubuntu - Installed` title. This will re-install all of your local
+  extensions to WSL.
+
+  :::
+
+- [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)<br />Add
+  the Remote Development extension to open any folder in a container, on a
+  remote machine, or in the Windows Subsystem for Linux (WSL) and take advantage
+  of VS Code's full feature set.
+
+- [Project Manager](https://marketplace.visualstudio.com/items?itemName=alefragnani.project-manager)<br />Once
+  you open a folder in WSL, you can save it as a project favorite and this
+  extension will remember that it's a WSL project and automatically open it
+  correctly. In addition, it allows you to switch between coding projects very
+  easily without having to use a file explorer or terminal to do so!
+
+- [Tutorial: Set up a custom prompt for PowerShell or WSL with Oh My Posh](https://learn.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup)<br />Want
+  a fancy terminal with a custom font, pretty background, or easier to read file
+  path? Follow these instructions to jazz it up a bit.
+
+- Check out our other
+  [Recommened Tools](/docs/engineering/knowledge-base/recommended-tools#recommended-vscode-extensions)
+  for more extension recommendations!
+
+## Quick Command Line Guide
+
+- `cd [folder_name]` or `cd [path]` **c**hanges **d**irectory to the folder or
+  path provided. (Note: For folders with spaces you should enclose the folder
+  name with single or double quotes.)
+
+  - `cd ..` moves you up one level in the directory.
+  - `cd /` moves you to the root directory.
+  - `cd ~` moves you to your home directory. (Note: in WSL, this is your user
+    folder.)
+
+- `code .` if you've installed VS Code, this will open your current folder in VS Code.
+
+- `ls` lists the files and folders in your current directory.
+
+  - For an exhaustive list of possible flags and options for `ls` see this
+    [freeCodeCamp Guide](https://www.freecodecamp.org/news/the-linux-ls-command-how-to-list-files-in-a-directory-with-options/).
+
+- `pwd` prints the current working directory (the path where your terminal is
+  currently working). Simply put, this is a "you are here" sign to help you find
+  your current location.
+
+- `mkdir [folder_name]` creates a folder with the name provided
+
+- `rm` removes the provided file or folder. Please see the options below for
+  more details!
+
+  :::warning
+
+  Deleting files and folders from WSL **DOES NOT** place them into the recycle
+  bin. They are permanently deleted when you run the below commands. Please be
+  certain you want to delete before you do so!
+
+  :::
+
+  - `rm [file.ext]` deletes the provided file.
+  - `rm -d [folder_name]` deletes an empty folder.
+  - `rm -r [folder_name]` also called a recursive delete, this command deletes
+    every file and subdirectory within the provided folder.
