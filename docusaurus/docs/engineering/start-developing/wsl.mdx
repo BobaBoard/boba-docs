@@ -4,6 +4,8 @@ sidebar_position: 3
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWindows, faLinux } from "@fortawesome/free-brands-svg-icons";
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 # The BobaBoard Guide to Installing WSL
 
@@ -14,20 +16,30 @@ as painless as possible, including explicit instructions for what to install and
 where to install it. If you've never used WSL and don't have a current Linux
 distro set-up we recommend you follow the guide in order.
 
+In some places we have chosen to link to other installation guides which provide
+additional information or contextm or to ensure you have the most up-to-date
+installs. Linking to an external guide is not an indication of complexity! We've
+included an estimated reading/working time (not including download and install
+times) to give you an idea of how long each external source is; reading/working
+estimates appear as [<FontAwesomeIcon icon={faClock} /> time].
+
 If you currently have WSL feel free to skip around as needed. We recommend
 running WSL2 with an Ubuntu distro. You can upgrade to WSL2 by following the
 [instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2).
-If you're using another Linux distro you can add a second distro by
-[following these instructions](https://learn.microsoft.com/en-us/windows/wsl/install#change-the-default-linux-distribution-installed).
+[<FontAwesomeIcon icon={faClock} /> 1 min] If you're using another Linux distro
+you can add a second distro by
+[following these instructions](https://learn.microsoft.com/en-us/windows/wsl/install#change-the-default-linux-distribution-installed)
+[<FontAwesomeIcon icon={faClock} /> 1 min].
 
+<!-- prettier-ignore-start -->
 :::note
 
 The guide uses the Windows logo <FontAwesomeIcon icon={faWindows} /> to indicate
-items that should be installed directly to Windows, while the Linux logo
-<FontAwesomeIcon icon={faLinux} /> indicates items that should be installed
-into your chosen Linux distro (Ubuntu).
+items that should be installed directly to Windows, while the Linux logo <FontAwesomeIcon icon={faLinux} />
+indicates items that should be installed xdddsinto your chosen Linux distro (Ubuntu).
 
 :::
+<!-- prettier-ignore-end -->
 
 ## What Is WSL?
 
@@ -36,47 +48,101 @@ Windows, unmodified, without a traditional virtual machine or dualboot setup.
 Simply put, WSL creates a Linux subdirectory on your system that you can use to
 develop software just like you could if you were running Linux.
 
-## WSL Set-up
-
-:::tip
+## <FontAwesomeIcon icon={faWindows} /> Installing Windows Terminal (Optional, but Recommended)
 
 Before you start, we recommend that you install the latest version of Windows
 Powershell and Windows Terminal. Windows Terminal automatically integrates with
 WSL and offers a command prompt in your Linux distro. The most recent version
-should be Powershell 7.x. Follow
-[these instructions](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3)
-to install the most recent version. If you also have Powershell 5 installed, we
-recommend that you uninstall it, as Windows occasionally gets confused
-concerning your default terminal.
+should be Powershell 7.
+
+The easiest way to check your Powershell version is that Powershell 7 is labeled
+in Windows 10/11 as "Powershell 7" and has a
+[black icon with a white command prompt](https://commons.wikimedia.org/wiki/File:PowerShell_Core_6.0_icon.png)
+on it. Powershell 5 is simply labeled "Powershell" and has a
+[blue icon with a white command prompt](https://commons.wikimedia.org/wiki/File:PowerShell_5.0_icon.png)
+on it.
+
+To further confirm your Powershell version, open Powershell and run:
+
+```bash showLineNumber
+$PSVersionTable
+```
+
+Your output should look something like the below screenshot with your version
+listed near at top of the list.
+
+![terminal screenshot](/img/engineering/wsl/powershell_version.png)
+
+Follow
+[these instructions](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
+[<FontAwesomeIcon icon={faClock} /> 2 min] to install the most recent version of
+Powershell. Note that installing Powershell 7 _will not_ remove your Powershell
+5 install. If you also have Powershell 5 installed, we recommend that you
+manually uninstall it, as Windows occasionally gets confused concerning your
+default terminal.
 
 After that's complete,
 [install Terminal](https://learn.microsoft.com/en-us/windows/terminal/install)
-and follow the instructions to set Powershell 7 as your default profile.
+[<FontAwesomeIcon icon={faClock} /> 4 min] and follow the instructions to set
+Powershell 7 as your default profile.
 
-:::
+## <FontAwesomeIcon icon={faWindows} /> WSL Set-up
 
 1. Complete the instructions in the
    [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
-   section.
+   [<FontAwesomeIcon icon={faClock} /> 1 min] section.
 
 2. Set-up your Linux username and password by
-   [following these instructions](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password).
+   [following these instructions](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password)
+   [<FontAwesomeIcon icon={faClock} /> 2 min].
 
 3. Follow the
    [instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2)
-   to upgrade from WSL to WSL2.
+   [<FontAwesomeIcon icon={faClock} /> 1 min] to verify you've installd WSL2 or
+   to upgrade from WSL to WSL2, if needed.
 
-4. [Upgrade and update Ubuntu packages](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#update-and-upgrade-packages).
+4. [Upgrade and update Ubuntu packages](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#update-and-upgrade-packages)
+   [<FontAwesomeIcon icon={faClock} /> 1 min].
 
 **Congrats! You've now installed WSL2 with an Ubuntu distro!**
 
 :::tip
 
 You might need to restart so that Windows fully recognizes your WSL. If at any
-point, your WSL behaves strangely by not recognizing that
+point your WSL behaves strangely by not recognizing that
 languages/packages/programs have been installed, a restart usually fixes that.
 
 :::
+
+## Working in WSL
+
+Your primary way of working in and accessing WSL will be via your terminal.
+There are two ways to access your WSL terminal:
+
+1. From your Windows Start Menu open the "Ubuntu on Windows" program. If you've
+   installed another Linux distro, this may be called something different (i.e.
+   "Debian on Windows").
+
+<!-- prettier-ignore-start -->
+
+2. If you have Windows Terminal open already, click the <FontAwesomeIcon icon={faChevronDown} />
+to access the dropdown menu and display the profiles you can open. Then
+select Ubuntu or your Linux distro from the list.
+
+<!-- prettier-ignore-end -->
+
+<img
+	src="/img/engineering/wsl/powershell_profiles.png"
+	style={{ width: "45%", paddingRight: 5 }}
+/>
+<img
+	src="/img/engineering/wsl/powershell_wsl_tab.png"
+	style={{ width: "45%" }}
+/>
+
+Both of these methods open a WSL terminal with your chosen distro for you to
+use. The rest of this guide will refer to this terminal as "Linux terminal" or
+"Linux shell".
 
 ## Installing BobaBoard Pre-requisites
 
@@ -91,26 +157,33 @@ instructions below _carefully_.
 
 ### <FontAwesomeIcon icon={faLinux} /> Installing Git
 
-1. Open your Linux distro (Ubuntu) from the Start Menu, or if you're already in
-   Windows Terminal, open a Linux (Ubuntu) profile shell.
+Git is a versioning control system which tracks changes across codebases as
+programmers work and allows us to coordinate our work. Understanding the details
+of how and why we use git isn't super important. Just know that you need git and
+a Github account in order to develop with Boba!
 
-2. If you updated your Ubuntu packages by following the install instructions
-   above, you can skip this step. Otherwise run:
+1. If you updated your Ubuntu packages by following the install instructions
+   above, you can skip this step. Otherwise, from your Linux terminal run:
 
    ```bash   showLineNumbers
    sudo apt-get update
    ```
 
-3. Once your updates are complete, install Git by running:
+2. Once your updates are complete, install Git by running:
 
    ```bash   showLineNumbers
    sudo apt-get install git-all
    ```
 
-4. Verify the install with:
+3. Verify the install with:
+
    ```bash   showLineNumbers
    git version
    ```
+
+   Your terminal should reply with a version number if git was properly
+   installed. A specific version of git is not required; you can use the most
+   recent version.
 
 ### <FontAwesomeIcon icon={faLinux} /> Installing nvm and NodeJS
 
@@ -124,12 +197,14 @@ issue.
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
    ```
 
-2. Use the below command to install the latest version of Node 16, which is
-   required by the BobaBoard codebase.
+2. Verify your nvm insall by running:
 
-   ```bash   showLineNumbers
-   nvm install 16.19.0
+   ```bash showLineNumber
+   command -v nvm
    ```
+
+   If your install is successful, your terminal should retun `nvm` as the
+   response.
 
 :::tip
 
@@ -138,6 +213,32 @@ and reopening it. If that fails, you may need to restart Windows.
 
 :::
 
+3. Which version of Node is needed depends primarily on what you are going to be
+   working on. If you are developing for the main BobaBoard codebases
+   (BobaFrontend, BobaComponents, etc), use the below command to install
+   NodeJS 16.
+
+   ```bash   showLineNumbers
+   nvm install 16.19.0
+   ```
+
+   If you are going to be working on boba-docs (this documentation), you should
+   install the most recent version of NodeJS. Note that with nvm you can install
+   both with no issues! Install the most recent version of NodeJs by running:
+
+   ```bash showLineNumber
+   nvm install node
+   ```
+
+   To verify which versions of NodeJS you have installed run:
+
+   ```bash showLineNumber
+   nvm ls
+   ```
+
+   Your terminal will provide a list of the versions of NodeJS currently
+   installed on WSL.
+
 ### <FontAwesomeIcon icon={faLinux} /> Installing yarn
 
 Yarn is a package installer and manager for projects. Now that you have NodeJS
@@ -145,19 +246,42 @@ you can install yarn using npm.
 
 1. In your Linux shell, run:
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    npm install --global yarn
    ```
+
+2. To verify your yarn install:
+
+   ```bash showLineNumbers
+   yarn install
+   ```
+
+Your terminal will reply with a version number. Like git, you can use the most
+up-to-date version of yarn with no issue.
 
 ### <FontAwesomeIcon icon={faWindows} /> Installing Docker
 
 Docker runs programs in containers and is used by BobaBackend to run the
-database on your local server. Docker should be installed on **Windows** and not
-on WSL. Please be sure to install via the link below, to ensure you are
-installing the correct version of Docker.
+database on your local server. From the Docker resources:
+
+> A container is a standard unit of software that packages up code and all its
+> dependencies so the application runs quickly and reliably from one computing
+> environment to another.
+
+If you're interested on more information on containers, please see
+[What is a container?](https://www.docker.com/resources/what-container/).
+
+**You should install this if you plan working on BobaBackend, BobaFrontend, etc.
+It is not needed for boba-docs! If you're confused about whether you need
+Docker, please reach out in the Volunteer Server!**
+
+Docker should be installed on **Windows** and not on WSL. Please be sure to
+install via the link below, to ensure you are installing the correct version of
+Docker.
 
 1. Follow the Windows instructions for installing Docker for WSL
-   [here](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#install-docker-desktop).
+   [here](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#install-docker-desktop)
+   [<FontAwesomeIcon icon={faClock} /> 2 min].
 
 **Congrats! You've installed all the BobaBoard pre-requisites!**
 
@@ -234,7 +358,7 @@ and WSL.
   :::tip
 
   If you have extensions you like to use in Windows which you would like to use
-  in WSL, navigate to the Extensions panel, and click the cloud download next to
+  in WSL, navigate to the Extensions panel and click the cloud download next to
   the `WSL: Ubuntu - Installed` title. This will re-install all of your local
   extensions to WSL.
 
@@ -263,10 +387,13 @@ and WSL.
 
 :::note
 
-These commands are the ones you should use in your Linux/Ubuntu terminal in WSL.
-In general, when researching what commands to use or how to install things for
-WSL, you should be referring to Linux instructions. If you're ever unsure, feel
-free to ask in the Volunteer Server and we'll be happy to help!
+These commands are the ones you should use in your Linux terminal in WSL. In
+general, when researching what commands to use or how to install things for WSL,
+you should be referring to Linux instructions. If you're ever unsure, feel free
+to ask in the Volunteer Server and we'll be happy to help!
+
+Please keep in mind that these may not be the same as the commands which should
+be used in a Windows terminal!
 
 :::
 
@@ -286,12 +413,16 @@ free to ask in the Volunteer Server and we'll be happy to help!
 
   - For an exhaustive list of possible flags and options for `ls` see this
     [freeCodeCamp Guide](https://www.freecodecamp.org/news/the-linux-ls-command-how-to-list-files-in-a-directory-with-options/).
+    You likely will not need the vast majority of these, but we did want you to
+    know there are options!
 
 - `pwd` prints the current working directory (the path where your terminal is
-  currently working). Simply put, this is a "you are here" sign to help you find
-  your current location.
+  currently working). This is a "you are here" sign to help you find your
+  current location.
 
 - `mkdir [folder_name]` creates a folder with the name provided
+
+- `mv [oldname] [newname]` renames the folder with `[oldname]` to `[newname]`
 
 - `rm` removes the provided file or folder. Please see the options below for
   more details!
