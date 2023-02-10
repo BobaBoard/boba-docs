@@ -2,7 +2,7 @@
 sidebar_position: 7
 ---
 
-# BobaEditor
+# Install BobaEditor
 
 \[[code](https://github.com/BobaBoard/boba-editor), [demo](https://bobaeditor.netlify.app/?path=/story/editor-preview--simple-editor)]
 
