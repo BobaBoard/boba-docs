@@ -7,7 +7,7 @@ sidebar_position: 2
 This is an overview of the programs you'll need to install before developing for BobaBoard.
 
 :::tip
-**Developing for BobaBoard requires use of the command line.** While this might seem scary, the amount of commands needed is minimal, and they can often be run without a deep understanding of them.
+**Developing for BobaBoard requires use of the command line.** While this might seem scary, the amount of commands needed is minimal and they can often be run without a deep understanding of them.
 
 If you're intimidated, contact Ms. Boba for help! Also consider editing this page to make it less scary for newcomers.
 :::
@@ -28,13 +28,13 @@ If you're intimidated, contact Ms. Boba for help! Also consider editing this pag
 This is only for Window users. It's optional, but **highly recommended**. Without this, it might be harder to help you in case of errors.
 :::
 
-**[WSL](https://docs.microsoft.com/en-us/windows/wsl/install) allows you to run Linux commands on Windows**, and will save you many, many headaches. If asked, when installing a distribution, Ubuntu is a perfectly fine choice. The reccommended version of WSL is the latest (WSL2).
+**[WSL](https://docs.microsoft.com/en-us/windows/wsl/install) allows you to run Linux commands on Windows**, and will save you many, many headaches. We recommend using the latest version of WSL (WSL2). The default Ubuntu distribution is the most commonly used, but if you're more familiar with another distribution, you're welcome to use it.
 
 :::caution
-If you need Docker (see below) and have Windows 10 Home Edition, you must install WSL.
+If you need Docker (see below) and have Windows 10 Home Edition, you **must** install WSL.
 :::
 
-If you have WSL installed, you have the option of using either WSL's command prompt (bash) or a Windows command prompt (cmd or powershell) when running the commands in this document. Either will work, but whichever you choose, use the same command prompt consistently for all commands. This will prevent annoying issues due to differences in how yarn works on Windows vs Linux. **If you are undecided, go with bash.**
+For a step-by-step guide to setting up WSL, installing the below pre-requisites, and getting set-up to develop for BobaBoard using WSL see [The BobaBoard Guide to Setting up WSL](/docs/engineering/start-developing/wsl)
 
 ### Git/GitHub
 

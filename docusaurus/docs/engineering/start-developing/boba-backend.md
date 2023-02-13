@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Install BobaBackend
 
 :::warning
@@ -16,7 +20,7 @@ The first time you work on BobaBackend you need to copy the project to the local
 
 In a terminal, run the following commands:
 
-```bash
+```bash   showLineNumbers
 # Clone the codebase from github
 git clone https://github.com/BobaBoard/boba-backend.git
 # Enter the codebase directory

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 6
 ---
 
 # Install BobaComponents
@@ -12,7 +12,7 @@ BobaComponents is where BobaBoard's UI pieces (components) are developed.
 
 In a terminal, run the following commands:
 
-```bash
+```bash   showLineNumbers
 # Clone the codebase from github
 git clone https://github.com/BobaBoard/boba-components.git
 # Enter the codebase directory
@@ -29,7 +29,7 @@ BobaComponents lists BobaEditor as a peer dependency. This means that, while Bob
 
 You should follow these instructions if you don't intend to make changes to BobaEditor, or don't care about running the latest version of BobaEditor.
 
-```bash
+```bash   showLineNumbers
 yarn install @bobaboard/boba-editor
 ```
 
@@ -57,7 +57,7 @@ You should follow these instructions if you want to make parallel changes to Bob
 
    In a terminal, run the following command:
 
-   ```bash
+   ```bash   showLineNumbers
    yarn run build
    yarn link
    ```
@@ -70,7 +70,7 @@ You should follow these instructions if you want to make parallel changes to Bob
    :::
    In a terminal, run the following command:
 
-   ```bash
+   ```bash   showLineNumbers
    yarn link @bobaboard/boba-editor
    ```
 
@@ -90,7 +90,7 @@ You can check the current Node version by running `node -v`.
 
 In a terminal, run the following command:
 
-```bash
+```bash   showLineNumbers
 yarn run storybook
 ```
 

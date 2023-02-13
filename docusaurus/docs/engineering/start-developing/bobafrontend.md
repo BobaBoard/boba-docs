@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Install BobaFrontend
 
 :::warning
@@ -14,7 +18,7 @@ TODO[Ms.Boba]: Update to new format.
 
 BobaBoard Frontend depends on BobaComponents.
 
-```bash
+```bash   showLineNumbers
 # First installation only:
 git clone https://github.com/BobaBoard/boba-frontend.git
 cd boba-frontend
@@ -40,7 +44,7 @@ You should follow these instructions if you don't intend to make changes to Boba
 
 The easiest way to install BobaEditor is to run `yarn install @bobaboard/ui-components`. This will install the latest "released" version of BobaComponents in your codebase.
 
-```bash
+```bash   showLineNumbers
 ### Run the "first installation instructions" above. ###
 
 yarn install @bobaboard/ui-components
@@ -52,7 +56,7 @@ yarn install @bobaboard/ui-components
 
 You should follow these instructions if you want to make parallel changes to BobaComponents as part of updating BobaFrontend.
 
-```bash
+```bash   showLineNumbers
 ### Run the "BobaComponents first installation instructions" first. ###
 ### You should now be in the boba-components folder. ###
 yarn run build
