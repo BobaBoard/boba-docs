@@ -5,6 +5,8 @@ we use to pull some of our data directly from our [GitHub organization](https://
 
 The monorepo aspect is managed through [Turborepo](https://turbo.build/), with yarn workspaces handling each "sub-package".
 
+> 📝 **NOTE:** Turborepo is not compatible with native Windows. Windows users will need to install WSL to edit the documentation. For more information on installing WSL see [The BobaBoard Guide to Installing WSL](https://docs.bobaboard.com/docs/engineering/start-developing/wsl).
+
 ## How to run
 
 ```
