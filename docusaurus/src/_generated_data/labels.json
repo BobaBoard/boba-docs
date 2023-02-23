@@ -81,6 +81,51 @@
     "description": "The issue is currently undergoing interface/interaction desing."
   },
   {
+    "id": 5124659967,
+    "node_id": "LA_kwDOE8ugM88AAAABMXQa_w",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9C%A8%20API%20endpoint",
+    "name": "✨ API endpoint",
+    "color": "3AFBEA",
+    "default": false,
+    "description": "An issue that involve creating new API endpoints"
+  },
+  {
+    "id": 5124658238,
+    "node_id": "LA_kwDOE8ugM88AAAABMXQUPg",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9C%A8%20SQL%20query",
+    "name": "✨ SQL query",
+    "color": "3AFBEA",
+    "default": false,
+    "description": "An issue that involve creating new SQL queries"
+  },
+  {
+    "id": 5124662518,
+    "node_id": "LA_kwDOE8ugM88AAAABMXQk9g",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9C%A8%20SQL%20table",
+    "name": "✨ SQL table",
+    "color": "3AFBEA",
+    "default": false,
+    "description": "An issue that involve creating new database table"
+  },
+  {
+    "id": 5124659179,
+    "node_id": "LA_kwDOE8ugM88AAAABMXQX6w",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9C%A8%20UI%20component",
+    "name": "✨ UI component",
+    "color": "3AFBEA",
+    "default": false,
+    "description": "An issue that involve creating new UI components"
+  },
+  {
+    "id": 5105834291,
+    "node_id": "LA_kwDOE8ugM88AAAABMFTZMw",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8C%8DGlobal",
+    "name": "🌍Global",
+    "color": "cccccc",
+    "default": false,
+    "description": "A large task that has smaller issues/tasks underneath it"
+  },
+  {
     "id": 3904344781,
     "node_id": "LA_kwDOE8ugM87ot5LN",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%8C%9F%20Ms.%20Boba's%20fave",

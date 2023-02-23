@@ -1,12 +1,285 @@
 [
   {
+    "id": "PVT_kwDOBKDHhM4AL-j5",
+    "title": "April 1st TODOs",
+    "shortDescription": null,
+    "readme": null,
+    "url": "https://github.com/orgs/BobaBoard/projects/8",
+    "items": {
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Add all the various things to do here",
+            "body": ""
+          }
+        }
+      ]
+    },
+    "repositories": {
+      "nodes": []
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4AL-j5zgBNTWM",
+          "name": "View 1",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  },
+  {
     "id": "PVT_kwDOBKDHhM4AK4p8",
     "title": "The \"almost there\" Realms Sprint (🛫 February 1st 2023, 🛬 March 15th 2023)",
-    "shortDescription": "Realms might be ready, but our community management strategy is not! Let's add some polish, pizzazz and code stability as we prepare to welcome our future neighbors.",
-    "readme": "What it says on the tin.\n\n---MACHINE DATA---\n```\nstatus: future\ntype: sprint\n```",
+    "shortDescription": "Realms might be ready, but our community management strategy is not! Let's add some polish, pizzazz, and code stability as we prepare to welcome our future neighbors.",
+    "readme": "This sprint is about preparing us for the first 30-60 days of a Realm. We're going to be focusing on:\n\n1) **Administrative tools:** at this stage, we're assuming that admins are still maintaining somewhat \"closed\" environments, and that moderation issues are infrequent and don't usually need to be resolved with extreme urgency.\n2) **User tools:** user tools are the lowest priority in this sprint, but we might focus on lowering the first barrier of entry for people unfamiliar with how BobaBoard works.\n3) **Development experience:** here we're focusing on stability/type safety work. As we gain more users, broken flows become more expensive and we have a higher number of people affected by issues/stuff to fix if it goes wrong.\n\nIn parallel with this sprint, we're also going to be working on upgrading to the new boba editor.\n\n\n---MACHINE DATA---\n```\nstatus: current\ntype: sprint\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/7",
     "items": {
-      "nodes": []
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85SEeMI",
+            "title": "Allow calling mod attention to a thread",
+            "body": "## Problem description\nWe currently use an external google form for people to report issues. Before doing a broader release of Realms, we should consider enabling users to call mod attention to a specific thread, contribution or comment directly from the UI.\n\n## Proposed solution\n\nThe ideal way of doing this would be for the flow to exist 100% inside of BobaBoard. But given that we don't really have a \"personal notifications\" system and won't have it for a while, I'd propose tying this functionality to a webhook, which can then be used to trigger notifications/actions on any system that supports them (including Discord or any Pipedream script).\n\n### Flow\n\n1. User opens the contextual dropdown for a thread/contribution/or comment\n2. User clicks on the \"signal to mod\" option\n3. An explanatory popup is opened, asking the user for more details on the issue\n4. When the user confirms the input, a request is sent to a server endpoint (TBD)\n5. The server endpoint checks whether a webhook is associated with the (current realm? action?), sends the request, and communicates back to the user whether the webhook triggering was successful \n\n## Deliberations needed\n\n-  [ ] Decide how specific the API endpoint should be. Is it specific to reporting threads/comments/posts, a generic way to contact mods, or an even more generic trigger for webhook actions? *(note: this will influence most other decisions)*\n- [ ] We already have a `webhooks` SQL table, which supports `rest` and `discord` as triggers. Do we support both types of webhooks for this feature?\n- [ ] Currently `webhooks` are always associated with subscriptions. What do we associate this `webhook` with? Is it a generic \"contact-a-mod webhook\" setting for the realm?\n- [ ] What happens if no webhook is set for this feature? Does the option disappear?\n\n## Other notes\n\n- We should have all the components needed for this feature, but we have not assembled this type of non-post input on the frontend before. In an ideal world, we'd just reuse the regular editor and restrict the inputs to the ones that we're able to translate to a discord format.  Until the new editor lands though, we can simply use a `textarea` input and only allow unformatted text.\n\n- We should CC ms boba on reports sent to mods so that she can take actions for items they may not have access to. This will also allow her to see how these features are used outside of her spaces so she can have information which will help her shape future features.\n\n- We will also need to alert people to the fact ms boba will be copied on the report.\n\n## Issue breakdown\n- [ ] Do the deliberations above and write a design document on how to implement the feature\n- [ ] Potentially create new SQL queries and tables as needed [`boba-backend`]\n- [ ] Create a new server endpoint to ping the webhook [`boba-backend`]\n- [ ] Add option to the user bar to send a message to a mod [`boba-frontend`]\n- [ ] Add modal to allow user to write a message to the mod [`boba-frontend`]\n\n### Stretch goals\n- [ ] Add option to comments to call mod attention to a specific comment [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option to comments to call mod attention to a specific post [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option to comments to call mod attention to a specific thread [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option for user to reveal their identity ",
+            "url": "https://github.com/BobaBoard/issues/issues/93",
+            "createdAt": "2022-09-18T00:20:46Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/93#issue-1376903944"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5cu_kf",
+            "title": "Allow users to see a \"eagle eye view\" of the Realm",
+            "body": "",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/122",
+            "createdAt": "2023-01-24T23:35:32Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/122#issue-1555822879"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvA4W",
+            "title": "Allow moderators to post in a thread even if they already had an anonymous identity",
+            "body": "Currently there is no way to post in a thread with a different identity if you already had one assigned. For moderation purposes, it's possible that a moderator will need to make an official post on a thread they already joined. This should be possible without them revealing their previous identity.\n\nOn a technical level, this will mean creating a table that assigns a per-post identity to a thread on the backend and returning a different `secretIdentity` for certain posts when displaying the thread. On the frontend, we shouldn't need to make a lot of changes, except that we might need to show the role selector dropdown even after an identity is already taken. We will likely also need to create a permission for some roles to be used as additional identities in a single thread. ",
+            "url": "https://github.com/BobaBoard/issues/issues/125",
+            "createdAt": "2023-01-24T23:42:26Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/125#issue-1555828246"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Thread locking",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85SEk5B",
+            "title": "Allow moderators to soft delete threads/contributions/comments",
+            "body": "## Description\n\nWhat it says on the tin: moderators (or roles with the corresponding permission) should be able to delete threads, contributions or comments.\n\n**Note:** this issue doesn't cover logging the deletion or displaying information about the deletion to users. This is about offering a soft delete option similar to the one I've been using straight from the database, but making it available beyond me.\n\n## Flow\n\n1. If the user has the corresponding permission, a \"delete thread/contribution/comment\" option is added to the dropdown menu of the corresponding entity.\n2. A popup is displayed to the user, asking to confirm the action.\n3. If the action is confirmed, a request for deletion is sent to the the server.\n\n## Implementation steps\n\n1. Implement hard deletion for threads\n2. Implement soft deletion for threads\n3. Do the same for contributions\n4. Do the same for comments\n\nThe following tasklist is an example of implementation steps for deleting threads. We'll likely need to open other issues for contributions and comments:\n\n```[tasklist]\n### Backend tasks\n- [ ] Write SQL queries to hard delete thread on the backend\n- [ ] Add an endpoint to delete a thread\n- [ ] Write tests for endpoint\n- [ ] Add `delete_threads` (`delete_contributions`|`delete_comments`) permissions to the backend\n- [ ] Gate deletion of a thread on correct permissions\n```\n\n```[tasklist]\n### Frontend tasks\n- [ ] Add delete button to the frontend \n- [ ] Add confirmation popup\n- [ ] Send request to the backend\n```\n\nTODO: make a separate issue for soft delete\n\n",
+            "url": "https://github.com/BobaBoard/issues/issues/94",
+            "createdAt": "2022-09-18T03:15:36Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/94#issue-1376931393"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvFjX",
+            "title": "Allow creating a new bobadex from a CSV file",
+            "body": "Currently we don't want to support complex bobadex management from within the UI, but instead allow realm admins to upload new bobadexes as CSV files.\n\nWe're going to suggest google sheets as an easy way to create this CSV. However, the google sheets CSV export doesn't support images, so we're going to explore whether we can get the pictures through API and upload it ourselves.\n\nTo support edits to the bobadex, we will ask realm managers to redownload an updated CSV with the external ids of each identity prefilled in. This way we can know whether they mean to update a pre-existing identity or create new ones. This feature is not considered part of an MVP.\n\n- [ ] Check whether the google sheets API can fetch images from a sheet\n- [ ] Write the SQL query to create the new identity in the bobadex and assign them to the correct Realm [`boba-backend`]\n- [ ] Add a permission for a role to be able to create the bobadex [`boba-backend`]\n- [ ] Write an endpoint to create the bobadex [`boba-backend`]\n- [ ] Define how the bobadex creation admin screen is going to look like \n- [ ] Implement the bobadex creation admin screen [`boba-frontend`/`boba-components`]",
+            "url": "https://github.com/BobaBoard/issues/issues/126",
+            "createdAt": "2023-01-25T00:04:15Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/126#issue-1555847383"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85dZ_KE",
+            "title": "Allow adding a new board",
+            "body": "- [ ] Write an SQL query to add a new board (this is probably already in `queries.sql`) [`boba-backend`]\n- [ ] Create a permission to add a new board [`boba-backend`]\n- [ ] Create an endpoint to add a new board [`boba-backend`]\n- [ ] Improve the existing image upload/edit component to allow us to reuse it for board avatars [`boba-components`]\n- [ ] Add new page to realm admin panel to manage boards [`boba-frontend`]\n- [ ] Add form to board management panel to add board [`boba-frontend`]",
+            "url": "https://github.com/BobaBoard/issues/issues/130",
+            "createdAt": "2023-02-02T00:26:01Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/130#issue-1567093380"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvH-R",
+            "title": "Fix code for the board sidebar edit flow",
+            "body": "This code needs to be rewritten and tested because we currently don't have any way of detecting \"dirty\" input before we discard changes made by the user, and also it's just generally sucky.\n\nWe have all the UI elements FWIW, but we should improve the logic that governs how they're displayed.\n\nThe edit flow logic is also hardcoded in boba-components but it's probably better suited for being moved in boba-frontend.\n\n- [ ] Investigate using XState to create a visualization of the state transitions of such flow\n- [ ] Integrate XState with the existing UI Components to recreate the current logic (but correct)\n- [ ] Move the XState state machine to the `boba-frontend` repository, and decouple ui components from it\n- [ ] Write some tests\n",
+            "url": "https://github.com/BobaBoard/issues/issues/127",
+            "createdAt": "2023-01-25T00:11:39Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/127#issue-1555857297"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Allow people with the right permissions to canonize content notices in boards",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Allow to canonize categories and content notices within realms",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85Jrmnz",
+            "title": "Allow to divide boards in categories",
+            "body": "## Current status\r\nIn the sidemenu UI we have the ability to [display boards divided in categories](https://bobaboard-ui.netlify.app/?path=/story/side-menu-side-menu--side-menu-preview), but we don't have any such division on the server. \r\n![image](https://user-images.githubusercontent.com/47095486/168492747-1ca99417-be70-450e-a845-770fc369f62e.png)\r\n\r\n## Goal\r\nMake it possible to add this categorization in the database (with direct queries, rather than through the UI), and have it surfaced in this menu (as well as in future contexts, like the main-page board display redesign).\r\n\r\n## MVP\r\n- [ ] Add categories table in the database, and update db queries to return the information (@MsMadGirl)\r\n- [ ] Define extension to current REST API endpoints to return category information (@essential-randomness)\r\n- [ ] Surface category information in the sidemenu UI (@essential-randomness)\r\n\r\n## Stretch goal\r\n- [ ] Surface category information as part of main page redesign (see: #86)\r\n \r\n",
+            "url": "https://github.com/BobaBoard/issues/issues/87",
+            "createdAt": "2022-05-15T02:19:13Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/87#issue-1236167155"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Double-check caching headers for images",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDODzMBe85SqXGs",
+            "title": "Standardize variable names in server code ",
+            "body": "This is a catch-all bug for standardizing variable names in the server (feel free to propose more changes, and create an appropriate bug for each change as you decide to work on it/feel like doing some filing work):\r\n\r\n- [ ] Make all string IDs specifically named `thingStringId`.",
+            "url": "https://github.com/BobaBoard/boba-backend/issues/95",
+            "createdAt": "2022-09-26T22:55:53Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-backend/issues/95#issue-1386836396"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDODzMBe85TjGtN",
+            "title": "Standardize server error messages",
+            "body": "many error messages are non-descriptive and unhelpful (ie: `500 error`)",
+            "url": "https://github.com/BobaBoard/boba-backend/issues/97",
+            "createdAt": "2022-10-07T22:18:56Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-backend/issues/97#issue-1401711437"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDODzMBe85V5oS4",
+            "title": "Make sure the routes are receiving and returning the right id types",
+            "body": "not a big one, but there are still a few cases where a number id is being passed when it should be an external id (ie- realm accessories). extending from standardizing variables",
+            "url": "https://github.com/BobaBoard/boba-backend/issues/101",
+            "createdAt": "2022-11-09T01:09:58Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-backend/issues/101#issue-1441170616"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Roles catchall",
+            "body": "- [ ] Decide role-related permissions\n- [ ] Discuss splitting cosmetic and permissions roles\n\nFor this sprint we're not going to be working on assigning/creating roles which will still be done through Ms Boba, but we do want to start displaying them."
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDODzMBe85cvQb_",
+            "title": "Prototype using Zod to add type safety to database queries",
+            "body": "Zod is a library that allows us to define and validate the shape of a JavaScript object and automatically generates the corresponding TypeScript types.\n\nWe want to create Zod types for all the SELECT queries in our database to provide strong typings to the data coming out of the database. ",
+            "url": "https://github.com/BobaBoard/boba-backend/issues/107",
+            "createdAt": "2023-01-25T00:50:47Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-backend/issues/107#issue-1555891967"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDODzMBe85cvQ2h",
+            "title": "Add typescript strict mode to boba-backend",
+            "body": "",
+            "url": "https://github.com/BobaBoard/boba-backend/issues/108",
+            "createdAt": "2023-01-25T00:52:44Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-backend/issues/108#issue-1555893665"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvRSp",
+            "title": "Prototype getting typescript types for the frontend from backend open api definitions",
+            "body": "We currently write backend response types 3 times:\n1 — As a typescript type in the server\n2 — As a OpenAPI definition\n3 — As a typescript type in the frontend\n\nThis is not good. We should change this.\n\n- [ ] Prototype generating typescript types from OpenAPI definition (TODO: remember library name)\n- [ ] Decide how to package typescript types to share with the frontend repository\n- [ ] Prototype adding strong typing to a query from the frontend",
+            "url": "https://github.com/BobaBoard/issues/issues/128",
+            "createdAt": "2023-01-25T00:54:47Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/128#issue-1555895465"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5cvRbi",
+            "title": "Move frontend end to end tests to Playwright",
+            "body": "We're currently writing end to end frontend tests in Cypress, but turns out Playwright has grown a lot in popularity recently and it's actually pretty great now. Since we only have a handful of end to end tests, we should be able to move to it quite quickly.",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/124",
+            "createdAt": "2023-01-25T00:55:31Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/124#issue-1555896034"
+          }
+        }
+      ]
     },
     "repositories": {
       "nodes": []
@@ -15,7 +288,22 @@
       "nodes": [
         {
           "id": "PVTV_lADOBKDHhM4AK4p8zgBGU88",
-          "name": "View 1",
+          "name": "By feature target",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AK4p8zgBHzuc",
+          "name": "Up for grabs",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AK4p8zgBJ02c",
+          "name": "MVP tasks",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AK4p8zgBJ0_o",
+          "name": "By Status",
           "layout": "TABLE_LAYOUT"
         }
       ]
@@ -636,7 +924,7 @@
           "content": {
             "id": "I_kwDOE8ugM85SEeMI",
             "title": "Allow calling mod attention to a thread",
-            "body": "## Problem description\r\nWe currently use an external google form for people to report issues. Before doing a broader release of Realms, we should consider enabling users to call mod attention to a specific thread, contribution or comment directly from the UI.\r\n\r\n## Proposed solution\r\n\r\nThe ideal way of doing this would be for the flow to exist 100% inside of BobaBoard. But given that we don't really have a \"personal notifications\" system and won't have it for a while, I'd propose tying this functionality to a webhook, which can then be used to trigger notifications/actions on any system that supports them (including Discord or any Pipedream script).\r\n\r\n### Flow\r\n\r\n1. User opens the contextual dropdown for a thread/contribution/or comment\r\n2. User clicks on the \"signal to mod\" option\r\n3. An explanatory popup is opened, asking the user for more details on the issue\r\n4. When the user confirms the input, a request is sent to a server endpoint (TBD)\r\n5. The server endpoint checks whether a webhook is associated with the (current realm? action?), sends the request, and communicates back to the user whether the webhook triggering was successful \r\n\r\n## Deliberations needed\r\n\r\n-  [ ] Decide how specific the API endpoint should be. Is it specific to reporting threads/comments/posts, a generic way to contact mods, or an even more generic trigger for webhook actions? *(note: this will influence most other decisions)*\r\n- [ ] We already have a `webhooks` SQL table, which supports `rest` and `discord` as triggers. Do we support both types of webhooks for this feature?\r\n- [ ] Currently `webhooks` are always associated with subscriptions. What do we associate this `webhook` with? Is it a generic \"contact-a-mod webhook\" setting for the realm?\r\n- [ ] What happens if no webhook is set for this feature? Does the option disappear?\r\n\r\n## Other notes\r\n\r\nWe should have all the components needed for this feature, but we have not assembled this type of non-post input on the frontend before. In an ideal world, we'd just reuse the regular editor and restrict the inputs to the ones that we're able to translate to a discord format.  Until the new editor lands though, we can simply use a `textarea` input and only allow unformatted text.",
+            "body": "## Problem description\nWe currently use an external google form for people to report issues. Before doing a broader release of Realms, we should consider enabling users to call mod attention to a specific thread, contribution or comment directly from the UI.\n\n## Proposed solution\n\nThe ideal way of doing this would be for the flow to exist 100% inside of BobaBoard. But given that we don't really have a \"personal notifications\" system and won't have it for a while, I'd propose tying this functionality to a webhook, which can then be used to trigger notifications/actions on any system that supports them (including Discord or any Pipedream script).\n\n### Flow\n\n1. User opens the contextual dropdown for a thread/contribution/or comment\n2. User clicks on the \"signal to mod\" option\n3. An explanatory popup is opened, asking the user for more details on the issue\n4. When the user confirms the input, a request is sent to a server endpoint (TBD)\n5. The server endpoint checks whether a webhook is associated with the (current realm? action?), sends the request, and communicates back to the user whether the webhook triggering was successful \n\n## Deliberations needed\n\n-  [ ] Decide how specific the API endpoint should be. Is it specific to reporting threads/comments/posts, a generic way to contact mods, or an even more generic trigger for webhook actions? *(note: this will influence most other decisions)*\n- [ ] We already have a `webhooks` SQL table, which supports `rest` and `discord` as triggers. Do we support both types of webhooks for this feature?\n- [ ] Currently `webhooks` are always associated with subscriptions. What do we associate this `webhook` with? Is it a generic \"contact-a-mod webhook\" setting for the realm?\n- [ ] What happens if no webhook is set for this feature? Does the option disappear?\n\n## Other notes\n\n- We should have all the components needed for this feature, but we have not assembled this type of non-post input on the frontend before. In an ideal world, we'd just reuse the regular editor and restrict the inputs to the ones that we're able to translate to a discord format.  Until the new editor lands though, we can simply use a `textarea` input and only allow unformatted text.\n\n- We should CC ms boba on reports sent to mods so that she can take actions for items they may not have access to. This will also allow her to see how these features are used outside of her spaces so she can have information which will help her shape future features.\n\n- We will also need to alert people to the fact ms boba will be copied on the report.\n\n## Issue breakdown\n- [ ] Do the deliberations above and write a design document on how to implement the feature\n- [ ] Potentially create new SQL queries and tables as needed [`boba-backend`]\n- [ ] Create a new server endpoint to ping the webhook [`boba-backend`]\n- [ ] Add option to the user bar to send a message to a mod [`boba-frontend`]\n- [ ] Add modal to allow user to write a message to the mod [`boba-frontend`]\n\n### Stretch goals\n- [ ] Add option to comments to call mod attention to a specific comment [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option to comments to call mod attention to a specific post [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option to comments to call mod attention to a specific thread [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option for user to reveal their identity ",
             "url": "https://github.com/BobaBoard/issues/issues/93",
             "createdAt": "2022-09-18T00:20:46Z",
             "bodyUrl": "https://github.com/BobaBoard/issues/issues/93#issue-1376903944"
