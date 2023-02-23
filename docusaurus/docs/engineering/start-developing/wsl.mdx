@@ -7,7 +7,13 @@ import { faWindows, faLinux } from "@fortawesome/free-brands-svg-icons";
 import { faClock } from "@fortawesome/free-regular-svg-icons";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
-# The BobaBoard Guide to Installing WSL
+# How to install WSL
+
+:::warning
+The following instructions are for Windows user only. If you use Linux or Mac and have already completed
+the steps in [Setup Your Development Environment](/docs/engineering/start-developing/setting-up-dev-env), you
+can skip forward to the next section.
+:::
 
 ## Guide Introduction
 
@@ -132,12 +138,12 @@ select Ubuntu or your Linux distro from the list.
 <!-- prettier-ignore-end -->
 
 <img
-	src="/img/engineering/wsl/powershell_profiles.png"
-	style={{ width: "45%", paddingRight: 5 }}
+  src="/img/engineering/wsl/powershell_profiles.png"
+  style={{ width: "45%", paddingRight: 5 }}
 />
 <img
-	src="/img/engineering/wsl/powershell_wsl_tab.png"
-	style={{ width: "45%" }}
+  src="/img/engineering/wsl/powershell_wsl_tab.png"
+  style={{ width: "45%" }}
 />
 
 Both of these methods open a WSL terminal with your chosen distro for you to
@@ -165,19 +171,19 @@ a Github account in order to develop with Boba!
 1. If you updated your Ubuntu packages by following the install instructions
    above, you can skip this step. Otherwise, from your Linux terminal run:
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    sudo apt-get update
    ```
 
 2. Once your updates are complete, install Git by running:
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    sudo apt-get install git-all
    ```
 
 3. Verify the install with:
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    git version
    ```
 
@@ -193,7 +199,7 @@ issue.
 
 1. In your Linux shell, run the below command to install nvm.
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
    ```
 
@@ -218,7 +224,7 @@ and reopening it. If that fails, you may need to restart Windows.
    (BobaFrontend, BobaComponents, etc), use the below command to install
    NodeJS 16.
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    nvm install 16.19.0
    ```
 
@@ -301,7 +307,7 @@ terminal. For help with useful terminal commands see the
 
 1. In your Linux shell type:
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    mkdir [repo_folder]
    ```
 
@@ -309,13 +315,13 @@ terminal. For help with useful terminal commands see the
    choose whatever you'd like. For example, to name your folder BobaRepos you'd
    type:
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    mkdir BobaRepos
    ```
 
 2. To move to your new folder type:
 
-   ```bash   showLineNumbers
+   ```bash showLineNumbers
    cd [repo_folder]
    ```
 
