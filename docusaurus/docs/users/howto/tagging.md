@@ -9,7 +9,7 @@ communicate additional information to readers or organize threads in a board.
 
 |           Type            |                                         Example                                          | Location         | Prefix | Use                          |
 | :-----------------------: | :--------------------------------------------------------------------------------------: | ---------------- | :----: | ---------------------------- |
-| [Whisper](#whisper-tags)  | ![black text on a white background "» An announcement from your headmistress!"][whisper] | bottom of thread | _none_ | comments                     |
+| [Whisper](#whisper-tags)  | ![black text on a white background "» An announcement from your headmaster!"][whisper] | bottom of thread | _none_ | comments                     |
 |   [Hashtag](#hashtags)    |            ![a red-orange pill tag with "# bobapost" in white text][hashtags]            | bottom of thread |  `#`   | identify additional topics   |
 | [Categories](#categories) |                ![a blue pill tag with "+ even" in white text][categories]                | bottom of thread |  `+`   | canonical tags for filtering |
 |  [Content Notices](#cn)   |         ![an orange-yellow pill tag with "cn: harassment psa" in dark text][cn]          | top of thread    | `cn:`  | warnings                     |
@@ -56,7 +56,7 @@ Categories have a blue pill-shaped background and have white text.
 #### Content Notices {#cn}
 
 Set by putting `cn:` at the beginning of a tag, content notices are moved above
-the thread to give people a warning about potentially nsfw, triggering, or
+the thread to give people a warning about potentially NSFW, triggering, or
 upsetting content that are in the thread, it's comments, or contributions so
 that they can skip it, [mute it](/docs/users/howto/threads#thread-menu),
 [hide it](/docs/users/howto/threads#thread-menu), or be better prepared.

@@ -44,7 +44,7 @@ Please keep in mind that as more Realms open, each Realm will have the opportuni
 
   Please add content notices to posts when asked. Please also do not get upset if moderators add content notices to your posts for you.
 
-  For more information on content notices and tagging, please see [Tagging](/docs/users/howto/threads#tagging).
+  For more information on content notices and tagging, please see [Tagging](/docs/users/howto/tagging).
 
 
 ## Posting Guidelines

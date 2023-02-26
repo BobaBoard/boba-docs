@@ -1,5 +1,15 @@
 # Fandom Coders
-Fandom Coders is the first official Realm. More information is coming soon!
+
+Fandom Coders is the first official Realm. It was launched on 4/20/2022 as an
+experiment to ensure that it was possible for the BobaBoard code to support more
+than one Realm on a domain.
+
+:::note
+
+Fandom Coders is currently on hiatus while volunteers work to make realm set-up
+and maintenance easier!
+
+:::
 
 <!-- COMMMENTED OUT SO WE CAN MAKE LIKE ELSA ON 6/9
 # How to Get An Account
