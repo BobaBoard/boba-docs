@@ -42,4 +42,4 @@ cd workspace/folder
 yarn add @package/name`
 ```
 
-Remeber to still run `yarn run start` from the root directory.
+Remember to still run `yarn run start` from the root directory.
