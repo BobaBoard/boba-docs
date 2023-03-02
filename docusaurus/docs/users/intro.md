@@ -5,6 +5,12 @@ sidebar_position: 1
 
 _"BobaBoard will move you and fill you with a feeling of deep peace. I hope your time here will be pleasant and your memories will last forever."_
 
+:::note
+ 
+This user guide is living document still under construction. If anything is confusing or unclear, please let us know!
+ 
+:::
+
 ## What is BobaBoard?
 **The Simple Answer:** A website featuring a collection of communities, made for fandom by people in fandom.
 
