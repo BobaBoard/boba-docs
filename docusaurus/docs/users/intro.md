@@ -7,7 +7,7 @@ _"BobaBoard will move you and fill you with a feeling of deep peace. I hope your
 
 :::note
  
-This user guide ia living document still under construction. If anything is confusing or unclear, please let us know!
+This user guide is living document still under construction. If anything is confusing or unclear, please let us know!
  
 :::
 
