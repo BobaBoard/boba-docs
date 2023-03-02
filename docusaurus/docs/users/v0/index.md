@@ -52,11 +52,10 @@ If this all sounds like a good fit, feel free to ask for an invite.
 
 ### How to Get an Invite
 
-Please email
-[ms.boba@bobaboard.com](mailto:ms.boba@bobaboard.com?subject=Invite%20Request&body=Hi%20ms.%20boba!%0D%0AI'm%20interested%20in%20joining%20the%20v0%20realm.%20Please%20send%20an%20invite%20to:%20[email%20address].)
-or if you know her elsewhere on the web reach out to her there. Please be sure
-to include the Realm name (VO) and an email you want to have the invite sent to
-(particularly if it's different than the one you're emailing from!).
+Please email the realm admin listed for V0 on the
+[Realm Admins](/docs/users/admins) page. Please be sure to include the Realm
+name (VO) and an email you want to have the invite sent to (particularly if it's
+different than the one you're emailing from!).
 
 ### Help! I forgot my password!
 
