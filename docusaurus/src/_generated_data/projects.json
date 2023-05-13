@@ -35,7 +35,7 @@
     "id": "PVT_kwDOBKDHhM4AK4p8",
     "title": "The \"almost there\" Realms Sprint (🛫 February 1st 2023, 🛬 March 15th 2023)",
     "shortDescription": "Realms might be ready, but our community management strategy is not! Let's add some polish, pizzazz, and code stability as we prepare to welcome our future neighbors.",
-    "readme": "This sprint is about preparing us for the first 30-60 days of a Realm. We're going to be focusing on:\n\n1) **Administrative tools:** at this stage, we're assuming that admins are still maintaining somewhat \"closed\" environments, and that moderation issues are infrequent and don't usually need to be resolved with extreme urgency.\n2) **User tools:** user tools are the lowest priority in this sprint, but we might focus on lowering the first barrier of entry for people unfamiliar with how BobaBoard works.\n3) **Development experience:** here we're focusing on stability/type safety work. As we gain more users, broken flows become more expensive and we have a higher number of people affected by issues/stuff to fix if it goes wrong.\n\nIn parallel with this sprint, we're also going to be working on upgrading to the new boba editor.\n\n\n---MACHINE DATA---\n```\nstatus: current\ntype: sprint\n```",
+    "readme": "This sprint is about preparing us for the first 30-60 days of a Realm. We're going to be focusing on:\n\n1) **Administrative tools:** at this stage, we're assuming that admins are still maintaining somewhat \"closed\" environments, and that moderation issues are infrequent and don't usually need to be resolved with extreme urgency.\n2) **User tools:** user tools are the lowest priority in this sprint, but we might focus on lowering the first barrier of entry for people unfamiliar with how BobaBoard works.\n3) **Development experience:** here we're focusing on stability/type safety work. As we gain more users, broken flows become more expensive and we have a higher number of people affected by issues/stuff to fix if it goes wrong.\n\nIn parallel with this sprint, we're also going to be working on upgrading to the new boba editor.\n\n\n---MACHINE DATA---\n```\nstatus: closed\ntype: sprint\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/7",
     "items": {
       "nodes": [
@@ -106,8 +106,8 @@
           },
           "content": {
             "id": "I_kwDOE8ugM85cvFjX",
-            "title": "Allow creating a new bobadex from a CSV file",
-            "body": "Currently we don't want to support complex bobadex management from within the UI, but instead allow realm admins to upload new bobadexes as CSV files.\n\nWe're going to suggest google sheets as an easy way to create this CSV. However, the google sheets CSV export doesn't support images, so we're going to explore whether we can get the pictures through API and upload it ourselves.\n\nTo support edits to the bobadex, we will ask realm managers to redownload an updated CSV with the external ids of each identity prefilled in. This way we can know whether they mean to update a pre-existing identity or create new ones. This feature is not considered part of an MVP.\n\n- [ ] Check whether the google sheets API can fetch images from a sheet\n- [ ] Write the SQL query to create the new identity in the bobadex and assign them to the correct Realm [`boba-backend`]\n- [ ] Add a permission for a role to be able to create the bobadex [`boba-backend`]\n- [ ] Write an endpoint to create the bobadex [`boba-backend`]\n- [ ] Define how the bobadex creation admin screen is going to look like \n- [ ] Implement the bobadex creation admin screen [`boba-frontend`/`boba-components`]",
+            "title": "Allow creating a new bobadex from a gSheet",
+            "body": "Currently we don't want to support complex bobadex management from within the UI, but instead allow realm admins to upload new bobadexes as CSV files.\n\nWe're going to suggest google sheets as an easy way to create this CSV. However, the google sheets CSV export doesn't support images, so we're going to explore whether we can get the pictures through API and upload it ourselves.\n\nTo support edits to the bobadex, we will ask realm managers to redownload an updated CSV with the external ids of each identity prefilled in. This way we can know whether they mean to update a pre-existing identity or create new ones. This feature is not considered part of an MVP.\n\n- [x] Check whether the google sheets API can fetch images from a sheet\n- [ ] Write the SQL query to create the new identity in the bobadex and assign them to the correct Realm [`boba-backend`]\n- [ ] Add a permission for a role to be able to create the bobadex [`boba-backend`]\n- [ ] Write an endpoint to create the bobadex [`boba-backend`]\n- [ ] Define how the bobadex creation admin screen is going to look like \n- [ ] Implement the bobadex creation admin screen [`boba-frontend`/`boba-components`]",
             "url": "https://github.com/BobaBoard/issues/issues/126",
             "createdAt": "2023-01-25T00:04:15Z",
             "bodyUrl": "https://github.com/BobaBoard/issues/issues/126#issue-1555847383"
@@ -260,7 +260,7 @@
           "content": {
             "id": "I_kwDOE8ugM85cvRSp",
             "title": "Prototype getting typescript types for the frontend from backend open api definitions",
-            "body": "We currently write backend response types 3 times:\n1 — As a typescript type in the server\n2 — As a OpenAPI definition\n3 — As a typescript type in the frontend\n\nThis is not good. We should change this.\n\n- [ ] Prototype generating typescript types from OpenAPI definition (TODO: remember library name)\n- [ ] Decide how to package typescript types to share with the frontend repository\n- [ ] Prototype adding strong typing to a query from the frontend",
+            "body": "We currently write backend response types 3 times:\n1 — As a typescript type in the server\n2 — As a OpenAPI definition\n3 — As a typescript type in the frontend\n\nThis is not good. We should change this.\n\n- [x] Prototype generating typescript types from OpenAPI definition (TODO: remember library name)\n- [ ] Decide how to package typescript types to share with the frontend repository\n- [ ] Prototype adding strong typing to a query from the frontend",
             "url": "https://github.com/BobaBoard/issues/issues/128",
             "createdAt": "2023-01-25T00:54:47Z",
             "bodyUrl": "https://github.com/BobaBoard/issues/issues/128#issue-1555895465"
@@ -304,6 +304,11 @@
         {
           "id": "PVTV_lADOBKDHhM4AK4p8zgBJ0_o",
           "name": "By Status",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AK4p8zgBVVpg",
+          "name": "To MVP",
           "layout": "TABLE_LAYOUT"
         }
       ]
