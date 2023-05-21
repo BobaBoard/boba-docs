@@ -8,7 +8,6 @@ If you're new to collaborating on a code project, you may be wondering what that
 
 To slowly get you familiar with more technical vocabulary you might run into, this document also includes relevant information about git and GitHub. For more information on these subjects you can look at our [Git Notes](/docs/engineering/legacy-pages/git-notes.md) page.
 
-
 :::note
 We will use GitHub as our example platform since BobaBoard's code is hosted there. However, there are alternative platforms that serve similar purposes.
 :::
@@ -19,21 +18,36 @@ As a side note, if you've looked at our [Recommended Tools](/docs/engineering/kn
 
 So, you've decided to contribute to a project. What happens next?
 
-1. **Add a copy of the project's code to your own GitHub account.** 
+1. **Add a copy of the project's code to your own GitHub account.**
+
 > This first step involves getting your own version of the project's code to edit to your heart's content. In technical terms, this means creating a 'fork' of the project you want to contribute to.
-2. **Download the code (from your GitHub account) to your computer.** 
+
+1. **Download the code (from your GitHub account) to your computer.**
+
 > You need to get the code onto your computer to start making changes. This way you can edit the code in the comfort of your own ~~home~~ code editor. This is done by downloading or, in technical terms, 'cloning' the code from your GitHub account.
-3. **Create a Branch in the code to keep your changes contained.** 
+
+1. **Create a Branch in the code to keep your changes contained.**
+
 > You get to create parallel versions of the code so you can work on different unrelated things at the same time without getting them tangled.
-4. **Make changes and set checkpoints as you get small tasks done.** 
+
+1. **Make changes and set checkpoints as you get small tasks done.**
+
 > It's always good to break up any tasks into smaller steps, and setting checkpoints regularly will let you see all the steps you took along the way. In technical terms, we call logging changes with descriptive messages in git 'making commits'.
-5. **Share your work with the project owners**. 
+
+1. **Share your work with the project owners**.
+
 > You've been working on your own personal copy of the code so far. Once you're ready, you can ask the people involved in the project to take a look at what you've done so you can get feedback. In technical terms this is called 'creating a pull (or merge) request'
-6. **Get feedback and make adjustments**. 
+
+1. **Get feedback and make adjustments**.
+
 > The owner of the project (and/or your fellow contributors) may suggest changes or point out bugs in your code. This process is called a 'code review'.
-7. **Success! Your changes are now included in the project.**
+
+1. **Success! Your changes are now included in the project.**
+
 > It could take more than one round of code reviews but eventually the owner of the project will accept your changes and add them to the codebase. In technical terms, your changes will be 'merged' into the codebase.
-8. **Keep your code up to date.**
+
+1. **Keep your code up to date.**
+
 > You did the thing and now you (and everyone else with a copy of the project on their PC) should get the new and updated version of the code - the one that includes your latest edits! In technical terms, you need to 'pull' the changes.
 
 ## Guide
@@ -44,7 +58,7 @@ The following is a more in-depth guide to the steps one would follow to contribu
 
 This will create an exact copy of the entire codebase to your own GitHub account. This means all it's files and the history of changes. You own this copy (in terms of permissions) and it's completely separate from the original. No matter what changes you make, the original codebase (often referred to as `upstream`) will remain unchanged.
 
-You can fork a repository on GitHub from its web interface by going to the repository's URL. For example, the repository for this documentation is `https://www.github.com/BobaBoard/boba-docs`, where `BobaBoard` is the name of the owner of the repository, and `boba-docs` is the repository's name. 
+You can fork a repository on GitHub from its web interface by going to the repository's URL. For example, the repository for this documentation is `https://www.github.com/BobaBoard/boba-docs`, where `BobaBoard` is the name of the owner of the repository, and `boba-docs` is the repository's name.
 
 Once you've created a fork, this copy will live somewhere that looks like so: `https://www.github.com/<YOUR_GITHUB_USERNAME>/<REPOSITORY_NAME>`
 
@@ -66,7 +80,7 @@ GitHub actually has a handy button in its interface to get this URL.
 > // TODO: add screenshot?
 
 :::caution On HTTPS vs SSH
-There's HTTPS and SSH..? 
+There's HTTPS and SSH..?
 :::
 
 When you run the clone command a new folder named after the repository will be created and all the files will be stored inside. Navigate to the folder where you want to store the project and then run the clone command.
@@ -78,7 +92,7 @@ git clone <REPOSITORY_URL>
 
 After cloning a few boba-repos and making a few personal projects you might end up with folder that look something like this:
 
-```
+```none
 /home
 ├─ /<USER_NAME>
 │  ├─ code-projects/
@@ -111,24 +125,23 @@ git branch --delete read-more
 
 > //TODO: Actually look up what that cursed checkout command does...
 
-### 4. Commit changes to your branch 
+### 4. Commit changes to your branch
 
 As you write code, you'll use git to "commit" your changes at different points. Committing creates a sort of checkpoint which is helpful when you need to check your progress after being away from the project for a bit and to undo or troubleshoot issues that arise as you add more and more changes.
 
 It could be helpful to think of commits as marking milestones in your journey. You don't need to commit every single line edit you make separately, but as you code you'll notice it makes sense to group certain changes together into a unit of work.
 
-For example, when working on the `read-more` branch, you might commit your code with the following messages: 
+For example, when working on the `read-more` branch, you might commit your code with the following messages:
 
 - 1st commit:  `Add read more button`
 - 2nd commit: `Style read more button`
 - 3rd commit: `Display text when read more button is clicked`
 
-
 :::tip Keep it short and sweet
 As you can see in the examples, commits are pretty short. It's best to make them descriptive enough so future-you and whoever is reading your code understands what you've been up to but not so long that they don't fit in a single line
 :::
 
-It's simple but in practice most of us have trouble remembering to make commits regularly and writing informative messages when we do. Don't worry too much about it, if you struggle you're in good company. 
+It's simple but in practice most of us have trouble remembering to make commits regularly and writing informative messages when we do. Don't worry too much about it, if you struggle you're in good company.
 
 ---
 
@@ -149,8 +162,7 @@ Once you're done, it's time to open a pull request (again, also known as "please
 
 3. Write a description and click on "create pull request". Try to explain what you did and why as if the person reading it had zero context for it and was eager to go back to reading hot fanfictions. That is, try to be precise but concise.
 
-
-### 6. The codebase owners review (and eventually "merge") the pull request.
+### 6. The codebase owners review (and eventually "merge") the pull request
 
 Once the pull request has been submitted for review, the codebase owners will review the changes made and might request edits to the code. The review process usually entails multiple rounds of back and forth between the developer and the codebase owners, and the developer often adds new commits to the pull request with the requested changes.
 
@@ -168,7 +180,7 @@ Once your pull request is merged (aka accepted in the main codebase), you can de
 
 When changes are requested, you will likely see comments on the pull request you have submitted. Simply go back to step 2, write code, commit and push until all comments are fixed. Then go back to the pull request, check that everything is in order, and ask for an additional review. You should mark the comments you have addressed as done by using the "resolve convo" button.
 
-### 7. Pulling from upstream.
+### 7. Pulling from upstream
 
 Now that the feature code has been merged to the `upstream master` branch, the code in the `master` branch of the developer's fork (which doesn't contain the original feature) is out of date. To download the updated code, the developer "pulls" the changes from the `upstream` codebase. This copies all the new code commits in the `upstream` codebase to the developer's.
 
@@ -182,6 +194,6 @@ git pull upstream master
 
 You can now go back to step 1 and make new changes all over again.
 
-### 8. Working on a new feature.
+### 8. Working on a new feature
 
 To work on a new feature, the developer repeats the same process starting from step 1.
