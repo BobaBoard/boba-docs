@@ -58,10 +58,12 @@ $ git remote -v
 
 In practical terms, when you contribute code to a BobaBoard repository, the repo that belongs to the BobaBoard account is the `upstream`, the fork that lives on your own GitHub account is the `origin` and the clone of *that* living in your PC is your `local`.****
 
-> [!question]- Uhm. What's the point of all this?
-> Glad you asked! The point of **forking** a repository is being able to push (meaning upload) changes in isolation until you're ready to actually request the original project's owner to review your edits. You'll also most often find that you don't have permission to directly make changes to other people's repos anyway, so editing your own fork is the way to go.
->
-> The point of **cloning** is being able to work on things on your own machine, in your own code editor. There's some edits that are easy to do from GitHub's web interface, especially for markdown files like README's or the boba-docs documentation files - but for the most part you'll want to have a copy in your own system to play with.
+:::note Uhm. What's the point of all this?
+Glad you asked! The point of **forking** a repository is being able to push (meaning upload) changes in isolation until you're ready to actually request the original project's owner to review your edits. You'll also most often find that you don't have permission to directly make changes to other people's repos anyway, so editing your own fork is the way to go.
+
+The point of **cloning** is being able to work on things on your own machine, in your own code editor. There's some edits that are easy to do from GitHub's web interface, especially for markdown files like README's or the boba-docs documentation files - but for the most part you'll want to have a copy in your own system to play with.
+
+:::
 
 ### branch
 
