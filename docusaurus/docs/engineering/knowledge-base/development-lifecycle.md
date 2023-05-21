@@ -90,7 +90,7 @@ cd /home/<USER_NAME>/code-projects/bobaboard
 git clone <REPOSITORY_URL>
 ```
 
-After cloning a few boba-repos and making a few personal projects you might end up with folder that look something like this:
+After cloning a few boba-repos and making a few personal projects you might end up with a folder structure that looks something like this:
 
 ```none
 /home
@@ -149,24 +149,27 @@ It's simple but in practice most of us have trouble remembering to make commits 
 
 ### 5. Open a "pull request" on the original codebase
 
-Once the new feature is complete, it should become part of the "official" codebase. To do so, the developer must ask the codebase owners to copy the commits made in step 2 to the `master` branch of the original `upstream` codebase. This process is called opening a "pull request".
+This is when you actually show your fellow project collaborators the changes you're proposing. This gives everyone the opportunity to look at the code and make comments, before it's eventually added to the official codebase.
 
-...
-
-Once you're done, it's time to open a pull request (again, also known as "please, BobaLord, merge my code into the official BobaBoard codebase"). To do so:
-
-1. Go to your **forked repo** on the **github** website
-2. You should see a message like the one in yellow here. Click on Compare & pull request.
+You can open a pull request (PR) by visiting your forked repo on GitHub. When your fork and the original project look different GitHub will show you a button offering to open a PR. When you click this button you'll be able to see a color-coded before and after of all the edits you have made (this is called a 'diff', since it shows you the differences between two things).
 
    ![An image of the Pull Request button on the main repo page.](/img/legacy/devenv3.png)
 
-3. Write a description and click on "create pull request". Try to explain what you did and why as if the person reading it had zero context for it and was eager to go back to reading hot fanfictions. That is, try to be precise but concise.
+Here, you'll write a brief description of the changes you've worked on. You can request specific people to take a look at your PR, but not everyone will know what you're working on, so you should do your best to explain it so even those with no context understand.
+
+> //TODO: add a note about opening PRs early, even if your feature is not finished, bc its a good way for people to offer guidance
 
 ### 6. The codebase owners review (and eventually "merge") the pull request
 
 Once the pull request has been submitted for review, the codebase owners will review the changes made and might request edits to the code. The review process usually entails multiple rounds of back and forth between the developer and the codebase owners, and the developer often adds new commits to the pull request with the requested changes.
 
 Once the pull request is approved, the pull request is "merged" and then "closed". Once merged, the developer's code becomes part of the `master` branch in the original `upstream` codebase. The developer can now delete the "feature branch" created in step 1.
+
+The feedback will vary a lot.
+
+- fix bugs you might have missed (it always helps to get a second pair of eyes!)
+- edit for consistency with the rest of the codebase
+- discuss an unforseen issue with the code you're adding
 
 ...
 
