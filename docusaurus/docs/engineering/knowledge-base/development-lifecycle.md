@@ -62,6 +62,10 @@ You can fork a repository on GitHub from its web interface by going to the repos
 
 Once you've created a fork, this copy will live somewhere that looks like so: `https://www.github.com/<YOUR_GITHUB_USERNAME>/<REPOSITORY_NAME>`
 
+:::info
+You can change the name of a fork to whatever you want, but in this guide we'll pretend you haven't
+:::
+
 ### 2. Clone your fork to your machine
 
 This means copying the code that is stored in your GitHub account to your PC. It doesn't really matter where you want to do this (make sure you have permissions?), though you might want to create a folder to keep all your BobaBoard-related coding in. For example: `/home/NAME/code-projects/bobaboard`.
@@ -86,7 +90,7 @@ There's HTTPS and SSH..?
 When you run the clone command a new folder named after the repository will be created and all the files will be stored inside. Navigate to the folder where you want to store the project and then run the clone command.
 
 ```bash   showLineNumbers
-cd /home/<USER_NAME>/code-projects/bobaboard
+cd /home/<USER>/code-projects/bobaboard
 git clone <REPOSITORY_URL>
 ```
 
@@ -104,6 +108,26 @@ After cloning a few boba-repos and making a few personal projects you might end 
 │  │  ├─ personal-website/
 ```
 
+One thing to keep in mind is that the code of a project can change fairly often, meaning you'll want to keep your fork in sync with the original repository, and your clone in sync with your fork. To do this you need to make sure that the local copy of the code that lives in your machine correctly points to both of these GitHub repositories (the one that belong to the BobaBoard organization, and the one in your own account).
+
+The clone you just created actually already points to your own GitHub account repo, but you'll need to add the original repository you forked from manually.
+
+Using boba-docs as an example:
+
+```bash
+# add a reference to a remote repository and call it 'upstream'
+git remote add upstream https://github.com/BobaBoard/boba-docs.git
+
+# check to make sure your local repo correctly points at the remotes
+git remote --verbose
+
+> origin    https://github.com/<YOUR_GITHUB_USERNAME>/boba-docs.git (fetch)
+> origin    https://github.com/<YOUR_GITHUB_USERNAME>/boba-docs.git (push)
+> upstream  https://github.com/BobaBoard/boba-docs.git (fetch)
+> upstream  https://github.com/BobaBoard/boba-docs.git (push)
+```
+
+
 ### 3. Create a branch for your edits
 
 When you initially clone the repository, you'll be looking at the `main` branch of the code. This is like the "official" version of the code, the current canon, if you will.
@@ -115,6 +139,13 @@ Branches help you work on different parts of the project at the same time. You c
 ```bash   showLineNumbers
 # create a new branch
 git branch read-more
+
+# see available branches, the one you're on has an asterisk (*)
+git branch --list
+>   read-more
+> * main
+
+# note that to get exit the list view you'll need to press 'q'
 
 # switch to your new branch
 git checkout read-more
