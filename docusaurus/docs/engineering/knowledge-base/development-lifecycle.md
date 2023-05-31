@@ -18,8 +18,6 @@ This document also includes relevant information about git and GitHub to slowly 
 We will use GitHub as our example platform since BobaBoard's code is hosted there. However, there are alternative platforms that serve similar purposes.
 :::
 
-As a side note, if you've looked at our [Recommended Tools](/docs/engineering/knowledge-base/recommended-tools.md) document, you might be aware that we recommend Visual Studio Code as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer. However, we will still list the commands here so that everyone can follow along and understand what's happening behind the scenes.
-
 ## Overview
 
 So, you've decided to contribute to a project. What happens next?
@@ -59,6 +57,10 @@ So, you've decided to contribute to a project. What happens next?
 ## Guide
 
 The following is a more in-depth guide to the steps one would follow to contribute a simple change to one of Boba's codebases.
+
+:::note
+If you've looked at our [Recommended Tools](/docs/engineering/knowledge-base/recommended-tools.md) document, you've seen we recommend Visual Studio Code as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer. However, we will still list the commands here so that everyone can follow along and understand what's happening behind the scenes.
+:::
 
 ### 1. Fork the repository on GitHub
 
