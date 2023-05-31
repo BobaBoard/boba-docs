@@ -4,9 +4,15 @@ sidebar_position: 7
 
 # Development Lifecycle
 
-If you're new to collaborating on a code project, you may be wondering what that process looks like. This page gives an overview of the development lifecycle, explains key terminology, and guides you through the step-by-step process of contributing to BobaBoard's codebase.
+> //TODO: Consider making this doc a folder with multiple sections and moving to the Volunteering section
 
-To slowly get you familiar with more technical vocabulary you might run into, this document also includes relevant information about git and GitHub. For more information on these subjects you can look at our [Git Notes](/docs/engineering/legacy-pages/git-notes.md) page.
+If you're new to collaborating on a code project, you may be wondering what that process looks like. This page will:
+
+- give an overview of the development lifecycle
+- explain key terminology
+- guide you through the step-by-step process of contributing to BobaBoard's codebase.
+
+This document also includes relevant information about git and GitHub to slowly get you familiar with more technical vocabulary you might run into. For more information on these subjects you can look at our [Git Notes](/docs/engineering/legacy-pages/git-notes.md) page.
 
 :::note
 We will use GitHub as our example platform since BobaBoard's code is hosted there. However, there are alternative platforms that serve similar purposes.
@@ -20,35 +26,35 @@ So, you've decided to contribute to a project. What happens next?
 
 1. **Add a copy of the project's code to your own GitHub account.**
 
-> This first step involves getting your own version of the project's code to edit to your heart's content. In technical terms, this means creating a 'fork' of the project you want to contribute to.
+   > This first step involves getting your own version of the project's code to edit to your heart's content. In technical terms, this means creating a 'fork' of the project you want to contribute to.
 
 1. **Download the code (from your GitHub account) to your computer.**
 
-> You need to get the code onto your computer to start making changes. This way you can edit the code in the comfort of your own ~~home~~ code editor. This is done by downloading or, in technical terms, 'cloning' the code from your GitHub account.
+   > You need to get the code onto your computer to start making changes. This way you can edit the code in the comfort of your own ~~home~~ code editor. This is done by downloading or, in technical terms, 'cloning' the code from your GitHub account.
 
 1. **Create a Branch in the code to keep your changes contained.**
 
-> You get to create parallel versions of the code so you can work on different unrelated things at the same time without getting them tangled.
+   > You get to create parallel versions of the code so you can work on different unrelated things at the same time without getting them tangled.
 
 1. **Make changes and set checkpoints as you get small tasks done.**
 
-> It's always good to break up any tasks into smaller steps, and setting checkpoints regularly will let you see all the steps you took along the way. In technical terms, we call logging changes with descriptive messages in git 'making commits'.
+   > It's always good to break up any tasks into smaller steps, and setting checkpoints regularly will let you see all the steps you took along the way. In technical terms, we call logging changes with descriptive messages in git 'making commits'.
 
 1. **Share your work with the project owners**.
 
-> You've been working on your own personal copy of the code so far. Once you're ready, you can ask the people involved in the project to take a look at what you've done so you can get feedback. In technical terms this is called 'creating a pull (or merge) request'
+   > You've been working on your own personal copy of the code so far. Once you're ready, you can ask the people involved in the project to take a look at what you've done so you can get feedback. In technical terms this is called 'creating a pull (or merge) request'
 
 1. **Get feedback and make adjustments**.
 
-> The owner of the project (and/or your fellow contributors) may suggest changes or point out bugs in your code. This process is called a 'code review'.
+   > The owner of the project (and/or your fellow contributors) may suggest changes or point out bugs in your code. This process is called a 'code review'.
 
 1. **Success! Your changes are now included in the project.**
 
-> It could take more than one round of code reviews but eventually the owner of the project will accept your changes and add them to the codebase. In technical terms, your changes will be 'merged' into the codebase.
+   > It could take more than one round of code reviews but eventually the owner of the project will accept your changes and add them to the codebase. In technical terms, your changes will be 'merged' into the codebase.
 
 1. **Keep your code up to date.**
 
-> You did the thing and now you (and everyone else with a copy of the project on their PC) should get the new and updated version of the code - the one that includes your latest edits! In technical terms, you need to 'pull' the changes.
+   > You did the thing and now you (and everyone else with a copy of the project on their PC) should get the new and updated version of the code - the one that includes your latest edits! In technical terms, you need to 'pull' the changes.
 
 ## Guide
 
@@ -56,14 +62,14 @@ The following is a more in-depth guide to the steps one would follow to contribu
 
 ### 1. Fork the repository on GitHub
 
-This will create an exact copy of the entire codebase to your own GitHub account. This means all it's files and the history of changes. You own this copy (in terms of permissions) and it's completely separate from the original. No matter what changes you make, the original codebase (often referred to as `upstream`) will remain unchanged.
+Forking creates an exact copy of the entire codebase to your own GitHub account. This means all it's files and the history of changes. You own this copy (in terms of permissions) and it's completely separate from the original. No matter what changes you make, the original codebase (often referred to as `upstream`) will remain unchanged.
 
 You can fork a repository on GitHub from its web interface by going to the repository's URL. For example, the repository for this documentation is `https://www.github.com/BobaBoard/boba-docs`, where `BobaBoard` is the name of the owner of the repository, and `boba-docs` is the repository's name.
 
 Once you've created a fork, this copy will live somewhere that looks like so: `https://www.github.com/<YOUR_GITHUB_USERNAME>/<REPOSITORY_NAME>`
 
 :::info
-You can change the name of a fork to whatever you want, but in this guide we'll pretend you haven't
+The name of your fork doesn't have to match the name of the original project. For this guide, however, we'll assume you have kept the same name.
 :::
 
 ### 2. Clone your fork to your machine
@@ -73,7 +79,8 @@ This means copying the code that is stored in your GitHub account to your PC. It
 :::danger
 
 Windows users using WSL will want to pay extra attention.
-TODO: be less mysterious about it...
+
+> //TODO: be less mysterious about it...
 
 :::
 
@@ -81,7 +88,7 @@ In order to clone the repository you need to tell git where the code you want to
 
 GitHub actually has a handy button in its interface to get this URL.
 
-> // TODO: add screenshot?
+> //TODO: add screenshot?
 
 :::caution On HTTPS vs SSH
 There's HTTPS and SSH..?
