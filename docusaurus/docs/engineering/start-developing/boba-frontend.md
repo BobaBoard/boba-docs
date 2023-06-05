@@ -10,74 +10,95 @@ This codebase requires Node **16**. If you're using [Node Version Manager](https
 You can check the current Node version by running `node -v`.
 :::
 
-:::note
-This is a legacy page imported from our old documentation.
+## Clone project
 
-TODO[Ms.Boba]: Update to new format.
-:::
+In a terminal, run the following commands:
 
-BobaBoard Frontend depends on BobaComponents.
-
-```bash   showLineNumbers
-# First installation only:
+```bash showLineNumbers
+# Clone the codebase from github
 git clone https://github.com/BobaBoard/boba-frontend.git
+# Enter the codebase directory
 cd boba-frontend
+# Install all necessary dependencies
 yarn install
-
-### HERE YOU WILL NEED TO INSTALL BOBA-COMPONENTS ###
-### See next sections to choose which route ###
-
-# What you will need to run every time:
-yarn run dev:stage
 ```
 
-> The above command (`yarn run dev:stage`) connects to the real server and database. Any post you make on your local machine will be reflected on the real server! Yes, this means you can make people have a really bad time if you want.
-> Do not make me revoke your access!
+`boba-frontend` does not currently require any special env set up.
 
-If you want (or need) to run the frontend connected to a local DB/server, follow the instructions to launch BobaBackend and then run `yarn run dev`.
+## Develop
 
-### Installing BobaFrontend, fetching BobaComponents through yarn
-
-You should follow these instructions if you don't intend to make changes to BobaComponents, or don't care about running the latest version of BobaComponents.
-
-> **Note**: not running the latest version might incur in some surprising problems, in case of incompatible changes. If you run into problems, contact the webmaster to get a new version of BobaComponents released. **Since the webmaster isn't regularly releasing npm updates, let her know if you wish to go this route.**
-
-The easiest way to install BobaEditor is to run `yarn install @bobaboard/ui-components`. This will install the latest "released" version of BobaComponents in your codebase.
-
-```bash   showLineNumbers
-### Run the "first installation instructions" above. ###
-
-yarn install @bobaboard/ui-components
-
-### You can now continue with the rest of the instructions. ###
-```
-
-### Installing BobaFrontend, using a local BobaComponents copy
-
-You should follow these instructions if you want to make parallel changes to BobaComponents as part of updating BobaFrontend.
-
-```bash   showLineNumbers
-### Run the "BobaComponents first installation instructions" first. ###
-### You should now be in the boba-components folder. ###
-yarn run build
-yarn link
-cd ..
-### Run the "first installation instructions" above for BobaFrontend. ###
-cd boba-frontend
-yarn link @bobaboard/ui-components
-### You can now continue with the rest of the instructions. ###
-```
-
-If you make changes to BobaComponents and want to see them reflected in BobaFrontend run `yarn run build` in the boba-frontend folder. BobaFrontend should pick up the changes when the website is reloaded.
-
-### Running BobaFrontend
-
-:::warning
-Since Realms became a thing, BobaFrontend uses [the Bonjour protocol](https://softwarekeep.com/help-center/what-is-bonjour-service-on-windows-10) to create fake `localhost` addresses in your local network. This allows us to use `http://REALM_NAME_boba.local` addresses to get the Realm name from the
-subdomain like in production.
-
-Do ask for help if you encounter problems!
+:::TODO
+Move these instructions to the `boba-frontend` section, similar to how it's done in the `boba-backend` install instructions.
 :::
+
+### Connect to a local `boba-backend` (default Realm)
+
+To connect to a local `boba-backend` instance, make sure that the instance is up, then run `yarn run dev`. Going to
+`http://localhost:3000` will show the default Realm (`twisted-minds`).
+
+:::info Logging in
+You can login with your BobaBoard credentials, although your test user will appear as "boba-tan".
+:::
+
+### Connect to a local `boba-backend` (multiple Realms)
+
+BobaFrontend uses the website address (URL) to distinguish between different communities (Realms). For local
+development, we use [the Bonjour protocol](https://softwarekeep.com/help-center/what-is-bonjour-service-on-windows-10) to create fake `localhost` addresses in your local network. This allows you to use `http://REALM_NAME_boba.local` addresses to simulate multiple realms.
 
 1. Run `yarn run dev:bonjour`
 2. Go to `http://twisted-minds_boba.local:3000` in your browser.
+
+:::warning
+Do ask for help if you encounter problems! If you're on a Linux machine, you may need to start the Avahi daemon.
+:::
+
+### Connect to a different backend
+
+To connect to a different backend, you can set the backend address by updating the
+`NEXT_PUBLIC_DEFAULT_BACKEND` environment variable in the `.env.development` file.
+
+For example, to connect to a server running at `https://backend.bobaboard.com`, you can add:
+
+```bash showLineNumbers
+NEXT_PUBLIC_DEFAULT_BACKEND=https://backend.bobaboard.com
+```
+
+### Test local updates to `boba-components`
+
+If you made changes to `boba-components`, you may want to also test your local updates in `boba-frontend`.
+To do so, you'll need to build the `boba-components` package locally, and link it into the `boba-frontend` repository.
+
+#### 1. Build the `boba-components` package and create a local package to link.
+
+In your `boba-components` directory run:
+
+```bash showLineNumbers
+# Run the "BobaComponents first installation instructions" first.
+yarn run build
+yarn link
+```
+
+#### 2. Link the local `boba-components` package to `boba-frontend`
+
+In your `boba-components` directory run:
+
+```bash showLineNumbers
+cd boba-frontend
+yarn link @bobaboard/ui-components
+```
+
+:::warning
+
+To see changes to BobaComponents reflected in BobaFrontend, you must run `yarn run build` in the `boba-components` folder. BobaFrontend should then pick up the changes when the page is reloaded. Loading may be slower the first time
+after new changes.
+:::
+
+## Troubleshooting
+
+### I'm getting an `0308010C:digital envelope routines::unsupported` error
+
+This usually happens with versions of Node other than 16. You can check the current Node version by running `node -v`, and change it by running `nvm use 16`.
+
+### I'm getting [error that happens when the backend is not up]
+
+TODO: explain
