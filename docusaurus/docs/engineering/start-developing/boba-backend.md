@@ -5,10 +5,6 @@ sidebar_position: 4
 # Install BobaBackend
 
 :::warning
-This is currently a private repository. Contact the BobaLord for access!
-:::
-
-:::important
 **Make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed.** This is the only codebase that needs it.
 :::
 
@@ -20,7 +16,7 @@ The first time you work on BobaBackend you need to copy the project to the local
 
 In a terminal, run the following commands:
 
-```bash   showLineNumbers
+```bash showLineNumbers
 # Clone the codebase from github
 git clone https://github.com/BobaBoard/boba-backend.git
 # Enter the codebase directory
@@ -43,8 +39,8 @@ touch firebase-sdk.json
 
 ### 2 — Set up your FirebaseSDK credentials.
 
-:::warning
-**This is an INVALIDATED Firebase service account key.** It will allow the firebase admin SDK to be correctly initialized, but doesn't grant any further privilege.
+:::info
+**This is an <u>INVALIDATED</u> Firebase service account key.** It will allow the firebase admin SDK to be correctly initialized, and allow you to login with your BobaBoard credentials, but doesn't grant any further privilege.
 :::
 
 Open `firebase-sdk.json` and paste the following content within it:
@@ -64,6 +60,8 @@ Open `firebase-sdk.json` and paste the following content within it:
 }
 ```
 
-## Start a local server
+## Next steps
 
-You can now [follow the instructions](/docs/engineering/boba-backend/getting-started) in the bobabackend guide and start your own local server.
+You're now ready to work on backend features! To start a local server, follow the instructions [in the boba-backend getting started guide](/docs/engineering/boba-backend/getting-started).
+
+If you want to interact with your local BobaBoard backend through a user interface (frontend), continue to the [install boba-frontend section](./boba-frontend).
