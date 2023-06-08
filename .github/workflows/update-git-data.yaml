@@ -1,0 +1,19 @@
+name: learn-github-actions
+run-name: ${{ github.actor }} is learning GitHub Actions
+schedule:
+  # * is a special character in YAML so you have to quote this string
+  - cron: "* 5 * * *"
+jobs:
+  update_git_data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: yarn run build
+        working-directory: ./plugins/github-downloader
+      - run: yarn run update-data
+        working-directory: ./docusaurus
