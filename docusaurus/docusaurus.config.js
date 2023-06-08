@@ -1,7 +1,6 @@
 const path = require("path");
 const excalidrawMdxPlugin = require("excalidraw-mdx-plugin/plugin");
 const excalidrawMdxRemark = require("excalidraw-mdx-plugin");
-const githubDownloader = require("github-downloader").default;
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -14,7 +13,7 @@ module.exports = {
   favicon: "img/badlyresizedab.ico",
   organizationName: "essential-randomness",
   projectName: "bobadocs",
-  plugins: [githubDownloader, excalidrawMdxPlugin],
+  plugins: [excalidrawMdxPlugin],
   clientModules: [require.resolve("./src/global.ts")],
   themeConfig: {
     respectPrefersColorScheme: true,
