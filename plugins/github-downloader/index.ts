@@ -22,6 +22,7 @@ Environment.parse(
 
 console.log(path.resolve(process.cwd()));
 console.log(path.resolve(process.cwd(), "./../.env"));
+console.log("glob", process.env);
 
 declare global {
   namespace NodeJS {
@@ -35,6 +36,7 @@ const DATA_PATH = path.resolve(process.cwd(), "src/_generated_data");
 // to a generic script. We should move it out of the plugins folder.
 async function githubDownloader() {
   console.log(await readFile(path.resolve(process.cwd(), "./../.env"), "utf8"));
+  console.log("gd", process.env);
   const labels = await maybeLoadLabelsFromRepo();
   const projects = await maybeLoadProjectsFromOrg();
 
