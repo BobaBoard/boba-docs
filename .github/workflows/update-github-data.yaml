@@ -21,6 +21,7 @@ jobs:
           touch .env
           echo GITHUB_TOKEN=${{ secrets.AUTHORIZED_GITHUB_TOKEN }} >> .env
           ls -la
+          cat .env
       - run: yarn run update-data
         working-directory: ./docusaurus
       - uses: peter-evans/create-pull-request@v5
