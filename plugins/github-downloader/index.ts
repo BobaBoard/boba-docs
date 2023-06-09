@@ -28,6 +28,8 @@ declare global {
 
 const DATA_PATH = path.resolve(process.cwd(), "src/_generated_data");
 
+// TODO: this is not a docusaurus plugin anymore and it's more akin
+// to a generic script. We should move it out of the plugins folder.
 async function githubDownloader() {
   const labels = await maybeLoadLabelsFromRepo();
   const projects = await maybeLoadProjectsFromOrg();
