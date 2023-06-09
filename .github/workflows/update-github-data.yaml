@@ -19,7 +19,7 @@ jobs:
         working-directory: ./plugins/github-downloader
       - run: |
           touch .env
-          echo GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} >> .env
+          echo GITHUB_TOKEN=${{ secrets.AUTHORIZED_GITHUB_TOKEN }} >> .env
           ls -la
       - run: yarn run update-data
         working-directory: ./docusaurus
