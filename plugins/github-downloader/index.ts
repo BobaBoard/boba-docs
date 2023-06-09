@@ -20,6 +20,9 @@ Environment.parse(
   })
 );
 
+console.log(path.resolve(process.cwd()));
+console.log(path.resolve(process.cwd(), "./../.env"));
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv extends z.infer<typeof Environment> {}
