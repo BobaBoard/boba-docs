@@ -15,6 +15,10 @@ jobs:
       - run: yarn install
       - run: yarn run build
         working-directory: ./plugins/github-downloader
+      - run: |
+          touch .env
+          echo GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} >> .env
+        working-directory: ./docusaurus
       - run: yarn run update-data
         working-directory: ./docusaurus
       - uses: peter-evans/create-pull-request@v5
