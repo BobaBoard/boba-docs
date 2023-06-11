@@ -3,7 +3,7 @@
     "id": "PVT_kwDOBKDHhM4AQ2-Y",
     "title": "\"It's a marathon not a sprint\" sprint (🛫Jun 5 — 🛬 July 17)",
     "shortDescription": null,
-    "readme": "Our goals:\n- Implement moderation tools that are blockers for Realms launch\n- Get a better handle on coding practices and standards\n- Figure out which documentation is missing and where to put it",
+    "readme": "Our goals:\n- Implement moderation tools that are blockers for Realms launch\n- Get a better handle on coding practices and standards\n- Figure out which documentation is missing and where to put it\n\n\n---MACHINE DATA---\n```\nstatus: active\ntype: sprint\n```",
     "url": "https://github.com/orgs/BobaBoard/projects/9",
     "items": {
       "nodes": [
