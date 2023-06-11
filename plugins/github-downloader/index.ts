@@ -1,7 +1,7 @@
 /* eslint-disable */
 import * as dotenv from "dotenv";
 
-import { mkdir, writeFile } from "fs/promises";
+import { mkdir, readFile, writeFile } from "fs/promises";
 
 import { maybeLoadLabelsFromRepo } from "./labels";
 import { maybeLoadProjectsFromOrg } from "./projects";

@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron: "* 5 * * *"
+    - cron: "0 5 * * *"
 jobs:
   update_github_data:
     runs-on: ubuntu-latest
@@ -19,9 +19,7 @@ jobs:
         working-directory: ./plugins/github-downloader
       - run: |
           touch .env
-          echo GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} >> .env
-          ls -la
-        working-directory: ./docusaurus
+          echo GITHUB_TOKEN=${{ secrets.AUTHORIZED_GITHUB_TOKEN }} >> .env
       - run: yarn run update-data
         working-directory: ./docusaurus
       - uses: peter-evans/create-pull-request@v5
