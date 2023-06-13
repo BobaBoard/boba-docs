@@ -81,14 +81,11 @@ The name of your fork doesn't have to match the name of the original project. Fo
 This means copying the code that is stored in your GitHub account to your PC. It doesn't really matter where you want to do this (make sure you have permissions?), though you might want to create a folder to keep all your BobaBoard-related coding in. For example: `/home/NAME/code-projects/bobaboard`.
 
 :::danger
-
 Windows users using WSL will want to pay extra attention.
+:::
 
 :::TODO
 be less mysterious about it...
-:::
-
-
 :::
 
 In order to clone the repository you need to tell git where the code you want to copy is stored. Simply put, you need a URL. Your repository's URL is simply the web address you use to view it on GitHub with a `.git` at the end. Meaning that if the URL you can copy from your browser's navigation bar is: `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components` then the URL you'll need to use when cloning is:  `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components.git`.
