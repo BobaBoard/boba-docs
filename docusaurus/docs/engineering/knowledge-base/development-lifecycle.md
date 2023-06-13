@@ -26,13 +26,13 @@ So, you've decided to contribute to a project. What happens next?
 
 1. **Add a copy of the project's code to your own GitHub account.**
 
-   > This first step involves getting your own version of the project's code to edit to your heart's content. In technical terms, this means creating a 'fork' of the project you want to contribute to.
+   > The first step is to get your own version of the project's code to edit to your heart's content. In technical terms, you'll create a "fork" of the project you want to contribute to, adding it to your GitHub account.
 
-1. **Download the code (from your GitHub account) to your computer.**
+1. **Download the code from your GitHub account to your computer.**
 
-   > You need to get the code onto your computer to start making changes. This way you can edit the code in the comfort of your own ~~home~~ code editor. This is done by downloading or, in technical terms, 'cloning' the code from your GitHub account.
+   > Before you can start making changes, you need to get the code on your computer. This way you can edit the code in the comfort of your own ~~home~~ code editor. This is done by downloading or, in technical terms, 'cloning' the code from your GitHub account.
 
-1. **Create a Branch in the code to keep your changes contained.**
+1. **Create a Branch in the repository to keep your changes contained.**
 
    > You get to create parallel versions of the code so you can work on different unrelated things at the same time without getting them tangled.
 
@@ -42,7 +42,7 @@ So, you've decided to contribute to a project. What happens next?
 
 1. **Share your work with the project owners**.
 
-   > You've been working on your own personal copy of the code so far. Once you're ready, you can ask the people involved in the project to take a look at what you've done so you can get feedback. In technical terms this is called 'creating a pull (or merge) request'
+   > So far, you've been working on your own copy of the code. Once you're ready, you can ask the people involved in the project to take a look at what you've done and give feedback. In technical terms this is called 'creating a pull (or merge) request'
 
 1. **Get feedback and make adjustments**.
 
@@ -61,12 +61,12 @@ So, you've decided to contribute to a project. What happens next?
 The following is a more in-depth guide to the steps one would follow to contribute a simple change to one of Boba's codebases.
 
 :::note
-If you've looked at our [Recommended Tools](/docs/engineering/knowledge-base/recommended-tools.md) document, you've seen we recommend Visual Studio Code as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer. However, we will still list the commands here so that everyone can follow along and understand what's happening behind the scenes.
+If you've looked at our [Recommended Tools](/docs/engineering/knowledge-base/recommended-tools.md) document, you've seen we recommend Visual Studio Code as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer.
 :::
 
 ### 1. Fork the repository on GitHub
 
-Forking creates an exact copy of the entire codebase to your own GitHub account. This means all it's files and the history of changes. You own this copy (in terms of permissions) and it's completely separate from the original. No matter what changes you make, the original codebase (often referred to as `upstream`) will remain unchanged.
+Forking creates an exact copy of the entire codebase to your own GitHub account. This includes all its files and the history of changes. You own this copy (in terms of permissions) and it's completely separate from the original. No matter what changes you make, the original codebase (often referred to as `upstream`) will remain unchanged.
 
 You can fork a repository on GitHub from its web interface by going to the repository's URL. For example, the repository for this documentation is `https://www.github.com/BobaBoard/boba-docs`, where `BobaBoard` is the name of the owner of the repository, and `boba-docs` is the repository's name.
 
@@ -78,7 +78,7 @@ The name of your fork doesn't have to match the name of the original project. Fo
 
 ### 2. Clone your fork to your machine
 
-This means copying the code that is stored in your GitHub account to your PC. It doesn't really matter where you want to do this (make sure you have permissions?), though you might want to create a folder to keep all your BobaBoard-related coding in. For example: `/home/NAME/code-projects/bobaboard`.
+Cloning means copying the code that is stored in your GitHub account to your PC. It doesn't really matter where you want to do this, as long as you have permission to create files.  For this project, we suggest suggest creating a folder to keep all your BobaBoard-related coding in. For example: `/home/NAME/code-projects/bobaboard`.
 
 :::danger
 Windows users using WSL will want to pay extra attention.
@@ -88,7 +88,9 @@ Windows users using WSL will want to pay extra attention.
 be less mysterious about it...
 :::
 
-In order to clone the repository you need to tell git where the code you want to copy is stored. Simply put, you need a URL. Your repository's URL is simply the web address you use to view it on GitHub with a `.git` at the end. Meaning that if the URL you can copy from your browser's navigation bar is: `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components` then the URL you'll need to use when cloning is:  `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components.git`.
+To clone the repository you need to tell git where the code you want to copy is stored. Simply put, you need a URL. Your repository's URL is simply the web address you use to view it on GitHub with a `.git` at the end. 
+
+For example, if the URL you can copy from your browser's navigation bar is: `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components` then the URL you'll need to use when cloning is:  `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components.git`.
 
 GitHub actually has a handy button in its interface to get this URL.
 
@@ -109,7 +111,7 @@ git clone <REPOSITORY_URL>
 
 After cloning a few boba-repos and making a few personal projects you might end up with a folder structure that looks something like this:
 
-```none
+```txt
 /home
 ├─ /<USER_NAME>
 │  ├─ code-projects/
@@ -139,7 +141,6 @@ git remote --verbose
 > upstream  https://github.com/BobaBoard/boba-docs.git (fetch)
 > upstream  https://github.com/BobaBoard/boba-docs.git (push)
 ```
-
 
 ### 3. Create a branch for your edits
 
