@@ -4,7 +4,9 @@ sidebar_position: 7
 
 # Development Lifecycle
 
-> //TODO: Consider making this doc a folder with multiple sections and moving to the Volunteering section
+:::TODO
+Consider making this doc a folder with multiple sections and moving to the Volunteering section
+:::
 
 If you're new to collaborating on a code project, you may be wondering what that process looks like. This page will:
 
@@ -82,7 +84,10 @@ This means copying the code that is stored in your GitHub account to your PC. It
 
 Windows users using WSL will want to pay extra attention.
 
-> //TODO: be less mysterious about it...
+:::TODO
+be less mysterious about it...
+:::
+
 
 :::
 
@@ -90,7 +95,9 @@ In order to clone the repository you need to tell git where the code you want to
 
 GitHub actually has a handy button in its interface to get this URL.
 
-> //TODO: add screenshot?
+:::TODO
+add screenshot?
+:::
 
 :::caution On HTTPS vs SSH
 There's HTTPS and SSH..?
@@ -163,7 +170,9 @@ git checkout read-more
 git branch --delete read-more
 ```
 
-> //TODO: Actually look up what that cursed checkout command does...
+:::TODO
+Actually look up what that cursed checkout command does..
+:::
 
 ### 4. Commit changes to your branch
 
@@ -185,7 +194,9 @@ It's simple but in practice most of us have trouble remembering to make commits 
 
 ---
 
-> //TODO: continue edit below
+:::TODO
+continue edit below
+:::
 
 ### 5. Open a "pull request" on the original codebase
 
@@ -197,7 +208,9 @@ You can open a pull request (PR) by visiting your forked repo on GitHub. When yo
 
 Here, you'll write a brief description of the changes you've worked on. You can request specific people to take a look at your PR, but not everyone will know what you're working on, so you should do your best to explain it so even those with no context understand.
 
-> //TODO: add a note about opening PRs early, even if your feature is not finished, bc its a good way for people to offer guidance
+:::TODO
+add a note about opening PRs early, even if your feature is not finished, bc its a good way for people to offer guidance
+:::
 
 ### 6. The codebase owners review (and eventually "merge") the pull request
 
