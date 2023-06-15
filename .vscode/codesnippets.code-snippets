@@ -1,0 +1,91 @@
+{
+	"Admonition: Caution": {
+		"prefix": "Caution",
+		"body": [
+			":::caution",
+			" ",
+			"$1",
+			" ",
+			":::"
+		],
+		"description": "Create a caution admonition."
+	},
+
+	"Admonition: Danger": {
+		"prefix": "Danger",
+		"body": [
+			":::danger",
+			" ",
+			"$1",
+			" ",
+			":::"
+		],
+		"description": "Create a danger admonition."
+	},
+
+	"Admonition: Info": {
+		"prefix": "Info",
+		"body": [
+			":::info",
+			" ",
+			"$1",
+			" ",
+			":::"
+		],
+		"description": "Create a information admonition."
+	},
+
+	"Admonition: Note": {
+		"prefix": "Note",
+		"body": [
+			":::note",
+			" ",
+			"$1",
+			" ",
+			":::"
+		],
+		"description": "Create a note admonition."
+	},
+
+	"Admonition: Tip": {
+		"prefix": "Tip",
+		"body": [
+			":::tip",
+			" ",
+			"$1",
+			" ",
+			":::"
+		],
+		"description": "Create a tip admonition."
+	},
+
+	"Admonition: Warning": {
+		"prefix": "Warning",
+		"body": [
+			":::warning",
+			" ",
+			"$1",
+			" ",
+			":::"
+		],
+		"description": "Create a warning admonition."
+	},
+
+	"Codeblock with Line Number": {
+		"prefix": "Code Block",
+		"body": [
+			"```bash showLineNumber",
+			"$1",
+			"```"
+		],
+		"description": "Create a shell code block with line numbers visible"
+	},
+
+	"Reading Time": {
+		"prefix": "Reading Time",
+		"body": [
+			"[<FontAwesomeIcon icon={faClock} /> $1 min]",
+		],
+		"description": "Add a reading time."
+	},
+}
