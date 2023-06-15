@@ -11,8 +11,8 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/badlyresizedab.ico",
-  organizationName: "essential-randomness",
-  projectName: "bobadocs",
+  organizationName: "BobaBoard ",
+  projectName: "boba-docs",
   plugins: [excalidrawMdxPlugin],
   clientModules: [require.resolve("./src/global.ts")],
   themeConfig: {
