@@ -32,7 +32,7 @@
 			" ",
 			":::"
 		],
-		"description": "Create a information admonition."
+		"description": "Create an information admonition."
 	},
 
 	"Admonition: Note": {
@@ -86,6 +86,6 @@
 		"body": [
 			"[<FontAwesomeIcon icon={faClock} /> $1 min]",
 		],
-		"description": "Add a reading time."
+		"description": "Add an inline reading time annotation for external links."
 	},
 }
