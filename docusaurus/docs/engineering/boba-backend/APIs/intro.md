@@ -4,7 +4,7 @@ sidebar_position: 1
 
 # Introduction to APIs
 
-APIs allow applications (clients) to interact with another application (server) without unfettered access to the underlying data, or to the whole set of operations that can be executed on it. In short, an API is a contract defined by the server that establishes a common language that clients can use to communicate with it. Most operations allowed by APIs boil down to fetching, storing or updating data.
+APIs allow different applications to talk to each other without giving them complete access to all the data or operations of the other application. In simple terms, an API is a contract that defines a common language so one application can communicate with another. Most API operations involve fetching, storing, or updating data.
 
 :::note
 
@@ -12,15 +12,15 @@ You can explore the full BobaBackend API on the [REST API documentation page](/d
 
 :::
 
-While there are no enforced rules about how APIs should be defined, BobaBackend's API implements [a special set of API guidelines](https://www.redhat.com/en/topics/api/what-is-a-rest-api) called REST. Among the advantages of adhering to REST principles, is that REST APIs are easier to reason about, define, and scale. You can read about the REST principles followed by BobaBackend in the [API guidelines](./API-guidelines) page.
+While there are no enforced rules about how APIs should be defined, BobaBackend's API implements [a special set of API guidelines](https://www.redhat.com/en/topics/api/what-is-a-rest-api) called REST. Following REST principles has several advantages, including easier understanding, definition, and scalability of APIs. You can find more details about the REST principles followed by BobaBackend in the [API guidelines](./API-guidelines) page.
 
 ## How a REST API works
 
-REST APIs rely on the HTTP protocol, the same browsers use to navigate most webpages. In particular, a REST API defines a set of `endpoints` (URLs) that the client can access to execute operations. A REST API also defines the semantic of the data the client will send to describe the operation parameters, as well as the one of the data it will receive in response.
+REST APIs use the HTTP protocol, which is the same protocol that web browsers use to navigate websites. Specifically, a REST API defines a set of URLs called 'endpoints' that the client (your application) can access to perform operations. A REST API also specifies the format of the data the client needs to send for the operation and the format of the data it will receive in response.
 
-For requests, REST APIs rely on [`HTTP methods`](https://www.restapitutorial.com/lessons/httpmethods.html) to execute different operations on the same resource using a single `endpoint` associated with it. For responses, REST APIs rely on [`HTTP Status Codes`](https://httpstatuses.com/) to communicate the result of the operation.
+To make requests to a REST API, different [`HTTP methods`](https://www.restapitutorial.com/lessons/httpmethods.html) are used to perform various operations on a specific resource. These methods are associated with a single endpoint each. When the API responds to a request, it uses [`HTTP Status Codes`](https://httpstatuses.com/) to indicate the result of the operation.
 
-Additional data required as part of the request or response is referred to as the request/response `payload`. BobaBoard's API returns responses in the [`JSON format`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
+Any additional data that needs to be sent or received as part of the request or response is referred to as the request/response payload. In the case of BobaBoard's API, the responses are returned in the [`JSON format`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
 
 :::TODO
 
