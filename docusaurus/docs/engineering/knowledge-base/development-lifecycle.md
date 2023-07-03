@@ -123,9 +123,9 @@ After cloning a few boba-repos and making a few personal projects you might end 
 │  │  ├─ personal-website/
 ```
 
-One thing to keep in mind is that the code of a project can change fairly often, meaning you'll want to keep your fork in sync with the original repository, and your clone in sync with your fork. To do this you need to make sure that the local copy of the code that lives in your machine correctly points to both of these GitHub repositories (the one that belong to the BobaBoard organization, and the one in your own account).
+We want our local copy of the code to be able to interact and reference both the original codebase and the fork we made. To do this you need to make sure that the local copy of the code that lives in your machine correctly points to both of these GitHub repositories (the one that belongs to the BobaBoard organization, and the one in your own account).
 
-The clone you just created actually already points to your own GitHub account repo, but you'll need to add the original repository you forked from manually.
+The clone you just created actually already points to your own GitHub account repo, but you'll need to add the repository you originally forked from manually.
 
 Using boba-docs as an example:
 
