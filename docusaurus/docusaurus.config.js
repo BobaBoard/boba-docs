@@ -128,6 +128,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+					sidebarCollapsed: false,
           editUrl:
             "https://github.com/essential-randomness/bobadocs/edit/main/",
           admonitions: {
