@@ -39,7 +39,7 @@ module.exports = {
         },
         {
           type: "doc",
-          docId: "volunteering/intro",
+          docId: "volunteering/overview/index",
           position: "left",
           label: "Volunteering Guide",
         },
@@ -72,7 +72,7 @@ module.exports = {
             },
             {
               label: "Volunteering Guide",
-              to: "/docs/volunteering/intro",
+              to: "/docs/volunteering",
             },
             {
               label: "User Guide",
