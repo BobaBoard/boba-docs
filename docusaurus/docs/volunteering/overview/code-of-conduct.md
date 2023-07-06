@@ -8,7 +8,10 @@ slug: /volunteering/code-of-conduct
 This guide goes over the code of conduct for BobaBoard's volunteers.
 
 :::tip **This document and the surrounding processes are a living document.**
-Volunteers are empowered to propose changes, adjustments and additions. :::
+
+Volunteers are empowered to propose changes, adjustments and additions.
+
+:::
 
 ## Volunteers expectations
 
@@ -54,7 +57,9 @@ The final decision always rests on the judgement of the project leads.
 
 **Our goal is not to police, but to keep the community welcoming to those we
 want to serve.** Unless your behavior is grossly inappropriate, you aren't going
-to be suddenly banned for a slip up, or for a careless remark. :::
+to be suddenly banned for a slip up, or for a careless remark.
+
+:::
 
 With that said, BobaBoard's goal is to first and foremost protect niche fandom
 communities, and give them a safe, respectful space in which to freely express
