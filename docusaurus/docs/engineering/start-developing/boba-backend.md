@@ -80,4 +80,4 @@ Open `firebase-sdk.json` and paste the following content within it:
 
 ## Start a local server
 
-You can now [follow the instructions](/docusaurus/docs/engineering/boba-backend/getting-started) in the bobabackend guide and start your own local server.
+You can now [follow the instructions](../boba-backend/getting-started) in the bobabackend guide and start your own local server.

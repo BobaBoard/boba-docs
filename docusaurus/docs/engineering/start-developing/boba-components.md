@@ -10,7 +10,7 @@ BobaComponents is where BobaBoard's UI pieces (components) are developed.
 
 ## Install Instructions
 
-The first time you work on BobaComponents you need to [fork the repository]((https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)) so you can edit your own version of the code.
+The first time you work on BobaComponents you need to [fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) so you can edit your own version of the code.
 
 ### 1 — Clone your fork
 
@@ -61,7 +61,7 @@ You can now continue to the [development instructions](#development-instructions
 
 You should follow these instructions if you want to make parallel changes to BobaEditor as part of updating BobaComponents.
 
-1. **[Install BobaEditor](/docusaurus/docs/engineering/start-developing/boba-editor.md).** The rest of these instructions assume you're installing BobaEditor in the same containing folder as BobaComponents.
+1. **[Install BobaEditor](./boba-editor).** The rest of these instructions assume you're installing BobaEditor in the same containing folder as BobaComponents.
    :::danger
    If you install BobaEditor _within_ BobaComponents, you're going to have a bad time.
    :::
