@@ -11,7 +11,7 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/badlyresizedab.ico",
-  organizationName: "BobaBoard ",
+  organizationName: "BobaBoard",
   projectName: "boba-docs",
   plugins: [excalidrawMdxPlugin],
   clientModules: [require.resolve("./src/global.ts")],
@@ -50,7 +50,7 @@ module.exports = {
           label: "User Guide",
         },
         {
-          href: "https://github.com/essential-randomness/bobadocs",
+          href: "https://github.com/BobaBoard/boba-docs",
           label: "GitHub",
           position: "right",
         },
@@ -110,7 +110,7 @@ module.exports = {
             },
             {
               label: "GitHub",
-              href: "https://github.com/essential-randomness",
+              href: "https://github.com/BobaBoard",
             },
             {
               label: "Attributions",
@@ -128,8 +128,9 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+					sidebarCollapsed: false,
           editUrl:
-            "https://github.com/essential-randomness/bobadocs/edit/main/",
+            "https://github.com/BobaBoard/boba-docs/edit/main/docusaurus/",
           admonitions: {
             tag: ":::",
             keywords: [
@@ -171,7 +172,7 @@ module.exports = {
           showReadingTime: true,
           // Please change this to your repo.
           editUrl:
-            "https://github.com/essential-randomness/bobaboard/edit/main/website/blog/",
+            "https://github.com/BobaBoard/boba-docs/edit/main/docusaurus/blog/",
         },
         theme: {
           customCss: [
