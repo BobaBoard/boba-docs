@@ -80,7 +80,7 @@ yarn link
 
 #### 2. Link the local `boba-components` package to `boba-frontend`
 
-In your `boba-components` directory run:
+In your `boba-frontend` directory run:
 
 ```bash showLineNumbers
 cd boba-frontend
