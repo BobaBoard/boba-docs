@@ -9,6 +9,15 @@
     "description": ""
   },
   {
+    "id": 5771827646,
+    "node_id": "LA_kwDOE8ugM88AAAABWAcZvg",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9A%BENeeds%20Pinch%20Hitter",
+    "name": "⚾Needs Pinch Hitter",
+    "color": "EEEC84",
+    "default": false,
+    "description": "The original contributor needs to abandon this PR, and we need someone to step up to help out."
+  },
+  {
     "id": 2680331200,
     "node_id": "MDU6TGFiZWwyNjgwMzMxMjAw",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9B%88%EF%B8%8F%20Hard",
