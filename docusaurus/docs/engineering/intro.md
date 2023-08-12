@@ -33,7 +33,9 @@ Content created through boba-editor is stored in the **"Quill Delta" format**, a
 Since other BobaBoard codebases should not interact with this format directly, **boba-editor also exports utilities to manipulate the Delta format itself** (e.g. extracting images for upload, removing trailing spaces, etc).
 
 :::tip
+
 **Edit this codebase if:** you want to give users more input options, including embeds, images and gifs.
+
 :::
 
 ## boba-components
@@ -43,7 +45,9 @@ Since other BobaBoard codebases should not interact with this format directly, *
 boba-components is where BobaBoard's UI pieces (components) are developed, as separate from the "frontend/server logic" as possible to facilitate reuse and (one day) ease of testing. This is made possible by using [StoryBook](https://storybook.js.org/), which you can see in action at this [demo link](https://bobaboard-ui.netlify.app/).
 
 :::tip
+
 **Edit this codebase if:** you want to improve the functionality/look of specific boba-components elements, like buttons, contributions, sidebar elements, thread stems, etc.
+
 :::
 
 ## boba-frontend
@@ -53,7 +57,9 @@ boba-components is where BobaBoard's UI pieces (components) are developed, as se
 The BobaBoard frontend repository is in charge of managing the full BobaBoard user experience, putting together the components defined in boba-components (see above) into logical pages, and handling the communication between the user and the server. Based on [NextJS](https://nextjs.org/).
 
 :::tip
+
 **Edit this codebase if:** you want to change how UI elements come together to create pages like boards, threads, settings and the related user flows.
+
 :::
 
 ## boba-backend
@@ -67,5 +73,7 @@ Other than the server itself, this repository contains table definitions for Bob
 Other technologies used include a [Redis Cache](https://redis.io/) and [Jest](https://jestjs.io/) for testing.
 
 :::tip
+
 **Edit this codebase if:** you want to add new functionality to BobaBoard that goes beyond the interaction with the user (or fix existing bugs).
+
 :::

@@ -45,12 +45,14 @@ const set[entity]InCache = ({
 ```
 
 :::important
+
 The transform method **must** return:
 
 - The **same instance** of the entity if no update was done.
 - A **new instance** of the entity if an update was done.
 
 This ensures React's re-rendering logic correctly picks up (or ignores) the change.
+
 :::
 
 Our update methods can then use different transformers to update the data:

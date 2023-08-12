@@ -5,7 +5,9 @@ sidebar_position: 4
 # Install BobaBackend
 
 :::warning
+
 **Make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed.** This is the only codebase that needs it.
+
 :::
 
 ## Install Instructions
@@ -40,7 +42,9 @@ touch firebase-sdk.json
 ### 2 — Set up your FirebaseSDK credentials.
 
 :::info
+
 **This is an <u>INVALIDATED</u> Firebase service account key.** It will allow the firebase admin SDK to be correctly initialized so you can login with your BobaBoard credentials, but doesn't grant any administrative privilege, like the ability to create new users.
+
 :::
 
 Open `firebase-sdk.json` and paste the following content within it:

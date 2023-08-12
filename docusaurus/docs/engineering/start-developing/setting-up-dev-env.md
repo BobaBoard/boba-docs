@@ -7,9 +7,11 @@ sidebar_position: 2
 This is an overview of the programs you'll need to install before developing for BobaBoard.
 
 :::tip
+
 **Developing for BobaBoard requires use of the command line.** While this might seem scary, the amount of commands needed is minimal and they can often be run without a deep understanding of them.
 
 If you're intimidated, contact Ms. Boba for help! Also consider editing this page to make it less scary for newcomers.
+
 :::
 
 ## What to Install
@@ -25,13 +27,17 @@ If you're intimidated, contact Ms. Boba for help! Also consider editing this pag
 ### Windows Subsystem for Linux (WSL) [Windows Only]
 
 :::warning
+
 This is only for Window users. It's optional, but **highly recommended**. Without this, it might be harder to help you in case of errors.
+
 :::
 
 **[WSL](https://docs.microsoft.com/en-us/windows/wsl/install) allows you to run Linux commands on Windows**, and will save you many, many headaches. We recommend using the latest version of WSL (WSL2). The default Ubuntu distribution is the most commonly used, but if you're more familiar with another distribution, you're welcome to use it.
 
 :::caution
+
 If you need Docker (see below) and have Windows 10 Home Edition, you **must** install WSL.
+
 :::
 
 For a step-by-step guide to setting up WSL, installing the below pre-requisites, and getting set-up to develop for BobaBoard using WSL see [The BobaBoard Guide to Setting up WSL](/docs/engineering/start-developing/wsl)
@@ -47,11 +53,15 @@ To install git, follow the [instructions on GitHub](https://github.com/git-guide
 **NodeJS allows you to execute JavaScript outside of a web browser.** This should be installed via the [**Node Version Manager**](https://github.com/nvm-sh/nvm) (NVM), which allows you to manage multiple versions of NodeJS on the same machine.
 
 :::caution
+
 You can also install NodeJS directly through the installer, but you won't be able to switch between versions. It is **highly, highly recommended** that you install NVM.
+
 :::
 
 :::tip
+
 While NVM isn't natively supported on Windows, you can get access to it through [WSL](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
+
 :::
 
 ### Yarn
@@ -59,7 +69,9 @@ While NVM isn't natively supported on Windows, you can get access to it through 
 **[Yarn](https://classic.yarnpkg.com/en/) is a JavaScript Package Manager, which automatically downloads and installs the external code that BobaBoard depends on**, without you having to manually download everything yourself. Yarn is also used to hide complex scripts under simpler commands like `yarn run test`.
 
 :::tip
+
 Using `npm` instead of `yarn` will result in errors. You can blame React for that.
+
 :::
 
 ### Docker [BobaBackend Only]
@@ -69,7 +81,9 @@ Using `npm` instead of `yarn` will result in errors. You can blame React for tha
 - You also need [Docker Compose](https://docs.docker.com/compose/install/). This comes for free with the above in Windows and Mac, but might need additional steps on Linux.
 
 :::warning
+
 **[Windows Only]** You should run docker in a WSL2 instance. There's a checkbox in Docker settings for this. (This is required if you have Windows 10 Home Edition, and only recommended for other versions of Windows 10.) If Docker is failing to start, make sure you have WSL2 installed.
+
 :::
 
 Docker will be used to run BobaBoard's [**PostgreSQL**](https://www.postgresql.org/) database and the [**Redis**](https://redis.io/topics/quickstart) cache without globally installing them on your system. You can [learn more about caches](.../../../knowledge-base/caching) in our knowledge base.

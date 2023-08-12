@@ -5,7 +5,9 @@ sidebar_position: 1
 # Volunteering
 
 :::tip
+
 **This guide and the surrounding processes are a living document.** Volunteers and other BobaBoard stakeholders are empowered to propose changes, adjustments and additions.
+
 :::
 
 Thank you for your interest in volunteering for BobaBoard! Community contributions are vital to the success of the project, and we're looking forward to welcoming you onboard.
@@ -26,7 +28,9 @@ The goal of both staff and volunteers is to create spaces and processes that ena
 **Reaching and upholding these goals is a collective, continuos effort.** If you wish to propose changes, believe we're falling short of our commitments, or have other concerns, you can open an issue on GitHub, contact Ms. Boba, or take advantage of our anonymous volunteering feedback form.
 
 :::TODO
+
 [Ms Boba] Create an anonymous volunteers feedback form, and a standard "how to discuss X" template.
+
 :::
 
 ## The volunteering expectations
@@ -40,7 +44,9 @@ While BobaBoard strives to embody the chaotic and transgressive spirit of some c
 - Proactively let us know how we can help make their experience better, or smooth out problems for them.
 
 :::tip
+
 If life or other issues get in the way of a commitment you've made, <ins>let us know</ins>! We'll reassign the task with no judgement.
+
 :::
 
 **This project is fully committed to diversity, equity and inclusion.** If we can provide accommodations to improve your experience (such as breaking down tasks, or more regular check-ins), let us know. If you have concerns, you can report them to Ms. Boba.
@@ -48,23 +54,37 @@ If life or other issues get in the way of a commitment you've made, <ins>let us 
 ## The volunteering process
 
 :::caution
+
 We're currently focusing our efforts on improving the volunteering process **for tech volunteers**. Other types of volunteers are still invited to reach out.
+
 :::
 
 1. **[Fill the tech volunteering form](https://docs.google.com/forms/d/e/1FAIpQLSdCX2_fZgIYX0PXeCAA-pfQrcLw_lSp2clGHTt3uBTWgnwVSw/viewform)** to get access to our volunteers Discord server and our test community while BobaBoard is still in its closed alpha phase.
 2. **[Familiarize yourself with BobaBoard codebases.](../engineering/intro)** BobaBoard's architecture is modular by design. If you're particularly interested in a specific area of work, follow the corresponding instructions to install a local copy.
 3. **Familiarize yourself with the current roadmap and focus areas.** Volunteering expectations may vary according to the urgency of the task. If you're an expert developer with short-term availabilty, you're welcome to help with issues in the critical path. Beginners may want to start with improvements in non-urgent areas of focus.
+
    :::warning
+
    This is an active area of development. Check back later for instructions, and contact Ms. Boba in the meanwhile!
-   :::
+   
+	 :::
+
 4. **Select a first issue.** Contact Ms. Boba for help selecting an issue that meets your goals and requirements.
-   :::TODO
+   
+	 :::TODO
+
    [Ms. Boba] Create an open process to select issues.
-   :::
+   
+	 :::
+
 5. **Keep in touch.** Periodically update your status with any progress done.
+
    :::TODO
+
    [Ms. Boba] Create an open process for status check-ins.
-   :::
+   
+	 :::
+
 6. **Open a Pull Request and get your hard work merged in.** Use your GitHub account to submit your changes for review. After approval, the changes will be merged in the BobaBoard codebase.
 
    Some tasks might span multiple Pull Requests. If that is the case, after marking the reviewed step complete in the corresponding issue, go back to step 5. Once all work is complete, it's time for step 7.
