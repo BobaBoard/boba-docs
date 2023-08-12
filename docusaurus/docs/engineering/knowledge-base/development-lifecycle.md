@@ -8,11 +8,15 @@ To look at/download BobaBoard's code, check out our guide to [Setting Up your Co
 You might also be interested in [Git Notes](/docs/engineering/legacy-pages/git-notes)
 
 :::tip This seems scarier than it is!
+
 If you're new to coding and github, the following process might seem scary and overwhelming. Don't worry: it will become second nature very quickly! If you want someone to hold your hand throughout the process, contact Ms. Boba.
+
 :::
 
 :::note
+
 TODO[Ms.Boba]: Explore whether the new github command line interface can make this process less cumbersome.
+
 :::
 
 ## Development lifecycle overview
@@ -61,8 +65,10 @@ git fetch
 ```
 
 :::warning
+
 If you want to use a different GitHub account for BobaBoard, your `origin` URL
 will be different. Follow the instructions in the ["use a different GitHub account" section](#extra-use-a-different-github-account).
+
 :::
 
 At this point, you can proceed with the regular flow for a pull request.
@@ -147,7 +153,9 @@ git config user.email YOUR_BOBABOARD_GITHUB_EMAIL_HERE
 ```
 
 :::warning
+
 The email you set up will be visible to the world. GitHub provides a secret email address in your account section. Use that!
+
 :::
 
 ### 2. Update the `origin` of the repository to the right username

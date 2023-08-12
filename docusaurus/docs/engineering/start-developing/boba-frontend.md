@@ -5,9 +5,11 @@ sidebar_position: 5
 # Install BobaFrontend
 
 :::warning
+
 This codebase requires Node **16**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 16 by running `nvm use 16` in your terminal.
 
 You can check the current Node version by running `node -v`.
+
 :::
 
 ## Clone project
@@ -28,7 +30,9 @@ yarn install
 ## Develop
 
 :::TODO
+
 Move these instructions to the `boba-frontend` section, similar to how it's done in the `boba-backend` install instructions.
+
 :::
 
 ### Connect to a local `boba-backend` (default Realm)
@@ -37,7 +41,9 @@ To connect to a local `boba-backend` instance, make sure that the instance is up
 `http://localhost:3000` will show the default Realm (`twisted-minds`).
 
 :::info Logging in
+
 You can login with your BobaBoard credentials, although your test user will appear as "boba-tan".
+
 :::
 
 ### Connect to a local `boba-backend` (multiple Realms)
@@ -49,7 +55,9 @@ development, we use [the Bonjour protocol](https://softwarekeep.com/help-center/
 2. Go to `http://twisted-minds_boba.local:3000` in your browser.
 
 :::warning
+
 Do ask for help if you encounter problems! If you're on a Linux machine, you may need to start the Avahi daemon.
+
 :::
 
 ### Connect to a different backend
@@ -91,6 +99,7 @@ yarn link @bobaboard/ui-components
 
 To see changes to BobaComponents reflected in BobaFrontend, you must run `yarn run build` in the `boba-components` folder. BobaFrontend should then pick up the changes when the page is reloaded. Loading may be slower the first time
 after new changes.
+
 :::
 
 ## Troubleshooting

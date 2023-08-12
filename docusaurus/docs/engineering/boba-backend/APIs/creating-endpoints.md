@@ -7,9 +7,11 @@ sidebar_position: 2
 An API `endpoint` is a URL clients can request to execute operations. Following REST principles, BobaBoard's server endpoints are grouped by the type of resource they refer to (e.g. boards, threads, users). Their naming and structure, which reflects their external URL, should follow the principles defined in our [API guidelines](API-guidelines).
 
 :::note
+
 The same endpoint can be called with different HTTP methods, each of which corresponds (when defined) to a different operation on the associated resources.
 
 You can learn more in our [intro to APIs](./API-guidelines.md).
+
 :::
 
 ## Routes and endpoint structure {#structure}
@@ -29,13 +31,17 @@ The `server/all-routes.ts` file associates the routers exported by the `routes.t
 ## Adding a new endpoint
 
 :::tip
+
 A more general explanation of Express routing is available [on MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
+
 :::
 
 1. Locate the `routes.ts` file corresponding to the resource you want to add an endpoint to. It will be contained within the `server/[resource_name]` directory.
 
    :::note
+
    If you're adding a new top-level route, follow the instruction in the [creating a new top-level route](#top-level-route) section.
+
    :::
 
 2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will use. The [REST API example](./intro.md#api-example) includes examples of different methods and their semantic. You can also consult the [Zalando API guidelines](https://opensource.zalando.com/restful-api-guidelines/#148) for an in-depth explanation.
@@ -50,7 +56,9 @@ router.HTTP_METHOD("relative/path/to/route/", [middlewares], [routeHandler]);
 ```
 
 :::tip
+
 An express middleware is a function that runs before `routeHandler` is executed. You can read more about middlewares on the [Express documentation website](https://expressjs.com/en/guide/using-middleware.html).
+
 :::
 
 For example, the following code, contained within the `server/posts/routes.ts` file, defines the `/posts/:post_id/comment` endpoint:
@@ -75,7 +83,9 @@ router.post("/:post_id/comment", ensureLoggedIn, async (req, res) => {
 ```
 
 :::warning
+
 Each endpoint should be documented and tested.
+
 :::
 
 ### Creating a new top-level route {#top-level-route}
@@ -109,7 +119,9 @@ Each endpoint should be documented and tested.
 We use the [OpenAPI 3.1](https://spec.openapis.org/oas/latest.html) spec to document API endpoints.
 
 :::tip
+
 You can learn more about the libraries used and the setup [on this dev.to article](https://dev.to/essentialrandom/documenting-express-rest-apis-with-openapi-and-jsdoc-m68).
+
 :::
 
 OpenAPI specifications are best learned by looking at existing documentation. If you need more exhaustive explanations (or have doubts), documentation is available [on the OpenAPI website](https://swagger.io/docs/specification/paths-and-operations/).
@@ -231,5 +243,7 @@ Other documentation can refer to these components by using the `$ref: "#/compone
 ### Adding examples
 
 :::TODO
+
 This section is incomplete. Ask Ms. Boba to fill it out!
+
 :::

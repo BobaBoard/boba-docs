@@ -30,7 +30,9 @@ Here are the steps to do this:
 ![a cropped screenshot of the bobadocs github page, with a red arrow pointing to the fork button](/img/volunteer/bobadocsfork.jpg)
 
 :::tip
+
 By the way! To do this right, you'd also need to branch. Read our [knowledge base](/docs/volunteering/github/understanding-github) to learn more about branching.
+
 :::
 
 ### Keeping your files updated
@@ -46,7 +48,9 @@ Now that you have your own copy of the files, all you have to do to edit the pag
 3. Edit the URL of the editor page by replacing `essential-randomness` with your GitHub username. Going to the edited URL will open the same editor, but using your copy of the files. _Use this editor._ Like before, you can tell you're in the right place if `[USERNAME]/bobadocs` appears on the top left.
 
 :::tip
+
 Remember how the last tip mentioned branching? That last bullet is there to keep you from accidentally creating a branch (something outside the scope of this guide). If you do create a new branch and need to delete it, see the [appendix](./editing-bobadocs-appendix/#deleting-a-branch) for how to do that.
+
 :::
 
 ## Step 2: Make your edits
@@ -68,7 +72,9 @@ On the top left of the editor is a "Preview" tab, which will let you look at you
 Use this tab often. Clicking the "Show diff" button on the top right of preview will highlight the changes you've made to the file, making it easy to see what you've done so far. Use show diff often.
 
 :::tip
+
 Notice how GitHub's preview doesn't look exactly the same as the page on Docusaurus? That's because Docusaurus makes use of tools that GitHub's editor doesn't, such as HTML or page metadata at the top of the file. If you're going to use these in GitHub's editor, take extra care and leave plenty of space between different elements to avoid errors.
+
 :::
 
 Once you're satisfied with your changes, it's time to save them. Scroll down the page.
