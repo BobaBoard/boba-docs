@@ -11,7 +11,7 @@ While every feature is unique, developing on boba backend usually involves chang
 - **Database:** the tables and queries used to store and retrieve data from permanent storage.
 - **Tests:** the automated checks that ensure code runs (and continues to run) as expected.
 
-This page goes over the main steps involved in making changes to each of these. This is not the only order
+This guide explains the main steps required to make changes to each of these. This is not the only order
 in which these changes can be tackled, and not all changes will involve all steps.
 
 ## API endpoints development
@@ -57,7 +57,7 @@ At the end of the feature design phase, you should have the following informatio
 During the development phase you should:
 
 1. **Identify where the API endpoint should be placed:** see [Routes and Endpoints Structure](docs/engineering/boba-backend/APIs/creating-endpoints#structure)
-2. **Write the endpoint function** (if not already present): at this stage, it will simply throw [HTTP 501 Not Implemented](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501) error.
+2. **Write the endpoint function** (if not already present): at this stage, it will simply throw an [HTTP 501 Not Implemented](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/501) error.
 3. **Add or modify the endpoint OpenAPI definition:** see [Documenting endpoints](docs/engineering/boba-backend/APIs/creating-endpoints#documentation).
 
    :::TODO
@@ -74,18 +74,18 @@ During the development phase you should:
 
    :::
 
-5. **Create a test file:** if no test exists for this endpoint, add it, and test that calling the endpoint correctly returns HTTP 501 Error.
+5. **Create a test file:** if no test exists for this endpoint, add it, and test that calling the endpoint correctly returns an HTTP 501 Error.
 
 :::warning
 
-At this stage, endpoint development might be blocked while needed permissions or database queries are created. You can move on to the appropriate sections are needed, and come back once you're unblocked.
+At this stage, endpoint development might be blocked while needed permissions or database queries are created. You can move on to the appropriate sections as needed, and come back once you're unblocked.
 
 :::
 
-6. **Add permissions middleware and update tests:** if the endpoint needs to be gated on special conditions (e.g. the user being logged in,
-   or a permission existing), add the necessary middleware to the endpoint. See [Checking permissions](docs/engineering/boba-backend/permissions/check-permissions). <u>Make sure to also update tests</u> to check the correct HTTP status code are returned.
+6. **Add permissions middleware and update tests:** if the endpoint needs to be gated on special conditions (e.g. the user being logged in
+   or a permission existing), add the necessary middleware to the endpoint. See [Checking permissions](docs/engineering/boba-backend/permissions/check-permissions). <u>Make sure to also update tests</u> to check the correct HTTP status codes are returned.
 
-7. **Use SQL queries and generated Zod types to write and validate the endpoint functionality.** With permission errors are taken care of in step 6,
+7. **Use SQL queries and generated Zod types to write and validate the endpoint functionality.** With permission errors taken care of in step 6,
    it's now time to write the actual logic of the endpoint. If you need, you can use [Postman](docs/engineering/boba-backend/using-postman) to test the endpoint as you develop.
 
    :::TODO
