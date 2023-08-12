@@ -95,14 +95,10 @@ after new changes.
 
 ## Troubleshooting
 
-### I'm getting an `0308010C:digital envelope routines::unsupported` error
-
-This usually happens with versions of Node other than 16. You can check the current Node version by running `node -v`, and change it by running `nvm use 16`.
-
 ### I'm getting [error that happens when the backend is not up]
 
 TODO: explain
 
 ### Help! Things are weird and I don't know why!
 
-A good first step in troubleshooting is to install dependencies again. Double-check that you're using the correct node version by running `node -v` (it should start with 16), then simply re-run `yarn install` in the root folder.
+A good first step in troubleshooting is to install dependencies again. Double-check that you're using the correct node version by running `node -v` (it should start with 18), then simply re-run `yarn install --force` in the root folder.
