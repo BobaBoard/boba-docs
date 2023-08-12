@@ -121,6 +121,16 @@ module.exports = {
       ],
       copyright: `Copyright © ${new Date().getFullYear()} BobaBoard.`,
     },
+    algolia: {
+      appId: "F7GIZ5AC07",
+      apiKey: "d50ff87094e511d319174694452416c1",
+      indexName: "bobaboard_docs",
+      contextualSearch: true,
+      replaceSearchResultPathname: {
+        from: "/docs/", // or as RegExp: /\/docs\//
+        to: "/",
+      },
+    },
   },
   presets: [
     [
@@ -128,7 +138,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-					sidebarCollapsed: false,
+          sidebarCollapsed: false,
           editUrl:
             "https://github.com/BobaBoard/boba-docs/edit/main/docusaurus/",
           admonitions: {
