@@ -22,3 +22,4 @@ src/_generated_data*
 plugins/*/dist*
 .turbo
 .env
+.vscode/settings.json
