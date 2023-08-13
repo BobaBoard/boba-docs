@@ -5,7 +5,9 @@ sidebar_position: 7
 # Development Lifecycle
 
 :::TODO
+
 Consider making this doc a folder with multiple sections and moving to the Volunteering section
+
 :::
 
 If you're new to collaborating on a code project, you may be wondering what that process looks like. This page will:
@@ -14,10 +16,12 @@ If you're new to collaborating on a code project, you may be wondering what that
 - explain key terminology
 - guide you through the step-by-step process of contributing to BobaBoard's codebase.
 
-This document also includes relevant information about git and GitHub to slowly get you familiar with more technical vocabulary you might run into. For more information on these subjects you can look at our [Git Notes](/docs/engineering/legacy-pages/git-notes.md) page.
+This document also includes relevant information about git and GitHub to introduce you to technical vocabulary you might run into. For more information on these subjects you can look at our [Git Notes](/docs/engineering/legacy-pages/git-notes.md) page.
 
 :::note
+
 We will use GitHub as our example platform since BobaBoard's code is hosted there. However, there are alternative platforms that serve similar purposes.
+
 :::
 
 ## Overview
@@ -26,11 +30,11 @@ So, you've decided to contribute to a project. What happens next?
 
 1. **Add a copy of the project's code to your own GitHub account.**
 
-   > The first step is to get your own version of the project's code to edit to your heart's content. In technical terms, you'll create a "fork" of the project you want to contribute to, adding it to your GitHub account.
+   > Before you can start making changes, you need to get the code on your computer. This way you can edit the code in the comfort of your own home code editor. This is done by downloading or 'cloning' the code from your GitHub account (in the cloud) to your own local machine.
 
 1. **Download the code from your GitHub account to your computer.**
 
-   > Before you can start making changes, you need to get the code on your computer. This way you can edit the code in the comfort of your own ~~home~~ code editor. This is done by downloading or, in technical terms, 'cloning' the code from your GitHub account.
+   > Branches allow you to create parallel versions of the code so you can work on many different unrelated changes at the same time. You can move freely between your branches without fear of losing your place or messing things up.
 
 1. **Create a Branch in the repository to keep your changes contained.**
 
@@ -38,19 +42,19 @@ So, you've decided to contribute to a project. What happens next?
 
 1. **Make changes and set checkpoints as you get small tasks done.**
 
-   > It's always good to break up any tasks into smaller steps, and setting checkpoints regularly will let you see all the steps you took along the way. In technical terms, we call logging changes with descriptive messages in git 'making commits'.
+   > It's always good to break up any tasks into smaller steps. Regularly marking checkpoints as you accomplish small tasks will let you see all the steps you took along the way, and course-correct in case of issues. In technical terms, marking checkpoints by logging changes with descriptive messages in git is referred to as 'committing'. When you commit you are saving your changes to your own branches on your fork, not to the original repo.
 
 1. **Share your work with the project owners**.
 
-   > So far, you've been working on your own copy of the code. Once you're ready, you can ask the people involved in the project to take a look at what you've done and give feedback. In technical terms this is called 'creating a pull (or merge) request'
+   > So far, you've been working on your own copy of the code. Once you're ready, you can ask the project maintainers (for BobaBoard this is ms. boba or other volunteers) to take a look at what you've done and give feedback. This is called 'creating a pull (or merge) request'. You might also see it abbreviated as "a PR".
 
 1. **Get feedback and make adjustments**.
 
-   > The owner of the project (and/or your fellow contributors) may suggest changes or point out bugs in your code. This process is called a 'code review'.
+   > The owner of the project (and/or your fellow contributors) may suggest changes or point out bugs in your code. This process is called a 'code review'. If changes are requested, you should make the changes and request another code review when the changes are complete. It could take more than one round of code reviews, and you may receive reviews from multiple people. If advice is unclear or you're uncertain what they're asking for, you should ask questions. Code reviews are discussions!
 
 1. **Success! Your changes are now included in the project.**
 
-   > It could take more than one round of code reviews but eventually the owner of the project will accept your changes and add them to the codebase. In technical terms, your changes will be 'merged' into the codebase.
+   > Eventually the project will accept your changes and add them to the codebase by merging them to a branch in the main repo.
 
 1. **Keep your code up to date.**
 
@@ -61,7 +65,9 @@ So, you've decided to contribute to a project. What happens next?
 The following is a more in-depth guide to the steps one would follow to contribute a simple change to one of Boba's codebases.
 
 :::note
+
 If you've looked at our [Recommended Tools](/docs/engineering/knowledge-base/recommended-tools.md) document, you've seen we recommend Visual Studio Code as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer.
+
 :::
 
 ### 1. Fork the repository on GitHub
@@ -73,7 +79,9 @@ You can fork a repository on GitHub from its web interface by going to the repos
 Once you've created a fork, this copy will live somewhere that looks like so: `https://www.github.com/<YOUR_GITHUB_USERNAME>/<REPOSITORY_NAME>`
 
 :::info
+
 The name of your fork doesn't have to match the name of the original project. For this guide, however, we'll assume you have kept the same name.
+
 :::
 
 ### 2. Clone your fork to your machine
