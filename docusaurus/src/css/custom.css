@@ -5,6 +5,60 @@
  * work well for content-centric websites.
  */
 
+@font-face {
+  font-family: "Latin Modern Mono";
+  src: url("/fonts/latin_modern_mono/lmmono-regular.woff");
+  src: url("/fonts/latin_modern_mono/lmmono-regular.woff") format("woff"),
+    url("/fonts/latin_modern_mono/lmmono-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Latin Modern Mono";
+  src: url("/fonts/latin_modern_mono/lmmono-italic.woff");
+  src: url("/fonts/latin_modern_mono/lmmono-italic.woff") format("woff"),
+    url("/fonts/latin_modern_mono/lmmono-italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("/fonts/roboto/roboto-regular.woff");
+  src: url("/fonts/roboto/roboto-regular.woff") format("woff"),
+    url("/fonts/roboto/roboto-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("/fonts/roboto/roboto-italic.woff");
+  src: url("/fonts/roboto/roboto-italic.woff") format("woff"),
+    url("/fonts/roboto/roboto-italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("/fonts/roboto/roboto-bold.woff");
+  src: url("/fonts/roboto/roboto-bold.woff") format("woff"),
+    url("/fonts/roboto/roboto-bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/poppins/poppins-regular.woff");
+  src: url("/fonts/poppins/poppins-regular.woff") format("woff"),
+    url("/fonts/poppins/poppins-regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #25c2a0;
@@ -14,7 +68,10 @@
   --ifm-color-primary-light: rgb(70, 203, 174);
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
+	--ifm-font-family-base: "Roboto", Arial, Helvetica, sans-serif;
+	--ifm-font-family-monospace: "Latin Modern Mono", "Courier New", monospace;
+	--ifm-heading-font-family: "Poppins", var(--ifm-font-family-base);
+  --ifm-code-font-size: 110%;
 }
 
 .docusaurus-highlight-code-line {
@@ -35,10 +92,6 @@ img.emoji {
   vertical-align: -0.1em;
 }
 
-html {
-  font-size: 100%;
-}
-
 .theme-admonition-TODO {
   --ifm-alert-background-color: #fdf7d8;
   --ifm-alert-border-color: #f8de5d;
@@ -47,4 +100,30 @@ html {
 html[data-theme="dark"] .theme-admonition-TODO {
   --ifm-alert-background-color: #463a02;
   --ifm-alert-border-color: #f8de5d;
+}
+
+element {
+
+}
+.admonition_---node_modules-\@docusaurus-theme-classic-lib-theme-Admonition-styles-module {
+
+    margin-bottom: 1em;
+
+}
+.alert {
+    background-color: transparent;
+    border: 1px solid var(--ifm-alert-border-color);
+    box-shadow: none;
+		padding: 0px;
+}
+
+[class*=admonitionHeading] {
+	background-color: var(--ifm-alert-background-color);
+	border-bottom: 1px dashed var(--ifm-alert-border-color);
+	padding: 1rem 1rem 0.5rem;
+}
+
+[class*=admonitionContent] {
+	background-color: hsl(from var(--ifm-alert-background-color) h s l);
+	padding: 0.5rem 1rem 1rem;
 }
