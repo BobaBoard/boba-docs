@@ -13,7 +13,10 @@ module.exports = {
   favicon: "img/badlyresizedab.ico",
   organizationName: "BobaBoard",
   projectName: "boba-docs",
-  plugins: [excalidrawMdxPlugin],
+  plugins: [
+    excalidrawMdxPlugin,
+    require.resolve("docusaurus-plugin-image-zoom"),
+  ],
   clientModules: [require.resolve("./src/global.ts")],
   themeConfig: {
     respectPrefersColorScheme: true,
@@ -129,6 +132,13 @@ module.exports = {
       replaceSearchResultPathname: {
         from: "/docs/", // or as RegExp: /\/docs\//
         to: "/",
+      },
+    },
+    zoom: {
+      selector: ".markdown svg, .markdown img",
+      background: {
+        light: "rgba(255, 255, 255, 0.75)",
+        dark: "rgba(0, 0, 0, 0.75)",
       },
     },
   },

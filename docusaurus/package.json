@@ -30,6 +30,7 @@
     "clsx": "^1.1.1",
     "container-query-polyfill": "^0.1.2",
     "culori": "^2.0.3",
+    "docusaurus-plugin-image-zoom": "^1.0.1",
     "excalidraw-mdx-plugin": "*",
     "js-yaml": "^4.1.0",
     "react": "^17.0.2",
