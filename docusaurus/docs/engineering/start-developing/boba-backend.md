@@ -19,6 +19,9 @@ The first time you work on BobaBackend you'll need to [fork the repository](http
 In a terminal, run the following commands - or [follow Github's instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
 
 ```bash showLineNumbers
+# Go into the folder where you want to store your boba repositories
+# For example:
+cd my-boba-repos
 # Clone the codebase from github
 git clone https://github.com/[YOUR GITHUB USERNAME HERE]/boba-backend.git
 # Enter the codebase directory

@@ -17,6 +17,9 @@ The first time you work on BobaComponents you need to [fork the repository](http
 After forking the repository, open up a terminal and run the following commands:
 
 ```bash   showLineNumbers
+# Go into the folder where you want to store your boba repositories
+# For example:
+cd my-boba-repos
 # Clone the codebase from github
 git clone https://github.com/[YOUR GITHUB USERNAME HERE]/boba-components.git
 # Enter the codebase directory
