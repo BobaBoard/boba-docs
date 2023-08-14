@@ -26,7 +26,9 @@ yarn install
 ```
 
 :::tip
+
 The commands shown use HTTPS to interact with the code on GitHub but you can do so with SSH if you've got it set up
+
 :::
 
 ### 2 — Add the BobaBoard repository as a remote
@@ -50,9 +52,11 @@ yarn install @bobaboard/boba-editor
 ```
 
 :::danger
+
 Not running the latest version might incur in some surprising problems in case of incompatible changes. **Since Ms. Boba isn't regularly releasing npm updates, let her know if you wish to go this route.**
 
 You can [check when BobaEditor was last released](https://www.npmjs.com/package/@bobaboard/boba-editor) on its npm page.
+
 :::
 
 You can now continue to the [development instructions](#development-instructions).
@@ -63,12 +67,17 @@ You should follow these instructions if you want to make parallel changes to Bob
 
 1. **[Install BobaEditor](./boba-editor).** The rest of these instructions assume you're installing BobaEditor in the same containing folder as BobaComponents.
    :::danger
+
    If you install BobaEditor _within_ BobaComponents, you're going to have a bad time.
+
    :::
+
 2. **Build and link BobaEditor.**
 
    :::caution
+
    **Make sure you're in the BobaEditor directory!** To check the present directory, you can use the `pwd` command.
+
    :::
 
    In a terminal, run the following commands:
@@ -82,9 +91,13 @@ You should follow these instructions if you want to make parallel changes to Bob
    This will create the `@bobaboard/boba-editor` package on your _local_ machine.
 
 3. **Install BobaEditor in BobaComponents**
+
    :::caution
+
    **Make sure you're in the BobaComponents directory!** To check the present directory, you can use the `pwd` command.
+
    :::
+
    In a terminal, run the following commands:
 
    ```bash   showLineNumbers
@@ -95,15 +108,19 @@ You should follow these instructions if you want to make parallel changes to Bob
 You can now continue to the [development instructions](#development-instructions).
 
 :::tip
+
 If you make changes to BobaEditor and want to see them reflected in BobaComponents, run `yarn run build` in the BobaEditor folder. BobaComponents should pick up the changes.
+
 :::
 
 ## Development Instructions
 
 :::warning
+
 This codebase requires Node **16**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 16 by running `nvm use 16` in your terminal.
 
 You can check the current Node version by running `node -v`.
+
 :::
 
 In a terminal, run the following command:
@@ -115,5 +132,7 @@ yarn run storybook
 You should now have a DevServer running at [http://localhost:6006](http://localhost:6006) that will look something like [the online demo](https://boba-components.netlify.app/).
 
 :::tip
+
 If new code dependencies have been added, you might need to re-run `yarn install`. If the above command is giving you problems, give it a try!
+
 :::

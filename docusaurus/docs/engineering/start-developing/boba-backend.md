@@ -5,7 +5,9 @@ sidebar_position: 4
 # Install BobaBackend
 
 :::warning
+
 **Make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed.** This is the only codebase that needs it.
+
 :::
 
 ## Install Instructions
@@ -26,7 +28,9 @@ yarn install
 ```
 
 :::tip
+
 The commands shown on this page use HTTPS to interact with the code on GitHub but you can do so with SSH if you're comfortable
+
 :::
 
 ### 2 — Add the BobaBoard repository as a remote
@@ -58,7 +62,9 @@ touch firebase-sdk.json
 ### 4 — Set up your FirebaseSDK credentials
 
 :::warning
+
 **This is an INVALIDATED Firebase service account key.** It will allow the firebase admin SDK to be correctly initialized, but doesn't grant any further privilege.
+
 :::
 
 Open `firebase-sdk.json` and paste the following content within it:
