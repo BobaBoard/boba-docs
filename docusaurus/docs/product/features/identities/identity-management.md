@@ -5,7 +5,9 @@ sidebar_position: 1
 # Identity Management
 
 :::caution
+
 This documentation and design are a WIP!
+
 :::
 
 Identity management is one of the mechanisms that set BobaBoard apart from other social networks. In particular, rather than surfacing
@@ -38,12 +40,16 @@ with separate accounts.
 ## Creating Identities
 
 :::TODO
+
 **This feature still in the design phase!** More information will be available in the future.
+
 :::
 
 :::danger
+
 When a friendship relationship is present, the current implementation reveals the `user data` rather than the data of the `Identity`
 associated with the `User`. Fixing this should be trivial once the design is finalized.
+
 :::
 
 ## Managing Identities
@@ -56,7 +62,9 @@ about anonymous identity selection in the [BobaDex page](bobadex.md).
 ### Non-Anonymous Boards/Realms
 
 :::TODO
+
 **This feature still in the design phase!** More information will be available in the future.
+
 :::
 
 :::OPEN QUESTION
@@ -81,7 +89,9 @@ about anonymous identity selection in the [BobaDex page](bobadex.md).
 ## Revealing Identities
 
 :::TODO
+
 **This feature still in the design phase!** More information will be available in the future.
+
 :::
 
 While the codebase already accounts for this system, the exact mechanics governing identity reveal are not currently defined.
@@ -99,5 +109,7 @@ is available in the API.
 :::
 
 :::TODO
+
 **This feature still in the design phase!** More information will be available in the future.
+
 :::

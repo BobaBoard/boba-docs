@@ -80,8 +80,8 @@ You should follow these instructions if you want to make parallel changes to Bob
    :::caution
 
    **Make sure you're in the BobaEditor directory!** To check the present directory, you can use the `pwd` command.
-
-   :::
+   
+	 :::
 
    In a terminal, run the following commands:
 
@@ -98,10 +98,10 @@ You should follow these instructions if you want to make parallel changes to Bob
    :::caution
 
    **Make sure you're in the BobaComponents directory!** To check the present directory, you can use the `pwd` command.
+   
+	 :::
 
-   :::
-
-   In a terminal, run the following commands:
+   In a terminal, run the following command:
 
    ```bash   showLineNumbers
    cd boba-components

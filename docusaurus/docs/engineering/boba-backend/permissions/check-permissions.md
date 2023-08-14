@@ -28,7 +28,9 @@ router.patch(
 ```
 
 :::warning
+
 If the route has no `:thread_id` param, the `withThreadPermissions` handler will throw an error.
+
 :::
 
 ### Generic permission checkers
@@ -53,7 +55,9 @@ router.post(
 ```
 
 :::warning
+
 If the route has no `:board_id` param, the `ensureBoardPermission` handler will throw an error.
+
 :::
 
 ### Complex permission checkers
@@ -74,5 +78,7 @@ router.get("feeds/boards/:board_id", ensureBoardAccess, async (req, res) => {
 Each board's metadata includes the user's permission for the board and all threads and posts contained within. See the [`boards/{board_id}`](/docs/engineering/rest-api/#operation/getBoardsByUuid) endpoint for details.
 
 :::TODO
+
 Create documentation about checking permissions on the client and add a link here.
+
 :::
