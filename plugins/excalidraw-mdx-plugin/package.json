@@ -11,6 +11,7 @@
   "dependencies": {
     "@docusaurus/core": "^2.1.0",
     "@excalidraw/excalidraw": "^0.12.0",
+    "@types/unist": "^3.0.0",
     "raw-loader": "^4.0.2",
     "unist-util-visit-parents": "^5.1.1"
   },
