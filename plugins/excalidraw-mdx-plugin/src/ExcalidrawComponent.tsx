@@ -1,7 +1,10 @@
 import BrowserOnly from "@docusaurus/BrowserOnly";
 import React from "react";
+import { useColorMode } from "@docusaurus/theme-common";
 
 export const ExcalidrawComponent = (props: { fileContent: string }) => {
+  const { colorMode } = useColorMode();
+
   return (
     <BrowserOnly>
       {() => {
@@ -14,16 +17,17 @@ export const ExcalidrawComponent = (props: { fileContent: string }) => {
         return (
           <span className="excalidraw-embed">
             <span
-              key={props.fileContent}
+              key={props.fileContent + colorMode}
               ref={(ref) => {
                 exportToSvg({
                   ...JSON.parse(props.fileContent),
                   appState: {
-                    theme: THEME.DARK,
-                    exportWithDarkMode: true,
+                    theme: colorMode == "dark" ? THEME.DARK : THEME.LIGHT,
+                    exportWithDarkMode: colorMode == "dark",
+                    exportBackground: false,
                   },
                   type: "png",
-                }).then((svg) => {
+                }).then((svg: any) => {
                   if (!ref || ref.hasChildNodes()) {
                     return;
                   }
@@ -42,13 +46,13 @@ export const ExcalidrawComponent = (props: { fileContent: string }) => {
               }}
             >
               <button
+                key={"clipboard-copy" + colorMode}
                 onClick={() => {
                   exportToClipboard({
                     ...JSON.parse(props.fileContent),
                     appState: {
-                      theme: THEME.DARK,
-                      viewBackgroundColor: "transparent",
-                      exportWithDarkMode: true,
+                      theme: colorMode == "dark" ? THEME.DARK : THEME.LIGHT,
+                      exportWithDarkMode: colorMode == "dark",
                     },
                     type: "png",
                   });
@@ -56,13 +60,6 @@ export const ExcalidrawComponent = (props: { fileContent: string }) => {
               >
                 Copy image
               </button>
-              <a
-                href={`https://excalidraw.com/#json=${encodeURIComponent(
-                  props.fileContent
-                )}`}
-              >
-                Open in Excalidraw
-              </a>
             </span>
           </span>
         );

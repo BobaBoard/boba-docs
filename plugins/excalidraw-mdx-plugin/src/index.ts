@@ -1,6 +1,7 @@
-import { Parent, SKIP, visitParents } from "unist-util-visit-parents";
+import { SKIP, visitParents } from "unist-util-visit-parents";
 
 import type { Image } from "mdast";
+import type { Parent } from "unist";
 import type { VFile } from "vfile";
 
 const plugin = () => {
