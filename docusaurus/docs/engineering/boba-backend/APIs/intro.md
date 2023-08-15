@@ -4,6 +4,8 @@ sidebar_position: 1
 
 # Introduction to APIs
 
+![Example of client/server HTTP request/response exchange](./client-server.excalidraw)
+
 APIs allow different applications to talk to each other without giving them complete access to all the data or operations of the other application. In simple terms, an API is a contract that defines a common language so one application can communicate with another. Most API operations involve fetching, storing, or updating data.
 
 :::note
