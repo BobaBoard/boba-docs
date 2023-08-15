@@ -23,12 +23,15 @@ For requests, REST APIs rely on [`HTTP methods`](https://www.restapitutorial.com
 Additional data required as part of the request or response is referred to as the request/response `payload`. BobaBoard's API returns responses in the [`JSON format`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
 
 :::TODO
+
 Add a quick explanation of different type of request parameters (URL, query and body).
+
 :::
 
 ## REST API example {#api-example}
 
 :::caution
+
 The following is a high-level example to help understand how REST APIs work. It does not reflect how BobaBackend works in practice. The source of truth for the BobaBackend API is our [REST API documentation page](/docs/engineering/rest-api/).
 
 :::
@@ -50,6 +53,7 @@ Possible responses include:
 :::note
 
 `GET` requests are the default type of request the browser sends when you access a web page.
+
 :::
 
 ### POST: Create a new contribution in a thread
@@ -57,7 +61,9 @@ Possible responses include:
 The client wants to **create** a contribution with id `contribution_123` in the thread with id `thread_456`. To achieve this, the client sends a `POST` request to the `/threads/thread_456/contributions/contribution_123` endpoint. The `POST` request would also include the contribution data as a `payload`.
 
 :::caution
+
 In practice, the contribution id would likely be determined by the server when creating the contribution. In this case, the `POST` request would be sent to the `/threads/thread_456/contributions/` endpoint instead, and the assigned contribution id would be returned as part of the response `payload`.
+
 :::
 
 Possible responses include:
@@ -69,6 +75,7 @@ Possible responses include:
 :::note
 
 `POST` requests are most often used by browsers when submitting forms.
+
 :::
 
 ### PUT: Update a contribution in a thread

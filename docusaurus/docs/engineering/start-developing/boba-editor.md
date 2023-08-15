@@ -24,15 +24,19 @@ yarn install
 ```
 
 :::tip
+
 If you would prefer to use a GUI with GitHub, you can [fork and clone](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop) via GitHub Desktop, then enter your new directory in a terminal and run `yarn install`.
+
 :::
 
 ## Start a Local DevServer
 
 :::warning
+
 This codebase requires Node **16**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 16 by running `nvm use 16` in your terminal.
 
 You can check the current Node version by running `node -v`.
+
 :::
 
 In a terminal, run the following command:
@@ -44,7 +48,9 @@ yarn run storybook
 You should now have a DevServer running at [http://localhost:6006](http://localhost:6006) that will look something like [the online demo](https://bobaeditor.netlify.app/).
 
 :::tip
+
 If new code dependencies have been added, you might need to re-run `yarn install`. If the above command is giving you problems, give it a try!
+
 :::
 
 ## Developing for Embeds
@@ -58,7 +64,9 @@ Given that the embeds service won't accept requests from localhost for security 
 ### Option 2: Run iFramely on your own machine
 
 :::caution
+
 You shouldn't need to do this, unless you're fiddling with iFramely's setup.
+
 :::
 
 You can run storybook pointing to a local instance of iFramely by using the `yarn run storybook:local-embeds` command. To run your own iFramely you can use the instructions [here](https://iframely.com/docs/host). You will also likely need BobaBoard's iframely config as a started config. You can ask the webmaster for a copy of this file.
