@@ -728,8 +728,8 @@
     },
     {
       "type": "text",
-      "version": 80,
-      "versionNonce": 10130028,
+      "version": 81,
+      "versionNonce": 1578571670,
       "isDeleted": false,
       "id": "ubZt7vZuGVVHRxC3TXMCg",
       "fillStyle": "hachure",
@@ -753,7 +753,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1692127515958,
+      "updated": 1692133598819,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -764,7 +764,7 @@
       "containerId": null,
       "originalText": "HTTP Request",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 18
     },
     {
       "type": "arrow",
@@ -819,8 +819,8 @@
     },
     {
       "type": "text",
-      "version": 154,
-      "versionNonce": 1507793492,
+      "version": 155,
+      "versionNonce": 70800586,
       "isDeleted": false,
       "id": "oLbBGiLqsTBDGuQcIVSd1",
       "fillStyle": "hachure",
@@ -844,7 +844,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1692127515958,
+      "updated": 1692133598820,
       "link": null,
       "locked": false,
       "fontSize": 20,
@@ -855,7 +855,7 @@
       "containerId": null,
       "originalText": "HTTP Response",
       "lineHeight": 1.25,
-      "baseline": 17
+      "baseline": 18
     },
     {
       "type": "rectangle",
@@ -887,8 +887,8 @@
     },
     {
       "type": "text",
-      "version": 251,
-      "versionNonce": 183854316,
+      "version": 252,
+      "versionNonce": 968602838,
       "isDeleted": false,
       "id": "7WInxQkkk62stAv4xGO95",
       "fillStyle": "hachure",
@@ -907,7 +907,7 @@
       "groupIds": [],
       "roundness": null,
       "boundElements": [],
-      "updated": 1692127515958,
+      "updated": 1692133598820,
       "link": null,
       "locked": false,
       "fontSize": 28,
@@ -922,8 +922,8 @@
     },
     {
       "type": "text",
-      "version": 707,
-      "versionNonce": 1429254100,
+      "version": 708,
+      "versionNonce": 413608842,
       "isDeleted": false,
       "id": "_xoUqsZr8EuR0Oamr81Yr",
       "fillStyle": "hachure",
@@ -942,7 +942,7 @@
       "groupIds": [],
       "roundness": null,
       "boundElements": [],
-      "updated": 1692127515959,
+      "updated": 1692133598820,
       "link": null,
       "locked": false,
       "fontSize": 28,
@@ -1008,8 +1008,8 @@
     },
     {
       "type": "text",
-      "version": 632,
-      "versionNonce": 1464985452,
+      "version": 633,
+      "versionNonce": 156936726,
       "isDeleted": false,
       "id": "00dZ1avDaGETbxWtWA1y5",
       "fillStyle": "cross-hatch",
@@ -1031,7 +1031,7 @@
       ],
       "roundness": null,
       "boundElements": [],
-      "updated": 1692127515959,
+      "updated": 1692133598820,
       "link": null,
       "locked": false,
       "fontSize": 28,
@@ -1046,8 +1046,8 @@
     },
     {
       "type": "text",
-      "version": 564,
-      "versionNonce": 1823708500,
+      "version": 567,
+      "versionNonce": 683153034,
       "isDeleted": false,
       "id": "R5M8k-hNLa-lZvsmLuGIN",
       "fillStyle": "cross-hatch",
@@ -1069,23 +1069,23 @@
       ],
       "roundness": null,
       "boundElements": [],
-      "updated": 1692127515959,
+      "updated": 1692133603441,
       "link": null,
       "locked": false,
       "fontSize": 28,
       "fontFamily": 1,
-      "text": "server\n(boba-backend)",
+      "text": "Server\n(boba-backend)",
       "textAlign": "center",
       "verticalAlign": "top",
       "containerId": null,
-      "originalText": "server\n(boba-backend)",
+      "originalText": "Server\n(boba-backend)",
       "lineHeight": 1.25,
       "baseline": 59
     },
     {
       "type": "text",
-      "version": 279,
-      "versionNonce": 435821036,
+      "version": 280,
+      "versionNonce": 199817046,
       "isDeleted": false,
       "id": "LGyr5_o-84hDXpugX7vDf",
       "fillStyle": "hachure",
@@ -1109,7 +1109,7 @@
           "type": "arrow"
         }
       ],
-      "updated": 1692127515959,
+      "updated": 1692133598821,
       "link": null,
       "locked": false,
       "fontSize": 28,
