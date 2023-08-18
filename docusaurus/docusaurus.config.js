@@ -124,7 +124,7 @@ module.exports = {
     algolia: {
       appId: "86NF1IYBIX",
       apiKey: "d4b1e3a5db4a6b2cc820865825fdc10b",
-      indexName: "bobaboard_docs",
+      indexName: "bobaboard",
       contextualSearch: true,
       replaceSearchResultPathname: {
         from: "/docs/", // or as RegExp: /\/docs\//
