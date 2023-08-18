@@ -122,8 +122,8 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} BobaBoard.`,
     },
     algolia: {
-      appId: "F7GIZ5AC07",
-      apiKey: "d50ff87094e511d319174694452416c1",
+      appId: "86NF1IYBIX",
+      apiKey: "d4b1e3a5db4a6b2cc820865825fdc10b",
       indexName: "bobaboard_docs",
       contextualSearch: true,
       replaceSearchResultPathname: {
