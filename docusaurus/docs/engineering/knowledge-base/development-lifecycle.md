@@ -4,162 +4,274 @@ sidebar_position: 7
 
 # Development Lifecycle
 
-To look at/download BobaBoard's code, check out our guide to [Setting Up your Coding Environment](/docs/engineering/start-developing/before-you-start).
-You might also be interested in [Git Notes](/docs/engineering/legacy-pages/git-notes)
+:::TODO
 
-:::tip This seems scarier than it is!
-
-If you're new to coding and github, the following process might seem scary and overwhelming. Don't worry: it will become second nature very quickly! If you want someone to hold your hand throughout the process, contact Ms. Boba.
+Consider making this doc a folder with multiple sections and moving to the Volunteering section
 
 :::
+
+If you're new to collaborating on a code project, you may be wondering what that process looks like. This page will:
+
+- give an overview of the development lifecycle
+- explain key terminology
+- guide you through the step-by-step process of contributing to BobaBoard's codebase.
+
+This document also includes relevant information about git and GitHub to introduce you to technical vocabulary you might run into. For more information on these subjects you can look at our [Git Notes](/docs/engineering/legacy-pages/git-notes.md) page.
 
 :::note
 
-TODO[Ms.Boba]: Explore whether the new github command line interface can make this process less cumbersome.
+We will use GitHub as our example platform since BobaBoard's code is hosted there. However, there are alternative platforms that serve similar purposes.
 
 :::
 
-## Development lifecycle overview
+## Overview
 
-At a high level, the git development lifecycle follows these steps:
+So, you've decided to contribute to a project. What happens next?
 
-0. **The developer "forks" the code.** This creates a separate copy of the codebase owned by the developer itself. No matter what changes the developer makes, the original codebase (called `upstream`) will remain unchanged.
-1. **The developer creates a "feature branch" on their "fork".** When the developer first forks the code, they are placed on the official "current version" of the codebase, called `master` (or `main`). Rather than modify `master` directly, the developer then creates a "feature branch" to make their edits on.
+### 1. **Add a copy of the project's code to your own GitHub account.**
 
-   For example, if the developer is working on adding a "read more" feature, they might create a branch called `read-more`. Creating branches allows a developer to work on many independent features at the same time.
+The first step is to get a copy of the project's code into your own GitHub account by "forking" it. This will allow you to make as many changes to the code as you desire without impacting the original project.
 
-2. **The developer "commits" code changes to their "feature branch".** As the developer writes code, they will modify the code in the branch they're working on. Periodically, the developer will then "commit" the changes made. Committing creates "code checkpoints", and is helpful to split code creation in logical segment that are easier to reason about and check for correctness.
+### 2. **Download the code from your GitHub account to your computer.**
 
-   For example, when working on the `read-more` branch, the developer might create the following commits:
+Before you can start making changes, you need to get the code on your computer. This way you can edit the code in the comfort of your own ~~home~~ code editor. This is done by downloading or, in technical terms, 'cloning' the code from your GitHub account.
 
-   - Commit 1: Add read more button
-   - Commit 2: Style read more button
-   - Commit 2: Display read more text when button is clicked
+### 3. **Create a Branch in the code to keep your changes contained.**
 
-3. **The developer opens a "pull request" on the original codebase.** Once the new feature is complete, it should become part of the "official" codebase. To do so, the developer must ask the codebase owners to copy the commits made in step 2 to the `master` branch of the original `upstream` codebase. This process is called opening a "pull request".
-4. **The codebase owners review (and eventually "merge") the pull request.** Once the pull request has been submitted for review, the codebase owners will review the changes made and might request edits to the code. The review process usually entails multiple rounds of back and forth between the developer and the codebase owners, and the developer often adds new commits to the pull request with the requested changes.
+You get to create parallel versions of the code so you can work on different unrelated things at the same time without getting them tangled.
 
-   Once the pull request is approved, the pull request is "merged" and then "closed". Once merged, the developer's code becomes part of the `master` branch in the original `upstream` codebase. The developer can now delete the "feature branch" created in step 1.
+### 4. **Make changes and set checkpoints as you get small tasks done.**
 
-5. **Pulling from upstream.** Now that the feature code has been merged to the `upstream master` branch, the code in the `master` branch of the developer's fork (which doesn't contain the original feature) is out of date. To download the updated code, the developer "pulls" the changes from the `upstream` codebase. This copies all the new code commits in the `upstream` codebase to the developer's.
-6. **Working on a new feature.** To work on a new feature, the developer repeats the same process starting from step 1.
+It's always good to break up any tasks into smaller steps. Regularly marking checkpoints as you accomplish small tasks will let you see all the steps you took along the way and course-correct in case of issues. In technical terms, marking checkpoints by logging changes with descriptive messages in git is referred to as 'committing'. When you commit you are saving your changes to your own branches on your fork, not to the original repo.
 
-### 0. Create a fork
+### 5. **Backup your changes to your remote.**
 
-If you haven't been explicitly added to the repository you're contributing to, you will need to create a "fork" you own and upload the changes there before opening a pull request (aka "please, BobaLord, merge my code into the official BobaBoard codebase", see [Git Notes](/docs/engineering/legacy-pages/git-notes) ). Unless you know what you're doing and have forked before running `git clone`, follow these instructions to change your `clone` into `fork`.
+As you make commits, you are saving your code locally in git. To get those changes to GitHub you have to "push" them to your remote of your fork.
 
-1. Go to the **github website** (you must be logged in) and click on the fork button at the top-right corner of the repository you want.
+### 6. **Share your work with the repo maintainers.**
 
-   ![The fork button is located on the top right of the page.](/img/legacy/devenv1.png)
+So far, you've been working on your own copy of the code. Once you're ready, you can ask the project maintainers (for BobaBoard this is ms. boba or other volunteers) to take a look at what you've done and give feedback. This is called "creating a pull (or merge) request". You might also see it abbreviated as "a PR". To make sure the repo maintainers see your changes, your pull request should be on "upstream"
 
-2. Take note of the new git address of your forked repository. It should be something like `https://github.com/YOUR-USERNAME/BOBABOARD-REPO.git`. You can find it on the main page of your new forked repo, under code.
+### 7. **Get feedback and make adjustments.**
 
-   ![The URL of our new repo is under the "Code" dropdown on your repo's main page.](/img/legacy/devenv2.png)
+The owner of the project (and/or your fellow contributors) may suggest changes or point out bugs in your code. This process is called a 'code review'. If changes are requested, you should make the changes and request another code review when the changes are complete. It could take more than one round of code reviews, and you may receive reviews from multiple people. If advice is unclear or you're uncertain what they're asking for, you should ask questions. Code reviews are discussions!
 
-3. Run the following commands from your terminal, in the root folder of the repo that you want to upload.
+### 8. **Success! Your changes are now included in the project.**
 
-```bash   showLineNumbers
-git config --get remote.origin.url | xargs git remote add upstream
-git remote set-url origin YOUR_NEW_REMOTE_URL_HERE
-git fetch
-```
+Eventually the project will accept your changes and add them to the codebase by merging them to a branch in the main repo.
 
-:::warning
+### 9. **Keep your code up to date.**
 
-If you want to use a different GitHub account for BobaBoard, your `origin` URL
-will be different. Follow the instructions in the ["use a different GitHub account" section](#extra-use-a-different-github-account).
+You did the thing and now you (and everyone else with a copy of the project on their PC) should get the new and updated version of the code - the one that includes your latest edits! You need to 'pull' the changes.
+
+## Guide
+
+The following is a more in-depth guide to the steps one would follow to contribute to one of Boba's codebases.
+
+:::note
+
+If you've looked at our [Recommended Tools](/docs/engineering/knowledge-base/recommended-tools.md) document, you've seen we recommend Visual Studio Code (VS Code) as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer.
 
 :::
 
-At this point, you can proceed with the regular flow for a pull request.
+### 1. Fork the repository on GitHub
 
-### 1. Create a branch off of `master` for your new feature
+Forking creates an exact copy of the entire codebase to your own GitHub account. This includes all its files and the history of changes. You own this copy (in terms of permissions) and it's completely separate from the original. No matter what changes you make, the original codebase (often referred to as `upstream`) will remain unchanged.
 
-In the folder for your **forked** repository (see step 0) run
+You can [fork a repository on GitHub](https://docs.github.com/en/get-started/quickstart/fork-a-repo) from its web interface by going to the repository's URL. For example, the repository for this documentation is `https://www.github.com/BobaBoard/boba-docs`, where `BobaBoard` is the name of the owner of the repository, and `boba-docs` is the repository's name.
 
-```bash   showLineNumbers
-git branch -f new-feature-name
-git checkout new-feature-name
-```
+Once you've created a fork, this copy will live somewhere that looks like so: `https://www.github.com/<YOUR_GITHUB_USERNAME>/<REPOSITORY_NAME>`
 
-Of course you can swap `new-feature-name` with whatever string represents what you're trying to do.
+:::info
 
-**TIP:** if you want to work on multiple changes at the same time, you can maintain different branches with separate code (see [Git Notes](/docs/engineering/legacy-pages/git-notes)). Just run the code above to create another branch, and you can then switch between branches using `git checkout my-branch`. Code changes aren't shared between branches.
-
-### 2. Write code
-
-Write the most revolutionary piece of code the world has ever seen. Once you're done, commit it (basically, create a checkpoint) to your repository by running:
-
-```bash   showLineNumbers
-# Add all the modified files to the present commit
-git add .
-# Actually commit all the added files
-git commit -m "this is a description of what my whole commit is about"
-# Push your changes to the github website (remote repository)
-# on the new-feature-name branch
-git push origin new-feature-name
-```
-
-**TIP:** you can do this multiple times as you code to split your work in "logical segments". This is good practice, but don't feel too bad if you commit everything together because BobaLord is also extremely bad at clean commits and will not judge you.
-
-### 3. Create a pull request on Github
-
-Once you're done, it's time to open a pull request (again, also known as "please, BobaLord, merge my code into the official BobaBoard codebase"). To do so:
-
-1. Go to your **forked repo** on the **github** website
-2. You should see a message like the one in yellow here. Click on Compare & pull request.
-
-   ![An image of the Pull Request button on the main repo page.](/img/legacy/devenv3.png)
-
-3. Write a description and click on "create pull request". Try to explain what you did and why as if the person reading it had zero context for it and was eager to go back to reading hot fanfictions. That is, try to be precise but concise.
-
-### 4. Submit for review
-
-There will be a bit of back and forth, and you might get comments requesting to change some of your code or asking clarifying questions. This is normal and expected: no engineer, no matter how senior, never gets comments and questions on their code. It's just part of the job, and not a reflection of your skills.
-
-Most often, code reviews are just a matter of the maintainer enforcing consistency in the codebase, or spotting bugs you might have missed (like we all do), or asking to make code clearer for someone that has never read it before. Always feel free to ask clarifying questions, or to push back if you disagree with something.
-
-Once your pull request is merged (aka accepted in the main codebase), you can delete your branch. Github has a easy button for you to do so.
-
-#### How to Make Requested Changes
-
-When changes are requested, you will likely see comments on the pull request you have submitted. Simply go back to step 2, write code, commit and push until all comments are fixed. Then go back to the pull request, check that everything is in order, and ask for an additional review. You should mark the comments you have addressed as done by using the "resolve convo" button.
-
-### 5. Pulling from upstream
-
-When you go back to the codebase, it's likely that more changes will have been made on the original BobaBoard codebase your code is forked from. To update your git fork to reflect the changes of "upstream" (aka the original codebase) run the following command.
-
-```bash   showLineNumbers
-git pull upstream master
-```
-
-You can now go back to step 1 and make new changes all over again.
-
-## Extra: Use a different GitHub account
-
-If you already have a GitHub account set up on your machine and want to use a different one for BobaBoard, you can use the following instructions:
-
-### 0. Create a special folder to house BobaBoard code
-
-This is the folder you're going to `clone` the BobaBoard repositories in.
-
-### 1. Set Up your Git username and email
-
-In your new folder, run the following commands to set up the new user:
-
-```bash   showLineNumbers
-git config user.name YOUR_BOBABOARD_GITHUB_USERNAME_HERE
-git config user.email YOUR_BOBABOARD_GITHUB_EMAIL_HERE
-```
-
-:::warning
-
-The email you set up will be visible to the world. GitHub provides a secret email address in your account section. Use that!
+The name of your fork doesn't have to match the name of the original project. For this guide, however, we'll assume you have kept the same name.
 
 :::
 
-### 2. Update the `origin` of the repository to the right username
+### 2. Clone your fork to your machine
 
+Cloning means copying the code that is stored in your GitHub account to your local machine. It doesn't really matter where you want to do this, as long as you have permission to create files. We suggest suggest creating a folder to keep all your BobaBoard-related coding in.
+
+:::danger Windows Subsystem for Linux (WSL)
+
+If you are coding for BobaBoard on Windows, we recommend setting up Windows Subsystem for Linux (WSL). When you create your folders for your BobaBoard project, they will need to be in the WSL file tree, not your normal Windows file explorer. For more in depth information please see [](/docs/engineering/start-developing/wsl). 
+
+:::
+
+To clone the repository you need to tell git where the code you want to copy is stored. Simply put, you need a URL. Your repository's URL is the web address you use to view it on GitHub with a `.git` at the end. 
+
+For example, if the URL you can copy from your browser's navigation bar is: `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components` then the URL you'll need to use when cloning is:  `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components.git`.
+
+GitHub has a button in its interface to get this URL.
+
+:::TODO
+
+Add explanation about HTTPs versus SSH.
+
+:::
+
+When you run the clone command a new folder named after the repository will be created and all the files will be stored inside. Navigate to the folder where you want to store the project and then run the clone command.
+
+```bash showLineNumbers
+cd /home/<USER>/code-projects/bobaboard
+git clone <REPOSITORY_URL>
 ```
-git remote set-url origin git@github.com-YOUR_BOBABOARD_GITHUB_USERNAME_HERE:YOUR_REMOTE_URL_HERE
+
+After cloning the boba-repos and creating personal projects you might end up with a folder structure that looks something like this:
+
+```txt
+/home
+├─ /<USER_NAME>
+│  ├─ code-projects/
+│  │  ├─ bobaboard/
+│  │  │  ├─ boba-backend/
+│  │  │  ├─ boba-components/
+│  │  │  ├─ boba-docs/
+│  │  │  ├─ boba-editor/
+│  │  ├─ boba-tan-shrine/
+│  │  ├─ personal-website/
 ```
+
+We want our local copy of the code to be able to interact and reference both the original codebase and the fork we made. To do this you need to make sure that the local copy of the code that lives in your machine correctly points to both of these GitHub repositories (the one that belongs to the BobaBoard organization, and the one in your own account).
+
+The clone you just created already points to your own GitHub account repo, but you'll need to add the repository you originally forked from manually.
+
+Using boba-docs as an example:
+
+```bash
+# add a reference to a remote repository and call it 'upstream'
+git remote add upstream https://github.com/BobaBoard/boba-docs.git
+
+# check to make sure your local repo correctly points at the remotes
+git remote --verbose
+
+> origin https://github.com/<YOUR_GITHUB_USERNAME>/boba-docs.git (fetch)
+> origin https://github.com/<YOUR_GITHUB_USERNAME>/boba-docs.git (push)
+> upstream  https://github.com/BobaBoard/boba-docs.git (fetch)
+> upstream  https://github.com/BobaBoard/boba-docs.git (push)
+```
+
+### 3. Create a branch for your edits
+
+When you initially clone the repository, you'll only have a main branch. This is the "official" version of the code or its current canon.
+
+Instead of making your changes there, you'll create a new branch where you can experiment freely. You'll want to give each branch you create a descriptive name to make it easier to find later if you switch to working on something else. For example, if you're working on adding a "read more" feature to the editor, you might create a branch called `read-more`.
+
+Branches help you work on different parts of the project at the same time. You can switch between branches to focus on specific tasks or experiments. If something goes wrong or you don't like the changes in a branch, you can just delete it without affecting the main code or losing any unrelated work.
+
+```bash showLineNumbers
+# create a new branch
+git branch read-more
+
+# see available branches, the one you're on has an asterisk (*)
+git branch --list
+>read-more
+> * main
+
+# note that to get exit the list view you'll need to press 'q'
+
+# switch to your new branch
+git checkout read-more
+
+# delete a branch
+git branch --delete read-more
+```
+
+### 4. Commit changes to your branch
+
+As you write code, you'll use git to "commit" your changes at different points. Committing creates a sort of checkpoint which is helpful when you need to check your progress after being away from the project for a bit and to undo or troubleshoot issues that arise as you add more and more changes.
+
+It could be helpful to think of commits as marking milestones in your journey. You don't need to commit every single line edit you make separately, but as you code you'll notice it makes sense to group certain changes together into a unit of work.
+
+For example, when working on the `read-more` branch, you might commit your code with the following messages:
+
+- 1st commit: `Add read more button`
+- 2nd commit: `Style read more button`
+- 3rd commit: `Display text when read more button is clicked`
+
+:::tip Keep it short and sweet
+
+Commit messages have limited characters. It's best to make them descriptive enough so future-you and whoever is reading your code understands what you've been up to but not so long the important ideas don't fit in a single line. Multi-line commits are also possible and can be used to detail more information.
+
+:::
+
+It's simple but in practice most of us have trouble remembering to make commits regularly and writing informative messages when we do. Don't worry too much about it, if you struggle you're in good company.
+
+### 5. 
+
+### 6. Open a "pull request" on the original codebase
+
+When you want to show your fellow project collaborators the changes you're proposing, you will open a "pull request". Pull requests give everyone the opportunity to see the code and add comments before it's added to the codebase as canonical.
+
+You can open a pull request (PR) by visiting your forked repo on GitHub. When your fork and the original project look different GitHub will show you a button offering to open a PR. When you click this button you'll be able to see a color-coded before and after of all the edits you have made (this is called a 'diff', since it shows you the differences between two things).
+
+![An image of the Pull Request button on the main repo page.](/img/legacy/devenv3.png)
+
+Here, you'll write a brief description of the changes you've worked on. You can request specific people to take a look at your PR, but not everyone will know what you're working on, so you should do your best to explain it so even those with no context understand.
+
+:::tip Open Pull Requests Early
+
+It can be a good idea to open pull requests even before your changes are fully ready to be merged. This allows you to start a conversation about the code you're working on and get early feedback that can save you time on changes later.
+
+:::
+
+### 7. The codebase owners review (and eventually "merge") the pull request
+
+Once the pull request has been submitted for review, the repo maintainers will review the changes made and might request edits to the code. You could receive comments requesting changes to code or asking clarifying questions. This is normal and expected, and is not a reflection of your skills.
+
+Feedback may include:
+
+- fixing bugs you might have missed (it always helps to get a second pair of eyes!)
+- editing for consistency with the rest of the codebase
+- discussing an unforeseen issue with the code you're adding
+
+Most often, code reviews are a matter of the maintainer enforcing consistency in the codebase, spotting bugs you might have missed, or asking to make code clearer for someone that has never read it before. You should feel free to ask clarifying questions concerning requested changes or to push back if you disagree with a request.
+
+The review process may entail multiple rounds of back and forth between the pull requester and the maintainers, and the developer often adds new commits to the pull request with the requested changes as the process is repeated.
+
+:::note How to Make Requested Changes
+
+When changes are requested, you will see comments on the pull request you have submitted. Simply write code, commit and push until all comments are resolved. Then go back to the pull request, check that everything is in order, and request for another review. You should mark the comments you have addressed as done by using the "resolve conversation" button.
+
+:::
+
+Once the pull request is approved, the pull request is "merged" and "closed". Once merged, your code becomes part of the `main` branch in the original `upstream` codebase. You can now delete the "feature branch" created in step 1.
+
+:::tip Branch Maintenance
+
+You can use GitHub's "Delete Branch" button to delete your branches, but you might find that your local branches still appear in VS Code or that your own fork still has branches you thought were deleted showing, where you've tracked them previously. You can use the below commands to delete and prune branches.
+
+```bash showLineNumbers
+# To delete your local branch
+git branch -D branch-name
+
+# To clean up your fork's remote branches
+git remote prune origin
+
+# To clean up the main repo's remote branches
+git remote prune upstream
+```
+
+:::
+
+
+
+### 8. Pulling from upstream
+
+Now that the feature code has been merged to the `upstream main` branch, the code in the `main` branch of your fork (which doesn't contain the original feature) is out of date. To download the updated code, you "pull" the changes from the `upstream` codebase. This copies all the new code commits in the upstream codebase to both your fork and its local clone.
+...
+
+As you work, it's very likely other people will have made pull requests that will have been accepted to the original codebase you've forked from. To update your own fork and local copies to reflect the changes of "upstream" (the original codebase) run:
+
+```bash showLineNumbers
+git pull upstream main
+```
+:::caution
+
+Do not use `git pull` when there are uncommitted changes in your worktree. In this case you'll want to use `git fetch upstream main`, and then merge after you've committed.
+
+:::
+
+### 9. Continuing your work
+
+To continue your work (whether it's adding a new feature, cleaning up code, or squashing bugs), you will repeat the same process starting from step 1.
