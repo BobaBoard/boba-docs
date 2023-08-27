@@ -3,17 +3,22 @@ import { z } from "zod";
 
 let OCTOKIT_CLIENT: typeof graphql | null = null;
 
-if (process.env.GITHUB_TOKEN) {
-  OCTOKIT_CLIENT = graphql.defaults({
-    headers: {
-      authorization: `token ${process.env.GITHUB_TOKEN}`,
-    },
-  });
-} else {
-  console.log(
-    "[GITHUB DOWNLOADER] No GITHUB_TOKEN found in .env. Skipping projects fetch."
-  );
-}
+const maybeLoadOctokitClient = () => {
+  if (OCTOKIT_CLIENT) {
+    return;
+  }
+  if (process.env.GITHUB_TOKEN) {
+    OCTOKIT_CLIENT = graphql.defaults({
+      headers: {
+        authorization: `token ${process.env.GITHUB_TOKEN}`,
+      },
+    });
+  } else {
+    console.log(
+      "[GITHUB DOWNLOADER] No GITHUB_TOKEN found in .env. Skipping projects fetch."
+    );
+  }
+};
 
 export const Project = z.object({
   id: z.string(),
@@ -49,6 +54,7 @@ export const Result = z.object({
 });
 
 export const maybeLoadProjectsFromOrg = async () => {
+  maybeLoadOctokitClient();
   if (!OCTOKIT_CLIENT) {
     console.error(
       "[GITHUB DOWNLOADER] Couldn't update projects data. No authorized Octokit client found."

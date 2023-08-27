@@ -8,5 +8,6 @@
     "outDir": "./dist",
     "forceConsistentCasingInFileNames": true,
     "strict": true
-  }
+  },
+  "include": ["./src/**/*"]
 }

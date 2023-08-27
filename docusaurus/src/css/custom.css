@@ -38,3 +38,13 @@ img.emoji {
 html {
   font-size: 100%;
 }
+
+.theme-admonition-TODO {
+  --ifm-alert-background-color: #fdf7d8;
+  --ifm-alert-border-color: #f8de5d;
+}
+
+html[data-theme="dark"] .theme-admonition-TODO {
+  --ifm-alert-background-color: #463a02;
+  --ifm-alert-border-color: #f8de5d;
+}

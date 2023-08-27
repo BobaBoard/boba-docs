@@ -7,7 +7,9 @@ sidebar_position: 2
 This guide goes over the code of conduct for BobaBoard's volunteers.
 
 :::tip
+
 **This document and the surrounding processes are a living document.** Volunteers are empowered to propose changes, adjustments and additions.
+
 :::
 
 ## Volunteers expectations
@@ -32,9 +34,11 @@ When representing the project in any form or engaging in the volunteering channe
 Above all, **volunteers should act in good faith while working together in BobaBoard's spaces.** This means you should value and employ honesty in your actions and communication, with a sincere intention to deal fairly and respectfully with others. Intentional violations of basic standards of decency toward your fellow humans have no place here.
 
 :::important
+
 **These rules don't exist as hard fences, but as guiding lines.** The final decision always rests on the judgement of the project leads.
 
 **Our goal is not to police, but to keep the community welcoming to those we want to serve.** Unless your behavior is grossly inappropriate, you aren't going to be suddenly banned for a slip up, or for a careless remark.
+
 :::
 
 With that said, BobaBoard's goal is to first and foremost protect niche fandom communities, and give them a safe, respectful space in which to freely express themselves. Because of this, the culture of our volunteers community (and BobaBoard at large) has some baseline ideals that, _whether individuals fully agree with them or not_, will guide how we handle conflict and policy.

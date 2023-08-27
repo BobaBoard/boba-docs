@@ -1,5 +1,282 @@
 [
   {
+    "id": "PVT_kwDOBKDHhM4AQ2-Y",
+    "title": "\"It's a marathon not a sprint\" sprint (🛫Jun 5 — 🛬 July 17)",
+    "shortDescription": null,
+    "readme": "Our goals:\n- Implement moderation tools that are blockers for Realms launch\n- Get a better handle on coding practices and standards\n- Figure out which documentation is missing and where to put it\n\n\n---MACHINE DATA---\n```\nstatus: active\ntype: sprint\n```",
+    "url": "https://github.com/orgs/BobaBoard/projects/9",
+    "items": {
+      "nodes": [
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85SEk5B",
+            "title": "Allow moderators to hard delete threads/contributions/comments",
+            "body": "## Description\n\nWhat it says on the tin: moderators (or roles with the corresponding permission) should be able to delete threads, contributions or comments.\n\n**Note:** this issue doesn't cover logging the deletion or displaying information about the deletion to users. This is about offering a soft delete option similar to the one I've been using straight from the database, but making it available beyond me.\n\n## Flow\n\n1. If the user has the corresponding permission, a \"delete thread/contribution/comment\" option is added to the dropdown menu of the corresponding entity.\n2. A popup is displayed to the user, asking to confirm the action.\n3. If the action is confirmed, a request for deletion is sent to the the server.\n\n## Implementation steps\n\n1. Implement hard deletion for threads\n2. Implement soft deletion for threads\n3. Do the same for contributions\n4. Do the same for comments\n\nThe following tasklist is an example of implementation steps for deleting threads. We'll likely need to open other issues for contributions and comments:\n\n```[tasklist]\n### Backend tasks\n- [ ] Write SQL queries to hard delete thread on the backend\n- [ ] Add an endpoint to delete a thread\n- [ ] Write tests for endpoint\n- [ ] Add `delete_threads` (`delete_contributions`|`delete_comments`) permissions to the backend\n- [ ] Gate deletion of a thread on correct permissions\n```\n\n```[tasklist]\n### Frontend tasks\n- [ ] Add delete button to the frontend \n- [ ] Add confirmation popup\n- [ ] Send request to the backend\n```\n\nTODO: make a separate issue for soft delete\n\n",
+            "url": "https://github.com/BobaBoard/issues/issues/94",
+            "createdAt": "2022-09-18T03:15:36Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/94#issue-1376931393"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85SEeMI",
+            "title": "Allow calling mod attention to a thread",
+            "body": "## Problem description\nWe currently use an external google form for people to report issues. Before doing a broader release of Realms, we should consider enabling users to call mod attention to a specific thread, contribution or comment directly from the UI.\n\n## Proposed solution\n\nThe ideal way of doing this would be for the flow to exist 100% inside of BobaBoard. But given that we don't really have a \"personal notifications\" system and won't have it for a while, I'd propose tying this functionality to a webhook, which can then be used to trigger notifications/actions on any system that supports them (including Discord or any Pipedream script).\n\n### Flow\n\n1. User opens the contextual dropdown for a thread/contribution/or comment\n2. User clicks on the \"signal to mod\" option\n3. An explanatory popup is opened, asking the user for more details on the issue\n4. When the user confirms the input, a request is sent to a server endpoint (TBD)\n5. The server endpoint checks whether a webhook is associated with the (current realm? action?), sends the request, and communicates back to the user whether the webhook triggering was successful \n\n## Deliberations needed\n\n-  [ ] Decide how specific the API endpoint should be. Is it specific to reporting threads/comments/posts, a generic way to contact mods, or an even more generic trigger for webhook actions? *(note: this will influence most other decisions)*\n- [ ] We already have a `webhooks` SQL table, which supports `rest` and `discord` as triggers. Do we support both types of webhooks for this feature?\n- [ ] Currently `webhooks` are always associated with subscriptions. What do we associate this `webhook` with? Is it a generic \"contact-a-mod webhook\" setting for the realm?\n- [ ] What happens if no webhook is set for this feature? Does the option disappear?\n\n## Other notes\n\n- We should have all the components needed for this feature, but we have not assembled this type of non-post input on the frontend before. In an ideal world, we'd just reuse the regular editor and restrict the inputs to the ones that we're able to translate to a discord format.  Until the new editor lands though, we can simply use a `textarea` input and only allow unformatted text.\n\n- We should CC ms boba on reports sent to mods so that she can take actions for items they may not have access to. This will also allow her to see how these features are used outside of her spaces so she can have information which will help her shape future features.\n\n- We will also need to alert people to the fact ms boba will be copied on the report.\n\n## Issue breakdown\n- [ ] Do the deliberations above and write a design document on how to implement the feature\n- [ ] Potentially create new SQL queries and tables as needed [`boba-backend`]\n- [ ] Create a new server endpoint to ping the webhook [`boba-backend`]\n- [ ] Add option to the user bar to send a message to a mod [`boba-frontend`]\n- [ ] Add modal to allow user to write a message to the mod [`boba-frontend`]\n\n### Stretch goals\n- [ ] Add option to comments to call mod attention to a specific comment [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option to comments to call mod attention to a specific post [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option to comments to call mod attention to a specific thread [`boba-backend`\\\\`boba-frontend`]\n- [ ] Add option for user to reveal their identity ",
+            "url": "https://github.com/BobaBoard/issues/issues/93",
+            "createdAt": "2022-09-18T00:20:46Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/93#issue-1376903944"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvFjX",
+            "title": "Allow creating a new bobadex from a gSheet",
+            "body": "Currently we don't want to support complex bobadex management from within the UI, but instead allow realm admins to upload new bobadexes as CSV files.\n\nWe're going to suggest google sheets as an easy way to create this CSV. However, the google sheets CSV export doesn't support images, so we're going to explore whether we can get the pictures through API and upload it ourselves.\n\nTo support edits to the bobadex, we will ask realm managers to redownload an updated CSV with the external ids of each identity prefilled in. This way we can know whether they mean to update a pre-existing identity or create new ones. This feature is not considered part of an MVP.\n\n- [x] Check whether the google sheets API can fetch images from a sheet\n- [ ] Write the SQL query to create the new identity in the bobadex and assign them to the correct Realm [`boba-backend`]\n- [ ] Add a permission for a role to be able to create the bobadex [`boba-backend`]\n- [ ] Write an endpoint to create the bobadex [`boba-backend`]\n- [ ] Define how the bobadex creation admin screen is going to look like \n- [ ] Implement the bobadex creation admin screen [`boba-frontend`/`boba-components`]",
+            "url": "https://github.com/BobaBoard/issues/issues/126",
+            "createdAt": "2023-01-25T00:04:15Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/126#issue-1555847383"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Design Thread locking",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Move out of gcloud",
+            "body": "We're going to be creating a NixOS configuration for BobaBoard, and deploy it to a Digital Ocean droplet.\n\nCurrent work is at: https://github.com/BobaBoard/boba-extras "
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Create TOS",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOD9V3Vc5n3urK",
+            "title": "Add link to DMCA policy",
+            "body": "We now have a DMCA agent, but to be in compliance we must display this somewhere on our site. I think the bottom of the main page is a nice place to add a link. We should also add the boilerplate text (which @essential-randomness has) to the documentation.\n\n- [ ] Add the DMCA boilerplate text to `boba-docs`\n- [ ] Add a link to the bottom of the main page",
+            "url": "https://github.com/BobaBoard/boba-frontend/issues/136",
+            "createdAt": "2023-06-05T21:39:28Z",
+            "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/136#issue-1742662346"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Create guidelines for new Realm admins",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85n3bWO",
+            "title": "Add eslint configuration",
+            "body": "We should add eslint to all our codebases to enforce code style conventions. Code style conventions are currently not defined very strictly, so this might involve adding common configurations, figuring out what breaks, and push people/ms boba to fix it (or add TODOs).\n\nWe should figure out what are common stylistic choices projects make and make sure that we agree on which ones we want to adopt ourselves.\n\n```[tasklist]\n### Tasks\n- [ ] Discuss set of stylistic choices we need to make\n- [ ] Set up eslint on boba-backend\n- [ ] Review eslint configuration on boba-frontend \n- [ ] Review eslint configuration on boba-components\n```\n\n\n\n",
+            "url": "https://github.com/BobaBoard/issues/issues/141",
+            "createdAt": "2023-06-05T20:36:38Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/141#issue-1742583182"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Prettier configuration",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85daOje",
+            "title": "Add end to end type safety to board feed queries",
+            "body": "We want to test our end to end typesafety flow by adding it to a new endpoint. The chosen candidate is `/feeds/boards/{board_id}`.\n\n- [x] Create zod type definitions for the \"`DbActivitySomethingType`\", which is used to standardize the return type of DB feed queries.\n- [x] Generate typescript definition from the OpenAPI types of the `/feeds/boards/{board_id}` endpoint.\n- [ ] Swap typescript definitions with new types and check for any discrepancies\n- [ ] Add typescript definitions to the frontend and type safe the corresponding queries.",
+            "url": "https://github.com/BobaBoard/issues/issues/132",
+            "createdAt": "2023-02-02T01:26:05Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/132#issue-1567156446"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvRSp",
+            "title": "Prototype getting typescript types for the frontend from backend open api definitions",
+            "body": "We currently write backend response types 3 times:\n1 — As a typescript type in the server\n2 — As a OpenAPI definition\n3 — As a typescript type in the frontend\n\nThis is not good. We should change this.\n\n- [x] Prototype generating typescript types from OpenAPI definition (TODO: remember library name)\n- [ ] Decide how to package typescript types to share with the frontend repository\n- [ ] Prototype adding strong typing to a query from the frontend",
+            "url": "https://github.com/BobaBoard/issues/issues/128",
+            "createdAt": "2023-01-25T00:54:47Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/128#issue-1555895465"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvH-R",
+            "title": "Fix code for the board sidebar edit flow",
+            "body": "This code needs to be rewritten and tested because we currently don't have any way of detecting \"dirty\" input before we discard changes made by the user, and also it's just generally sucky.\n\nWe have all the UI elements FWIW, but we should improve the logic that governs how they're displayed.\n\nThe edit flow logic is also hardcoded in boba-components but it's probably better suited for being moved in boba-frontend.\n\n- [x] Investigate using XState to create a visualization of the state transitions of such flow\n- [ ] Integrate XState with the existing UI Components to recreate the current logic (but correct)\n- [ ] Move the XState state machine to the `boba-frontend` repository, and decouple ui components from it\n- [ ] Write some tests\n",
+            "url": "https://github.com/BobaBoard/issues/issues/127",
+            "createdAt": "2023-01-25T00:11:39Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/127#issue-1555857297"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Rename ui-components package to boba-components",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85cvA4W",
+            "title": "Allow moderators to post in a thread even if they already had an anonymous identity",
+            "body": "Currently there is no way to post in a thread with a different identity if you already had one assigned. For moderation purposes, it's possible that a moderator will need to make an official post on a thread they already joined. This should be possible without them revealing their previous identity.\n\nOn a technical level, this will mean creating a table that assigns a per-post identity to a thread on the backend and returning a different `secretIdentity` for certain posts when displaying the thread. On the frontend, we shouldn't need to make a lot of changes, except that we might need to show the role selector dropdown even after an identity is already taken. We will likely also need to create a permission for some roles to be used as additional identities in a single thread. ",
+            "url": "https://github.com/BobaBoard/issues/issues/125",
+            "createdAt": "2023-01-24T23:42:26Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/125#issue-1555828246"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Allow people with the right permissions to canonize content notices in boards",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85daKJB",
+            "title": "Allow users to see which roles are assigned to them",
+            "body": "```[tasklist]\n### Backend tasks\n- [ ] https://github.com/BobaBoard/issues/issues/136\n- [ ] https://github.com/BobaBoard/issues/issues/137\n```\n\n```[tasklist]\n### Frontend tasks\n- [ ] https://github.com/BobaBoard/boba-components/issues/119\n- [ ] https://github.com/BobaBoard/boba-frontend/issues/129\n```\n\n```[tasklist]\n### Stretch task\n- [ ] Surface permissions associated with a Role\n```",
+            "url": "https://github.com/BobaBoard/issues/issues/131",
+            "createdAt": "2023-02-02T01:04:18Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/131#issue-1567138369"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "id": "I_kwDOE8ugM85daPIv",
+            "title": "Allow admins (with the right permissions) to see which roles exist on a realm",
+            "body": "Blocked on #129 \n\n- [ ] Define what permissions are needed to see role assignments in a Realm\n- [ ] Add a \"label\" column to the roles assignment table to identify the user with the role\n- [ ] Create SQL queries to fetch roles assigned in a Realm\n- [ ] Create server endpoint to query for roles assigned in a Realm\n- [ ] Create page in Realm Admin panel to see which roles are assigned in the realm (can probably reuse work done for #131)",
+            "url": "https://github.com/BobaBoard/issues/issues/133",
+            "createdAt": "2023-02-02T01:29:06Z",
+            "bodyUrl": "https://github.com/BobaBoard/issues/issues/133#issue-1567158831"
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": "Add pre-push hook for linting",
+            "body": ""
+          }
+        },
+        {
+          "creator": {
+            "url": "https://github.com/essential-randomness"
+          },
+          "content": {
+            "title": ".vscode/ folder settings",
+            "body": ""
+          }
+        }
+      ]
+    },
+    "repositories": {
+      "nodes": []
+    },
+    "views": {
+      "nodes": [
+        {
+          "id": "PVTV_lADOBKDHhM4AQ2-YzgBp37c",
+          "name": "By target",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AQ2-YzgBp4kc",
+          "name": "By status",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AQ2-YzgBp4lM",
+          "name": "By type",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AQ2-YzgBp4lw",
+          "name": "Up for grabs",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AQ2-YzgBrRQk",
+          "name": "Backend Tasks",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AQ2-YzgBrRRM",
+          "name": "Frontend Tasks",
+          "layout": "TABLE_LAYOUT"
+        },
+        {
+          "id": "PVTV_lADOBKDHhM4AQ2-YzgBrRR8",
+          "name": "Components Tasks",
+          "layout": "TABLE_LAYOUT"
+        }
+      ]
+    }
+  },
+  {
     "id": "PVT_kwDOBKDHhM4AL-j5",
     "title": "April 1st TODOs",
     "shortDescription": null,
@@ -59,7 +336,7 @@
           "content": {
             "id": "I_kwDOD9V3Vc5cu_kf",
             "title": "Allow users to see a \"eagle eye view\" of the Realm",
-            "body": "",
+            "body": "My hypothesis is that newcomers to a Realm currently have a hard time figuring out the theme of each board and what gets posted where \"at a glance\". They might click on each board to get a sense, but that means they might accidentally open something that they don't want to see*. It would be nice if they could have a way to get a broader sense of the Realm structure in a single place.\n\n*We also often got the request to allow people to mute boards without entering them.\n\nDesign is the BoardsListSection here: \n\n![Image](https://github.com/BobaBoard/boba-frontend/assets/47095486/06264450-2fc6-4627-a947-b7a67d15d619)\n\n\nSee: https://app.excalidraw.com/s/AWH4aJGGt8v/Ar8nCjAhwK\n\n",
             "url": "https://github.com/BobaBoard/boba-frontend/issues/122",
             "createdAt": "2023-01-24T23:35:32Z",
             "bodyUrl": "https://github.com/BobaBoard/boba-frontend/issues/122#issue-1555822879"
@@ -93,7 +370,7 @@
           },
           "content": {
             "id": "I_kwDOE8ugM85SEk5B",
-            "title": "Allow moderators to soft delete threads/contributions/comments",
+            "title": "Allow moderators to hard delete threads/contributions/comments",
             "body": "## Description\n\nWhat it says on the tin: moderators (or roles with the corresponding permission) should be able to delete threads, contributions or comments.\n\n**Note:** this issue doesn't cover logging the deletion or displaying information about the deletion to users. This is about offering a soft delete option similar to the one I've been using straight from the database, but making it available beyond me.\n\n## Flow\n\n1. If the user has the corresponding permission, a \"delete thread/contribution/comment\" option is added to the dropdown menu of the corresponding entity.\n2. A popup is displayed to the user, asking to confirm the action.\n3. If the action is confirmed, a request for deletion is sent to the the server.\n\n## Implementation steps\n\n1. Implement hard deletion for threads\n2. Implement soft deletion for threads\n3. Do the same for contributions\n4. Do the same for comments\n\nThe following tasklist is an example of implementation steps for deleting threads. We'll likely need to open other issues for contributions and comments:\n\n```[tasklist]\n### Backend tasks\n- [ ] Write SQL queries to hard delete thread on the backend\n- [ ] Add an endpoint to delete a thread\n- [ ] Write tests for endpoint\n- [ ] Add `delete_threads` (`delete_contributions`|`delete_comments`) permissions to the backend\n- [ ] Gate deletion of a thread on correct permissions\n```\n\n```[tasklist]\n### Frontend tasks\n- [ ] Add delete button to the frontend \n- [ ] Add confirmation popup\n- [ ] Send request to the backend\n```\n\nTODO: make a separate issue for soft delete\n\n",
             "url": "https://github.com/BobaBoard/issues/issues/94",
             "createdAt": "2022-09-18T03:15:36Z",
@@ -133,7 +410,7 @@
           "content": {
             "id": "I_kwDOE8ugM85cvH-R",
             "title": "Fix code for the board sidebar edit flow",
-            "body": "This code needs to be rewritten and tested because we currently don't have any way of detecting \"dirty\" input before we discard changes made by the user, and also it's just generally sucky.\n\nWe have all the UI elements FWIW, but we should improve the logic that governs how they're displayed.\n\nThe edit flow logic is also hardcoded in boba-components but it's probably better suited for being moved in boba-frontend.\n\n- [ ] Investigate using XState to create a visualization of the state transitions of such flow\n- [ ] Integrate XState with the existing UI Components to recreate the current logic (but correct)\n- [ ] Move the XState state machine to the `boba-frontend` repository, and decouple ui components from it\n- [ ] Write some tests\n",
+            "body": "This code needs to be rewritten and tested because we currently don't have any way of detecting \"dirty\" input before we discard changes made by the user, and also it's just generally sucky.\n\nWe have all the UI elements FWIW, but we should improve the logic that governs how they're displayed.\n\nThe edit flow logic is also hardcoded in boba-components but it's probably better suited for being moved in boba-frontend.\n\n- [x] Investigate using XState to create a visualization of the state transitions of such flow\n- [ ] Integrate XState with the existing UI Components to recreate the current logic (but correct)\n- [ ] Move the XState state machine to the `boba-frontend` repository, and decouple ui components from it\n- [ ] Write some tests\n",
             "url": "https://github.com/BobaBoard/issues/issues/127",
             "createdAt": "2023-01-25T00:11:39Z",
             "bodyUrl": "https://github.com/BobaBoard/issues/issues/127#issue-1555857297"

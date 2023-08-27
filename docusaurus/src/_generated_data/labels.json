@@ -9,6 +9,15 @@
     "description": ""
   },
   {
+    "id": 5771827646,
+    "node_id": "LA_kwDOE8ugM88AAAABWAcZvg",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9A%BENeeds%20Pinch%20Hitter",
+    "name": "⚾Needs Pinch Hitter",
+    "color": "EEEC84",
+    "default": false,
+    "description": "The original contributor needs to abandon this PR, and we need someone to step up to help out."
+  },
+  {
     "id": 2680331200,
     "node_id": "MDU6TGFiZWwyNjgwMzMxMjAw",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%E2%9B%88%EF%B8%8F%20Hard",
@@ -243,6 +252,15 @@
     "description": "Can easily be broken down in a way in which a volunteer should have a easy way taking care of it"
   },
   {
+    "id": 5853255043,
+    "node_id": "LA_kwDOE8ugM88AAAABXOGVgw",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%89%20The%20Big%20Issues%20Bankruptcy%20of%202023",
+    "name": "📉 The Big Issues Bankruptcy of 2023",
+    "color": "ED0A3D",
+    "default": false,
+    "description": "Sometimes what you need is a fresh start"
+  },
+  {
     "id": 3832963560,
     "node_id": "LA_kwDOE8ugM87kdmHo",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%93%A6%20%20Meta",
@@ -286,51 +304,6 @@
     "color": "fcb760",
     "default": false,
     "description": "An issue that involves the boba-frontend repository"
-  },
-  {
-    "id": 2680295286,
-    "node_id": "MDU6TGFiZWwyNjgwMjk1Mjg2",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%94%A5P4",
-    "name": "🔥P4",
-    "color": "E5E7EB",
-    "default": false,
-    "description": "Priority NONE: No current plans to do this, but still considering it"
-  },
-  {
-    "id": 2680271398,
-    "node_id": "MDU6TGFiZWwyNjgwMjcxMzk4",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%94%A5%F0%9F%94%A5P3",
-    "name": "🔥🔥P3",
-    "color": "FFFBEB",
-    "default": false,
-    "description": "Priority LOW: This can wait until we have time"
-  },
-  {
-    "id": 2680270642,
-    "node_id": "MDU6TGFiZWwyNjgwMjcwNjQy",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5P2",
-    "name": "🔥🔥🔥P2",
-    "color": "FDE68A",
-    "default": false,
-    "description": "Priority MEDIUM: This can wait a few releases"
-  },
-  {
-    "id": 2680270160,
-    "node_id": "MDU6TGFiZWwyNjgwMjcwMTYw",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5P1",
-    "name": "🔥🔥🔥🔥P1",
-    "color": "F59E0B",
-    "default": false,
-    "description": "Priority HIGH: Do this for the next release"
-  },
-  {
-    "id": 2680269554,
-    "node_id": "MDU6TGFiZWwyNjgwMjY5NTU0",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5%F0%9F%94%A5P0",
-    "name": "🔥🔥🔥🔥🔥P0",
-    "color": "DC2626",
-    "default": false,
-    "description": "Priority CRITICAL: Drop everything to work on this"
   },
   {
     "id": 4542483721,

@@ -87,7 +87,9 @@ https://www.npmjs.com/package/jest-extended
 Call `startTestServer(router)`.
 
 :::GOTCHA
+
 Follow this syntax exactly, and do **not** destructure the object returned by `startTestServer(router)`. If you do, `app` will be undefined within your tests, and you're going to have a bad time.
+
 :::
 
 For more information, you can read [Jest's mocking guide](https://jestjs.io/docs/mock-functions)/

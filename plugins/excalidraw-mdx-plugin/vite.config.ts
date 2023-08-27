@@ -11,7 +11,14 @@ export default defineConfig({
         transformer: path.resolve(__dirname, "src/index.ts"),
         component: path.resolve(__dirname, "src/ExcalidrawComponent.tsx"),
       },
-      external: ["react", "react-dom", "fs", "@docusaurus/BrowserOnly"],
+      external: [
+        "react",
+        "react-dom",
+        "fs",
+        "@docusaurus/BrowserOnly",
+        "@docusaurus/theme-common",
+        "@docusaurus/plugin-content-docs",
+      ],
       output: [
         {
           globals: {
@@ -35,5 +42,9 @@ export default defineConfig({
       preserveEntrySignatures: "exports-only",
     },
   },
-  plugins: [dts()],
+  plugins: [
+    dts({
+      include: ["./src/index.ts"],
+    }),
+  ],
 });

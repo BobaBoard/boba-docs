@@ -5,28 +5,48 @@ sidebar_position: 4
 # Install BobaBackend
 
 :::warning
-This is currently a private repository. Contact the BobaLord for access!
-:::
 
-:::important
 **Make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed.** This is the only codebase that needs it.
+
 :::
 
 ## Install Instructions
 
-The first time you work on BobaBackend you need to copy the project to the local machine and set up the environment configuration files (`.env`, [ELI5](https://www.reddit.com/r/webdev/comments/a54pxr/what_is_a_env_file/ebjwbtr/?utm_source=reddit&utm_medium=web2x&context=3)).
+The first time you work on BobaBackend you'll need to [fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) so you can edit your own version of the code.
 
-### 1 – Clone project and create configuration files
+### 1 — Clone your fork
 
-In a terminal, run the following commands:
+In a terminal, run the following commands - or [follow Github's instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
 
-```bash   showLineNumbers
+```bash showLineNumbers
+# Go into the folder where you want to store your boba repositories
+# For example:
+cd my-boba-repos
 # Clone the codebase from github
-git clone https://github.com/BobaBoard/boba-backend.git
+git clone https://github.com/[YOUR GITHUB USERNAME HERE]/boba-backend.git
 # Enter the codebase directory
-cd bobabackend
+cd boba-backend
 # Install all necessary code
 yarn install
+```
+
+:::tip
+
+The commands shown on this page use HTTPS to interact with the code on GitHub but you can do so with SSH if you're comfortable
+
+:::
+
+### 2 — Add the BobaBoard repository as a remote
+
+Once you've made your changes to your fork, you'll need some way of pushing the changes to the upstream codebase. To do so, we need to tell git how to find it. Run the following command, or [check out Github's steps](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository):
+
+```bash
+git remote add upstream https://github.com/BobaBoard/boba-backend.git
+```
+
+### 3 — Create configuration files
+
+```bash
 # Create the .env files containing the secrets for our test DB
 touch .env
 echo "POSTGRES_USER=the_amazing_bobaboard" >> .env
@@ -37,19 +57,22 @@ echo "GOOGLE_APPLICATION_CREDENTIALS_PATH=../firebase-sdk.json" >> .env
 echo "FORCED_USER=c6HimTlg2RhVH3fC1psXZORdLcx2" >> .env
 echo "REDIS_HOST=localhost" >> .env
 echo "REDIS_PORT=6379" >> .env
+
 # Create the firebase-sdk config file to connect to the authentication service
 touch firebase-sdk.json
 ```
 
-### 2 — Set up your FirebaseSDK credentials.
+### 4 — Set up your FirebaseSDK credentials
 
 :::warning
+
 **This is an INVALIDATED Firebase service account key.** It will allow the firebase admin SDK to be correctly initialized, but doesn't grant any further privilege.
+
 :::
 
 Open `firebase-sdk.json` and paste the following content within it:
 
-```
+```json
 {
   "type": "service_account",
   "project_id": "bobaboard-fb",
@@ -66,4 +89,4 @@ Open `firebase-sdk.json` and paste the following content within it:
 
 ## Start a local server
 
-You can now [follow the instructions](/docs/engineering/boba-backend/getting-started) in the bobabackend guide and start your own local server.
+You can now [follow the instructions](../boba-backend/getting-started) in the bobabackend guide and start your own local server.
