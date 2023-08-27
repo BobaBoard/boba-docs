@@ -110,10 +110,18 @@ html[data-theme="dark"] .theme-admonition-TODO {
   border-left: 3px solid var(--ifm-alert-border-color);
 }
 
+html[data-theme="light"] .alert {
+	background: rgba(0,0,0,0.02);
+}
+
+html[data-theme="dark"] .alert {
+	background: rgba(255,255,255,0.02);
+}
+
 [class*="admonitionHeading"] {
   color: var(--ifm-alert-border-color);
   font-size: 1.2rem !important;
-  padding: 0.5rem 0.5rem 0.25rem;
+  padding: 0.75rem 1rem 0.25rem;
 }
 
 [class*="admonition"] > svg {
@@ -122,5 +130,5 @@ html[data-theme="dark"] .theme-admonition-TODO {
 }
 
 [class*="admonitionContent"] {
-  padding: 0rem 0.5rem 0rem;
+  padding: 0rem 1rem 0.75rem;
 }
