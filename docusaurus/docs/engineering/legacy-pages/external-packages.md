@@ -9,8 +9,8 @@ sidebar_position: 11
 - **PostgresSQL:** our database of choice. Currently hosted through Google CloudSQL, mostly for ease of setup and automated backups.
 - **React:** needs no intro, I believe. This is what we're using for the UI.
 - **[React-Query](https://github.com/tannerlinsley/react-query):** asynchronous data management in React. Might seem complex at first, but it really does querying the server for data much better.
-- **NextJS:** tries to make developing React websites as easy as developing websites with PHP used to be. Provides Sever-Side Rendering out of the box, though I haven't done the work to set it up yet. Only caveat to know about: it's very unhappy when you reference the *window* object before components are mounted.
-- **Styled JSX:** our "css-in-js" system. It's not the most popular out there and has a couple of caveats I'm unhappy about, but it allows us to write *actual CSS* rather than just assigning JavaScript objects.
+- **NextJS:** tries to make developing React websites as easy as developing websites with PHP used to be. Provides Sever-Side Rendering out of the box, though I haven't done the work to set it up yet. Only caveat to know about: it's very unhappy when you reference the _window_ object before components are mounted.
+- **Styled JSX:** our "css-in-js" system. It's not the most popular out there and has a couple of caveats I'm unhappy about, but it allows us to write _actual CSS_ rather than just assigning JavaScript objects.
 - **QuillJS:** used for the text editor. While its internal workings are mostly isolated in the editor package, the QuillJS delta format is used to store the text data in the DB.
 - **Storybook:** allows developing UI component systems completely separate from a frontend, as well as provides an easy way to document them.
 - **Netlify:** used continuous deployment of storybook updates. Currently only truly working in a completely automated fashion for the editor because of a bug. (TODO: link to bug).

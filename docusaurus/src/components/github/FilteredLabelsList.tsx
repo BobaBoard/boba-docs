@@ -40,7 +40,7 @@ const Label = ({
 
 const FilteredLabelsList = ({ prefix }: { prefix: string }) => {
   const filteredLabels = labels.filter((label) =>
-    label.name.startsWith(prefix)
+    label.name.startsWith(prefix),
   );
 
   return (

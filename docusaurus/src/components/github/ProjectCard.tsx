@@ -15,9 +15,7 @@ const ProjectCard = ({ id, title, shortDescription, url }: Project) => {
       <h3>
         <a href={url}>{title}</a>
         {projectData.priority && (
-          <div>
-            {"🔥".repeat(5 - projectData.priority)}
-          </div>
+          <div>{"🔥".repeat(5 - projectData.priority)}</div>
         )}
       </h3>
       <div>

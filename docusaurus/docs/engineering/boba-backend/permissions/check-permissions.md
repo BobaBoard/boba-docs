@@ -23,7 +23,7 @@ router.patch(
   async (req, res) => {
     const { currentThreadPermissions } = req;
     // currentThreadPermissions now contains the permissions the user has for the thread with id `thread_id`.
-  }
+  },
 );
 ```
 
@@ -50,7 +50,7 @@ router.post(
   async (req, res, next) => {
     // If this handler is reached, the user has the `createThread` permission for the board with id `board_i`.
     // If ensureBoardPermission fails, a response with status 403 is automatically sent back.
-  }
+  },
 );
 ```
 

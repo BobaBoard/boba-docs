@@ -19,14 +19,14 @@ This is just notes on setup, what pages aren't included, etc.
 # FAQs and Troubleshooting
 
 ### Help! I ran `git pull` and now when I go running yarn it says `[library name] not found`!
- 
+
 This usually means a new library has been added to the project that you don't currently have. Try running `yarn install` again!
 
 ---
 
 # QA Philosophy
 
-Write about your approach to QA and why it's critical to success. 
+Write about your approach to QA and why it's critical to success.
 
 ## Processes
 
@@ -86,4 +86,4 @@ TODO
 
 ## Test Database
 
-The test database init data is defined at  `db/test_db_init/`.
+The test database init data is defined at `db/test_db_init/`.

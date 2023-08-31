@@ -7,12 +7,12 @@ sidebar_position: 3
 BobaBoard has four types of tags for threads. Each type of tag allows you to
 communicate additional information to readers or organize threads in a board.
 
-|           Type            |                                         Example                                          | Location         | Prefix | Use                          |
-| :-----------------------: | :--------------------------------------------------------------------------------------: | ---------------- | :----: | ---------------------------- |
+|           Type            |                                        Example                                         | Location         | Prefix | Use                          |
+| :-----------------------: | :------------------------------------------------------------------------------------: | ---------------- | :----: | ---------------------------- |
 | [Whisper](#whisper-tags)  | ![black text on a white background "» An announcement from your headmaster!"][whisper] | bottom of thread | _none_ | comments                     |
-|   [Hashtag](#hashtags)    |            ![a red-orange pill tag with "# bobapost" in white text][hashtags]            | bottom of thread |  `#`   | identify additional topics   |
-| [Categories](#categories) |                ![a blue pill tag with "+ even" in white text][categories]                | bottom of thread |  `+`   | canonical tags for filtering |
-|  [Content Notices](#cn)   |         ![an orange-yellow pill tag with "cn: harassment psa" in dark text][cn]          | top of thread    | `cn:`  | warnings                     |
+|   [Hashtag](#hashtags)    |           ![a red-orange pill tag with "# bobapost" in white text][hashtags]           | bottom of thread |  `#`   | identify additional topics   |
+| [Categories](#categories) |               ![a blue pill tag with "+ even" in white text][categories]               | bottom of thread |  `+`   | canonical tags for filtering |
+|  [Content Notices](#cn)   |        ![an orange-yellow pill tag with "cn: harassment psa" in dark text][cn]         | top of thread    | `cn:`  | warnings                     |
 
 :::info
 

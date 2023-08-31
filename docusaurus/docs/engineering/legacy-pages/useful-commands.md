@@ -10,13 +10,13 @@ Frequently used commands. This is a helpful page to add to your Favorites. [Here
 
 For `BobaEditor` and `BobaComponents` run (in the corresponding folders):
 
-```bash   showLineNumbers
+```bash showLineNumbers
 yarn run storybook
 ```
 
 For `BobaFrontend` run:
 
-```bash   showLineNumbers
+```bash showLineNumbers
 # Start instance connected to local server (BobaBackend must be running)
 yarn run dev
 
@@ -26,7 +26,7 @@ yarn run dev:stage
 
 For `BobaBackend` run:
 
-```bash   showLineNumbers
+```bash showLineNumbers
 yarn run start-db
 yarn run dev:watch
 ```

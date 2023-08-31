@@ -14,7 +14,7 @@ First, [fork the boba-editor repository](https://docs.github.com/en/get-started/
 
 In a terminal on your own machine, enter the local directory where you want to keep your copy of BobaEditor, then run the following commands:
 
-```bash   showLineNumbers
+```bash showLineNumbers
 # Clone the codebase from github
 git clone https://github.com/[YOUR GITHUB USERNAME HERE]/boba-editor.git
 # Enter the codebase directory
@@ -41,7 +41,7 @@ You can check the current Node version by running `node -v`.
 
 In a terminal, run the following command:
 
-```bash   showLineNumbers
+```bash showLineNumbers
 yarn run storybook
 ```
 

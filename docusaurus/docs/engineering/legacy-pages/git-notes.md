@@ -10,11 +10,10 @@ Here are some notes on git concepts that might be useful to newcomers.
 
 A commit is like "saving a checkpoint" of your code. Assume you divide your work in various steps, like:
 
-1) Create tables in the DB
-2) Write queries to fetch from the DB
-3) Write logic that returns data on request using the queries created in 2
-
-It would be a good practice to create a commit after each step (or with even more granularly). What that does is that if in the middle of step 3 you find yourself wanting to start over, you can discard everything you have done up to that point and go back to the previous commit (aka checkpoint). Without a commit, you would have to detangle the code you created on step 2 from the code you wrote for step 3, which might be an extremely terrible endeavor.
+1. Create tables in the DB
+2. Write queries to fetch from the DB
+3. Write logic that returns data on request using the queries created in 2
+   It would be a good practice to create a commit after each step (or with even more granularly). What that does is that if in the middle of step 3 you find yourself wanting to start over, you can discard everything you have done up to that point and go back to the previous commit (aka checkpoint). Without a commit, you would have to detangle the code you created on step 2 from the code you wrote for step 3, which might be an extremely terrible endeavor.
 
 ## On Pull Requests
 
@@ -26,7 +25,7 @@ Git branches allow you to work on code in isolation. Basically, every branch exi
 
 You can create a branch with `git branch -f name-of-branch` and checkout a branch with `git checkout name-of-branch`. To pull (download) a branch from the remote (a.k.a. the code on github) that you don't have on your local machine, you can run `git pull origin name-of-branch`. This allows you to pick up from someone else's branch.
 
-----
+---
 
 ## Even more terminology
 
@@ -56,9 +55,10 @@ $ git remote -v
 > upstream  https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git (push)
 ```
 
-In practical terms, when you contribute code to a BobaBoard repository, the repo that belongs to the BobaBoard account is the `upstream`, the fork that lives on your own GitHub account is the `origin` and the clone of *that* living in your PC is your `local`.****
+In practical terms, when you contribute code to a BobaBoard repository, the repo that belongs to the BobaBoard account is the `upstream`, the fork that lives on your own GitHub account is the `origin` and the clone of _that_ living in your PC is your `local`.\*\*\*\*
 
 :::note Uhm. What's the point of all this?
+
 Glad you asked! The point of **forking** a repository is being able to push (meaning upload) changes in isolation until you're ready to actually request the original project's owner to review your edits. You'll also most often find that you don't have permission to directly make changes to other people's repos anyway, so editing your own fork is the way to go.
 
 The point of **cloning** is being able to work on things on your own machine, in your own code editor. There's some edits that are easy to do from GitHub's web interface, especially for markdown files like README's or the boba-docs documentation files - but for the most part you'll want to have a copy in your own system to play with.
@@ -67,7 +67,7 @@ The point of **cloning** is being able to work on things on your own machine, in
 
 ### branch
 
-When you create a branch in your git repository you can safely make edits without affecting your `main` branch, or any other branches you choose to create. It's essentially a way to make multiple parallel edits to code in an orderly way. 
+When you create a branch in your git repository you can safely make edits without affecting your `main` branch, or any other branches you choose to create. It's essentially a way to make multiple parallel edits to code in an orderly way.
 
 For example, you may want to create a branch named `typos` to fix small text mistakes. Then, another branch named `css-edits` to work on improving the styling of a component that is failing accesibility checks, and yet another branch named `new-component` to add a new piece to the UI.
 

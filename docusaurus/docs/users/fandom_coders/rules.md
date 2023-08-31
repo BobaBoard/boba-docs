@@ -1,4 +1,5 @@
 # Rules
+
 More detailed information on the rules and posting guidelines is forthcoming! For now, please play by the Fandom Coder Discord server rules when testing out the new Realm.
 
 <!-- COMMMENTED OUT SO WE CAN MAKE LIKE ELSA ON 6/9

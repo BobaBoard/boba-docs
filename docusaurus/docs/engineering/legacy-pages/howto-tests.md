@@ -8,7 +8,7 @@ sidebar_position: 10
 
 For backend testing, we use `mocha` + `chai`.
 
-All files ending with `.test.ts` are automatically run as tests. As much as possible, tests should be divided in different files according to the functionality they're testing for (e.g. `boards/tests/pagination.tests.ts`, `boards/tests/metadata.tests.ts`). 
+All files ending with `.test.ts` are automatically run as tests. As much as possible, tests should be divided in different files according to the functionality they're testing for (e.g. `boards/tests/pagination.tests.ts`, `boards/tests/metadata.tests.ts`).
 
 ### How to Run Backend Tests
 

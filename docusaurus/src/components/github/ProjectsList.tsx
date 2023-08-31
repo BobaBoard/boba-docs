@@ -5,7 +5,7 @@ import { load } from "js-yaml";
 import projects from "../../_generated_data/projects.json";
 import styles from "./Projects.module.css";
 
-export type Project = typeof projects[0];
+export type Project = (typeof projects)[0];
 
 /**
  * This data should be added to the README section of projects in a YAML-based
@@ -26,7 +26,7 @@ export const getProjectData = ({
   id: string;
 }): Partial<ProjectData> => {
   const project: Project | undefined = projects.find(
-    (project) => project.id == id
+    (project) => project.id == id,
   );
   if (!project || !project.readme) {
     return {};
@@ -37,15 +37,18 @@ export const getProjectData = ({
     return {};
   }
   return load(
-    project.readme.substring(dataStart + DATA_DELIMITER_START.length, dataEnd)
+    project.readme.substring(dataStart + DATA_DELIMITER_START.length, dataEnd),
   );
 };
 
-const DATA_BY_PROJECT_ID = projects.reduce((finalObject, project) => {
-  finalObject[project.id] = getProjectData(project);
-  console.log(getProjectData(project));
-  return finalObject;
-}, {} as Record<string, Partial<ProjectData>>);
+const DATA_BY_PROJECT_ID = projects.reduce(
+  (finalObject, project) => {
+    finalObject[project.id] = getProjectData(project);
+    console.log(getProjectData(project));
+    return finalObject;
+  },
+  {} as Record<string, Partial<ProjectData>>,
+);
 
 const getProjects = ({ status, type }: Partial<ProjectData>) => {
   const projectsOfStatus = status
@@ -65,7 +68,7 @@ const ProjectsList = (props) => {
       return (
         DATA_BY_PROJECT_ID[id1].priority - DATA_BY_PROJECT_ID[id2].priority
       );
-    }
+    },
   );
 
   return projects.length > 0 ? (

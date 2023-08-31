@@ -66,24 +66,24 @@ We're currently focusing our efforts on improving the volunteering process **for
    :::warning
 
    This is an active area of development. Check back later for instructions, and contact Ms. Boba in the meanwhile!
-   
-	 :::
+
+   :::
 
 4. **Select a first issue.** Contact Ms. Boba for help selecting an issue that meets your goals and requirements.
-   
-	 :::TODO
+
+   :::TODO
 
    [Ms. Boba] Create an open process to select issues.
-   
-	 :::
+
+   :::
 
 5. **Keep in touch.** Periodically update your status with any progress done.
 
    :::TODO
 
    [Ms. Boba] Create an open process for status check-ins.
-   
-	 :::
+
+   :::
 
 6. **Open a Pull Request and get your hard work merged in.** Use your GitHub account to submit your changes for review. After approval, the changes will be merged in the BobaBoard codebase.
 
