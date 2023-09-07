@@ -2,8 +2,12 @@ import BrowserOnly from "@docusaurus/BrowserOnly";
 import React from "react";
 import { useColorMode } from "@docusaurus/theme-common";
 
-export const ExcalidrawComponent = (props: { fileContent: string }) => {
+export const ExcalidrawComponent = (props: {
+  fileContent: string;
+  alt: string;
+}) => {
   const { colorMode } = useColorMode();
+  const dialog = React.useRef<HTMLDialogElement>(null);
 
   return (
     <BrowserOnly>
@@ -15,11 +19,57 @@ export const ExcalidrawComponent = (props: { fileContent: string }) => {
         } = require("@excalidraw/excalidraw");
 
         return (
-          <span className="excalidraw-embed">
-            <span
+          <div className="excalidraw-embed" aria-label={props.alt}>
+            <dialog
+              ref={dialog}
+              onClick={(event) => {
+                if (!dialog.current) {
+                  return;
+                }
+                var rect = dialog.current.getBoundingClientRect();
+                var isInDialog =
+                  rect.top <= event.clientY &&
+                  event.clientY <= rect.top + rect.height &&
+                  rect.left <= event.clientX &&
+                  event.clientX <= rect.left + rect.width;
+                if (!isInDialog) {
+                  dialog.current.close();
+                }
+              }}
+            >
+              <div
+                key={props.fileContent + colorMode}
+                ref={async (ref) => {
+                  const svgImage = await exportToSvg({
+                    ...JSON.parse(props.fileContent),
+                    appState: {
+                      theme: colorMode == "dark" ? THEME.DARK : THEME.LIGHT,
+                      exportWithDarkMode: colorMode == "dark",
+                      exportBackground: false,
+                    },
+                    type: "png",
+                  });
+                  if (!ref || ref.hasChildNodes()) {
+                    return;
+                  }
+                  svgImage.style.maxWidth = "max(100%, 500px)";
+                  svgImage.style.height = "auto";
+                  ref.appendChild(svgImage);
+                }}
+              />
+              <form
+                method="dialog"
+                onSubmit={() => {
+                  document.body.style.overflow = "visible";
+                }}
+              >
+                <button>Close dialog</button>
+              </form>
+            </dialog>
+            <div
               key={props.fileContent + colorMode}
-              ref={(ref) => {
-                exportToSvg({
+              ref={async (ref) => {
+                const svgImage = await exportToSvg({
                   ...JSON.parse(props.fileContent),
                   appState: {
                     theme: colorMode == "dark" ? THEME.DARK : THEME.LIGHT,
@@ -27,14 +77,13 @@ export const ExcalidrawComponent = (props: { fileContent: string }) => {
                     exportBackground: false,
                   },
                   type: "png",
-                }).then((svg: any) => {
-                  if (!ref || ref.hasChildNodes()) {
-                    return;
-                  }
-                  svg.style.maxWidth = "100%";
-                  svg.style.height = "auto";
-                  ref.appendChild(svg);
                 });
+                if (!ref || ref.hasChildNodes()) {
+                  return;
+                }
+                svgImage.style.maxWidth = "100%";
+                svgImage.style.height = "auto";
+                ref.appendChild(svgImage);
               }}
             />
             <span
@@ -60,8 +109,23 @@ export const ExcalidrawComponent = (props: { fileContent: string }) => {
               >
                 Copy image
               </button>
+              <button
+                onClick={() => {
+                  dialog.current?.showModal();
+                  document.body.style.overflow = "hidden";
+                }}
+              >
+                Show full page
+              </button>
             </span>
-          </span>
+            <style>
+              {`
+              .excalidraw-embed dialog::backdrop {
+                background-color: rgba(0,0,0, 0.7);
+              }
+            `}
+            </style>
+          </div>
         );
       }}
     </BrowserOnly>
