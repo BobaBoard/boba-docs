@@ -1,8 +1,8 @@
 ---
 sidebar_position: 1
+title: The BobaBoard Team(s)
+slug: /volunteering
 ---
-
-# Volunteering
 
 :::tip
 
