@@ -22,7 +22,7 @@ TODO[Ms.Boba]: Create a intro page to help people with a specific skill (or desi
 
 ## Step 0 - Sign up for a GitHub Account
 
-In order to submit code, you will need a [GitHub account](https://github.com/). You can read more about GitHub in our [Knowledge Base](/docs/volunteering/github/understanding-github).
+In order to submit code, you will need a [GitHub account](https://github.com/). You can read more about [Using Github](/docs/volunteering/coding/github/understanding-github).
 
 ## Step 1 - Take a look at open issues
 
