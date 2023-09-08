@@ -74,7 +74,7 @@ module.exports = {
             },
             {
               label: "Volunteering Guide",
-              to: "/docs/volunteering/intro",
+              to: "/docs/volunteering",
             },
             {
               label: "User Guide",
