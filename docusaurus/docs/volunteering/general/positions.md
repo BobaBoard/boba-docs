@@ -1,4 +1,8 @@
-# Intro
+---
+sidebar_position: 4
+title: Open Positions
+---
+
 
 This sections will contain a list of open positions, their requirements and expectations.
 

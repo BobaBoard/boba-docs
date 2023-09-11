@@ -1,3 +1,7 @@
+---
+title: Selecting An Issue
+---
+
 - Types of contributions
 - For code beginners
 - For code experts

@@ -41,8 +41,7 @@ module.exports = {
           activeBaseRegex: "docs/engineering",
         },
         {
-          type: "doc",
-          docId: "volunteering/intro",
+          to: "docs/volunteering/",
           position: "left",
           label: "Volunteering Guide",
         },
@@ -75,7 +74,7 @@ module.exports = {
             },
             {
               label: "Volunteering Guide",
-              to: "/docs/volunteering/intro",
+              to: "/docs/volunteering",
             },
             {
               label: "User Guide",

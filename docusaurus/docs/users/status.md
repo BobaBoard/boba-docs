@@ -31,4 +31,4 @@ You can provide feedback by:
 
 - posting in the **!bobaland** Board for your Realm
 - opening a [Github Issue](https://github.com/BobaBoard/issues/issues)
-- becoming a [volunteer](/docs/volunteering/intro)
+- becoming a [volunteer](/docs/volunteering)
