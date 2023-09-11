@@ -441,6 +441,15 @@
     "description": ""
   },
   {
+    "id": 5908638870,
+    "node_id": "LA_kwDOE8ugM88AAAABYC6slg",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%A4%B8%E2%80%8D%E2%99%82%EF%B8%8F%20Teamwork%20welcome",
+    "name": "🤸‍♂️ Teamwork welcome",
+    "color": "cccccc",
+    "default": false,
+    "description": "An issue made of many small parts that can be tackled by multiple people independently"
+  },
+  {
     "id": 2680258770,
     "node_id": "MDU6TGFiZWwyNjgwMjU4Nzcw",
     "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%A6%B5%20Good%20first%20issue",
@@ -452,11 +461,11 @@
   {
     "id": 4542482822,
     "node_id": "LA_kwDOE8ugM88AAAABDsDJhg",
-    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%AA%B2%20Behind%20the%20scenes",
-    "name": "🪲 Behind the scenes",
+    "url": "https://api.github.com/repos/BobaBoard/issues/labels/%F0%9F%AA%B2%20Dev%20experience",
+    "name": "🪲 Dev experience",
     "color": "cccccc",
     "default": false,
-    "description": ""
+    "description": "An issue that's not visible to users, but it's definitely visible to developers."
   },
   {
     "id": 2680258762,
