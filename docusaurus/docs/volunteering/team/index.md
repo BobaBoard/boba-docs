@@ -33,24 +33,6 @@ The goal of both staff and volunteers is to create spaces and processes that ena
 
 :::
 
-## The volunteering expectations
-
-While BobaBoard strives to embody the chaotic and transgressive spirit of some corners of transformative fandom, **we expect volunteers and staff to approach their roles and tasks with seriousness and respect**, and to familiarize themselves with our [code of conduct](/docs/volunteering/team/code-of-conduct).
-
-**Active and clear communication is the most important quality of a successful volunteer**. This means volunteers are expected to:
-
-- Asks questions early and often.
-- Communicate problems as soon as possible.
-- Proactively let us know how we can help make their experience better, or smooth out problems for them.
-
-:::tip
-
-If life or other issues get in the way of a commitment you've made, <ins>let us know</ins>! We'll reassign the task with no judgement.
-
-:::
-
-**This project is fully committed to diversity, equity and inclusion.** If we can provide accommodations to improve your experience (such as breaking down tasks, or more regular check-ins), let us know. If you have concerns, you can report them to Ms. Boba.
-
 ## The volunteering process
 
 :::caution
@@ -66,24 +48,24 @@ We're currently focusing our efforts on improving the volunteering process **for
    :::warning
 
    This is an active area of development. Check back later for instructions, and contact Ms. Boba in the meanwhile!
-   
-	 :::
+
+   :::
 
 4. **Select a first issue.** Contact Ms. Boba for help selecting an issue that meets your goals and requirements.
-   
-	 :::TODO
+
+   :::TODO
 
    [Ms. Boba] Create an open process to select issues.
-   
-	 :::
+
+   :::
 
 5. **Keep in touch.** Periodically update your status with any progress done.
 
    :::TODO
 
    [Ms. Boba] Create an open process for status check-ins.
-   
-	 :::
+
+   :::
 
 6. **Open a Pull Request and get your hard work merged in.** Use your GitHub account to submit your changes for review. After approval, the changes will be merged in the BobaBoard codebase.
 
