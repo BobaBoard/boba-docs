@@ -12,8 +12,6 @@ This guide goes over the code of conduct for BobaBoard's volunteers.
 
 :::
 
-## Volunteers expectations
-
 ## Code of conduct
 
 When representing the project in any form or engaging in the volunteering channels, we ask you that you do so with courtesy and respect. Be mindful that, in virtue of being a professional environment, the standards and expectations of conduct in volunteering spaces are going to be higher than on the platform itself. At the same time, because of the nature of fandom spaces, the range of topics discussed is likely to exceed what would be appropriate in a conventional workplace.
