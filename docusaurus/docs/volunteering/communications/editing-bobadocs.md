@@ -8,7 +8,7 @@ This guide will show you how to edit BobaDocs, the website that you're looking a
 
 You will need:
 
-- A [GitHub](https://github.com) account. (A brief explanation of GitHub is available in our [Knowledge Base](/docs/volunteering/github/understanding-github). Any `git terminology` use in this guide is also explained there.)
+- A [GitHub](https://github.com) account. (A brief explanation of GitHub is available in our [Knowledge Base](/docs/volunteering/coding/github/understanding-github). Any `git terminology` use in this guide is also explained there.)
 
 You will NOT need:
 
@@ -16,7 +16,7 @@ You will NOT need:
 
 ## Step 0: Create your own copy of BobaDocs
 
-Only the BobaLord is allowed to modify the original copy of BobaDocs. To make changes, you'll have to your own copy of the files. This process is called forking, and you can read more about it in our [knowledge base](/docs/volunteering/github/understanding-github).
+Only the BobaLord is allowed to modify the original copy of BobaDocs. To make changes, you'll have to your own copy of the files. This process is called forking, and you can read more about it in our [knowledge base](/docs/volunteering/coding/github/understanding-github).
 
 **If you already have a copy of BobaDocs, skip to [Keeping your files updated](#keeping-your-files-updated).**
 
@@ -31,7 +31,7 @@ Here are the steps to do this:
 
 :::tip
 
-By the way! To do this right, you'd also need to branch. Read our [knowledge base](/docs/volunteering/github/understanding-github) to learn more about branching.
+By the way! To do this right, you'd also need to branch. Read our [knowledge base](/docs/volunteering/coding/github/understanding-github) to learn more about branching.
 
 :::
 

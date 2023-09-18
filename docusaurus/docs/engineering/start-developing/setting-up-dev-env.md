@@ -44,7 +44,7 @@ For a step-by-step guide to setting up WSL, installing the below pre-requisites,
 
 ### Git/GitHub
 
-**You will use Git and a [GitHub](https://github.com/) account to download the BobaBoard code, make changes and send them out for review. **You can [learn more about Git and GitHub](/docs/volunteering/github/understanding-github) in our knowledge base.
+**You will use Git and a [GitHub](https://github.com/) account to download the BobaBoard code, make changes and send them out for review. **You can [learn more about Git and GitHub](/docs/volunteering/coding/github/understanding-github) in our knowledge base.
 
 To install git, follow the [instructions on GitHub](https://github.com/git-guides/install-git). While this documentation assumes you're using git through the command line, using GitHub Desktop or VSCode's Git(Hub) integration might provide an easier experience for newcomers.
 

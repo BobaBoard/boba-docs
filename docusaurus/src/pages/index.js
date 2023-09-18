@@ -1,10 +1,10 @@
-import React from "react";
-import clsx from "clsx";
+import HomepageFeatures from "../components/HomepageFeatures";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import React from "react";
+import clsx from "clsx";
 import styles from "./index.module.css";
-import HomepageFeatures from "../components/HomepageFeatures";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -16,7 +16,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/volunteering/intro"
+            to="/docs/volunteering"
           >
             Volunteer with us 💼
           </Link>
