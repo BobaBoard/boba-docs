@@ -2,7 +2,7 @@
 sidebar_position: 15
 ---
 
-# Expectations & Code of Conduct
+# Code of Conduct
 
 This guide goes over the code of conduct for BobaBoard's volunteers.
 
@@ -47,7 +47,7 @@ With that said, BobaBoard's goal is to first and foremost protect niche fandom c
 
 Callouts are, in the present online climate, a weapon that is too easy to wield irresponsibly and misuse. Disclosing personal information obtained through your volunteering role without the consent of the interested parties is an act without honor.
 
-### Follow "diversity 101" principles
+### Follow "Diversity 101" principles
 
 **Basic Diversity 101 values will be applied in our volunteer spaces, as well as in the community as a whole**. These include:
 

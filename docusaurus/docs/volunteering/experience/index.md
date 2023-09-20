@@ -23,54 +23,6 @@ As part of volunteering with us, you'll get to:
     comfort zone
   - Learn at your pace—for your enjoyment or to level up your coding career
 
-## The Ideal Volunteer
-
-Below are some common traits of our most successful volunteers or are traits
-they aspire to/are working towards. The list is extensive, and you aren't
-required to meet them all every day and in every situation, because no one is
-perfect! However, if you find yourself frequently thinking you can't or don't
-want to do these things while reading the list, BobaBoard may not be a good
-cultural fit for you.
-
-:::TODO
-
-Highlight the must haves
-
-:::
-
-### General Traits
-
-- Can communicate in written English (imperfect English is welcome!)
-- Comfortable with a diverse environment in terms of background, culture, fandom
-  experience and interests, gender, sexuality, identity, skills and more
-- Comfortable with mentions of sex and sexuality as they happen within fandom
-  spaces
-- Perseveres when things get difficult or stressful
-
-### Environmental Fit
-
-- Is ok with a work-in-progress environment where fast-paced change is the norm
-- Willing to learn, grow, and try new things to make each iteration better than
-  the previous one with an understanding that we take a long-term view and
-  approach to what we're building
-- Help us with learning to balance the seriousness of an ambitious project with
-  the whimsical nature of being in a fandom environment
-- Thrives in a non-hierarchical environment where no one can **force** you (or
-  others!) to complete tasks or change certain behaviors... or willing to ask
-  for the support they need to do so
-- Communicates and advocates for themselves and is willing to put in the work
-  to help shape the space to meet their needs
-
-### Team Relationships
-
-- Trusts and respects people who share this journey with them
-- Receives feedback gracefully while giving it respectfully and constructively
-- Extends grace when others make mistakes and approaches the discussion of
-  issues with a blameless mindset
-- Knows their needs and limitations. Assesses whether a given task/project is a
-  good fit for them. Is willing to ask for help when needed, but recognizes and
-  mentions when a wrong assignment has been made
-
 ## Volunteering Expectations
 
 :::TODO
