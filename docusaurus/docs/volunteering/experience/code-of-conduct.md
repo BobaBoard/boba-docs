@@ -20,10 +20,11 @@ When representing the project in any form or engaging in the volunteering channe
 
 - Be mindful and courteous to fellow volunteers.
 - Value de-escalation of conflict.
-- Think of volunteer space as a professional environment.
+- Think of volunteer spaces as a professional (but relaxed) environment.
 - Be ready to discuss or be privy to discussion of a variety of topics.
 - Respect identities, interests, boundaries, and kinks without making public judgment.
 - Act honestly and in good faith.
+- Assume good faith from others, until clearly proven otherwise.
 
 :::
 
@@ -93,7 +94,7 @@ If you have legal concerns, or believe there is a clear danger to real individua
 
 ## Reporting past behavior
 
-Egregiously bad conduct aside (e.g. a proven, recent history of misconduct, or extensive patterns of harmful behavior to be evaluated on a case by case basis), **we do not use people's past behavior and beliefs against them**. Redemption and repentance cannot be judged objectively from across a screen, and discouraging "digging for receipts" as a practice means judging people for their present conduct in our space.
+Egregiously bad conduct aside (e.g. a proven, recent history of misconduct, or extensive patterns of harmful behavior to be evaluated on a case by case basis), **we do not use people's past behavior and beliefs against them**. Whether or not someone regrets their past actions and has learned from their mistakes cannot be judged objectively through a screen. Discouraging "digging for receipts" as a practice means judging people for their present conduct in our space.
 
 If you believe one of your fellow volunteers is not an appropriate representative of the above listed ideals and poses a danger to the health of our community and its participants, the situation should be discussed privately with team leads and the appropriate volunteer wranglers.
 
