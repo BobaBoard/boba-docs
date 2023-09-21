@@ -32,7 +32,7 @@ The goal of both core members and other volunteers is to create spaces and proce
 - A welcoming and enriching experience for beginners and experts alike.
 - An encouraging, judgement-free environment to develop new skills in, or to hone pre-existing ones.
 - The opportunity for motivated individuals to make an impact, and to have their contributions publicly recognized to the extent they're comfortable with.
-- A leadership style mindful of the experience of marginalized communities, proactive in addressing their needs, and supportive of proposed changes within the boundaries of its [code of conduct](/docs/volunteering/team/code-of-conduct).
+- A leadership style mindful of the experience of marginalized communities, proactive in addressing their needs, and supportive of proposed changes within the boundaries of its [code of conduct](/docs/volunteering/experience/code-of-conduct).
 
 **Reaching and upholding these goals is a collective, continuos effort.** If you wish to propose changes, believe we're falling short of our commitments, or have other concerns, you can open an issue on GitHub, contact Ms. Boba, or take advantage of our anonymous volunteering feedback form.
 
@@ -53,7 +53,7 @@ Rewrite this section!
 While BobaBoard strives to embody the chaotic and transgressive spirit of some
 corners of transformative fandom, **we expect volunteers and staff to approach
 their roles and tasks with seriousness and respect**, and to familiarize
-themselves with our [code of conduct](/docs/volunteering/team/code-of-conduct).
+themselves with our [code of conduct](/docs/volunteering/experience/code-of-conduct).
 
 **Active and clear communication is the most important quality of a successful
 volunteer**. This means volunteers are expected to:
