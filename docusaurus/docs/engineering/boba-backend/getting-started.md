@@ -14,40 +14,76 @@ Before continuing with this section, **follow the installation instructions** in
 
 :::warning
 
-This codebase requires Node **16**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 16 by running `nvm use 16` in your terminal.
+This codebase requires Node **18**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 18 by running `nvm use 18` in your terminal.
 
 You can check the current Node version by running `node -v`.
 
 :::
 
-To develop for BobaBackend, you will need to start 3 separate components: the database, the cache, and the actual server.
+BobaBackend needs 3 different components to run:
 
-### Start DB
+1) The actual server (NodeJS + Express)
+2) The database (PostgreSQL)
+3) The cache (Redis)
 
-In a terminal, run the following command:
+You can choose to run these in the same command, or separately. Unless you're running tests, you'll likely want to start them all together.
 
-```
-yarn run start-db
-```
+### Quickstart (single command)
 
-:::note
+:::warning
 
-This command starts both the database (Postgres) and the cache (Redis).
+Make sure you have Docker installed and running
 
 :::
 
-### Run development server
-
 In a terminal, run the following command:
 
 ```
-yarn run dev:watch
+yarn run dev
 ```
+### Individual commands
+
+In a terminal, run the following commands:
+
+#### Start the database and the cache
+
+```
+yarn run db:start
+```
+
+#### Start the server (development mode)
+
+```
+yarn run server:dev
+```
+
+#### Run tests
+
+:::warning
+
+You should start the database independently before running tests
+
+:::
+
+
+```
+yarn run test
+```
+
+## Making sure the server is running
+
+You can test the server is running by opening `http://localhost:4200/realms/slug/twisted-minds` in any browser. You should now see a list of all the realm properties in [JSON format](https://developers.squarespace.com/what-is-json).
 
 :::tip
 
-**The above command will automatically restart the server on any code change you make. **
-For some edits, like updates to .sql files, you might need to restart it manually.
+Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/engineering/boba-backend/using-postman).
+
+:::
+
+
+:::tip
+
+**The above commands will automatically restart the server on any code change you make. **
 
 <details>
 <summary><strong>How to manually restart the development server</strong>
@@ -56,16 +92,8 @@ For some edits, like updates to .sql files, you might need to restart it manuall
 Both of these actions need to be performed on the console where `yarn run dev:watch` is currently running.
 
 - **Fancy Way:** Type `rs` and press enter.
-- **Bruteforce Way:** ~~Press~~ Mash `ctrl+c` to stop the running process, then run `yarn run dev:watch` again.
+- **Bruteforce Way:** ~~Press~~ Mash `ctrl+c` to stop the running process, then run `yarn run dev` again.
 
 </details>
-
-:::
-
-You can test the server is running by opening `http://localhost:4200/realms/slug/twisted-minds` in any browser. You should now see a list of all the realm properties in [JSON format](https://developers.squarespace.com/what-is-json).
-
-:::tip
-
-Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/engineering/boba-backend/using-postman).
 
 :::
