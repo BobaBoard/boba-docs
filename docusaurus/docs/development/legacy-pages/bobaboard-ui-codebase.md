@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # BobaComponents Codebase
 
-For installation instructions check out [Setting Up Your DevEnv](/docs/engineering/start-developing/setting-up-dev-env).
+For installation instructions check out [Setting Up Your DevEnv](/docs/development/start-developing/setting-up-dev-env).
 
 ## Overview
 

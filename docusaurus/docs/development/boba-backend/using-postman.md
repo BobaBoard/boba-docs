@@ -10,7 +10,7 @@ tutorial. A sample BobaBoard URL to use is
 `http://localhost:4200/realms/slug/twisted-minds` with the `GET` HTTP method.
 
 You can find all the BobaBoard REST API endpoints in our
-[Rest API documentation](/docs/engineering/rest-api/).
+[Rest API documentation](/docs/development/rest-api/).
 
 :::important
 

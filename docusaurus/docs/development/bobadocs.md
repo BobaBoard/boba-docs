@@ -26,11 +26,11 @@ All the documentation pages in BobaDocs are stored in the `docs` folder as `.md`
 Each of these guides has a different purpose:
 
 - **User Guide**/`users`: Describes how people on the site interact with the site in their day-to-day.
-- **Product Guide**/`product`: Provides a broad overview of BobaBoard's current setup/goals/etc. "What are the features that lead to what the users see, and how do they generally work?"
-- **Engineering Guide**/`engineering`: Provides a more granular overview of BobaBoard's current setup/goals/etc. "How is the code set up and what does it say, leading to the features described in the Product Guide?"
+- **Project Guide**/`project`: Provides a broad overview of BobaBoard's current setup/goals/etc. "What are the features that lead to what the users see, and how do they generally work?"
+- **Development Guide**/`development`: Provides a more granular overview of BobaBoard's current setup/goals/etc. "How is the code set up and what does it say, leading to the features described in the Project Guide?"
 - **Volunteer Guide**/`volunteer`: Exactly what it sounds like! Includes information relevant to all volunteers (ie policies and such) along with how to do non-tech volunteer work.
 
-Opening any one of these folders will net you the files and folders that are in the guide. As an example, here's the Engineering Guide's files:
+Opening any one of these folders will net you the files and folders that are in the guide. As an example, here's the Development Guide's files:
 
 ![a screenshot of the git repo compared to the sidebar on BobaDocs. lines are drawn between items with similar names](/img/volunteer/bobadocsnav2.jpg)
 
@@ -42,8 +42,8 @@ Also of note: the URL of each page comes directly from this folder structure, wi
 https://bobadocs.netlify.app/[PATH TO FILE]
 ```
 
-If you replace \[PATH TO FILE] with the filepath in the repo, you get the URL for that file. The only difference is that the URL doesn't include the file extension `.md`. For example, the URL of this page, which has the filepath `/docs/engineering/docusaurus.md` is:
+If you replace \[PATH TO FILE] with the filepath in the repo, you get the URL for that file. The only difference is that the URL doesn't include the file extension `.md`. For example, the URL of this page, which has the filepath `/docs/development/docusaurus.md` is:
 
 ```
-https://bobadocs.netlify.app/docs/engineering/docusaurus
+https://bobadocs.netlify.app/docs/development/docusaurus
 ```

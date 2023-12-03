@@ -126,7 +126,7 @@ You can learn more about the libraries used and the setup [on this dev.to articl
 
 OpenAPI specifications are best learned by looking at existing documentation. If you need more exhaustive explanations (or have doubts), documentation is available [on the OpenAPI website](https://swagger.io/docs/specification/paths-and-operations/).
 
-During development, you can preview your documentation by opening `http://localhost:4200/api-docs/` in your browser. Oce the updated server is deployed to production, the documentation will be automatically available [on this same website](/docs/engineering/rest-api/).
+During development, you can preview your documentation by opening `http://localhost:4200/api-docs/` in your browser. Oce the updated server is deployed to production, the documentation will be automatically available [on this same website](/docs/development/rest-api/).
 
 The generated OpenAPI JSON spec is available at the `/open-api.json` endpoint.
 
