@@ -16,6 +16,19 @@ module.exports = {
   plugins: [
     excalidrawMdxPlugin,
     require.resolve("docusaurus-plugin-image-zoom"),
+    [
+      "@docusaurus/plugin-client-redirects",
+      {
+        createRedirects: (path) => {
+          if (path.startsWith("/docs/engineering")) {
+            return [path.replace("/docs/engineering", "/docs/development")];
+          }
+          if (path.startsWith("/docs/product")) {
+            return [path.replace("/docs/product", "/docs/project")];
+          }
+        },
+      },
+    ],
   ],
   clientModules: [require.resolve("./src/global.ts")],
   themeConfig: {
@@ -30,15 +43,15 @@ module.exports = {
       items: [
         {
           type: "doc",
-          docId: "product/intro",
+          docId: "project/intro",
           position: "left",
-          label: "Product Guide",
+          label: "Project Guide",
         },
         {
-          to: "docs/engineering/intro",
+          to: "docs/development/intro",
           position: "left",
-          label: "Engineering Guide",
-          activeBaseRegex: "docs/engineering",
+          label: "Development Guide",
+          activeBaseRegex: "docs/development",
         },
         {
           to: "docs/volunteering/",
@@ -65,12 +78,12 @@ module.exports = {
           title: "Docs",
           items: [
             {
-              label: "Product Guide",
-              to: "/docs/product/intro",
+              label: "Project Guide",
+              to: "/docs/project/intro",
             },
             {
-              label: "Engineering Guide",
-              to: "/docs/engineering/intro",
+              label: "Development Guide",
+              to: "/docs/development/intro",
             },
             {
               label: "Volunteering Guide",
@@ -188,7 +201,7 @@ module.exports = {
       {
         specs: [
           {
-            routePath: "docs/engineering/rest-api/",
+            routePath: "docs/development/rest-api/",
             specUrl:
               process.env.API_SPEC ||
               "https://backend-dot-bobaboard.uc.r.appspot.com/open-api.json",

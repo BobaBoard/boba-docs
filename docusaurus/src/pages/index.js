@@ -52,7 +52,7 @@ export default function Home() {
             While we straighten things up, you can keep up to date with
             BobaBoard's happenings by subscribing to{" "}
             <a href="https://www.bobaboard.com/#newsletter">
-              our product newsletter
+              our project newsletter
             </a>
             , our{" "}
             <a href="https://essentialrandomness.com/">insiders newsletter</a>,

@@ -53,6 +53,7 @@
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.0.0-beta.15",
+    "@docusaurus/plugin-client-redirects": "^2.4.1",
     "@octokit/plugin-rest-endpoint-methods": "^6.7.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "docusaurus-plugin-remote-content": "^2.1.0",

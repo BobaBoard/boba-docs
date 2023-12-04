@@ -16,7 +16,7 @@ If you're new to collaborating on a code project, you may be wondering what that
 - explain key terminology
 - guide you through the step-by-step process of contributing to BobaBoard's codebase.
 
-This document also includes relevant information about git and GitHub to introduce you to technical vocabulary you might run into. For more information on these subjects you can look at our [Git Notes](/docs/engineering/legacy-pages/git-notes.md) page.
+This document also includes relevant information about git and GitHub to introduce you to technical vocabulary you might run into. For more information on these subjects you can look at our [Git Notes](/docs/development/legacy-pages/git-notes.md) page.
 
 :::note
 
@@ -70,7 +70,7 @@ The following is a more in-depth guide to the steps one would follow to contribu
 
 :::note
 
-If you've looked at our [Recommended Tools](/docs/engineering/knowledge-base/recommended-tools.md) document, you've seen we recommend Visual Studio Code (VS Code) as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer.
+If you've looked at our [Recommended Tools](/docs/development/knowledge-base/recommended-tools.md) document, you've seen we recommend Visual Studio Code (VS Code) as a code editor. One reason for this is its excellent integration with git. This lets you perform various tasks using the editor's user interface instead of typing commands in your terminal. Feel free to use integrations if you prefer.
 
 :::
 
@@ -94,13 +94,13 @@ Cloning means copying the code that is stored in your GitHub account to your loc
 
 :::danger Windows Subsystem for Linux (WSL)
 
-If you are coding for BobaBoard on Windows, we recommend setting up Windows Subsystem for Linux (WSL). When you create your folders for your BobaBoard project, they will need to be in the WSL file tree, not your normal Windows file explorer. For more in depth information please see [](/docs/engineering/start-developing/wsl). 
+If you are coding for BobaBoard on Windows, we recommend setting up Windows Subsystem for Linux (WSL). When you create your folders for your BobaBoard project, they will need to be in the WSL file tree, not your normal Windows file explorer. For more in depth information please see [](/docs/development/start-developing/wsl).
 
 :::
 
-To clone the repository you need to tell git where the code you want to copy is stored. Simply put, you need a URL. Your repository's URL is the web address you use to view it on GitHub with a `.git` at the end. 
+To clone the repository you need to tell git where the code you want to copy is stored. Simply put, you need a URL. Your repository's URL is the web address you use to view it on GitHub with a `.git` at the end.
 
-For example, if the URL you can copy from your browser's navigation bar is: `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components` then the URL you'll need to use when cloning is:  `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components.git`.
+For example, if the URL you can copy from your browser's navigation bar is: `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components` then the URL you'll need to use when cloning is: `https://github.com/<YOUR_GITHUB_USERNAME>/boba-components.git`.
 
 GitHub has a button in its interface to get this URL.
 
@@ -197,7 +197,7 @@ Commit messages have limited characters. It's best to make them descriptive enou
 
 It's simple but in practice most of us have trouble remembering to make commits regularly and writing informative messages when we do. Don't worry too much about it, if you struggle you're in good company.
 
-### 5. 
+### 5.
 
 ### 6. Open a "pull request" on the original codebase
 
@@ -254,8 +254,6 @@ git remote prune upstream
 
 :::
 
-
-
 ### 8. Pulling from upstream
 
 Now that the feature code has been merged to the `upstream main` branch, the code in the `main` branch of your fork (which doesn't contain the original feature) is out of date. To download the updated code, you "pull" the changes from the `upstream` codebase. This copies all the new code commits in the upstream codebase to both your fork and its local clone.
@@ -266,6 +264,7 @@ As you work, it's very likely other people will have made pull requests that wil
 ```bash showLineNumbers
 git pull upstream main
 ```
+
 :::caution
 
 Do not use `git pull` when there are uncommitted changes in your worktree. In this case you'll want to use `git fetch upstream main`, and then merge after you've committed.

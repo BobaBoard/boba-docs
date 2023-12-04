@@ -12,7 +12,7 @@ You can [learn more about Git, GitHub and Version Control](https://blog.devmount
 
 For GitHub tutorials, check out the [GitHub Learning Lab](https://lab.github.com/).
 
-For instructions on installing git, head to the [Setup Your Development Environment](/docs/engineering/start-developing/setting-up-dev-env#gitgithub) guide.
+For instructions on installing git, head to the [Setup Your Development Environment](/docs/development/start-developing/setting-up-dev-env#gitgithub) guide.
 
 ## How Git[Hub] Works
 

@@ -6,7 +6,7 @@ sidebar_position: 1
 
 :::important
 
-Before continuing with this section, **follow the installation instructions** in our [Contribute section](/docs/engineering/start-developing/boba-backend).
+Before continuing with this section, **follow the installation instructions** in our [Contribute section](/docs/development/start-developing/boba-backend).
 
 :::
 
@@ -22,9 +22,9 @@ You can check the current Node version by running `node -v`.
 
 BobaBackend needs 3 different components to run:
 
-1) The actual server (NodeJS + Express)
-2) The database (PostgreSQL)
-3) The cache (Redis)
+1. The actual server (NodeJS + Express)
+2. The database (PostgreSQL)
+3. The cache (Redis)
 
 You can choose to run these in the same command, or separately. Unless you're running tests, you'll likely want to start them all together.
 
@@ -41,6 +41,7 @@ In a terminal, run the following command:
 ```
 yarn run dev
 ```
+
 ### Individual commands
 
 In a terminal, run the following commands:
@@ -65,7 +66,6 @@ You should start the database independently before running tests
 
 :::
 
-
 ```
 yarn run test
 ```
@@ -76,10 +76,9 @@ You can test the server is running by opening `http://localhost:4200/realms/slug
 
 :::tip
 
-Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/engineering/boba-backend/using-postman).
+Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/development/boba-backend/using-postman).
 
 :::
-
 
 :::tip
 
