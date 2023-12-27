@@ -80,12 +80,15 @@ Run the regular `yarn add` command from within the workspace folder
 
 ```
 cd workspace/folder
-yarn add @package/name`
+yarn add @package/name
 ```
 
 Remember to still run `yarn run start` from the root directory.
 
 ## Contributing
+
+> [!Important]
+> Our issue tracker is not up-to-date and we are specifically looking for people to help us wrangle issues into order. If you're very eager to start working, please contact us through our [tech form](https://docs.google.com/forms/d/e/1FAIpQLSdCX2_fZgIYX0PXeCAA-pfQrcLw_lSp2clGHTt3uBTWgnwVSw/viewform)  (for coding) or our [non-tech form](https://forms.gle/Z44UreTxnbvFnoqc9) (for issue wrangling).
 
 BobaBoard welcomes one-time contributions. Our volunteer
 [Code of Conduct](https://docs.bobaboard.com/docs/volunteering/experience/code-of-conduct)
