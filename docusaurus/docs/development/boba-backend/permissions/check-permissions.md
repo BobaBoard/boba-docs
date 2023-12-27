@@ -75,7 +75,7 @@ router.get("feeds/boards/:board_id", ensureBoardAccess, async (req, res) => {
 
 ## On the client
 
-Each board's metadata includes the user's permission for the board and all threads and posts contained within. See the [`boards/{board_id}`](/docs/engineering/rest-api/#operation/getBoardsByUuid) endpoint for details.
+Each board's metadata includes the user's permission for the board and all threads and posts contained within. See the [`boards/{board_id}`](/docs/development/rest-api/#operation/getBoardsByUuid) endpoint for details.
 
 :::TODO
 

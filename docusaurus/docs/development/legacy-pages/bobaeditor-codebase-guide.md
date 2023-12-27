@@ -4,7 +4,7 @@ sidebar_position: 3
 
 # BobaEditor Codebase Guide
 
-For installation instructions check out [Setting Up Your DevEnv](/docs/engineering/start-developing/before-you-start).
+For installation instructions check out [Setting Up Your DevEnv](/docs/development/start-developing/before-you-start).
 
 ## Overview
 

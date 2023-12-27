@@ -16,7 +16,7 @@ Following REST principles has several advantages, including easier understanding
 
 :::tip
 
-You can explore the full BobaBackend API on the [REST API documentation page](/docs/engineering/rest-api/).
+You can explore the full BobaBackend API on the [REST API documentation page](/docs/development/rest-api/).
 
 :::
 
@@ -45,7 +45,7 @@ Response details (assuming success):
 
 - **HTTP Response status code:** [200 (success)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)
 - **HTTP Response payload:** what you see in the browser
-- **HTTP Response type:** [See endpoint documentation](/docs/engineering/rest-api/#tag/realms/operation/getRealmsBySlug)
+- **HTTP Response type:** [See endpoint documentation](/docs/development/rest-api/#tag/realms/operation/getRealmsBySlug)
 
 </details>
 
@@ -67,7 +67,7 @@ Add a quick explanation of different type of request parameters (URL, query and 
 
 **The following examples do not reflect how BobaBackend works in practice**, and are just meant to help understand REST APIs.
 
-The source of truth for the BobaBackend API is our [REST API documentation page](/docs/engineering/rest-api/).
+The source of truth for the BobaBackend API is our [REST API documentation page](/docs/development/rest-api/).
 
 :::
 
@@ -164,7 +164,7 @@ Possible responses include:
 :::tip
 
 `PUT` requests are not easily accessible through browsers! To issue one, you can
-use a tool like [Postman](docs/engineering/boba-backend/using-postman) or write a test for your endpoint.
+use a tool like [Postman](docs/development/boba-backend/using-postman) or write a test for your endpoint.
 
 :::
 
@@ -187,6 +187,6 @@ Possible responses include:
 :::tip
 
 `DELETE` requests are not easily accessible through browsers! To issue one, you can
-use a tool like [Postman](docs/engineering/boba-backend/using-postman) or write a test for your endpoint.
+use a tool like [Postman](docs/development/boba-backend/using-postman) or write a test for your endpoint.
 
 :::

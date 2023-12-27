@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Engineering Philosophy (draft)
+# Development Philosophy (draft)
 
 This page documents the principles leading our engineering choices. It's an extreme WIP.
 
@@ -24,7 +24,7 @@ This page documents the principles leading our engineering choices. It's an extr
 - Aspirationally try to encourage more coders in fandom by organizing events, networking and offering a safe space to get their feet wet in.
   - This should be a learning environment for those willing to put in the work!
 - Accomodate collaborators at all levels of ability and availability.
-  - A diverse set of collaborators makes the product better. Regardless, we want this project to be a tide that lifts everyone up.
+  - A diverse set of collaborators makes the project better. Regardless, we want this project to be a tide that lifts everyone up.
 
 ## Think for the long term
 

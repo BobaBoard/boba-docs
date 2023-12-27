@@ -40,7 +40,7 @@ If you need Docker (see below) and have Windows 10 Home Edition, you **must** in
 
 :::
 
-For a step-by-step guide to setting up WSL, installing the below pre-requisites, and getting set-up to develop for BobaBoard using WSL see [The BobaBoard Guide to Setting up WSL](/docs/engineering/start-developing/wsl)
+For a step-by-step guide to setting up WSL, installing the below pre-requisites, and getting set-up to develop for BobaBoard using WSL see [The BobaBoard Guide to Setting up WSL](/docs/development/start-developing/wsl)
 
 ### Git/GitHub
 

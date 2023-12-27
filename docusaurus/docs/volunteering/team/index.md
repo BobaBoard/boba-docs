@@ -1,94 +1,76 @@
 ---
 sidebar_position: 1
 title: The BobaBoard Team(s)
-slug: /volunteering
 ---
 
-:::tip
+:::warning
 
-**This guide and the surrounding processes are a living document.** Volunteers and other BobaBoard stakeholders are empowered to propose changes, adjustments and additions.
-
-:::
-
-Thank you for your interest in volunteering for BobaBoard! Community contributions are vital to the success of the project, and we're looking forward to welcoming you onboard.
-
-This guide serves as a starting point to familiarize yourself with the BobaBoard volunteering process and environment.
-
-## The volunteering experience
-
-While still in its inception, **the BobaBoard volunteering process aims to be a supportive entry point into open source development**, empowering fandom folks to actively contribute to and shape the online communities they inhabit.
-
-The goal of both staff and volunteers is to create spaces and processes that enable:
-
-- A welcoming and enriching experience for beginners and experts alike.
-- An encouraging, judgement-free environment to develop new skills in, or to hone pre-existing ones.
-- The opportunity for motivated individuals to make an impact, and to have their contributions publicly recognized to the extent they're comfortable with.
-- A leadership style mindful of the experience of marginalized communities, proactive in addressing their needs, and supportive of proposed changes within the boundaries of its [code of conduct](/docs/volunteering/team/code-of-conduct).
-
-**Reaching and upholding these goals is a collective, continuos effort.** If you wish to propose changes, believe we're falling short of our commitments, or have other concerns, you can open an issue on GitHub, contact Ms. Boba, or take advantage of our anonymous volunteering feedback form.
-
-:::TODO
-
-[Ms Boba] Create an anonymous volunteers feedback form, and a standard "how to discuss X" template.
+We're currently in the early(ish) stages of figuring out how to organize
+ourselves effectively. Expect things to be incomplete or change unexpectedly.
 
 :::
 
-## The volunteering expectations
+## How We Assign Roles
 
-While BobaBoard strives to embody the chaotic and transgressive spirit of some corners of transformative fandom, **we expect volunteers and staff to approach their roles and tasks with seriousness and respect**, and to familiarize themselves with our [code of conduct](/docs/volunteering/team/code-of-conduct).
+![TODO: alt text](./wedont.png)
 
-**Active and clear communication is the most important quality of a successful volunteer**. This means volunteers are expected to:
+While we're still in the process of setting things up, we plan to use the Teal
+Organization framework. In this framework, roles are not strictly assigned or
+fixed. When you join you will have ample freedom to choose your first task, as
+well as subsequent ones. If you want to try your hand at something managed by a
+team you didn't start with, that's totally fine! All we ask is that you seek
+advice on their processes, talk with involved people about what is needed, and
+listen to their feedback.
 
-- Asks questions early and often.
-- Communicate problems as soon as possible.
-- Proactively let us know how we can help make their experience better, or smooth out problems for them.
+Once you start volunteering, you'll always be welcome to come and go according
+to your availability and interest. We give plenty of flexibility to carve your
+own roles and tasks or offer to help people working on theirs.
 
-:::tip
+You might be wondering: how do we even have teams if everything is flexible?
+Over time people will naturally gravitate to their strengths and areas of
+interest. Those people will eventually become "core members" of a team. While
+they can also try something new or lend expertise to other efforts as
+opportunities arise, they'll likely come back to their "home team" frequently.
 
-If life or other issues get in the way of a commitment you've made, <ins>let us know</ins>! We'll reassign the task with no judgement.
+## Coding Team
 
-:::
+The coding team is our longest running team with the main goal of adding
+features to and fixing bugs for BobaBoard software. We have been through a few
+iterations of our processes and have learned a lot on the journey.
 
-**This project is fully committed to diversity, equity and inclusion.** If we can provide accommodations to improve your experience (such as breaking down tasks, or more regular check-ins), let us know. If you have concerns, you can report them to Ms. Boba.
+We periodically run sprints where we code together; we are trying to get better
+at assigning tasks and delivering full-fledged features. Our current focuses are
+adding the features to make Realms sustainable and making BobaBoard stable for
+self-hosting.
 
-## The volunteering process
+## Communications Team
+
+Our next team to form will be the communications team. The Communications Team
+will be working to:
+
+- solidify our internal and external documentation with the goals of helping us
+  smooth out onboarding and make less work depend on ms. boba.
+- build team processes and find ways to support collaborative writing efforts.
+- support more open (and frequent!) external communication on social media.
+- continue building our volunteer culture.
+
+If any of this sounds like something you might like to work on, please
+[Apply to Volunteer](../experience/volunteer-application.md)!
+
+## Community Team
+
+Coming soon, the Community Team will focus on sustaining and supporting
+BobaBoard (and related) communities on all of our community channels. This team
+will focus on things like:
+
+- Day-to-day moderation of Discord, Github Discussions, and/or BobaBoard Realms.
+- Working with the Communications Team to create Codes of Conduct and other
+  related cultural documentation.
+- Helping to create a fun and engaging volunteer experience.
 
 :::caution
 
-We're currently focusing our efforts on improving the volunteering process **for tech volunteers**. Other types of volunteers are still invited to reach out.
+The Community Team is the _least_ solidified of our team plans and all of the
+above is subject to change!
 
 :::
-
-1. **[Fill the tech volunteering form](https://docs.google.com/forms/d/e/1FAIpQLSdCX2_fZgIYX0PXeCAA-pfQrcLw_lSp2clGHTt3uBTWgnwVSw/viewform)** to get access to our volunteers Discord server and our test community while BobaBoard is still in its closed alpha phase.
-2. **[Familiarize yourself with BobaBoard codebases.](/docs/engineering/intro)** BobaBoard's architecture is modular by design. If you're particularly interested in a specific area of work, follow the corresponding instructions to install a local copy.
-3. **Familiarize yourself with the current roadmap and focus areas.** Volunteering expectations may vary according to the urgency of the task. If you're an expert developer with short-term availabilty, you're welcome to help with issues in the critical path. Beginners may want to start with improvements in non-urgent areas of focus.
-
-   :::warning
-
-   This is an active area of development. Check back later for instructions, and contact Ms. Boba in the meanwhile!
-   
-	 :::
-
-4. **Select a first issue.** Contact Ms. Boba for help selecting an issue that meets your goals and requirements.
-   
-	 :::TODO
-
-   [Ms. Boba] Create an open process to select issues.
-   
-	 :::
-
-5. **Keep in touch.** Periodically update your status with any progress done.
-
-   :::TODO
-
-   [Ms. Boba] Create an open process for status check-ins.
-   
-	 :::
-
-6. **Open a Pull Request and get your hard work merged in.** Use your GitHub account to submit your changes for review. After approval, the changes will be merged in the BobaBoard codebase.
-
-   Some tasks might span multiple Pull Requests. If that is the case, after marking the reviewed step complete in the corresponding issue, go back to step 5. Once all work is complete, it's time for step 7.
-
-7. **Pat yourself on the back.** You did it! Let Ms. Boba know how you want to be credited for your hard work: your code contribution will be merged in with the next release.
-
-   At this stage, you can either select a new issue to work on, or chill for a bit. In the latter case, you're still welcome to still hang around BobaBoard's volunteer spaces, and jump into discussions and conversations as you see fit.
