@@ -56,7 +56,11 @@ export default function Home() {
             </a>
             , our{" "}
             <a href="https://essentialrandomness.com/">insiders newsletter</a>,
-            or by following us on other socials (in the footer).
+            our{" "}
+            <Link to="/docs/volunteering/experience/volunteer-application#apply-to-volunteer">
+              volunteering newsletter
+            </Link>
+            , or by following us on other socials (in the footer).
           </p>
         </div>
       </main>
