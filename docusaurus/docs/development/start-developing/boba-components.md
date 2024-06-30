@@ -60,7 +60,7 @@ You should follow these instructions if you don't intend to make changes to
 BobaEditor, or don't care about running the latest version of BobaEditor.
 
 ```bash showLineNumbers
-yarn install @bobaboard/boba-editor
+yarn add @bobaboard/boba-editor
 ```
 
 :::danger
