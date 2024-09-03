@@ -1,5 +1,14 @@
 # The v0 Realm
 
+:::note
+
+The v0 Realm is part of the boba.social Galaxy which is privately run by ms.
+boba. For more information, see [Galaxy & Realm Admins](../admins).
+
+The v0 Realm is currently not adding more members.
+
+:::
+
 The v0 Realm is the Alpha version of BobaBoard, the place where the magic
 started and the flagship of the BobaBoard concept. It's a little wacky and a
 little off the beaten path. If you're interested in seeing what BobaBoard is all
