@@ -1,20 +1,18 @@
 ---
+title: Galaxy & Realm Admins
 sidebar_position: 5
 ---
 
-# Realm Admins
-
 :::info
 
-Currently our two existing realms are being overseen by Ms. Boba. This may
-change in the future as more realms are added and realm functionality is
-expanded. What admins can do and how they differ from moderators or other roles
-are still taking shape.
+boba.social was the flagship Galaxy for BobaBoard. As the project has refocused
+and reorganized to focus on self-hosting BobaBoard instances, boba.social (and
+its two Realms) are currently privately run by ms. boba and are not directly
+affiliated with the BobaBoard project or FujoCoded LLC.
 
 :::
 
-Please reach email the admins below if you would like an invite or need password
-reset help.
+Please email the admins below if you need password reset help.
 
 | Realm         | Admin Email                                           |
 | ------------- | ----------------------------------------------------- |

@@ -55,7 +55,7 @@ will be working to:
 - continue building our volunteer culture.
 
 If any of this sounds like something you might like to work on, please
-[Apply to Volunteer](../experience/volunteer-application.md)!
+[Apply to Volunteer](../experience/volunteer-application)!
 
 ## Community Team
 
