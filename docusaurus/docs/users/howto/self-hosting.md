@@ -29,7 +29,7 @@ In our self-hosting demo livestream, Ms Boba showed the viewer how to install Ni
 In your Hetzner dashboard, navigate to the "Create a server" screen. You will need to indicate a choice in each of the following categories:
 * Server name
 * Region 
-:::tip
+:::note
 This is where your new server will live, not where *you* live.
 :::
 * Image/Operating system 
@@ -46,7 +46,7 @@ Our suggestion: Both Public IPv4 & Public IPv6.
 :::
 * SSH key(s) 
 :::tip
-If you don't already have an OpenSSH key you want to use, [generate one](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+If you don't already have an OpenSSH key you want to use, you can [generate one](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
 :::
 * Cloud configuration *(see below)*
 
@@ -65,7 +65,7 @@ Copy and paste the following `YAML` data into the Cloud Config field. Then repla
   }
 ```
 
-The `YAML` configuration must also include an instruction to overwrite the contents of your server machine with NixOS. Add the text below to the Cloud Config field. Then compare the link below (right after the word "curl") with the link currently visible in the "How do I use it?" section on the page for this [NixOS installation script](https://github.com/elitak/nixos-infect). If the link you find on that page is different from the one we have here, replace our link with the newer one in your Cloud Config field.
+The `YAML` configuration must also include an instruction to overwrite the contents of your server machine with NixOS. Add the text below to the Cloud Config field. Then compare the link below (right after the word "curl") with the link currently visible in the "How do I use it?" section on the page for this [NixOS installation script](https://github.com/elitak/nixos-infect). If the link you find on that page is different from the one we have here, replace our link with the newer one when you enter this into your Cloud Config field.
 
 ```
 runcmd:
