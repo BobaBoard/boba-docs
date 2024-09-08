@@ -7,6 +7,7 @@ sidebar_position: 5
 :::warning
 
 The ability to self-host is still new and experimental. We'd love for people to try it out and let us know how it goes, but we currently can't dedicate a lot of engineering resources to helping you if you run into difficulties. Host at your own risk!
+:::
 
 ## What is self-hosting, again?
 
