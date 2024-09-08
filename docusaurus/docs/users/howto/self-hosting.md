@@ -4,7 +4,7 @@ sidebar_position: 5
 
 # Self-Hosting BobaBoard
 
-## A Warning
+:::warning
 
 The ability to self-host is still new and experimental. We'd love for people to try it out and let us know how it goes, but we currently can't dedicate a lot of engineering resources to helping you if you run into difficulties. Host at your own risk!
 
@@ -12,16 +12,14 @@ The ability to self-host is still new and experimental. We'd love for people to 
 
 Self-hosting means setting up your very own BobaBoard server!
 
-To host something in a way that's accessible to the world, you need a **server** to not only host your files, but also "serve" them to your audience. The network settings, installed programs, and security credentials of a server are collectively called the **server configuration** or server config.
+To host something in a way that's accessible to the world, you need a **server** to host your files and "serve" them up on request. The network settings, installed programs, and security credentials of a server are collectively called the **server configuration** or server config.
 
-Since defining all the parts of a server configuration can be time consuming, we put together a [pre-made server configuration](https://github.com/BobaBoard/boba-nixos/) you can clone for your own low-maintenance, easily-reproducible BobaBoard server. To make use of our config, you'll need to install [NixOS](https://nixos.org/) on an unconfigured server and make a few tweaks to connect your server to a domain you control instead of to one we control.
+Since defining all the parts of a server configuration can be time consuming, we put together a [pre-made server configuration](https://github.com/BobaBoard/selfhost-example/) you can clone for your own low-maintenance, easily-reproducible BobaBoard server. To make use of our config, you'll need to install [NixOS](https://nixos.org/) on an unconfigured server and make a few tweaks to connect your server to a domain you control instead of to one we control.
 
 To follow these instructions, you will need:
 * A GitHub account *(and the knowledge of how to clone a repository)*
 * VSCode
 * An unconfigured server
-
-So far, there are two examples of self-hosting—one hosted by the BobaBoard organization [here](https://github.com/BobaBoard/selfhost-example), and one created during a livestream [here on Ms Boba's personal account](https://github.com/essential-randomness/boba-test) to simulate an outsider hosting a BobaBoard server from scratch.
 
 In our self-hosting demo livestream, Ms Boba showed the viewer how to install NixOS on a [Hetzner](https://www.hetzner.com/cloud/) VPS (virtual private server). While the instructions provided below assume you're also using Hetzner, it's not required! Other server options include [DigitalOcean](https://www.digitalocean.com/products/droplets/), [Vultr](https://www.vultr.com/), and even your own physical computer in your home (if you don't mind leaving your computer on 100% of the time!)
 
@@ -29,16 +27,16 @@ In our self-hosting demo livestream, Ms Boba showed the viewer how to install Ni
 
 In your Hetzner dashboard, navigate to the "Create a server" screen. You will need to indicate a choice in each of the following categories:
 * Server name
-* Region *(Up to you!)*
+* Region *(Where your new server will live, not where you live.)*
 * Image/Operating system *(Our suggestion: Ubuntu)*
-* Virtual CPU type *(BobaBoard doesn't need many CPU resources to run, so you can choose to use only a small number of vCPUs with 4 GB ram.)*
+* Virtual CPU type *(BobaBoard doesn't need much CPU usage during everyday use, but setting it up goes very slowly if you pick the cheapest option. Our suggestion: Pay for a bit of higher-tier CPU use, then drop to a lower tier once you're all set up. All you'd have to redo would be [this step](#getting-files-from-the-new-server).)*
 * Network address options *(Our suggestion: Both Public IPv4 & Public IPv6.)*
 * SSH key(s) *(If you don't already have an OpenSSH key you want to use, [generate one](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).)*
 * Cloud configuration *(see below)*
 
 You can skip choosing anything about SSD volumes, firewalls, automatic backups, server placement groups, or labels.
 
-When you get to the Cloud Configuration section, you will need to enter some brief `YAML` configuration instructions. These instructions will tell the new server what to do when it spins up for the first time. The server's first instructions **must** include your public SSH key—without your public SSH key as part of the initial configuration, you won't be able to use your public key to give the server any further instructions, so you'll be locked out and forced to start over.
+When you get to the Cloud Configuration section, you will need to enter some brief `YAML` configuration instructions. These instructions will tell the new server what to do when it first comes to life. The server's first instructions **must** include your public SSH key—without your public SSH key as part of the initial configuration, you won't be able to use your public key to give the server any further instructions, so you'll be locked out and forced to start over.
 
 Copy and paste the following `YAML` data into the Cloud Config field. Then replace everything between the bracketed quotation marks with your public SSH key. 
 ```
@@ -47,11 +45,11 @@ Copy and paste the following `YAML` data into the Cloud Config field. Then repla
 - path: /etc/nixos/host.nix
   permissions: '0644'
   content: |{pkgs, ...}:{   
-    users.users.root.openssh.authorizedKeys.keys = [“# your public key #”];
+    users.users.root.openssh.authorizedKeys.keys = [“/* your public key*/”];
   }
 ```
 
-The `YAML` configuration must also include an instruction to "infect" (overwrite) the contents of your server machine with NixOS. Add the text below to the Cloud Config field. Then compare the infect link below (right after the word "curl") with the link currently visible in the "How do I use it?" section on the [NixOS GitHub page](https://github.com/elitak/nixos-infect). If the link you find on the NixOS GitHub page is different from the one we have here, replace our link with the newer one in your Cloud Config field.
+The `YAML` configuration must also include an instruction to overwrite the contents of your server machine with NixOS. Add the text below to the Cloud Config field. Then compare the link below (right after the word "curl") with the link currently visible in the "How do I use it?" section on the page for this [NixOS installation script](https://github.com/elitak/nixos-infect). If the link you find on that page is different from the one we have here, replace our link with the newer one in your Cloud Config field.
 
 ```
 runcmd:
@@ -72,11 +70,13 @@ git@github.com:BobaBoard/selfhost-example.git
 
 ### flake.nix
 
-The `flake.nix` file is the backbone of your NixOS server configuration. It inclues directions to additional configuration instructions hosted publically on GitHub. (The nix language is unique, so don't be surprised if some of the syntax is especially unfamiliar.)
+The `flake.nix` file is the backbone of your NixOS server configuration. It includes directions to other publicly-available NixOS configurations on GitHub, which allow you to add new programs to your server without having to configure them yourself. Including directions to external resources also allows your server to easily stay up to date with whatever changes are made to those resources.
+
+Nix is a unique language, so don't be surprised if some of the syntax is especially unfamiliar!
 
 ### Systems folder
 
-Some of the configuration instructions in our `flake.nix` file expect to find necessary files in specific folders, namely the `systems` folder. Inside the `systems` folder, `flake.nix` expects a folder named after the type of system architecture your new server is running on. If you didn't do anything unusual during your initial server launch, your server is almost certainly running on an x86_64-linux system, so you can keep the `x86_64-linux` folder provided in the repository you just cloned.
+The [`snowfall-lib`]((https://snowfall.org/guides/lib/quickstart/) library linked in our `flake.nix` file expects to find to find relevant files in predictable, specifically-named folders. Inside the `systems` folder, `flake.nix` expects a folder named after the type of system architecture your new server is running on. Most servers are linux machines that run on x86 processors, so you can keep the `x86_64-linux` folder name provided in the repository you just cloned. If you selected a different type of server architecture, however, you should update this folder name accordingly.
 
 Inside the x86_64-linux folder, rename the "boba-example" folder to the name you gave your new server. 
 
@@ -98,28 +98,31 @@ Inside the folder now named after your server, there is a file called `default.n
 The `default.nix` file includes more specific configuration details of your new server, including:
 - which programs will be running
 - which network ports will be open
-- which administrator can connect to the server
+- how the server admin (`root`) and additional users can connect to the server
 
-#### The server's public key
+#### The root user's public key
 
-You will need to replace the server's public key in the sample file with the public key you used in the `YAML` Cloud Config above.
+The "root" account is the user with the highest level of authority in a Linux server, often referred to as the "administrator" or "superuser." This guide will refer to the root user as the administrator.
+
+You will need to replace the administrator's public key in the sample file with the public key you used in the `YAML` Cloud Config above.
 
 ```
 users.users.root.openssh.authorizedKeys.keys = ["# the same public key you used for the Cloud Config #"];
 ```
 
-#### First user & their public key
+#### The first non-root user & their public key
 
-To give an administrator access to edit the server, you will need to define initial login information for that user and add their public key. If the adminstrator is you, you can use the same public key as before, but if you want to give access to a different person, you can use a different public key as long as it is one half of a public-private key pair.
+An administrator has the power to change fundamental aspects of the server...including by accident. Even if you have access to an administrative account, it's good practice to have a non-administrator account for day-to-day configuration tasks. 
 
-Below is the part of the `default.nix` file that will establish your first user. Change all the parts that say `msboba` to whatever username you want. Then replace the sample public key with that user's public key. You can keep "password" as "password"; the user will have the ability to change it after they log in for the first time.
+To create a non-admin account, you will need to define initial login information for that user and add their public key. If the adminstrator is you, you can use the same public key as before, but if you want to give access to a different person, you can use a different public key as long as it is one half of a public-private key pair.
+
+Below is the part of the `default.nix` file that will establish your first user. Change all the parts that say `msboba` to whatever username you want. Then replace the sample public key with that user's public key. 
 
 ```
 users.users.msboba = {
     isNormalUser = true;
 
     name = "msboba";
-    initialPassword = "password";
 
     home = "/home/msboba";
     group = "users";
@@ -130,7 +133,7 @@ users.users.msboba = {
     extraGroups = [ "wheel" ];
 
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE08e9yPCfh8kEp/sUxzF+hJIkOnoPCrjwjUNr3cdt2I"
+      "/*the non-admin user's public key*/"
     ];
   };
 ```
@@ -188,7 +191,9 @@ Now switch back to the terminal connected to your new NixOS server. Right now, i
 
 First, set this env var to enable flakes if it's not already set:
 
-`export NIX_CONFIG="experimental-features = nix-command flakes"`
+```
+export NIX_CONFIG="experimental-features = nix-command flakes"
+```
 
 Next, point your NixOS server at your new config files by swapping `github:bobaboard/selfhost-example#boba-example` for the equivalent address of your own your-server-name folder. (It will probably look like `github:yourgithubusername/selfhost-example#your-server-name`.)
 
