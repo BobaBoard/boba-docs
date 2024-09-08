@@ -28,11 +28,26 @@ In our self-hosting demo livestream, Ms Boba showed the viewer how to install Ni
 
 In your Hetzner dashboard, navigate to the "Create a server" screen. You will need to indicate a choice in each of the following categories:
 * Server name
-* Region *(Where your new server will live, not where you live.)*
-* Image/Operating system *(Our suggestion: Ubuntu)*
-* Virtual CPU type *(BobaBoard doesn't need much CPU usage during everyday use, but setting it up goes very slowly if you pick the cheapest option. Our suggestion: Pay for a bit of higher-tier CPU use, then drop to a lower tier once you're all set up. All you'd have to redo would be [this step](#getting-files-from-the-new-server).)*
-* Network address options *(Our suggestion: Both Public IPv4 & Public IPv6.)*
-* SSH key(s) *(If you don't already have an OpenSSH key you want to use, [generate one](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).)*
+* Region 
+:::tip
+This is where your new server will live, not where *you* live.
+:::
+* Image/Operating system 
+:::tip
+Our suggestion: Ubuntu.
+:::
+* Virtual CPU type 
+:::tip
+BobaBoard doesn't need much CPU usage during everyday use, but setting it up goes very slowly if you pick the cheapest option. Our suggestion: Pay for a bit of higher-tier CPU use, then drop to a lower tier once you're all set up. All you'd have to redo would be [this step](#getting-files-from-the-new-server).
+:::
+* Network address options 
+:::tip
+Our suggestion: Both Public IPv4 & Public IPv6.
+:::
+* SSH key(s) 
+:::tip
+If you don't already have an OpenSSH key you want to use, [generate one](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+:::
 * Cloud configuration *(see below)*
 
 You can skip choosing anything about SSD volumes, firewalls, automatic backups, server placement groups, or labels.
