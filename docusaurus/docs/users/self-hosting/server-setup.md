@@ -1,4 +1,4 @@
-\---
+---
 sidebar_position: 1
 ---
 
@@ -65,7 +65,7 @@ The instructions you add to the cloud configuration section will tell the new se
 The server's first instructions **must** include your public SSH key—without your public SSH key as part of the initial configuration, you won't be able to use your public key to give the server any further instructions, so you'll be locked out and forced to start over.
 :::
 
-Copy and paste the following `YAML` data into the Cloud Config field. Then replace everything between the bracketed quotation marks with your public SSH key. 
+Copy and paste the following `YAML` data into the cloud config field. Then replace everything between the bracketed quotation marks with your public SSH key. 
 ```
 #cloud-config write_files:
 
