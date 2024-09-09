@@ -26,6 +26,9 @@ module.exports = {
           if (path.startsWith("/docs/product")) {
             return [path.replace("/docs/product", "/docs/project")];
           }
+          if (path.includes("/howto/self-hosting")) {
+            return [path.replace("/howto/self-hosting", "/self-hosting/server-setup")];
+          }
         },
       },
     ],
