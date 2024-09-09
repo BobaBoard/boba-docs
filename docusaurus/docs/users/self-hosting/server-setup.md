@@ -169,23 +169,19 @@ Open your `flake.nix` file and replace the words "boba-example" with your server
 
 ##### Set up your root account
 
-:::note
-The "root" account is the user with the highest level of authority in a Linux server, often referred to as the "administrator" or "superuser." This guide will refer to the root user as the administrator.
+:::danger
+The "root" account is the user with the highest level of authority in a Linux server, often referred to as the "administrator" (or "superuser.") An administrator has the power to alter or overwrite fundamental building blocks of the server. It's good practice to use a non-administrator account for day-to-day configuration tasks, to reduce the risk of making irrevocable and unwanted changes by accident. 
 :::
 
-Replace the administrator's public key in the `flake.nix` file with the public key you used in the `YAML` cloud config [up here](#Creating-your-SSH-key-file).
+Replace the public key in the `flake.nix` file with the public key you used in the `YAML` cloud config [up here](#Creating-your-SSH-key-file).
 
 ```
-users.users.root.openssh.authorizedKeys.keys = [" {the same public key you used for the cloud configuration} "];
+users.users.root.openssh.authorizedKeys.keys = [" {the public key used in the cloud configuration} "];
 ```
 
 ##### Set up the first non-root user
 
-:::danger
-An administrator has the power to alter or overwrite fundamental building blocks of the server. It's good practice to use a non-administrator account for day-to-day configuration tasks, to reduce the risk of making irrevocable and unwanted changes by accident. 
-:::
-
-To create a standard user account, define initial login information for that user and add their public key. (If the account is for you, you can use the same public key as before, but if you want to give an account to a different person, you can use a different public key as long as it is one half of a public-private key pair.)
+To create a standard user account, define initial login information for that user and add their public key. (If the account is for you, you can use the same public key as above, but if you want to give an account to a different person, you can use a different public key as long as it is one half of a public-private key pair.)
 
 Find the following section of the `default.nix` file. Change all the parts that say `msboba` to whatever username you want for your first standard user. Then replace the sample public key with that user's public key. 
 
@@ -244,14 +240,14 @@ Use the `cat` command to request the contents of two files from the NixOS server
 
 - Create a new file in your `new-server-name` folder called `hardware.nix`
 - Enter the following command in your terminal: `cat /etc/nixos/hardware-configuration.nix`
-- Copy the returned text into the new file
+- Copy the returned text into the new `hardware.nix` file
 - Save the file
 
 #### Get the networking.nix file
 
 - Create a new file in your `new-server-name` folder called `networking.nix`
 - Enter the following command in your terminal: `cat /etc/nixos/networking.nix`
-- Copy the returned text into the new file
+- Copy the returned text into the new `networking.nix` file
 - Save the file
 
 ### Push your local config files to GitHub
@@ -268,9 +264,9 @@ git commit -m "initial system configuration"
 git push
 ```
 
-### Rebuild your server with the config files
+### Rebuild your server using the config files
 
-Right now, your NixOS server config is nothing but that Cloud Config `YAML` you gave it before it launched. You'll rebuild its config using the new config files you just pushed.
+Right now, your NixOS server config is nothing but the brief `YAML` instructions you gave it before it launched. In this step, you'll rebuild its configuration using the new config files you just pushed.
 
 #### Enable flakes
 
