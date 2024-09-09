@@ -11,48 +11,59 @@ The ability to self-host is still new and experimental. We'd love for people to 
 
 ## What is self-hosting, again?
 
-Self-hosting means setting up your very own BobaBoard server!
+Self-hosting means setting up your very own BobaBoard server for you to use as you wish.
 
-To host something in a way that's accessible to the world, you need a **server** to host your files and "serve" them up on request. The network settings, installed programs, and security credentials of a server are collectively called the **server configuration** or server config.
+To make web-based software like BobaBoard accessible to the world, you need a **server** to host your files and "serve" them up on request. The network settings, installed programs, and security credentials of a server are collectively called the **server configuration** or server config. In this guide, we'll show you how to use Nix and NixOS to set up a server configuration that's perfect for hosting BobaBoard.
 
-Since defining all the parts of a server configuration can be time consuming, we put together a [pre-made server configuration](https://github.com/BobaBoard/selfhost-example/) you can clone for your own low-maintenance, easily-reproducible BobaBoard server. To make use of our config, you'll need to install [NixOS](https://nixos.org/) on an unconfigured server and make a few tweaks to connect your server to a domain you control instead of to one we control.
+### Self-hosting with NixOS
+
+Traditional servers are manually configured one paramater at a time, which is time-consuming and prone to errors. While you *can* configure a BobaBoard server that way, the instructions on this page show you how to use the pre-packaged [BobaBoard NixOS module](https://github.com/bobaboard/boba-nixos) we put together. The module can be easily installed on any server running NixOS.
+
+NixOS is an operating system that uses the Nix langauge to do all kinds of cool things. You don't need to know anything about NixOS to self-host BobaBoard, though, because we *also* put together a [pre-made server configuration](https://github.com/BobaBoard/selfhost-example/) that makes it easy to get a NixOS server up and running. 
+
+To make use of our config, you'll need to:
+1. Install [NixOS](https://nixos.org/) on a server you can connect to
+1. Edit our pre-made server configuration to configure your server for your own use
+1. Link your own domain to your newly-configured server.
 
 To follow these instructions, you will need:
 * A GitHub account *(and the knowledge of how to clone a repository)*
 * VSCode
 * An unconfigured server
-
-In our self-hosting demo livestream, Ms Boba showed the viewer how to install NixOS on a [Hetzner](https://www.hetzner.com/cloud/) VPS (virtual private server). While the instructions provided below assume you're also using Hetzner, it's not required! Other server options include [DigitalOcean](https://www.digitalocean.com/products/droplets/), [Vultr](https://www.vultr.com/), and even your own physical computer in your home (if you don't mind leaving your computer on 100% of the time!)
+* A [tailscale](https://tailscale.com/pricing) account
 
 ## Creating a Server
 
-In your Hetzner dashboard, navigate to the "Create a server" screen. You will need to indicate a choice in each of the following categories:
-* Server name
-* Region 
-:::note
-This is where your new server will live, not where *you* live.
+:::warning
+In our self-hosting demo livestream, Ms Boba showed the viewer how to install NixOS on a [Hetzner](https://www.hetzner.com/cloud/) VPS (virtual private server). While the instructions provided below assume you're also using Hetzner, it's not required! Other server options include [DigitalOcean](https://www.digitalocean.com/products/droplets/), [Vultr](https://www.vultr.com/), and even your own physical computer in your home (if you don't mind leaving your computer on 100% of the time!)
 :::
-* Image/Operating system 
-:::tip
-Our suggestion: Ubuntu.
-:::
-* Virtual CPU type 
-:::tip
-BobaBoard doesn't need much CPU usage during everyday use, but setting it up goes very slowly if you pick the cheapest option. Our suggestion: Pay for a bit of higher-tier CPU use, then drop to a lower tier once you're all set up. All you'd have to redo would be [this step](#getting-files-from-the-new-server).
-:::
-* Network address options 
-:::tip
-Our suggestion: Both Public IPv4 & Public IPv6.
-:::
-* SSH key(s) 
-:::tip
-If you don't already have an OpenSSH key you want to use, you can [generate one](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
-:::
-* Cloud configuration *(see below)*
+
+For the most up-to-date information on how to create a server, you should refer to the instructions from your provider of choice. For our recommended provider, you can find [Hetzner's guide here](https://docs.hetzner.com/cloud/servers/getting-started/creating-a-server/).
+
+In the "Create a server" screen, you will need to indicate your choice in each of the following categories:
+* **Server name:** a name (any name!) for your server.
+* **Region:** this is where your new server will live, not where *you* live. If you know where your users are likely to be from, choose a server close to their location. If not, New York is a safe choice.
+* **Image/Operating system:** We suggest Ubuntu.
+* **Virtual CPU type:** BobaBoard doesn't need much CPU usage during everyday use, but setting it up goes very slowly if you pick the cheapest option. Our suggestion: Pay for a bit of higher-tier CPU use, then drop to a lower tier once you're all set up. All you'd have to redo would be [this step](#getting-files-from-the-new-server).
+* **Network address options:** We suggest both Public IPv4 & Public IPv6.
+* **SSH key(s):** If you don't already have an SSH key you want to use, you can follow GitHub's instructions to [generate one](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent).
+* **Cloud configuration**: See below.
 
 You can skip choosing anything about SSD volumes, firewalls, automatic backups, server placement groups, or labels.
 
-When you get to the Cloud Configuration section, you will need to enter some brief `YAML` configuration instructions. These instructions will tell the new server what to do when it first comes to life. The server's first instructions **must** include your public SSH key—without your public SSH key as part of the initial configuration, you won't be able to use your public key to give the server any further instructions, so you'll be locked out and forced to start over.
+### Setting up your server's initial cloud configuration
+
+The instructions you add to the cloud configuration section will tell the new server what to do when it first comes to life. These instructions will:
+
+1. Save your public SSH key, allowing you to connect to your server after NixOS is done installing
+1. Run a command to replace your server's current operating system with NixOS
+ 
+
+#### Creating your SSH key file
+
+:::danger
+The server's first instructions **must** include your public SSH key—without your public SSH key as part of the initial configuration, you won't be able to use your public key to give the server any further instructions, so you'll be locked out and forced to start over.
+:::
 
 Copy and paste the following `YAML` data into the Cloud Config field. Then replace everything between the bracketed quotation marks with your public SSH key. 
 ```
@@ -65,14 +76,27 @@ Copy and paste the following `YAML` data into the Cloud Config field. Then repla
   }
 ```
 
-The `YAML` configuration must also include an instruction to overwrite the contents of your server machine with NixOS. Add the text below to the Cloud Config field. Then compare the link below (right after the word "curl") with the link currently visible in the "How do I use it?" section on the page for this [NixOS installation script](https://github.com/elitak/nixos-infect). If the link you find on that page is different from the one we have here, replace our link with the newer one when you enter this into your Cloud Config field.
+#### Installing NixOS on startup
 
+The `YAML` configuration must also include an instruction to overwrite the contents of your server machine with NixOS. We'll be using a [user-made NixOS installation script](https://github.com/elitak/nixos-infect) called **nixos-infect** for this. 
+
+WHen we last updated this article, the instructions for the script looked like this:
+> 0. Read and understand [the script](https://github.com/elitak/nixos-infect/blob/master/nixos-infect)
+> 1. Deploy any custom configuration you want on your host
+> 2. Deploy your host as non-Nix Operating System.
+> 3. Deploy an SSH key for the root user.
+> 4. run the script with:
+> `  curl https://raw.githubusercontent.com/elitak/nixos-infect/master/nixos-infect | NIX_CHANNEL=nixos-23.05 bash -x`
+
+The command they use to run the script in step 4 is a little different from the one we'll be pasting into our cloud configuration. However, you need to make sure that the link in their instructions *is* the link you use. Check [the instrucitons on their GitHub page](https://github.com/elitak/nixos-infect) and update the link in our script if the link they're using has changed. 
+
+Our script:
 ```
 runcmd:
 - curl https://raw.githubusercontent.com/elitak/nixos-infect/master/nixos-infect | PROVIDER=hetznercloud NIX_CHANNEL=nixos-23.05 bash 2>&1 | tee /tmp/infect.log
 ```
 
-Then start your server! This is called "spinning up" the server. It will take some time for NixOS to install, so you can work on the next steps of your server config while you wait.
+Add our script to the bottom of the cloud configuration box. Then go ahead and spin up (start) your server! It will take some time for NixOS to install, so you can work on the next steps of your server config while you wait.
 
 ## Writing the Configuration
 
@@ -201,29 +225,69 @@ git commit -m "initial system configuration"
 git push
 ```
 
-#### Use the pushed changes
+#### Rebuild your server with the new config files
 
-Now switch back to the terminal connected to your new NixOS server. Right now, its config is only that Cloud Config `YAML` you gave it before it launched. You'll rebuild its config using the new config files you just pushed.
+Once you've finished pushing to GitHub, switch back to your connection to your NixOS server. Right now, your NixOS server config is nothing but that Cloud Config `YAML` you gave it before it launched. You'll rebuild its config using the new config files you just pushed.
 
-First, set this env var to enable flakes if it's not already set:
+First, use an environmental variable to enable flakes in your new server if they're not enabled already:
 
 ```
 export NIX_CONFIG="experimental-features = nix-command flakes"
 ```
 
-Next, point your NixOS server at your new config files by swapping `github:bobaboard/selfhost-example#boba-example` for the equivalent address of your own your-server-name folder. (It will probably look like `github:yourgithubusername/selfhost-example#your-server-name`.)
+Next, use the code below to tell your NixOS server to rebuild using your new config files as its guide. Make sure you point to your own config instead of our sample config—swap out `github:bobaboard/selfhost-example#boba-example` for the equivalent address of your own your-server-name folder. (It will probably look like `github:yourgithubusername/selfhost-example#your-server-name`.)
 
 ```
 nixos-rebuild switch --no-write-lock-file --flake github:bobaboard/selfhost-example#boba-example --show-trace --option tarball-ttl 0 |& nix run nixpkgs#nix-output-monitor
 ```
 
-Then the system will build based on your configuration. The speed will vary depending on the power of the machine you've selected—it can take a long time on an underpowered machine.
+If you've inputted the code correctly, the server will build itself out based on the configuration files you just pushed to GitHub. The speed of the build will vary depending on the CPU choice you made when you first [created the server](#creating-a-server)—it can take a long time on an underpowered machine.
+
+#### Test your new build
+
+You are currently logged into your new server as the administrator. Try switching to your non-administrator account to see if it was successfully created:
+
+```
+su /*normalusername*/
+```
+
+You should receive a message that starts like this:
+
+```
+This is the Z Shell configuration function for new users, zsh-newuser-install.
+You are seeing this message because...
+```
+
+Press q to quit the menu and keep working with the server. You can do the new user setup later! 
 
 ## Working in the server
 
-- Switch to the user you created
-- Set up `tailscale`, starting with `sudo tailscale login`
-- Make a directory for your programs (`mkdir programs`, for example)
+### Connect to `tailscale`
+
+:::note
+If you don't already have a `tailscale` account, you can quickly set one up [here](https://tailscale.com/pricing) for free. Tailscale allows you to do useful things like:
+- easily access your new server remotesly
+- edit your server configuration files directly on the server using VSCode
+:::
+
+Connect your tailscale account to your new server with the followiing command:
+```
+sudo tailscale login
+```
+
+When asked for your password, hit "enter" to get an authentication link. Follow the link and authenticate in your browser window.
+
+### Clone your configuration 
+
+
+
+```
+mkdir programs /*Make a new directory (folder) called "programs".*/
+cd programs /*Change directories: move to the new folder you just made.*/
+
+
+```
+
 - We're going to do further work on the configuration directly from the server.
 - Clone the configuration from GitHub (several ways you could do this, the stream has us setting up GitHub command line access, adding a new SSH key from this machine, etc)
 - `cd` into the directory containing the configuration
