@@ -20,6 +20,8 @@ module.exports = {
       "@docusaurus/plugin-client-redirects",
       {
         createRedirects: (path) => {
+          console.log(path);
+          console.log(path.includes("/howto/self-hosting"));
           if (path.startsWith("/docs/engineering")) {
             return [path.replace("/docs/engineering", "/docs/development")];
           }
@@ -27,7 +29,9 @@ module.exports = {
             return [path.replace("/docs/product", "/docs/project")];
           }
           if (path.includes("/howto/self-hosting")) {
-            return [path.replace("/howto/self-hosting", "/self-hosting/server-setup")];
+            return [
+              path.replace("/howto/self-hosting", "/self-hosting/server-setup"),
+            ];
           }
         },
       },
