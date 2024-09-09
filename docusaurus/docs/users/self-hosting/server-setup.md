@@ -65,7 +65,7 @@ The instructions you add to the cloud configuration section will tell the new se
 The server's first instructions **must** include your public SSH key—without your public SSH key as part of the initial configuration, you won't be able to use your public key to give the server any further instructions, so you'll be locked out and forced to start over.
 :::
 
-Copy and paste the following `YAML` data into the Cloud Config field. Then replace everything between the bracketed quotation marks with your public SSH key. 
+Copy and paste the following `YAML` data into the cloud config field. Then replace everything between the bracketed quotation marks with your public SSH key. 
 ```
 #cloud-config write_files:
 
@@ -305,14 +305,21 @@ You are seeing this message because...
 
 Press q to quit the menu and keep working with the server. You can do the new user setup later! 
 
-## Working in the server
+## Work on config files in the server
+
+With the NixOS server configured from afar, we're now ready to enable editing the server configuration directly on the server.
+
+In the final step of configuring your new NixOS server, you will:
+- Connect the NixOS server to a `tailscale` account
+- Create an empty file directory on the NixOS server via `tailscale`
+- Clone the repository with your config files into the empty file directory
 
 ### Connect to `tailscale`
 
 :::note
 If you don't already have a `tailscale` account, you can quickly set one up [here](https://tailscale.com/pricing) for free. Tailscale allows you to do useful things like:
-- easily access your new server remotesly
-- edit your server configuration files directly on the server using VSCode
+- easily access your new server remotely
+- edit your server configuration files directly on the server
 :::
 
 Connect your tailscale account to your new server with the followiing command:
@@ -322,7 +329,7 @@ sudo tailscale login
 
 When asked for your password, hit "enter" to get an authentication link. Follow the link and authenticate in your browser window.
 
-### Clone your configuration 
+### Create a new directory on your server 
 
 ```
 mkdir programs /*Make a new directory (folder) called "programs".*/
@@ -335,3 +342,53 @@ cd programs /*Change directories: move to the new folder you just made.*/
 - `cd` into the directory containing the configuration
 - If you want to work in VSCode, you can take advantage of the fact that you've set up `tailscale`. You'll need the VSCode Tailscale extension, where you'll set the ssh username and machine address to access the remote host.
 
+### Clone your config files directly onto your NixOS server 
+
+#### Activate Git on your server
+
+You don't have Git installed on your new server yet, but you *do* have Nix, and for the moment that's just as good!
+
+Use the command line to temporarily active git commands on the NixOS server:
+
+```
+nix-shell -p gh
+```
+
+#### Log in to GitHub on your server
+
+Trigger the GitHub login with the code below:
+```
+gh auth login
+```
+
+Answer the questions that pop up:
+
+```
+What account to you want to log into?
+> GitHub.com
+What is your preferred protocol for Git operations on this host?
+> SSH
+Generate a new SSH key to add to your GitHub account?
+Y
+Enter a passphrase for your new SSH key (Optional): 
+ 
+Title for your SSH key: (GitHub CLI) 
+{up to you}
+How would you like to authenticate GitHub CLI?
+> Login with a web browser
+```
+
+Copy the web URL into your browser manually and authenticate yourself using the code provided in Terminal.
+
+#### Clone your repository
+
+While still in the new directory you made on your server, use Git to clone your config repository. Your code should reference your username and repository name instead of BobaBoard/selfhost-example.git.
+```
+git clone your_github_username/your_config_repository.git
+```
+
+Confirm you want the repository on your machine and proceed. Once the repository is copied over, you'll be able to edit all your config files directly on the server.
+
+## That's it!
+
+Your NixOS server is now ready to easily accept our [BobaBoard NixOS module](https://github.com/bobaboard/boba-nixos). BobaBoard hosting, here we come!
