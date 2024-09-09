@@ -1,4 +1,4 @@
----
+\---
 sidebar_position: 1
 ---
 
@@ -305,7 +305,7 @@ You are seeing this message because...
 
 Press q to quit the menu and keep working with the server. You can do the new user setup later! 
 
-## Work on in the server
+## Work on config files in the server
 
 With the NixOS server configured from afar, we're now ready to enable editing the server configuration directly on the server.
 
@@ -318,8 +318,8 @@ In the final step of configuring your new NixOS server, you will:
 
 :::note
 If you don't already have a `tailscale` account, you can quickly set one up [here](https://tailscale.com/pricing) for free. Tailscale allows you to do useful things like:
-- easily access your new server remotesly
-- edit your server configuration files directly on the server using VSCode
+- easily access your new server remotely
+- edit your server configuration files directly on the server
 :::
 
 Connect your tailscale account to your new server with the followiing command:
@@ -336,6 +336,11 @@ mkdir programs /*Make a new directory (folder) called "programs".*/
 cd programs /*Change directories: move to the new folder you just made.*/
 
 ```
+
+- We're going to do further work on the configuration directly from the server.
+- Clone the configuration from GitHub (several ways you could do this, the stream has us setting up GitHub command line access, adding a new SSH key from this machine, etc)
+- `cd` into the directory containing the configuration
+- If you want to work in VSCode, you can take advantage of the fact that you've set up `tailscale`. You'll need the VSCode Tailscale extension, where you'll set the ssh username and machine address to access the remote host.
 
 ### Clone your config files directly onto your NixOS server 
 
@@ -360,17 +365,17 @@ Answer the questions that pop up:
 
 ```
 What account to you want to log into?
-**> GitHub.com**
+> GitHub.com
 What is your preferred protocol for Git operations on this host?
-**> SSH**
+> SSH
 Generate a new SSH key to add to your GitHub account?
-**Y**
+Y
 Enter a passphrase for your new SSH key (Optional): 
  
 Title for your SSH key: (GitHub CLI) 
 {up to you}
 How would you like to authenticate GitHub CLI?
-**> Login with a web browser**
+> Login with a web browser
 ```
 
 Copy the web URL into your browser manually and authenticate yourself using the code provided in Terminal.
