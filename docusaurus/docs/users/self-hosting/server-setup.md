@@ -132,7 +132,7 @@ The `flake.nix` file is the backbone of your NixOS server configuration. It incl
 
 #### Your system subfolder
 
-The [`snowfall-lib`]((https://snowfall.org/guides/lib/quickstart/) library linked in our `flake.nix` file expects to find to find relevant files in predictable, specifically-named folders. Inside the `systems` folder, `flake.nix` expects a folder named after the type of system architecture your new server is running on. Most servers are linux machines that run on x86 processors, so you can keep the `x86_64-linux` folder name provided in the repository you just cloned. (If you selected a different type of server architecture, however, you should update this folder name accordingly.)
+The [`snowfall-lib`](https://snowfall.org/guides/lib/quickstart/) library linked in our `flake.nix` file expects to find to find relevant files in predictable, specifically-named folders. Inside the `systems` folder, `flake.nix` expects a folder named after the type of system architecture your new server is running on. Most servers are linux machines that run on x86 processors, so you can keep the `x86_64-linux` folder name provided in the repository you just cloned. (If you selected a different type of server architecture, however, you should update this folder name accordingly.)
 
 - `systems`
 	- **`x86_64-linux`**
