@@ -209,7 +209,7 @@ module.exports = {
             routePath: "docs/development/rest-api/",
             specUrl:
               process.env.API_SPEC ||
-              "http://docs.bobaboard.com/backend-open-api.json",
+              "https://docs.bobaboard.com/backend-open-api.json",
           },
         ],
         theme: {
