@@ -16,7 +16,7 @@ BobaBoard currently has the following bubbles:
 **Aim**: Bring together, guide, and support volunteers to collaboratively build a modern open-source community social platform that caters to the needs of, and welcomes the contributions of, queer/kinky/fannish people by prioritizing secure interaction within size-limited intentional communities. (Consented to on 9/29/24 for a one-year term.)
 **Domain:** All decisions relating to high-level priorities for the organization. Any decisions outside the domains of the more specialized bubble. Adjudication of other bubbles' domains if there is ever confusion over who is responsible for what. 
 
-:::tip **Not sure whose job it is?** The buck stops with Steering! If you don't know which bubble should handle something, or whether your bubble is ALLOWED to handle something, you can ask Steering to sort it out. 
+:::tip **Not sure whose job it is?** The buck stops with Steering! If you don't know which bubble should handle something, or whether your bubble is ALLOWED to handle something, you can ask Steering to sort it out. :::
 
 ### Boba Builders Bubble ("B^3")
 **Aim:** Build and maintain an accessible, self-hostable, modular codebase for a modern open-source community social platform that caters to the needs of, and welcomes the contributions of, its queer/kinky/fannish userbase by prioritizing secure interaction within size-limited intentional communities (Realms). (Consented to on 7/14/24 for a one-year term.)
