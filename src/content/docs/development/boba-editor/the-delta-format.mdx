@@ -1,22 +1,33 @@
 ---
-sidebar_position: 2
+title: The Delta Format
+sidebar:
+  order: 2
 ---
 
 import EditorPreview from "/src/components/EditorPreview.js";
 
-# The Delta Format
-
-The Delta format is at the base of QuillJS's text editing capabilities. You can [read the in-depth guide](https://quilljs.com/docs/delta/) on the QuillJS website. This introductory overview goes over what you need to understand to effectively work on BobaEditor.
+The Delta format is at the base of QuillJS's text editing capabilities. You can
+[read the in-depth guide](https://quilljs.com/docs/delta/) on the QuillJS
+website. This introductory overview goes over what you need to understand to
+effectively work on BobaEditor.
 
 ## What is a Delta?
 
-**A Delta is a presentation-agnostic representation of formatted text.** It contains everything we need to translate text into a visual format (e.g. HTML) without implementation-specific details.
+**A Delta is a presentation-agnostic representation of formatted text.** It
+contains everything we need to translate text into a visual format (e.g. HTML)
+without implementation-specific details.
 
-The separation of representation and implementation means **changes to BobaEditor's rendering logic also influence the rendering of older, stored Deltas**. This makes it possible to change our output (e.g. CSS classes, rendered HTML elements, JavaScript event handlers) without worrying about compatibility with previous versions, something that would be extremely hard if we stored the rendered HTML.
+The separation of representation and implementation means **changes to
+BobaEditor's rendering logic also influence the rendering of older, stored
+Deltas**. This makes it possible to change our output (e.g. CSS classes,
+rendered HTML elements, JavaScript event handlers) without worrying about
+compatibility with previous versions, something that would be extremely hard if
+we stored the rendered HTML.
 
 ## What does a Delta look like?
 
-In its simplest form (the one eventually stored in the database) a Delta is an array of insert operations.
+In its simplest form (the one eventually stored in the database) a Delta is an
+array of insert operations.
 
 <EditorPreview
   text={`
@@ -48,12 +59,15 @@ In its simplest form (the one eventually stored in the database) a Delta is an a
 There are three types of insert operations:
 
 - **Inline formatting**: for inline styles (e.g. bold, text spoilers).
-- **Line formatting**: for styles applied to the preceding line as a whole (e.g. paragraph centering, headings, lists).
+- **Line formatting**: for styles applied to the preceding line as a whole (e.g.
+  paragraph centering, headings, lists).
 - **Embeds**: for non-text content.
 
 ### Inline formatting
 
-Inline formatting applies only to the text within a specific insert operation. The type of formatting is specified through the "attributes" property of the corresponding insert operation.
+Inline formatting applies only to the text within a specific insert operation.
+The type of formatting is specified through the "attributes" property of the
+corresponding insert operation.
 
 <EditorPreview
   text={`
@@ -74,15 +88,22 @@ Inline formatting applies only to the text within a specific insert operation. T
 
 #### Custom inline formats
 
-For a practical example of a custom inline styles, you can refer to [InlineSpoilers.tsx](https://github.com/BobaBoard/boba-editor/blob/master/src/custom-nodes/InlineSpoilers.ts).
+For a practical example of a custom inline styles, you can refer to
+[InlineSpoilers.tsx](https://github.com/BobaBoard/boba-editor/blob/master/src/custom-nodes/InlineSpoilers.ts).
 
-The `InlineSpoilers` class extends the `blots/inline` class from Quill. This is used for inline text that can accept further formatting.
+The `InlineSpoilers` class extends the `blots/inline` class from Quill. This is
+used for inline text that can accept further formatting.
 
-You can [read more about inline blots](https://quilljs.com/guides/cloning-medium-with-parchment/#basic-formatting) on the "Cloning Medium with Parchment" example on the QuillJS website.
+You can
+[read more about inline blots](https://quilljs.com/guides/cloning-medium-with-parchment/#basic-formatting)
+on the "Cloning Medium with Parchment" example on the QuillJS website.
 
 ### Line formatting
 
-Line formatting applies to the whole preceding line, as delineated by the newline character (`\n`). The type of formatting is specified through the "attributes" property of the corresponding insert operation, whose textual value is a single `\n`.
+Line formatting applies to the whole preceding line, as delineated by the
+newline character (`\n`). The type of formatting is specified through the
+"attributes" property of the corresponding insert operation, whose textual value
+is a single `\n`.
 
 <EditorPreview
   text={`
@@ -98,13 +119,22 @@ Line formatting applies to the whole preceding line, as delineated by the newlin
 
 #### Custom line formats
 
-BobaEditor doesn't currently have an example of a custom line formatting element, which are (in theory, since we've never tried) implemented by extending the `blots/block` class from Quill. These are used for text formatting operations that are mutually exclusive (i.e. a `<h1>` element cannot appear within a `<blockquote>`).
+BobaEditor doesn't currently have an example of a custom line formatting
+element, which are (in theory, since we've never tried) implemented by extending
+the `blots/block` class from Quill. These are used for text formatting
+operations that are mutually exclusive (i.e. a `<h1>` element cannot appear
+within a `<blockquote>`).
 
-You can [read more about block blots](https://quilljs.com/guides/cloning-medium-with-parchment/#blockquote-and-headers) on the "Cloning Medium with Parchment" example on the QuillJS website.
+You can
+[read more about block blots](https://quilljs.com/guides/cloning-medium-with-parchment/#blockquote-and-headers)
+on the "Cloning Medium with Parchment" example on the QuillJS website.
 
 ### Embeds
 
-Embeds are complex, non-textual elements. In the case of embeds, the value of the insert attribute will be an object with a single attribute named after the type of embed itself. The value of this attribute will be passed to the embed element for rendering.
+Embeds are complex, non-textual elements. In the case of embeds, the value of
+the insert attribute will be an object with a single attribute named after the
+type of embed itself. The value of this attribute will be passed to the embed
+element for rendering.
 
 <EditorPreview
   text={`
@@ -125,14 +155,26 @@ Embeds are complex, non-textual elements. In the case of embeds, the value of th
 
 #### Custom embeds
 
-For an example of how to implement a custom embed, you can look at [BlockImage.tsx](https://github.com/BobaBoard/boba-editor/blob/master/src/custom-nodes/BlockImage.ts). This, like other embeds, extends the `blots/block/embed` class from Quill. The important methods to implement are:
+For an example of how to implement a custom embed, you can look at
+[BlockImage.tsx](https://github.com/BobaBoard/boba-editor/blob/master/src/custom-nodes/BlockImage.ts).
+This, like other embeds, extends the `blots/block/embed` class from Quill. The
+important methods to implement are:
 
-- **`create`**: the entry point of embed rendering. Its only argument is the value of the embed attribute specified by the `blotName` property (`block-image` in the previous example).
+- **`create`**: the entry point of embed rendering. Its only argument is the
+  value of the embed attribute specified by the `blotName` property
+  (`block-image` in the previous example).
 
-  `create` returns the root DOM node of the embed element, which is created by calling `super.create()` and whose node type (e.g. `div`) is determined by the `tagName` property.
+  `create` returns the root DOM node of the embed element, which is created by
+  calling `super.create()` and whose node type (e.g. `div`) is determined by the
+  `tagName` property.
 
-- **`value`**: given the root DOM node returned by `create`, extracts the value of the embed element.
+- **`value`**: given the root DOM node returned by `create`, extracts the value
+  of the embed element.
 
-  `value` returns the proprieties that need to be stored to recreate the embed during the insert operation (`{src: ..., width: ..., ...}` in the previous example).
+  `value` returns the proprieties that need to be stored to recreate the embed
+  during the insert operation (`{src: ..., width: ..., ...}` in the previous
+  example).
 
-You can [read more about embed blots](https://quilljs.com/guides/cloning-medium-with-parchment/#images) on the "Cloning Medium with Parchment" example on the QuillJS website.
+You can
+[read more about embed blots](https://quilljs.com/guides/cloning-medium-with-parchment/#images)
+on the "Cloning Medium with Parchment" example on the QuillJS website.

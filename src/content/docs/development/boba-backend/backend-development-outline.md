@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+title: Backend development overview
+sidebar:
+  order: 2
 ---
-
-# Backend development overview
 
 While every feature is unique, developing on boba backend usually involves changes to one or more of these entities:
 

@@ -1,6 +1,7 @@
 ---
-sidebar_position: 3
 title: General Info
+sidebar:
+  order: 3
 ---
 
 :::TODO

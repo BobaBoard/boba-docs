@@ -1,34 +1,43 @@
 ---
-sidebar_position: 6
+title: Development Philosophy (draft)
+sidebar:
+  order: 6
 ---
 
-# Development Philosophy (draft)
-
-This page documents the principles leading our engineering choices. It's an extreme WIP.
+This page documents the principles leading our engineering choices. It's an
+extreme WIP.
 
 ## Keep costs low
 
-- As little required "paid software" in the critical path as possible. Ideally none.
+- As little required "paid software" in the critical path as possible. Ideally
+  none.
   - This is also helpful for people running their own separate instances.
-- The higher the costs, the higher the risk of a single point of failure when it comes to funding.
+- The higher the costs, the higher the risk of a single point of failure when it
+  comes to funding.
 - A paid solution can be used in the short term under the following conditions:
-  - There's a clear path out of it that doesn't involve rewriting the whole codebase.
+  - There's a clear path out of it that doesn't involve rewriting the whole
+    codebase.
   - Can be opted out of for people running separate instances.
 
 ## Make collaboration easy
 
-- Create approachable "entry paths" for customization/expansions collaborators can try to tackle.
+- Create approachable "entry paths" for customization/expansions collaborators
+  can try to tackle.
 - Write exhaustive guides to collaboration. Make them beginner friendly.
 - _Do not burn people out. Do not burn people out. Do not burn people out._
-  - If the project can't succeed without people tethering on the verge of burn out, the project isn't succeeding.
-- Aspirationally try to encourage more coders in fandom by organizing events, networking and offering a safe space to get their feet wet in.
+  - If the project can't succeed without people tethering on the verge of burn
+    out, the project isn't succeeding.
+- Aspirationally try to encourage more coders in fandom by organizing events,
+  networking and offering a safe space to get their feet wet in.
   - This should be a learning environment for those willing to put in the work!
 - Accomodate collaborators at all levels of ability and availability.
-  - A diverse set of collaborators makes the project better. Regardless, we want this project to be a tide that lifts everyone up.
+  - A diverse set of collaborators makes the project better. Regardless, we want
+    this project to be a tide that lifts everyone up.
 
 ## Think for the long term
 
-- We dont need to build for scale right away, but we shouldnt be caught off guard by accidental success.
+- We dont need to build for scale right away, but we shouldnt be caught off
+  guard by accidental success.
 - Maintainability is _extremely important_ for a project like this.
 - Build on open standards and platforms
   - No relying on app stores or platform that can legally deny us their use.
@@ -36,6 +45,13 @@ This page documents the principles leading our engineering choices. It's an extr
 
 ## Always consider accessibility
 
-It's important that Boba be accessible to all. This should include neurodiverse, disabled, queer and all genre of people at all income levels, of all faith, races, sizes, identities and interests.
+It's important that Boba be accessible to all. This should include neurodiverse,
+disabled, queer and all genre of people at all income levels, of all faith,
+races, sizes, identities and interests.
 
-In the kickstart phase it might not always be possible to prioritize everyone's needs (e.g. making Boba work on low-end devices/connections at this stage would require architectural work we dont have resources for). With that said, "cutting corners" should always be a conscious choice, and should always be done with an eye towards facilitating that type of work when the right time (which should be actively sought) comes.
+In the kickstart phase it might not always be possible to prioritize everyone's
+needs (e.g. making Boba work on low-end devices/connections at this stage would
+require architectural work we dont have resources for). With that said, "cutting
+corners" should always be a conscious choice, and should always be done with an
+eye towards facilitating that type of work when the right time (which should be
+actively sought) comes.

@@ -1,28 +1,37 @@
 ---
-sidebar_position: 10
+title: How to Run (and Write) Tests
+sidebar:
+  order: 10
 ---
-
-# How to Run (and Write) Tests
 
 ## Backend
 
 For backend testing, we use `mocha` + `chai`.
 
-All files ending with `.test.ts` are automatically run as tests. As much as possible, tests should be divided in different files according to the functionality they're testing for (e.g. `boards/tests/pagination.tests.ts`, `boards/tests/metadata.tests.ts`). 
+All files ending with `.test.ts` are automatically run as tests. As much as
+possible, tests should be divided in different files according to the
+functionality they're testing for (e.g. `boards/tests/pagination.tests.ts`,
+`boards/tests/metadata.tests.ts`).
 
 ### How to Run Backend Tests
 
 You can run tests with the following commands:
 
-Tests use the same DB as the server! **You must run `yarn run start-db` before tests.** If you made changes to the DB (for example, by navigating through the boards in the local frontend), you will need to stop the DB and start it again.
+Tests use the same DB as the server! **You must run `yarn run start-db` before
+tests.** If you made changes to the DB (for example, by navigating through the
+boards in the local frontend), you will need to stop the DB and start it again.
 
-Run all tests once: `yarn run tests`.
-Run all tests and watch for changes: `yarn run tests:watch`.
-Run all tests in a single file and watch for changes: `yarn run tests:file server/posts/tests/queries.test.ts` (change with appropriate file path).
+Run all tests once: `yarn run tests`. Run all tests and watch for changes:
+`yarn run tests:watch`. Run all tests in a single file and watch for changes:
+`yarn run tests:file server/posts/tests/queries.test.ts` (change with
+appropriate file path).
 
 ### How to Write Backend Tests
 
-You can find a guide to testing in mocha [here](https://codeburst.io/how-to-test-javascript-with-mocha-the-basics-80132324752e) (but please don't install mocha globally). If you're writing a new test suite, you can use this template to get started:
+You can find a guide to testing in mocha
+[here](https://codeburst.io/how-to-test-javascript-with-mocha-the-basics-80132324752e)
+(but please don't install mocha globally). If you're writing a new test suite,
+you can use this template to get started:
 
 ```jsx
 import "mocha";

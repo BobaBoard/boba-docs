@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+title: How to test endpoints
+sidebar:
+  order: 3
 ---
-
-# How to test endpoints
 
 This document defines how to write tests for BobaBoard's REST API endpoints.
 

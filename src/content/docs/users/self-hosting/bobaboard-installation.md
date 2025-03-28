@@ -1,29 +1,36 @@
 ---
-sidebar_position: 2
+title: Installing BobaBoard 
+sidebar:
+  order: 2
 ---
-
-# Installing BobaBoard 
 
 :::warning
 
-The ability to self-host is still new and experimental. We'd love for people to try it out and let us know how it goes, but we currently can't dedicate a lot of engineering resources to helping you if you run into difficulties. Host at your own risk!
-:::
+The ability to self-host is still new and experimental. We'd love for people to
+try it out and let us know how it goes, but we currently can't dedicate a lot of
+engineering resources to helping you if you run into difficulties. Host at your
+own risk! :::
 
 ## What is self-hosting, again?
 
-Self-hosting means setting up your very own BobaBoard server for you to use as you wish.
+Self-hosting means setting up your very own BobaBoard server for you to use as
+you wish.
 
-BobaBoard is easiest to configure on a server running NixOS. If you need help with getting your server set up, head back to [Configuring a NixOS Server](https://docs.bobaboard.com/docs/users/selfhosting/serversetup)
+BobaBoard is easiest to configure on a server running NixOS. If you need help
+with getting your server set up, head back to
+[Configuring a NixOS Server](https://docs.bobaboard.com/docs/users/selfhosting/serversetup)
 
 ## Installing BobaBoard on a NixOS Server
 
 :::TODO
 
-This page currently contains notes from the live self-hosting demo. It needs to be expanded and reviewed.
+This page currently contains notes from the live self-hosting demo. It needs to
+be expanded and reviewed.
 
 :::
 
-You can install Bobaboard on the server the same way you installed other programs. (See example)
+You can install Bobaboard on the server the same way you installed other
+programs. (See example)
 
 Also see example for how to enable and configure the Bobaboard service.
 
@@ -32,28 +39,40 @@ Also see example for how to enable and configure the Bobaboard service.
 - configure firebase credentials
 - configure SSL (certificate and key)
 
-Reload the config. It's a simpler command now since the files are available on the remote machine: 
+Reload the config. It's a simpler command now since the files are available on
+the remote machine:
 
 ```
 sudo nixos-rebuild switch --flake .#boba-example |& nix run nixpkgs#nix-output-monitor
 ```
-Doing this without all the files in place will fail - so things like the certificates, the firebase creds, etc. There will also be other errors! Read the output!
 
-One thing that needs troubleshooting is a missing directory needed for the boba service to run correctly - it needs a `/var/lib/bobaboard` directory owned by the `bobaboard` user that the service creates.
+Doing this without all the files in place will fail - so things like the
+certificates, the firebase creds, etc. There will also be other errors! Read the
+output!
 
-(Note that roughly around the 2hr mark is a whole bunch of troubleshooting for this stuff)
+One thing that needs troubleshooting is a missing directory needed for the boba
+service to run correctly - it needs a `/var/lib/bobaboard` directory owned by
+the `bobaboard` user that the service creates.
 
-Someone hosting their own Bobaboard instance will have to have a Firebase account—they may or may not have to do much config. They'll likely need authentication and storage enabled, and that might be enough. This is something we'd need to test out.
+(Note that roughly around the 2hr mark is a whole bunch of troubleshooting for
+this stuff)
 
-Anyway, once you have the key/the SDK config, you'll want to save it at the specified file path from the boba service config.
+Someone hosting their own Bobaboard instance will have to have a Firebase
+account—they may or may not have to do much config. They'll likely need
+authentication and storage enabled, and that might be enough. This is something
+we'd need to test out.
 
-You can check `curl http://127.0.0.1:4200/realms/slug/uwu` to see if it's working after the database gets seeded.
+Anyway, once you have the key/the SDK config, you'll want to save it at the
+specified file path from the boba service config.
+
+You can check `curl http://127.0.0.1:4200/realms/slug/uwu` to see if it's
+working after the database gets seeded.
 
 ## Give it an address
 
 DNS, SSL, Certificates
 
 - Go to DNS provider and point the DNS to the server's IP
-- Ask The Big Certificate Authority in the Sky for a certificate to enable connecting to our machine using HTTPS at the specified URL
-stopped notetaking around 2:28
-
+- Ask The Big Certificate Authority in the Sky for a certificate to enable
+  connecting to our machine using HTTPS at the specified URL stopped notetaking
+  around 2:28

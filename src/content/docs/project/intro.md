@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+title: Project Guide
+sidebar:
+  order: 1
 ---
-
-# Project Guide
 
 This sections serves as a guide to BobaBoard as a project. It covers:
 

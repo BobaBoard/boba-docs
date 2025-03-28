@@ -1,9 +1,8 @@
 ---
 title: Development Status
-sidebar_position: 2
+sidebar:
+  order: 2
 ---
-
-# Development Status
 
 The first BobaBoard Realm was _quickly_ prototyped by Ms. Boba as a proof of
 concept. Because of this, a lot of BobaBoard's features and design elements are

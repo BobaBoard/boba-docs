@@ -1,14 +1,19 @@
 ---
-sidebar_position: 2
+title: How to work with endpoints
+sidebar:
+  order: 2
 ---
 
-# How to work with endpoints
-
-An API `endpoint` is a URL clients can request to execute operations. Following REST principles, BobaBoard's server endpoints are grouped by the type of resource they refer to (e.g. boards, threads, users). Their naming and structure, which reflects their external URL, should follow the principles defined in our [API guidelines](API-guidelines).
+An API `endpoint` is a URL clients can request to execute operations. Following
+REST principles, BobaBoard's server endpoints are grouped by the type of
+resource they refer to (e.g. boards, threads, users). Their naming and
+structure, which reflects their external URL, should follow the principles
+defined in our [API guidelines](API-guidelines).
 
 :::note
 
-The same endpoint can be called with different HTTP methods, each of which corresponds (when defined) to a different operation on the associated resources.
+The same endpoint can be called with different HTTP methods, each of which
+corresponds (when defined) to a different operation on the associated resources.
 
 You can learn more in our [intro to APIs](./API-guidelines.md).
 
@@ -16,36 +21,62 @@ You can learn more in our [intro to APIs](./API-guidelines.md).
 
 ## Routes and endpoint structure {#structure}
 
-Each subfolder in the [`server/` directory](https://github.com/BobaBoard/boba-backend/tree/master/server) defines the endpoints associated with the corresponding resource (e.g. boards, threads, users). For example, files in the `server/boards/` directory define the endpoints at the `[server_adress]/boards/*` URLs. In Express, the server framework BobaBoard uses, endpoints are defined through [Routes](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
+Each subfolder in the
+[`server/` directory](https://github.com/BobaBoard/boba-backend/tree/master/server)
+defines the endpoints associated with the corresponding resource (e.g. boards,
+threads, users). For example, files in the `server/boards/` directory define the
+endpoints at the `[server_adress]/boards/*` URLs. In Express, the server
+framework BobaBoard uses, endpoints are defined through
+[Routes](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
 
 Each subfolder in the `server/` directory contains at least the following files:
 
-- A `routes.ts` file, which exports an instance of [`Express.Router` ](https://expressjs.com/en/api.html#express.router) and defines the subroutes of the endpoint. This file also contains the [documentation](#documentation) of each subroute in its own JSDoc.
-- A `queries.ts` file, which contains methods acting as an interface between the route-handling code and the database.
-- A `sql/` folder, containing the definition of the SQL queries used by `queries.ts`.
-- A `tests/` folder, containing tests for the routes and queries. You can read more about defining tests in our [testing endpoints guide](./testing-endpoints.md).
-- A `examples/` folder (optional), containing examples used within our REST API documentation (see the [adding examples](#adding-examples) section)
+- A `routes.ts` file, which exports an instance of
+  [`Express.Router` ](https://expressjs.com/en/api.html#express.router) and
+  defines the subroutes of the endpoint. This file also contains the
+  [documentation](#documentation) of each subroute in its own JSDoc.
+- A `queries.ts` file, which contains methods acting as an interface between the
+  route-handling code and the database.
+- A `sql/` folder, containing the definition of the SQL queries used by
+  `queries.ts`.
+- A `tests/` folder, containing tests for the routes and queries. You can read
+  more about defining tests in our
+  [testing endpoints guide](./testing-endpoints.md).
+- A `examples/` folder (optional), containing examples used within our REST API
+  documentation (see the [adding examples](#adding-examples) section)
 
-The `server/all-routes.ts` file associates the routers exported by the `routes.ts` files with the corresponding root paths.
+The `server/all-routes.ts` file associates the routers exported by the
+`routes.ts` files with the corresponding root paths.
 
 ## Adding a new endpoint
 
 :::tip
 
-A more general explanation of Express routing is available [on MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
+A more general explanation of Express routing is available
+[on MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
 
 :::
 
-1. Locate the `routes.ts` file corresponding to the resource you want to add an endpoint to. It will be contained within the `server/[resource_name]` directory.
+1. Locate the `routes.ts` file corresponding to the resource you want to add an
+   endpoint to. It will be contained within the `server/[resource_name]`
+   directory.
 
    :::note
 
-   If you're adding a new top-level route, follow the instruction in the [creating a new top-level route](#top-level-route) section.
+   If you're adding a new top-level route, follow the instruction in the
+   [creating a new top-level route](#top-level-route) section.
 
    :::
 
-2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will use. The [REST API example](./intro.md#api-example) includes examples of different methods and their semantic. You can also consult the [Zalando API guidelines](https://opensource.zalando.com/restful-api-guidelines/#148) for an in-depth explanation.
-3. Add the endpoint to your chosen `routes.ts` file by calling the corresponding method on the `router` variable. You can find the documentation for Express Router on the [Express documentation website](https://expressjs.com/en/api.html#router.METHOD).
+2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will
+   use. The [REST API example](./intro.md#api-example) includes examples of
+   different methods and their semantic. You can also consult the
+   [Zalando API guidelines](https://opensource.zalando.com/restful-api-guidelines/#148)
+   for an in-depth explanation.
+3. Add the endpoint to your chosen `routes.ts` file by calling the corresponding
+   method on the `router` variable. You can find the documentation for Express
+   Router on the
+   [Express documentation website](https://expressjs.com/en/api.html#router.METHOD).
 
 ### Routes structure
 
@@ -57,11 +88,14 @@ router.HTTP_METHOD("relative/path/to/route/", [middlewares], [routeHandler]);
 
 :::tip
 
-An express middleware is a function that runs before `routeHandler` is executed. You can read more about middlewares on the [Express documentation website](https://expressjs.com/en/guide/using-middleware.html).
+An express middleware is a function that runs before `routeHandler` is executed.
+You can read more about middlewares on the
+[Express documentation website](https://expressjs.com/en/guide/using-middleware.html).
 
 :::
 
-For example, the following code, contained within the `server/posts/routes.ts` file, defines the `/posts/:post_id/comment` endpoint:
+For example, the following code, contained within the `server/posts/routes.ts`
+file, defines the `/posts/:post_id/comment` endpoint:
 
 ```javascript
 /**
@@ -90,7 +124,10 @@ Each endpoint should be documented and tested.
 
 ### Creating a new top-level route {#top-level-route}
 
-1. Create the corresponding folders and files as defined in the [structure](#structure) section. Don't forget to export an [`Express.Router`](https://expressjs.com/en/api.html#express.router) object from `routes.ts`. Here is a minimal example:
+1. Create the corresponding folders and files as defined in the
+   [structure](#structure) section. Don't forget to export an
+   [`Express.Router`](https://expressjs.com/en/api.html#express.router) object
+   from `routes.ts`. Here is a minimal example:
 
    ```javascript
    import express from "express";
@@ -116,25 +153,38 @@ Each endpoint should be documented and tested.
 
 ## Documenting endpoints {#documentation}
 
-We use the [OpenAPI 3.1](https://spec.openapis.org/oas/latest.html) spec to document API endpoints.
+We use the [OpenAPI 3.1](https://spec.openapis.org/oas/latest.html) spec to
+document API endpoints.
 
 :::tip
 
-You can learn more about the libraries used and the setup [on this dev.to article](https://dev.to/essentialrandom/documenting-express-rest-apis-with-openapi-and-jsdoc-m68).
+You can learn more about the libraries used and the setup
+[on this dev.to article](https://dev.to/essentialrandom/documenting-express-rest-apis-with-openapi-and-jsdoc-m68).
 
 :::
 
-OpenAPI specifications are best learned by looking at existing documentation. If you need more exhaustive explanations (or have doubts), documentation is available [on the OpenAPI website](https://swagger.io/docs/specification/paths-and-operations/).
+OpenAPI specifications are best learned by looking at existing documentation. If
+you need more exhaustive explanations (or have doubts), documentation is
+available
+[on the OpenAPI website](https://swagger.io/docs/specification/paths-and-operations/).
 
-During development, you can preview your documentation by opening `http://localhost:4200/api-docs/` in your browser. Oce the updated server is deployed to production, the documentation will be automatically available [on this same website](/docs/development/rest-api/).
+During development, you can preview your documentation by opening
+`http://localhost:4200/api-docs/` in your browser. Oce the updated server is
+deployed to production, the documentation will be automatically available
+[on this same website](/docs/development/rest-api/).
 
 The generated OpenAPI JSON spec is available at the `/open-api.json` endpoint.
 
 ### Endpoint Documentation
 
-The documentation of each endpoint is co-located with the endpoint declaration in the`routes.ts` file, using the [`swagger-jsdoc`](https://www.npmjs.com/package/swagger-jsdoc) library. Note that the documentation uses [`YAML syntax`](https://learnxinyminutes.com/docs/yaml/).
+The documentation of each endpoint is co-located with the endpoint declaration
+in the`routes.ts` file, using the
+[`swagger-jsdoc`](https://www.npmjs.com/package/swagger-jsdoc) library. Note
+that the documentation uses
+[`YAML syntax`](https://learnxinyminutes.com/docs/yaml/).
 
-Quick inline explanations of the various parts of the documentation can be found looking for `<- ALL CAPS EXPLANATION` within the following example:
+Quick inline explanations of the various parts of the documentation can be found
+looking for `<- ALL CAPS EXPLANATION` within the following example:
 
 ```javascript
 /**
@@ -196,15 +246,24 @@ router.post("/:post_id/comment", ensureLoggedIn, async (req, res) => {
 }
 ```
 
-As you can see in the example, components are referred to through the `$ref` attribute. You can learn more about components in the [documenting components](#documenting-components) section.
+As you can see in the example, components are referred to through the `$ref`
+attribute. You can learn more about components in the
+[documenting components](#documenting-components) section.
 
 ### Documenting components
 
-Components are reusable definitions of either data models (e.g. `Contribution`, `Comment`, `Board`), parameters, or other data types. You can find their documentation on the [OpenAPI Specs website](https://swagger.io/docs/specification/components/). Components are added to the documentation through the [$ref shortcut](https://swagger.io/docs/specification/using-ref/).
+Components are reusable definitions of either data models (e.g. `Contribution`,
+`Comment`, `Board`), parameters, or other data types. You can find their
+documentation on the
+[OpenAPI Specs website](https://swagger.io/docs/specification/components/).
+Components are added to the documentation through the
+[$ref shortcut](https://swagger.io/docs/specification/using-ref/).
 
-Components are located within the `/types/open-api` folder, and defined through [`YAML files`](https://learnxinyminutes.com/docs/yaml/).
+Components are located within the `/types/open-api` folder, and defined through
+[`YAML files`](https://learnxinyminutes.com/docs/yaml/).
 
-For example, this component defines a reusable data model for identity. It can be found under `/types/open-api/identity.yaml`:
+For example, this component defines a reusable data model for identity. It can
+be found under `/types/open-api/identity.yaml`:
 
 ```yaml
 components:
@@ -238,7 +297,9 @@ components:
         - avatar
 ```
 
-Other documentation can refer to these components by using the `$ref: "#/components/schemas/Identity"` and `$ref: "#/components/schemas/SecretIdentity"` constructs.
+Other documentation can refer to these components by using the
+`$ref: "#/components/schemas/Identity"` and
+`$ref: "#/components/schemas/SecretIdentity"` constructs.
 
 ### Adding examples
 

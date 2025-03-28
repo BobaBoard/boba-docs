@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+title: Identity Management
+sidebar:
+  order: 1
 ---
-
-# Identity Management
 
 :::caution
 

@@ -1,12 +1,13 @@
 ---
-sidebar_position: 4
+title: Testing permissions
+sidebar:
+  order: 4
 ---
-
-# Testing permissions
 
 ## Testing routes
 
-To test routes that require a specific permission, the permission must first be granted to a user in the test database.
+To test routes that require a specific permission, the permission must first be
+granted to a user in the test database.
 
 :::TODO
 

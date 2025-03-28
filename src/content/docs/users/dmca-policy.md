@@ -1,4 +1,6 @@
-# DMCA policy
+---
+title: DMCA policy
+---
 
 BobaBoard respects the intellectual property rights of others. Per the DMCA, we
 will respond expeditiously to claims of copyright infringement on the Site if

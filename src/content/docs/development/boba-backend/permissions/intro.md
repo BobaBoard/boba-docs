@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+title: Intro to permissions
+sidebar:
+  order: 1
 ---
-
-# Intro to permissions
 
 Permissions control which user(s) can execute specific actions, usually scoped to one or more entities. These entities include:
 

@@ -1,4 +1,6 @@
-# Identities
+---
+title: Identities
+---
 
 ## Secret Identities
 

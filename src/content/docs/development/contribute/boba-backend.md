@@ -1,22 +1,26 @@
 ---
-sidebar_position: 4
+title: Install BobaBackend
+sidebar:
+  order: 4
 ---
-
-# Install BobaBackend
 
 :::warning
 
-**Make sure you have [Docker](https://www.docker.com/products/docker-desktop) installed.** This is the only codebase that needs it.
+**Make sure you have [Docker](https://www.docker.com/products/docker-desktop)
+installed.** This is the only codebase that needs it.
 
 :::
 
 ## Install Instructions
 
-The first time you work on BobaBackend you'll need to [fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository) so you can edit your own version of the code.
+The first time you work on BobaBackend you'll need to
+[fork the repository](https://docs.github.com/en/get-started/quickstart/fork-a-repo#forking-a-repository)
+so you can edit your own version of the code.
 
 ### 1 — Clone your fork
 
-In a terminal, run the following commands - or [follow Github's instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
+In a terminal, run the following commands - or
+[follow Github's instructions](https://docs.github.com/en/get-started/quickstart/fork-a-repo#cloning-your-forked-repository).
 
 ```bash showLineNumbers
 # Go into the folder where you want to store your boba repositories
@@ -32,13 +36,17 @@ yarn install
 
 :::tip
 
-The commands shown on this page use HTTPS to interact with the code on GitHub but you can do so with SSH if you're comfortable
+The commands shown on this page use HTTPS to interact with the code on GitHub
+but you can do so with SSH if you're comfortable
 
 :::
 
 ### 2 — Add the BobaBoard repository as a remote
 
-Once you've made your changes to your fork, you'll need some way of pushing the changes to the upstream codebase. To do so, we need to tell git how to find it. Run the following command, or [check out Github's steps](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository):
+Once you've made your changes to your fork, you'll need some way of pushing the
+changes to the upstream codebase. To do so, we need to tell git how to find it.
+Run the following command, or
+[check out Github's steps](https://docs.github.com/en/get-started/quickstart/fork-a-repo#configuring-git-to-sync-your-fork-with-the-upstream-repository):
 
 ```bash
 git remote add upstream https://github.com/BobaBoard/boba-backend.git
@@ -66,7 +74,9 @@ touch firebase-sdk.json
 
 :::warning
 
-**This is an INVALIDATED Firebase service account key.** It will allow the firebase admin SDK to be correctly initialized, but doesn't grant any further privilege.
+**This is an INVALIDATED Firebase service account key.** It will allow the
+firebase admin SDK to be correctly initialized, but doesn't grant any further
+privilege.
 
 :::
 
@@ -89,4 +99,5 @@ Open `firebase-sdk.json` and paste the following content within it:
 
 ## Start a local server
 
-You can now [follow the instructions](../boba-backend/getting-started) in the bobabackend guide and start your own local server.
+You can now [follow the instructions](../boba-backend/getting-started) in the
+bobabackend guide and start your own local server.

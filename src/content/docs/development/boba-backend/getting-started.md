@@ -1,12 +1,13 @@
 ---
-sidebar_position: 1
+title: Getting Started
+sidebar:
+  order: 1
 ---
-
-# Getting Started
 
 :::important
 
-Before continuing with this section, **follow the installation instructions** in our [Contribute section](/docs/development/start-developing/boba-backend).
+Before continuing with this section, **follow the installation instructions** in
+our [Contribute section](/docs/development/start-developing/boba-backend).
 
 :::
 
@@ -14,7 +15,9 @@ Before continuing with this section, **follow the installation instructions** in
 
 :::warning
 
-This codebase requires Node **18**. If you're using [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version 18 by running `nvm use 18` in your terminal.
+This codebase requires Node **18**. If you're using
+[Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version
+18 by running `nvm use 18` in your terminal.
 
 You can check the current Node version by running `node -v`.
 
@@ -26,7 +29,8 @@ BobaBackend needs 3 different components to run:
 2. The database (PostgreSQL)
 3. The cache (Redis)
 
-You can choose to run these in the same command, or separately. Unless you're running tests, you'll likely want to start them all together.
+You can choose to run these in the same command, or separately. Unless you're
+running tests, you'll likely want to start them all together.
 
 ### Quickstart (single command)
 
@@ -72,26 +76,33 @@ yarn run test
 
 ## Making sure the server is running
 
-You can test the server is running by opening `http://localhost:4200/realms/slug/twisted-minds` in any browser. You should now see a list of all the realm properties in [JSON format](https://developers.squarespace.com/what-is-json).
+You can test the server is running by opening
+`http://localhost:4200/realms/slug/twisted-minds` in any browser. You should now
+see a list of all the realm properties in
+[JSON format](https://developers.squarespace.com/what-is-json).
 
 :::tip
 
-Accessing a URL through a browser is equivalent to making a GET request to the same URL through [Postman](/docs/development/boba-backend/using-postman).
+Accessing a URL through a browser is equivalent to making a GET request to the
+same URL through [Postman](/docs/development/boba-backend/using-postman).
 
 :::
 
 :::tip
 
-**The above commands will automatically restart the server on any code change you make. **
+**The above commands will automatically restart the server on any code change
+you make. **
 
 <details>
 <summary><strong>How to manually restart the development server</strong>
 </summary>
 
-Both of these actions need to be performed on the console where `yarn run dev:watch` is currently running.
+Both of these actions need to be performed on the console where
+`yarn run dev:watch` is currently running.
 
 - **Fancy Way:** Type `rs` and press enter.
-- **Bruteforce Way:** ~~Press~~ Mash `ctrl+c` to stop the running process, then run `yarn run dev` again.
+- **Bruteforce Way:** ~~Press~~ Mash `ctrl+c` to stop the running process, then
+  run `yarn run dev` again.
 
 </details>
 

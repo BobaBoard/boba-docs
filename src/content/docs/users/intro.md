@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+title: BobaBoard Basics
+sidebar:
+  order: 1
 ---
-
-# BobaBoard Basics
 
 _"BobaBoard will move you and fill you with a feeling of deep peace. I hope your
 time here will be pleasant and your memories will last forever."_

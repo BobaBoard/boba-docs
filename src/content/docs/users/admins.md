@@ -1,6 +1,7 @@
 ---
 title: Galaxy & Realm Admins
-sidebar_position: 5
+sidebar:
+  order: 5
 ---
 
 :::info

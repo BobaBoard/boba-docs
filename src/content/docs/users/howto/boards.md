@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+title: Boards and Feeds
+sidebar:
+  order: 1
 ---
-
-# Boards and Feeds
 
 ## Boards
 

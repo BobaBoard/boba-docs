@@ -1,8 +1,8 @@
 ---
-sidebar_position: 3
+title: General BobaBoard Etiquette
+sidebar:
+  order: 3
 ---
-
-# General BobaBoard Etiquette
 
 As mentioned in other parts of the Guide, our two current Realms have more in
 common than not in common. Below you'll find the guidelines for the type of

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 1
+title: How BobaBoard uses GitHub
+sidebar:
+  order: 1
 ---
-
-# How BobaBoard uses GitHub
 
 :::TODO
 

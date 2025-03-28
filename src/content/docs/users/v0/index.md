@@ -1,4 +1,6 @@
-# The v0 Realm
+---
+title: The v0 Realm
+---
 
 :::note
 

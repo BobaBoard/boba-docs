@@ -1,22 +1,23 @@
 ---
-sidebar_position: 9
+title: Useful Commands
+sidebar:
+  order: 9
 ---
 
-# Useful Commands
-
-Frequently used commands. This is a helpful page to add to your Favorites. [Here's how to do so on Notion.](https://www.notion.so/notion/Navigate-Notion-left-sidebar-7ef7287cee00464d9a813073b02ce24a#cb2f704bec9b420d94babc8685ea358b)
+Frequently used commands. This is a helpful page to add to your Favorites.
+[Here's how to do so on Notion.](https://www.notion.so/notion/Navigate-Notion-left-sidebar-7ef7287cee00464d9a813073b02ce24a#cb2f704bec9b420d94babc8685ea358b)
 
 # 🚚 Running dev env
 
 For `BobaEditor` and `BobaComponents` run (in the corresponding folders):
 
-```bash   showLineNumbers
+```bash showLineNumbers
 yarn run storybook
 ```
 
 For `BobaFrontend` run:
 
-```bash   showLineNumbers
+```bash showLineNumbers
 # Start instance connected to local server (BobaBackend must be running)
 yarn run dev
 
@@ -26,14 +27,15 @@ yarn run dev:stage
 
 For `BobaBackend` run:
 
-```bash   showLineNumbers
+```bash showLineNumbers
 yarn run start-db
 yarn run dev:watch
 ```
 
 # 🚢 Debugging Logs on Frontend
 
-To enable debug logs, set `localStorage.debug` to one of the following values (you can do so through the JavaScript console of your browser of choice):
+To enable debug logs, set `localStorage.debug` to one of the following values
+(you can do so through the JavaScript console of your browser of choice):
 
 ```jsx
 // Print all the debug logs related to the editor

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+title: Identities
+sidebar:
+  order: 4
 ---
-
-# Identities
 
 BobaBoard assigns random identities from a shared pool of identities known as
 the [**Bobadex**](#the-bobadex) to its users. The identities are assigned when

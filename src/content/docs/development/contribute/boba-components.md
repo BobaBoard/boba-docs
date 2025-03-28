@@ -1,8 +1,8 @@
 ---
-sidebar_position: 6
+title: Install BobaComponents
+sidebar:
+  order: 6
 ---
-
-# Install BobaComponents
 
 \[[code](https://github.com/BobaBoard/boba-components),
 [demo](https://bobaboard-ui.netlify.app/)]

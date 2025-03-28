@@ -1,19 +1,32 @@
-# Caching Queries
+---
+title: Caching Queries
+---
 
-BobaBoard's frontend uses [React Query](https://react-query.tanstack.com/) as its query caching mechanism. See our knowledge base for basic information on [caches](../knowledge-base/caching).
+BobaBoard's frontend uses [React Query](https://react-query.tanstack.com/) as
+its query caching mechanism. See our knowledge base for basic information on
+[caches](../knowledge-base/caching).
 
 ## Manual Cache Operations
 
-[React Query](https://react-query.tanstack.com/) automatically manages the caching and refetching of queries. That said, manual operations are required on occasion:
+[React Query](https://react-query.tanstack.com/) automatically manages the
+caching and refetching of queries. That said, manual operations are required on
+occasion:
 
-1. **[Optimistic Updates](../knowledge-base/caching.md#optimistic-updates):** we manually write the updated values in the existing cache after receiving new data from the user. This gives the illusion of an immediate update while we wait for server confirmation.
-   - **Example:** showing the updated board description in the sidebar as soon as the "save" button is clicked.
-2. **Data Preloading:** to preload the (potentially partial) result of a query when partial data exists in already-loaded ones.
-   - **Example:** showing the first post in a thread (loaded from the board feed data) while waiting for the full thread to load.
+1. **[Optimistic Updates](../knowledge-base/caching.md#optimistic-updates):** we
+   manually write the updated values in the existing cache after receiving new
+   data from the user. This gives the illusion of an immediate update while we
+   wait for server confirmation.
+   - **Example:** showing the updated board description in the sidebar as soon
+     as the "save" button is clicked.
+2. **Data Preloading:** to preload the (potentially partial) result of a query
+   when partial data exists in already-loaded ones.
+   - **Example:** showing the first post in a thread (loaded from the board feed
+     data) while waiting for the full thread to load.
 
 ### Where to Define Manual Cache Operations
 
-All caches operation are definined in the `/cache` directory. Each entity (e.g. thread, board) should have its own file named as the entity (singular).
+All caches operation are definined in the `/cache` directory. Each entity (e.g.
+thread, board) should have its own file named as the entity (singular).
 
 ### Getter and Setters
 
@@ -25,7 +38,9 @@ The cache methods should use the following patterns:
 
 ### The Transformer Pattern
 
-Most often update operations have to be repeated by multiple functions across multiple caches. To ensure all functions consistently update an entity across all caches it appears in, we use a transformer pattern:
+Most often update operations have to be repeated by multiple functions across
+multiple caches. To ensure all functions consistently update an entity across
+all caches it appears in, we use a transformer pattern:
 
 ```typescript
 const set[entity]InCache = ({
@@ -51,7 +66,8 @@ The transform method **must** return:
 - The **same instance** of the entity if no update was done.
 - A **new instance** of the entity if an update was done.
 
-This ensures React's re-rendering logic correctly picks up (or ignores) the change.
+This ensures React's re-rendering logic correctly picks up (or ignores) the
+change.
 
 :::
 
@@ -107,9 +123,11 @@ const setBoardVisibleInCache = ({
 
 ### Useful React Query Methods
 
-If you're working with the cache, it might be useful to familiarize yourself with the following methods:
+If you're working with the cache, it might be useful to familiarize yourself
+with the following methods:
 
 - [QueryClient.setQueriesData](https://react-query.tanstack.com/reference/QueryClient#queryclientsetqueriesdata)
 - [QueryClient.getQueriesData](https://react-query.tanstack.com/reference/QueryClient#queryclientgetqueriesdata)
 
-The best way to understand how to use them is to look at the existing implementations of `set[Entity]InCache`cache methods.
+The best way to understand how to use them is to look at the existing
+implementations of `set[Entity]InCache`cache methods.

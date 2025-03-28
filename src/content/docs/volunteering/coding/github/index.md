@@ -1,4 +1,5 @@
 ---
-sidebar_position: 3
 title: Using Github
+sidebar:
+  order: 3
 ---

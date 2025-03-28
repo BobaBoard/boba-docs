@@ -1,4 +1,6 @@
-# Compound Components
+---
+title: Compound Components
+---
 
 Compound components are a common React design pattern where a component (the
 parent) also defines other subcomponents (its children) as part of its
@@ -173,7 +175,10 @@ const Layout: LayoutCompound = (props: LayoutProps) => {
 
 :::warning
 
-Unless you write code _specifically_ to allow this, there shouldn't be any additional component between a parent and its subcomponents, not even a fragment! If they aren't part of the children array, the extraction methods will fail.
+Unless you write code _specifically_ to allow this, there shouldn't be any
+additional component between a parent and its subcomponents, not even a
+fragment! If they aren't part of the children array, the extraction methods will
+fail.
 
 ```tsx
 // This won't allow the sidemenu to be extracted, cause it won't be in the children array.

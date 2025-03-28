@@ -1,13 +1,15 @@
 ---
-sidebar_position: 2
+title: BobaDex
+sidebar:
+  order: 2
 ---
 
-# BobaDex
+Each `Realm` that supports `Anonymity` must have an associated `BobaDex`,
+containing all the anonymous identities that can be assigned to `users` when
+they create new `threads`.
 
-Each `Realm` that supports `Anonymity` must have an associated `BobaDex`, containing all the anonymous
-identities that can be assigned to `users` when they create new `threads`.
-
-A `BobaDex` can be further divided in `Seasons`, each containing a subset of the `Identities` in the `BobaDex`.
+A `BobaDex` can be further divided in `Seasons`, each containing a subset of the
+`Identities` in the `BobaDex`.
 
 :::OPEN QUESTION
 

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 2
+title: Threads, Comments, and Contributions
+sidebar:
+  order: 2
 ---
-
-# Threads, Comments, and Contributions
 
 Threads are the posts you make to a Board and all of the comments and
 contributions to the original post.

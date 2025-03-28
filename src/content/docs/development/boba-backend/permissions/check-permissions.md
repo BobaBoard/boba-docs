@@ -1,16 +1,24 @@
 ---
-sidebar_position: 2
+title: Checking permissions
+sidebar:
+  order: 2
 ---
-
-# Checking permissions
 
 ## On the server
 
-[Permission handlers](https://github.com/BobaBoard/boba-backend/blob/main/handlers/permissions.ts) are a type of custom [Express middleware](https://expressjs.com/en/guide/using-middleware.html). They fetch permissions from the database and add them to the incoming request. Optionally, they check whether a specific permissions is present, and automatically return the `UNAUTHORIZED` status code in the negative case.
+[Permission handlers](https://github.com/BobaBoard/boba-backend/blob/main/handlers/permissions.ts)
+are a type of custom
+[Express middleware](https://expressjs.com/en/guide/using-middleware.html). They
+fetch permissions from the database and add them to the incoming request.
+Optionally, they check whether a specific permissions is present, and
+automatically return the `UNAUTHORIZED` status code in the negative case.
 
 ### Permissions fetchers
 
-Handlers named `with[Entity]Permissions` (e.g. `withThreadPermissions`, `withBoardPermissions`) are "permission fetchers". They extract the appropriate entity id from the request, fetch the corresponding permissions, and add them to the request object under the key `current[Entity]Permissions`.
+Handlers named `with[Entity]Permissions` (e.g. `withThreadPermissions`,
+`withBoardPermissions`) are "permission fetchers". They extract the appropriate
+entity id from the request, fetch the corresponding permissions, and add them to
+the request object under the key `current[Entity]Permissions`.
 
 Example:
 
@@ -29,15 +37,21 @@ router.patch(
 
 :::warning
 
-If the route has no `:thread_id` param, the `withThreadPermissions` handler will throw an error.
+If the route has no `:thread_id` param, the `withThreadPermissions` handler will
+throw an error.
 
 :::
 
 ### Generic permission checkers
 
-Handlers named `ensure[Entity]Permission` (e.g. `ensureThreadPermission`, `ensureBoardPermission`) are generic permission checkers. Each of these handlers takes a permission as an argument, and checks that the user has the permission for the given entity. If the permission is not found, the appropriate `UNAUTHORIZED` status code is automatically returned.
+Handlers named `ensure[Entity]Permission` (e.g. `ensureThreadPermission`,
+`ensureBoardPermission`) are generic permission checkers. Each of these handlers
+takes a permission as an argument, and checks that the user has the permission
+for the given entity. If the permission is not found, the appropriate
+`UNAUTHORIZED` status code is automatically returned.
 
-Like permission fetchers, permission checkers add a list of the user's permissions to the request object under the key `current[Entity]Permissions`.
+Like permission fetchers, permission checkers add a list of the user's
+permissions to the request object under the key `current[Entity]Permissions`.
 
 Example:
 
@@ -56,13 +70,17 @@ router.post(
 
 :::warning
 
-If the route has no `:board_id` param, the `ensureBoardPermission` handler will throw an error.
+If the route has no `:board_id` param, the `ensureBoardPermission` handler will
+throw an error.
 
 :::
 
 ### Complex permission checkers
 
-When checking for the simple existance of a permission is not enough, we can create a permission checker with more specific logic. These handlers are usually named `ensure[Condition]` (e.g. `ensureLoggedIn`, `ensureBoardAccess`). Their semantic is the same as generic permission checkers.
+When checking for the simple existance of a permission is not enough, we can
+create a permission checker with more specific logic. These handlers are usually
+named `ensure[Condition]` (e.g. `ensureLoggedIn`, `ensureBoardAccess`). Their
+semantic is the same as generic permission checkers.
 
 Example:
 
@@ -75,10 +93,14 @@ router.get("feeds/boards/:board_id", ensureBoardAccess, async (req, res) => {
 
 ## On the client
 
-Each board's metadata includes the user's permission for the board and all threads and posts contained within. See the [`boards/{board_id}`](/docs/development/rest-api/#operation/getBoardsByUuid) endpoint for details.
+Each board's metadata includes the user's permission for the board and all
+threads and posts contained within. See the
+[`boards/{board_id}`](/docs/development/rest-api/#operation/getBoardsByUuid)
+endpoint for details.
 
 :::TODO
 
-Create documentation about checking permissions on the client and add a link here.
+Create documentation about checking permissions on the client and add a link
+here.
 
 :::
