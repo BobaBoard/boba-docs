@@ -1,0 +1,14 @@
+# Caching
+
+## Caches and Optimistic Updates {#caches}
+
+A cache is a temporary storage location that saves data from slow queries (e.g. network queries, database queries) for faster access. Caches are used to quickly retrieve data that hasn't changed, reducing the load on the system and giving the illusion of faster operations. They're also used to retrieve partial pre-existing data to display while loading the full data in the background.
+
+BobaBoard uses two main caches:
+
+- A frontend cache that stores and manages data from the backend. This uses [React Query](https://react-query.tanstack.com/).
+- A backend cache that manages rerely-changing data (e.g. board details). This uses [Redis](https://redis.io/).
+
+### Optimistic Updates
+
+Optimistic updates are used in the frontend to give the illusion of quick data-modifying operations (e.g. updating tags, board descriptions). Rather than wait for the server to confirm the operation succeeded, the updated data is immediately saved in the cache and displayed. If the server returns success, no further action is needed. If the server fails, an error message is shown and the cache is reverted to the previous state.
