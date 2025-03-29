@@ -1,0 +1,20 @@
+---
+import Default from "@astrojs/starlight/components/SocialIcons.astro";
+import { Icon } from "astro-icon/components";
+---
+<a href="https://bobaboard.com"
+  ><Icon name="lucide:home" /></a
+>
+<a href="mailto:contact@bobaboard.com"
+  ><Icon name="lucide:at-sign" /></a
+>
+<a href="https://bobaboard.tumblr.com"
+  ><Icon name="simple-icons:tumblr" /></a
+>
+<Default><slot /></Default>
+
+<style>
+  [data-icon] {
+    color: var(--sl-color-text-accent);
+  }
+</style>

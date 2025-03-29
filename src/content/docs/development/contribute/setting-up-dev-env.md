@@ -1,0 +1,148 @@
+---
+title: Setup Your Development Environment
+sidebar:
+  order: 2
+---
+
+This is an overview of the programs you'll need to install before developing for
+BobaBoard.
+
+:::tip
+
+**Developing for BobaBoard requires use of the command line.** While this might
+seem scary, the amount of commands needed is minimal and they can often be run
+without a deep understanding of them.
+
+If you're intimidated, contact Ms. Boba for help! Also consider editing this
+page to make it less scary for newcomers.
+
+:::
+
+## What to Install
+
+### Install Checklist
+
+- [ ] [Windows Subsystem for Linux (WSL)](#windows-subsystem-for-linux-wsl-windows-only)
+      [Windows Only]
+- [ ] [Git](#git)
+- [ ] [NodeJS](#nodejs-with-nvm)
+- [ ] [Yarn](#yarn)
+- [ ] [Docker](#docker-bobabackend-only) [BobaBackend Only]
+
+### Windows Subsystem for Linux (WSL) [Windows Only]
+
+:::warning
+
+This is only for Window users. It's optional, but **highly recommended**.
+Without this, it might be harder to help you in case of errors.
+
+:::
+
+**[WSL](https://docs.microsoft.com/en-us/windows/wsl/install) allows you to run
+Linux commands on Windows**, and will save you many, many headaches. We
+recommend using the latest version of WSL (WSL2). The default Ubuntu
+distribution is the most commonly used, but if you're more familiar with another
+distribution, you're welcome to use it.
+
+:::caution
+
+If you need Docker (see below) and have Windows 10 Home Edition, you **must**
+install WSL.
+
+:::
+
+For a step-by-step guide to setting up WSL, installing the below pre-requisites,
+and getting set-up to develop for BobaBoard using WSL see
+[The BobaBoard Guide to Setting up WSL](/docs/development/start-developing/wsl)
+
+### Git/GitHub
+
+**You will use Git and a [GitHub](https://github.com/) account to download the
+BobaBoard code, make changes and send them out for review. **You can
+[learn more about Git and GitHub](/docs/volunteering/coding/github/understanding-github)
+in our knowledge base.
+
+To install git, follow the
+[instructions on GitHub](https://github.com/git-guides/install-git). While this
+documentation assumes you're using git through the command line, using GitHub
+Desktop or VSCode's Git(Hub) integration might provide an easier experience for
+newcomers.
+
+### NodeJS (with NVM)
+
+**NodeJS allows you to execute JavaScript outside of a web browser.** This
+should be installed via the
+[**Node Version Manager**](https://github.com/nvm-sh/nvm) (NVM), which allows
+you to manage multiple versions of NodeJS on the same machine.
+
+:::caution
+
+You can also install NodeJS directly through the installer, but you won't be
+able to switch between versions. It is **highly, highly recommended** that you
+install NVM.
+
+:::
+
+:::tip
+
+While NVM isn't natively supported on Windows, you can get access to it through
+[WSL](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
+
+:::
+
+### Yarn
+
+**[Yarn](https://classic.yarnpkg.com/en/) is a JavaScript Package Manager, which
+automatically downloads and installs the external code that BobaBoard depends
+on**, without you having to manually download everything yourself. Yarn is also
+used to hide complex scripts under simpler commands like `yarn run test`.
+
+:::tip
+
+Using `npm` instead of `yarn` will result in errors. You can blame React for
+that.
+
+:::
+
+### Docker [BobaBackend Only]
+
+[**Docker**](https://www.docker.com/products/docker-desktop) runs applications
+in containers.
+[I literally had to Google an ELI5.](https://www.reddit.com/r/docker/comments/9xwlg6/can_anyone_eli5_what_docker_is_and_its_practical/)
+Trust me, you don't need to understand Docker to use it.
+
+- You also need [Docker Compose](https://docs.docker.com/compose/install/). This
+  comes for free with the above in Windows and Mac, but might need additional
+  steps on Linux.
+
+:::warning
+
+**[Windows Only]** You should run docker in a WSL2 instance. There's a checkbox
+in Docker settings for this. (This is required if you have Windows 10 Home
+Edition, and only recommended for other versions of Windows 10.) If Docker is
+failing to start, make sure you have WSL2 installed.
+
+:::
+
+Docker will be used to run BobaBoard's
+[**PostgreSQL**](https://www.postgresql.org/) database and the
+[**Redis**](https://redis.io/topics/quickstart) cache without globally
+installing them on your system. You can
+[learn more about caches](.../../../knowledge-base/caching) in our knowledge
+base.
+
+## Next Steps
+
+You can install each codebase independently by following the "fetching
+dependencies through yarn" section in its instructions. If you want to "catch
+them all", you should go through each of them in reading order and follow the
+"local copy" section instead.
+
+## BobaBoard Install Fests
+
+"Install Fests" are events where one or more contributors install the BobaBoard
+codebase together and help each other in case of problems. Ms. Boba is also
+there on standby for any question that comes up.
+
+While we plan to organize regular install fests in the future, we currently
+schedule them on request. You can contact Ms. Boba for availability.
