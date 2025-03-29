@@ -64,7 +64,7 @@ that they can skip it, [mute it](/docs/users/howto/threads#thread-menu),
 Content notices appear with a orange-yellow pill background (reminiscent of a
 caution road sign) with black text.
 
-[whisper]: /img/userguide/tagging/whisper.png
-[hashtags]: /img/userguide/tagging/hashtags.png
-[categories]: /img/userguide/tagging/categories.png
-[cn]: /img/userguide/tagging/contentnotice.png
+[whisper]: ../../../../assets/img/userguide/tagging/whisper.png
+[hashtags]: ../../../../assets/img/userguide/tagging/hashtags.png
+[categories]: ../../../../assets/img/userguide/tagging/categories.png
+[cn]: ../../../../assets/img/userguide/tagging/contentnotice.png

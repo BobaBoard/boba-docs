@@ -36,7 +36,7 @@ of thumb:
 Here is an overview of how the components in BobaComponents come together to
 compose the website structure.
 
-![Layout.tsx covers the page as a whole, FeedWithMenu.tsc hasthe main content feed, and SideMenu.tsx controls the side menu content.](/img/legacy/ui.png)
+![Layout.tsx covers the page as a whole, FeedWithMenu.tsc hasthe main content feed, and SideMenu.tsx controls the side menu content.](../../../../assets/img/legacy/ui.png)
 
 ### Layout Structure
 
@@ -57,7 +57,7 @@ the mobile breakpoint is reached, and will only be displayed again when the
 The component for regular, display posts is `post/Post.tsx`, which has the
 following structure:
 
-![There are four sections, each named after what they control: Header.tsx, Tags.tsx, Footer.tsx, and BobaEditor (which is its own repo). Card.tsx contains the code to bring it all together.](/img/legacy/poststructure.png)
+![There are four sections, each named after what they control: Header.tsx, Tags.tsx, Footer.tsx, and BobaEditor (which is its own repo). Card.tsx contains the code to bring it all together.](../../../../assets/img/legacy/poststructure.png)
 
 The component for the post editor is `post/PostEditor.tsx` , which follows a
 similar structure but swaps out `Footer.tsx` for `EditableFooter.tsx`.
@@ -69,7 +69,7 @@ which are multiple comments chained one after the other. These classes could
 probably be merged into one, which would be a great refactoring exercise for the
 willing.
 
-![Comment.tsx controls the large post-like comments, while CommentChain.tsx covers the small comment chains below larger posts.](/img/legacy/comment.png)
+![Comment.tsx controls the large post-like comments, while CommentChain.tsx covers the small comment chains below larger posts.](../../../../assets/img/legacy/comment.png)
 
 **Imperative Handler**
 

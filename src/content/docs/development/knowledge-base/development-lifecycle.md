@@ -302,7 +302,7 @@ offering to open a PR. When you click this button you'll be able to see a
 color-coded before and after of all the edits you have made (this is called a
 'diff', since it shows you the differences between two things).
 
-![An image of the Pull Request button on the main repo page.](/img/legacy/devenv3.png)
+![An image of the Pull Request button on the main repo page.](../../../../assets/img/legacy/devenv3.png)
 
 Here, you'll write a brief description of the changes you've worked on. You can
 request specific people to take a look at your PR, but not everyone will know

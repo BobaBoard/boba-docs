@@ -40,17 +40,17 @@ interface DropdownProps {
 
 ### Desktop View
 
-![Dropdown on Desktop](/img/documentation/ui-components/dropdown-desktop.png)
+![Dropdown on Desktop](../../../../assets/img/documentation/ui-components/dropdown-desktop.png)
 
 ### Mobile View
 
-![Dropdown on Mobile](/img/documentation/ui-components/dropdown-mobile.png)
+![Dropdown on Mobile](../../../../assets/img/documentation/ui-components/dropdown-mobile.png)
 
 ## Final Result
 
 ### Mockup
 
-![Gif Search](../../../static/img/wips/gif-search.png)
+![Gif Search](../../../../assets/img/wips/gif-search.png)
 
 ### Considerations
 

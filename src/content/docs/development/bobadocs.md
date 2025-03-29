@@ -27,7 +27,7 @@ All the documentation pages in BobaDocs are stored in the `docs` folder as `.md`
 files. In `docs`, there are four folders, each of which correspond to one of the
 guides on BobaDocs as shown below:
 
-![a screenshot of the git repo compared to the top navbar on BobaDocs. lines are drawn between items with similar names](/img/volunteer/bobadocsnav4.jpg)
+![a screenshot of the git repo compared to the top navbar on BobaDocs. lines are drawn between items with similar names](../../../assets/img/volunteer/bobadocsnav4.jpg)
 
 Each of these guides has a different purpose:
 
@@ -46,7 +46,7 @@ Each of these guides has a different purpose:
 Opening any one of these folders will net you the files and folders that are in
 the guide. As an example, here's the Development Guide's files:
 
-![a screenshot of the git repo compared to the sidebar on BobaDocs. lines are drawn between items with similar names](/img/volunteer/bobadocsnav2.jpg)
+![a screenshot of the git repo compared to the sidebar on BobaDocs. lines are drawn between items with similar names](../../../assets/img/volunteer/bobadocsnav2.jpg)
 
 Docusaurus uses the structure within each guide's folder to generate the
 sidebars for that guide. Each markdown file is a page, and they can be collected

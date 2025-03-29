@@ -14,7 +14,7 @@ purpose and set of technologies:
 - [**boba-frontend**](#boba-frontend): ties verything together into something
   _aspirationally_ usable and useful.
 
-![An overview of how BobaBoard's components fit together](/img/documentation/codebase-overview.png)
+![An overview of how BobaBoard's components fit together](../../../assets/img/documentation/codebase-overview.png)
 
 :::note Why this split?
 
