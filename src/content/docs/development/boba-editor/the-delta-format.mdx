@@ -5,8 +5,6 @@ sidebar:
   hidden: true
 ---
 
-import EditorPreview from "../../../../components/EditorPreview";
-
 The Delta format is at the base of QuillJS's text editing capabilities. You can
 [read the in-depth guide](https://quilljs.com/docs/delta/) on the QuillJS
 website. This introductory overview goes over what you need to understand to
@@ -30,30 +28,6 @@ we stored the rendered HTML.
 In its simplest form (the one eventually stored in the database) a Delta is an
 array of insert operations.
 
-<EditorPreview
-  text={`
-[
-    { "insert": "This is a H1 Header" },
-    { "insert": "\\n", "attributes": { "header": 1 } },
-    { "insert": "You can have various types of formatting, like " },
-    { "insert": "inline code", "attributes": { "code": true } },
-    { "insert": ", " },
-    { "insert": "bold text", "attributes": { "bold": true } },
-    { "insert": ", or even " },
-    { "insert": "spoilers!", "attributes": { "inline-spoilers": true } },
-    { "insert": "!\\n" },
-    { "insert": 
-      { 
-        "block-image": {
-          "src": "../../../assets/img/documentation/cool.png",
-          "width": "200",
-          "height": "106"
-        }
-      }
-    },
-    { "insert": "As seen above ☝️, images and other types of embeds are also supported." }
-]`}
-/>
 
 ## Insert operations
 
@@ -70,22 +44,6 @@ Inline formatting applies only to the text within a specific insert operation.
 The type of formatting is specified through the "attributes" property of the
 corresponding insert operation.
 
-<EditorPreview
-  text={`
-[
-    { "insert": "Here's an " },
-    { "insert": "example", "attributes": { "italic": true } },
-    { "insert": " of " },
-    { "insert": "inline ", "attributes": { "bold": true } },
-    { "insert": "~styles~", "attributes": 
-        { 
-          "bold": true, 
-          "link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-          "italic": true
-        }
-    }
-]`}
-/>
 
 #### Custom inline formats
 
@@ -106,17 +64,6 @@ newline character (`\n`). The type of formatting is specified through the
 "attributes" property of the corresponding insert operation, whose textual value
 is a single `\n`.
 
-<EditorPreview
-  text={`
-[
-    { "insert": "When a insert operation contains only a single '\\\\n' its attributes apply to the whole previous \\n" },
-    { "insert": "line (which can still have " },
-    { "insert": "inline attributes", "attributes": { "bold": true } },
-    { "insert": ")" },
-    { "insert": "\\n", "attributes": { "header": 1 } },
-    { "insert": "!" }
-]`}
-/>
 
 #### Custom line formats
 
@@ -137,22 +84,6 @@ the insert attribute will be an object with a single attribute named after the
 type of embed itself. The value of this attribute will be passed to the embed
 element for rendering.
 
-<EditorPreview
-  text={`
-[
-    { "insert": "Embeds represent complex non-textual elements, like images:" },
-    { "insert": 
-      { 
-        "block-image": {
-          "src": "https://media1.tenor.com/images/4335e4cadbb8ac96f1e888710ebbff08/tenor.gif?itemid=15782429",
-          "width": "200",
-          "height": "200",
-          "spoilers": true
-        }
-      }
-    }
-]`}
-/>
 
 #### Custom embeds
 
