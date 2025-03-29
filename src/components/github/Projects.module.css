@@ -1,0 +1,59 @@
+.container {
+  --padding-block: 12px;
+  --padding-inline: 16px;
+  --border-radius: 10px;
+  border: 2px solid #ff9b9f25;
+  border-radius: var(--border-radius);
+  padding-top: 0px;
+}
+.container:not(.empty) {
+  background-color: #ff9b9f08;
+}
+
+.container h3 {
+  padding-inline: var(--padding-inline);
+  padding-block: var(--padding-block) 0;
+  border-start-start-radius: var(--border-radius);
+  border-start-end-radius: var(--border-radius);
+  font-weight: 600;
+  margin-block: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container h3 > a {
+  color: var(--ifm-color-primary-dark);
+}
+
+.container h3 > a::after {
+  content: "\00a0\00a0↗";
+}
+
+.container > div {
+  border-block-start: 0;
+  border-end-start-radius: var(--border-radius);
+  border-end-end-radius: var(--border-radius);
+  padding-inline: var(--padding-inline);
+  padding-block: var(--padding-block);
+  display: flex;
+  flex-direction: column;
+}
+
+.container + .container {
+  margin-top: 20px;
+}
+
+.empty {
+  border: 1px dashed var(--ifm-color-gray-700);
+  padding-inline: var(--padding-inline);
+  padding-block: var(--padding-block);
+}
+
+.closed {
+  filter: grayscale();
+  transition: all 0.5s;
+}
+
+.container.closed:hover {
+  filter: none;
+}

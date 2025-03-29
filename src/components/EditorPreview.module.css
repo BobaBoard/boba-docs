@@ -1,0 +1,13 @@
+.editorContainer {
+  border-radius: var(--ifm-pre-border-radius);
+  background-color: whitesmoke;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  color: black;
+}
+.previewContainer {
+  padding: 0.5em;
+  border: 1px dashed lightgray;
+  border-radius: var(--ifm-pre-border-radius);
+  background-color: white;
+}
