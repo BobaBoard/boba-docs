@@ -3,13 +3,12 @@ import { defineConfig } from "astro/config";
 import favicons from "astro-favicons";
 import icon from "astro-icon";
 import metaTags from "astro-meta-tags";
+import react from "@astrojs/react";
 import robotsTxt from "astro-robots-txt";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
 import starlightSidebarTopics from "starlight-sidebar-topics";
 import tailwind from "@astrojs/tailwind";
-
-import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({

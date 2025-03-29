@@ -4,10 +4,7 @@ sidebar:
   order: 3
 ---
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faWindows, faLinux } from "@fortawesome/free-brands-svg-icons";
-import { faClock } from "@fortawesome/free-regular-svg-icons";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { Icon } from "@astrojs/starlight/components";
 
 :::warning
 
@@ -30,25 +27,23 @@ additional information or context or to ensure you have the most up-to-date
 installs. Linking to an external guide is not an indication of complexity! We've
 included an estimated reading/working time (not including download and install
 times) to give you an idea of how long each external source is; reading/working
-estimates appear as [<FontAwesomeIcon icon={faClock} /> time].
+estimates appear as [<Icon name="seti:clock" class="inline-icon" /> time].
 
 If you currently have WSL feel free to skip around as needed. We recommend
 running WSL2 with an Ubuntu distro. You can upgrade to WSL2 by following the
 [instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2).
-[<FontAwesomeIcon icon={faClock} /> 1 min] If you're using another Linux distro
-you can add a second distro by
+[<Icon name="seti:clock" class="inline-icon" /> 1 min] If you're using another Linux distro you can
+add a second distro by
 [following these instructions](https://learn.microsoft.com/en-us/windows/wsl/install#change-the-default-linux-distribution-installed)
-[<FontAwesomeIcon icon={faClock} /> 1 min].
+[<Icon name="seti:clock" class="inline-icon" /> 1 min].
 
-<!-- prettier-ignore-start -->
 :::note
 
-The guide uses the Windows logo <FontAwesomeIcon icon={faWindows} /> to indicate
-items that should be installed directly to Windows, while the Linux logo <FontAwesomeIcon icon={faLinux} />
-indicates items that should be installed into your chosen Linux distro (Ubuntu).
+The guide uses the Windows logo <Icon name="seti:windows" class="inline-icon" /> to indicate items
+that should be installed directly to Windows, while the Linux logo indicates
+items that should be installed into your chosen Linux distro (Ubuntu).
 
 :::
-<!-- prettier-ignore-end -->
 
 ## What Is WSL?
 
@@ -57,7 +52,7 @@ Windows, unmodified, without a traditional virtual machine or dualboot setup.
 Simply put, WSL creates a Linux subdirectory on your system that you can use to
 develop software just like you could if you were running Linux.
 
-## <FontAwesomeIcon icon={faWindows} /> Installing Windows Terminal (Optional, but Recommended)
+## <Icon name="seti:windows" class="inline-icon" /> Installing Windows Terminal (Optional, but Recommended)
 
 Before you start, we recommend that you install the latest version of Windows
 Powershell and Windows Terminal. Windows Terminal automatically integrates with
@@ -84,7 +79,7 @@ listed near at top of the list.
 
 Follow
 [these instructions](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
-[<FontAwesomeIcon icon={faClock} /> 2 min] to install the most recent version of
+[<Icon name="seti:clock" class="inline-icon" /> 2 min] to install the most recent version of
 Powershell. Note that installing Powershell 7 _will not_ remove your Powershell
 5 install. If you also have Powershell 5 installed, we recommend that you
 manually uninstall it, as Windows occasionally gets confused concerning your
@@ -92,26 +87,26 @@ default terminal.
 
 After that's complete,
 [install Terminal](https://learn.microsoft.com/en-us/windows/terminal/install)
-[<FontAwesomeIcon icon={faClock} /> 4 min] and follow the instructions to set
-Powershell 7 as your default profile.
+[<Icon name="seti:clock" class="inline-icon" /> 4 min] and follow the instructions to set Powershell
+7 as your default profile.
 
-## <FontAwesomeIcon icon={faWindows} /> WSL Set-up
+## <Icon name="seti:windows" class="inline-icon" /> WSL Set-up
 
 1. Complete the instructions in the
    [Install WSL](https://learn.microsoft.com/en-us/windows/wsl/install#install-wsl-command)
-   [<FontAwesomeIcon icon={faClock} /> 1 min] section.
+   [<Icon name="seti:clock" class="inline-icon" /> 1 min] section.
 
 2. Set-up your Linux username and password by
    [following these instructions](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#set-up-your-linux-username-and-password)
-   [<FontAwesomeIcon icon={faClock} /> 2 min].
+   [<Icon name="seti:clock" class="inline-icon" /> 2 min].
 
 3. Follow the
    [instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2)
-   [<FontAwesomeIcon icon={faClock} /> 1 min] to verify you've installed WSL2 or
-   to upgrade from WSL to WSL2, if needed.
+   [<Icon name="seti:clock" class="inline-icon" /> 1 min] to verify you've installed WSL2 or to
+   upgrade from WSL to WSL2, if needed.
 
 4. [Upgrade and update Ubuntu packages](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#update-and-upgrade-packages)
-   [<FontAwesomeIcon icon={faClock} /> 1 min].
+   [<Icon name="seti:clock" class="inline-icon" /> 1 min].
 
 **Congrats! You've now installed WSL2 with an Ubuntu distro!**
 
@@ -132,22 +127,12 @@ There are two ways to access your WSL terminal:
    installed another Linux distro, this may be called something different (i.e.
    "Debian on Windows").
 
-<!-- prettier-ignore-start -->
+2. If you have Windows Terminal open already, click the
+   <Icon name="down-caret" class="inline-icon" /> to access the dropdown menu and display the
+   profiles you can open. Then select Ubuntu or your Linux distro from the list.
 
-2. If you have Windows Terminal open already, click the <FontAwesomeIcon icon={faChevronDown} />
-to access the dropdown menu and display the profiles you can open. Then
-select Ubuntu or your Linux distro from the list.
-
-<!-- prettier-ignore-end -->
-
-<img
-  src="../../../../assets/img/development/wsl/powershell_profiles.png"
-  style={{ width: "45%", paddingRight: 5 }}
-/>
-<img
-  src="../../../../assets/img/development/wsl/powershell_wsl_tab.png"
-  style={{ width: "45%" }}
-/>
+![](../../../../assets/img/development/wsl/powershell_profiles.png)
+![](../../../../assets/img/development/wsl/powershell_wsl_tab.png)
 
 Both of these methods open a WSL terminal with your chosen distro for you to
 use. The rest of this guide will refer to this terminal as "Linux terminal" or
@@ -164,7 +149,7 @@ instructions below _carefully_.
 
 :::
 
-### <FontAwesomeIcon icon={faLinux} /> Installing Git
+### <Icon name="linux" class="inline-icon" /> Installing Git
 
 Git is a versioning control system which tracks changes across codebases as
 programmers work and allows us to coordinate our work. Understanding the details
@@ -194,7 +179,7 @@ a Github account in order to develop with Boba!
    installed. A specific version of git is not required; you can use the most
    recent version.
 
-### <FontAwesomeIcon icon={faLinux} /> Installing nvm and NodeJS
+### <Icon name="linux" class="inline-icon" /> Installing nvm and NodeJS
 
 We highly recommend installing nvm (node version manager), which allows you to
 install and use multiple versions of NodeJS in various environments without
@@ -248,7 +233,7 @@ and reopening it. If that fails, you may need to restart Windows.
    Your terminal will provide a list of the versions of NodeJS currently
    installed on WSL.
 
-### <FontAwesomeIcon icon={faLinux} /> Installing yarn
+### <Icon name="linux" class="inline-icon" /> Installing yarn
 
 Yarn is a package installer and manager for projects. Now that you have NodeJS
 you can install yarn using npm.
@@ -268,7 +253,7 @@ you can install yarn using npm.
 Your terminal will reply with a version number. Like git, you can use the most
 up-to-date version of yarn with no issue.
 
-### <FontAwesomeIcon icon={faWindows} /> Installing Docker
+### <Icon name="seti:windows" class="inline-icon" /> Installing Docker
 
 Docker runs programs in containers and is used by BobaBackend to run the
 database on your local server. From the Docker resources:
@@ -290,7 +275,7 @@ Docker.
 
 1. Follow the Windows instructions for installing Docker for WSL
    [here](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers#install-docker-desktop)
-   [<FontAwesomeIcon icon={faClock} /> 2 min].
+   [<Icon name="seti:clock" class="inline-icon" /> 2 min].
 
 **Congrats! You've installed all the BobaBoard pre-requisites!**
 
