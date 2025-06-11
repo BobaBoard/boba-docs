@@ -1,5 +1,6 @@
 ---
 title: Hall of Fame
+draft: true
 ---
 
 Funny things that happened in the history of BobaBoard.
