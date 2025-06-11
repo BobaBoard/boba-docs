@@ -8,12 +8,13 @@ import robotsTxt from "astro-robots-txt";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
 import starlightSidebarTopics from "starlight-sidebar-topics";
-import tailwind from "@astrojs/tailwind";
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://docs.bobaboard.com",
   base: "/",
+
   integrations: [favicons(), robotsTxt({
     policy: [
       {
@@ -47,12 +48,12 @@ export default defineConfig({
   }), metaTags(), starlight({
     logo: { src: "./public/favicon.svg" },
     title: "BobaBoard Docs",
-    social: {
-      blueSky: "https://bsky.app/profile/bobaboard.bsky.social",
-      mastodon: "https://tech.lgbt/@bobaboard@blorbo.social",
-      github: "https://github.com/BobaBoard/boba-docs",
-      twitter: "https://twitter.com/BobaBoard",
-    },
+    social: [
+      {icon: 'blueSky', label: 'BlueSky', href: "https://bsky.app/profile/bobaboard.bsky.social"},
+      {icon: 'mastodon', label: 'Mastodon', href: "https://tech.lgbt/@bobaboard@blorbo.social"},
+      {icon: 'github', label: 'GitHub', href: "https://github.com/BobaBoard/boba-docs"},
+      {icon: 'twitter', label: 'Twitter', href: "https://twitter.com/BobaBoard"},
+  	],
     editLink: {
       baseUrl: "https://github.com/BobaBoard/boba-docs/edit/main/",
     },
@@ -79,10 +80,14 @@ export default defineConfig({
         autogenerate: { directory: "extra" },
       },
     ],
-    customCss: ["./src/tailwind.css"],
+    customCss: ["./src/styles/global.css"],
     plugins: [starlightImageZoom()],
     components: {
       SocialIcons: "./src/components/SocialLinks.astro",
     },
-  }), tailwind({ applyBaseStyles: false }), icon(), react()],
+  }), icon(), react()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
