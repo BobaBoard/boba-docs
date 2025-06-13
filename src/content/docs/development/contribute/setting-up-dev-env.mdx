@@ -4,10 +4,12 @@ sidebar:
   order: 2
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 This is an overview of the programs you'll need to install before developing for
 BobaBoard.
 
-:::tip
+<Aside type="tip">
 
 **Developing for BobaBoard requires use of the command line.** While this might
 seem scary, the amount of commands needed is minimal and they can often be run
@@ -16,7 +18,7 @@ without a deep understanding of them.
 If you're intimidated, contact Ms. Boba for help! Also consider editing this
 page to make it less scary for newcomers.
 
-:::
+</Aside>
 
 ## What to Install
 
@@ -83,12 +85,12 @@ install NVM.
 
 :::
 
-:::tip
+<Aside type="tip">
 
 While NVM isn't natively supported on Windows, you can get access to it through
 [WSL](https://learn.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-wsl).
 
-:::
+</Aside>
 
 ### Yarn
 
@@ -97,12 +99,12 @@ automatically downloads and installs the external code that BobaBoard depends
 on**, without you having to manually download everything yourself. Yarn is also
 used to hide complex scripts under simpler commands like `yarn run test`.
 
-:::tip
+<Aside type="tip">
 
 Using `npm` instead of `yarn` will result in errors. You can blame React for
 that.
 
-:::
+</Aside>
 
 ### Docker [BobaBackend Only]
 

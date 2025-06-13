@@ -5,6 +5,7 @@ sidebar:
 ---
 
 import { Icon } from "@astrojs/starlight/components";
+import { Aside } from '@astrojs/starlight/components';
 
 :::warning
 
@@ -110,13 +111,13 @@ After that's complete,
 
 **Congrats! You've now installed WSL2 with an Ubuntu distro!**
 
-:::tip
+<Aside type="tip">
 
 You might need to restart so that Windows fully recognizes your WSL. If at any
 point your WSL behaves strangely by not recognizing that
 languages/packages/programs have been installed, a restart usually fixes that.
 
-:::
+</Aside>
 
 ## Working in WSL
 
@@ -200,12 +201,12 @@ issue.
    If your install is successful, your terminal should retun `nvm` as the
    response.
 
-:::tip
+<Aside type="tip">
 
 If your terminal doesn't recognize the nvm command, try closing your terminal
 and reopening it. If that fails, you may need to restart Windows.
 
-:::
+</Aside>
 
 3. Which version of Node is needed depends primarily on what you are going to be
    working on. If you are developing for the main BobaBoard codebases
@@ -349,14 +350,14 @@ and WSL.
 
   :::
 
-  :::tip
+  <Aside type="tip">
 
   If you have extensions you like to use in Windows which you would like to use
   in WSL, navigate to the Extensions panel and click the cloud download next to
   the `WSL: Ubuntu - Installed` title. This will re-install all of your local
   extensions to WSL.
 
-  :::
+ </Aside>
 
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)<br />Add
   the Remote Development extension to open any folder in a container, on a

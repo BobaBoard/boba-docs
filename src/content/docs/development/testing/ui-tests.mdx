@@ -2,6 +2,8 @@
 title: UI Tests with Jest and Storybook
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 This guide will cover how to write tests for the bobaboard-ui codebase. It
 assumes that you have some familiarity with Bobaboard as a user of the site,
 have taken at least a brief look at the file structure of the
@@ -114,7 +116,9 @@ component, it should already have stories written, but you may find that you
 have to tweak them a bit, or add additional props, to cover all the cases you
 need to test.
 
-:::tip Typescript Tip If you ever want to see exactly what all the props a given
+<Aside type="tip" title="Typescript Tip">
+
+If you ever want to see exactly what all the props a given
 component should or could have are, typescript has your back. Look in the src
 file for the component and find the `interface` and/or `type` declarations where
 the types are defined for the component's props. Here's an example from the
@@ -134,7 +138,7 @@ export interface BoardMenuItemProps {
 }
 ```
 
-:::
+</Aside>
 
 ### Actions
 
@@ -428,7 +432,9 @@ expect(screen.getAllByRole("link")).toHaveLength(8);
 That way if someone goes and adds an extra item into the story array at some
 point, they don't have to also update the length value in the test.
 
-:::tip Typescript Tip When you are trying to access the value of a story prop
+<Aside type="tip" title="Typescript Tip">
+
+When you are trying to access the value of a story prop
 with `Story.args.value` you may run in two sorts of related typescript errors:
 
 1. The prop is of a type that is actually `TypeA | TypeB`. We can tell it which
@@ -443,7 +449,9 @@ actually handle the null cases in our code and use
 [narrowing](https://www.typescriptlang.org/docs/handbook/2/narrowing.html) to
 determine which of multiple possible types we are working with, but for testing
 that's overkill. If something goes wrong, the repercussions are that the test
-fails, which is what we want to happen in the case of a problem anyway. :::
+fails, which is what we want to happen in the case of a problem anyway.
+
+</Aside>
 
 For an example of all of this put together into a complete test, let's look at
 the actual test for the scenario we mentioned in the Determine What to Test
@@ -483,8 +491,8 @@ test("Correctly marks boards with updates", async () => {
 });
 ```
 
-:::tip Accessibility - Aria Labels, Rolls, and Attributes You may have noticed
-that Testing Library queries rely heavily on accessible labels, roles, and
+<Aside type="tip" title="Accessibility - Aria Labels, Rolls, and Attributes">
+You may have noticed that Testing Library queries rely heavily on accessible labels, roles, and
 attributes. This is good because it reminds us to use them properly in our
 components.
 
@@ -503,7 +511,9 @@ is also a good resource. You don't need to read it all the way through for
 writing tests, but the
 [Providing Accessible Names and Descriptions](https://www.w3.org/TR/wai-aria-practices-1.2/#names_and_descriptions)
 section can be really helpful for better understanding how best to use aria
-labels. :::
+labels.
+
+</Aside>
 
 :::caution Aria in React Aria labels, rolls, and attributes need to go on the
 actual basic html elements in jsx, but Typescript/VScode won't catch it as a

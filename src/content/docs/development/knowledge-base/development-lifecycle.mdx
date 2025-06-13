@@ -4,12 +4,9 @@ sidebar:
   order: 7
 ---
 
-:::TODO
+import { Aside } from "@astrojs/starlight/components";
 
-Consider making this doc a folder with multiple sections and moving to the
-Volunteering section
-
-:::
+{/* TODO: Consider making this doc a folder with multiple sections and moving to the Volunteering section */}
 
 If you're new to collaborating on a code project, you may be wondering what that
 process looks like. This page will:
@@ -166,11 +163,7 @@ need to use when cloning is:
 
 GitHub has a button in its interface to get this URL.
 
-:::TODO
-
-Add explanation about HTTPs versus SSH.
-
-:::
+{/* Add explanation about HTTPs versus SSH. */}
 
 When you run the clone command a new folder named after the repository will be
 created and all the files will be stored inside. Navigate to the folder where
@@ -274,14 +267,14 @@ with the following messages:
 - 2nd commit: `Style read more button`
 - 3rd commit: `Display text when read more button is clicked`
 
-:::tip Keep it short and sweet
+<Aside type="tip" title="Keep it short and sweet">
 
 Commit messages have limited characters. It's best to make them descriptive
 enough so future-you and whoever is reading your code understands what you've
 been up to but not so long the important ideas don't fit in a single line.
 Multi-line commits are also possible and can be used to detail more information.
 
-:::
+</Aside>
 
 It's simple but in practice most of us have trouble remembering to make commits
 regularly and writing informative messages when we do. Don't worry too much
@@ -309,14 +302,14 @@ request specific people to take a look at your PR, but not everyone will know
 what you're working on, so you should do your best to explain it so even those
 with no context understand.
 
-:::tip Open Pull Requests Early
+<Aside type="tip"  title="Open Pull Requests Early">
 
 It can be a good idea to open pull requests even before your changes are fully
 ready to be merged. This allows you to start a conversation about the code
 you're working on and get early feedback that can save you time on changes
 later.
 
-:::
+</Aside>
 
 ### 7. The codebase owners review (and eventually "merge") the pull request
 
@@ -356,7 +349,7 @@ Once the pull request is approved, the pull request is "merged" and "closed".
 Once merged, your code becomes part of the `main` branch in the original
 `upstream` codebase. You can now delete the "feature branch" created in step 1.
 
-:::tip Branch Maintenance
+<Aside type="tip" title="Branch Maintenance">
 
 You can use GitHub's "Delete Branch" button to delete your branches, but you
 might find that your local branches still appear in VS Code or that your own
@@ -374,7 +367,7 @@ git remote prune origin
 git remote prune upstream
 ```
 
-:::
+</Aside>
 
 ### 8. Pulling from upstream
 

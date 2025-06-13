@@ -2,6 +2,8 @@
 title: Using Postman
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 You can send complex HTTP requests to the backend server using the
 [Postman API client](https://www.postman.com/product/api-client/). You can
 [download Postman here](https://www.postman.com/downloads/).
@@ -98,10 +100,10 @@ environment.
 
    Your request should now have the correct authorization header.
 
-   :::tip
+   <Aside type="tip">
 
    Your authentication token will expire after an hour. You will need to
    reauthenticate again after that by sending another **Authentication HTTP
    Request**.
 
-   :::
+   </Aside>

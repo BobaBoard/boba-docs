@@ -2,6 +2,8 @@
 title: Testing Basics
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 Tests are code that we write, which we can run on our application code to make
 sure it's behaving as we are expecting, and that any changes we've made don't
 have unintended consequences. The goal of tests is to catch bugs before they get
@@ -18,10 +20,14 @@ particular place.
 If you are working on changes, or a new feature, please add appropriate tests
 and run the existing tests on your changes.
 
-:::tip At the moment, there are many existing parts of the Boba codebase that
+<Aside type="tip">
+
+At the moment, there are many existing parts of the Boba codebase that
 need tests written for them. If you're a beginner looking to get involved,
 writing tests for the existing code can be a great way to get a sense of how
-things work while contributing critical infrastructure. :::
+things work while contributing critical infrastructure.
+
+</Aside>
 
 We use a number of techniques and tools for testing different parts of the
 codebase. The following pages will outline how to write different kinds of

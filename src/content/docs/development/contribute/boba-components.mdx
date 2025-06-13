@@ -4,6 +4,8 @@ sidebar:
   order: 6
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 \[[code](https://github.com/BobaBoard/boba-components),
 [demo](https://bobaboard-ui.netlify.app/)]
 
@@ -31,12 +33,12 @@ cd boba-components
 yarn install
 ```
 
-:::tip
+<Aside type="tip">
 
 The commands shown use HTTPS to interact with the code on GitHub but you can do
 so with SSH if you've got it set up
 
-:::
+</Aside>
 
 ### 2. Add the BobaBoard repository as a remote
 
@@ -134,13 +136,13 @@ BobaEditor as part of updating BobaComponents.
    You can now continue to the
    [development instructions](#development-instructions).
 
-   :::tip
+   <Aside type="tip">
 
    If you make changes to BobaEditor and want to see them reflected in
    BobaComponents, run `yarn run build` in the BobaEditor folder. BobaComponents
    should pick up the changes.
 
-   :::
+   </Aside>
 
 ## Development Instructions
 
@@ -164,9 +166,9 @@ You should now have a DevServer running at
 [http://localhost:6006](http://localhost:6006) that will look something like
 [the online demo](https://boba-components.netlify.app/).
 
-:::tip
+<Aside type="tip">
 
 If new code dependencies have been added, you might need to re-run
 `yarn install`. If the above command is giving you problems, give it a try!
 
-:::
+</Aside>

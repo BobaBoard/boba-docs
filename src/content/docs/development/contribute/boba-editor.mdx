@@ -4,6 +4,8 @@ sidebar:
   order: 7
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 \[[code](https://github.com/BobaBoard/boba-editor),
 [demo](https://bobaeditor.netlify.app/?path=/story/editor-preview--simple-editor)]
 
@@ -30,14 +32,14 @@ cd boba-editor
 yarn install
 ```
 
-:::tip
+<Aside type="tip">
 
 If you would prefer to use a GUI with GitHub, you can
 [fork and clone](https://docs.github.com/en/desktop/contributing-and-collaborating-using-github-desktop/adding-and-cloning-repositories/cloning-and-forking-repositories-from-github-desktop)
 via GitHub Desktop, then enter your new directory in a terminal and run
 `yarn install`.
 
-:::
+</Aside>
 
 ## Start a Local DevServer
 
@@ -61,12 +63,12 @@ You should now have a DevServer running at
 [http://localhost:6006](http://localhost:6006) that will look something like
 [the online demo](https://bobaeditor.netlify.app/).
 
-:::tip
+<Aside type="tip">
 
 If new code dependencies have been added, you might need to re-run
 `yarn install`. If the above command is giving you problems, give it a try!
 
-:::
+</Aside>
 
 ## Developing for Embeds
 

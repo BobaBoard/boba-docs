@@ -4,6 +4,8 @@ sidebar:
   order: 1
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 Application Programming Interfaces (APIs) allow applications (clients) to
 request data or actions from other applications (servers), without being given
 full access to all the data and actions that exists on those servers.
@@ -26,12 +28,12 @@ understanding, definition, and scalability of APIs. You can find more details
 about the REST principles followed by BobaBackend in the
 [API guidelines](./API-guidelines) page.
 
-:::tip
+<Aside type="tip">
 
 You can explore the full BobaBackend API on the
 [REST API documentation page](/docs/development/rest-api/).
 
-:::
+</Aside>
 
 ## How a REST API works
 
@@ -43,7 +45,7 @@ or request data.
 A REST API also specifies the format of the data the client needs to send for
 the operation and the format of the data it will receive in response.
 
-:::tip
+<Aside type="tip">
 
 When running `boba-backend` locally, you can send an API request and see an
 example of an API response by opening your browser and going to the
@@ -70,7 +72,7 @@ Response details (assuming success):
 
 </details>
 
-:::
+</Aside>
 
 When a client makes a request to a REST API, it uses different
 [`HTTP methods`](https://www.restapitutorial.com/lessons/httpmethods.html) to
@@ -84,12 +86,7 @@ response is referred to as the request/response payload. In the case of
 BobaBoard's API, the responses are returned in the
 [`JSON format`](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON).
 
-:::TODO
-
-Add a quick explanation of different type of request parameters (URL, query and
-body).
-
-:::
+{/* TODO: Add a quick explanation of different type of request parameters (URL, query and body). */}
 
 ## REST API example {#api-example}
 
@@ -117,12 +114,12 @@ Remember that endpoints often accept only a subset of these operations. Make
 sure to check the documentation of the APIs you're using before sending
 requests!
 
-:::tip
+<Aside type="tip">
 
 For a refresher on HTTP Status codes,
 [MDN is your friend](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)!
 
-:::
+</Aside>
 
 ### GET: Fetch the data for a contribution in a thread
 
@@ -143,12 +140,12 @@ Possible responses include:
 - **Authentication needed:** An HTTP Status Code of `401` if the access requires
   authentication data and none was found in the request.
 
-:::tip
+<Aside type="tip">
 
 `GET` requests are the default type of request the browser sends when you access
 a web page. This means you can access `GET` endpoints through your browsers!
 
-:::
+</Aside>
 
 ### POST: Create a new contribution in a thread
 
@@ -191,11 +188,11 @@ Possible responses include:
 - **Conflict:** An HTTP Status Code of `409` if a contribution with the given id
   already exists.
 
-:::tip
+<Aside type="tip">
 
 `POST` requests are often used by browsers when submitting forms.
 
-:::
+</Aside>
 
 ### PUT: Update a contribution in a thread
 
@@ -221,13 +218,13 @@ Possible responses include:
 - **Not found:** An HTTP Status Code of `404` if the contribution does not
   exist.
 
-:::tip
+<Aside type="tip">
 
 `PUT` requests are not easily accessible through browsers! To issue one, you can
 use a tool like [Postman](docs/development/boba-backend/using-postman) or write
 a test for your endpoint.
 
-:::
+</Aside>
 
 ### DELETE: Delete a contribution in a thread
 
@@ -249,10 +246,10 @@ Possible responses include:
 - **Not found:** An HTTP Status Code of `404` if the contribution does not
   exist.
 
-:::tip
+<Aside type="tip">
 
 `DELETE` requests are not easily accessible through browsers! To issue one, you
 can use a tool like [Postman](docs/development/boba-backend/using-postman) or
 write a test for your endpoint.
 
-:::
+</Aside>

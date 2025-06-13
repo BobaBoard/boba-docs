@@ -4,6 +4,8 @@ sidebar:
   order: 2
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 An API `endpoint` is a URL clients can request to execute operations. Following
 REST principles, BobaBoard's server endpoints are grouped by the type of
 resource they refer to (e.g. boards, threads, users). Their naming and
@@ -25,7 +27,7 @@ Each subfolder in the
 [`server/` directory](https://github.com/BobaBoard/boba-backend/tree/master/server)
 defines the endpoints associated with the corresponding resource (e.g. boards,
 threads, users). For example, files in the `server/boards/` directory define the
-endpoints at the `[server_adress]/boards/*` URLs. In Express, the server
+endpoints at the `[server_address]/boards/*` URLs. In Express, the server
 framework BobaBoard uses, endpoints are defined through
 [Routes](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
 
@@ -50,12 +52,12 @@ The `server/all-routes.ts` file associates the routers exported by the
 
 ## Adding a new endpoint
 
-:::tip
+<Aside type="tip">
 
 A more general explanation of Express routing is available
 [on MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
 
-:::
+</Aside>
 
 1. Locate the `routes.ts` file corresponding to the resource you want to add an
    endpoint to. It will be contained within the `server/[resource_name]`
@@ -86,13 +88,13 @@ Each route follows the same general structure:
 router.HTTP_METHOD("relative/path/to/route/", [middlewares], [routeHandler]);
 ```
 
-:::tip
+<Aside type="tip">
 
 An express middleware is a function that runs before `routeHandler` is executed.
 You can read more about middlewares on the
 [Express documentation website](https://expressjs.com/en/guide/using-middleware.html).
 
-:::
+</Aside>
 
 For example, the following code, contained within the `server/posts/routes.ts`
 file, defines the `/posts/:post_id/comment` endpoint:
@@ -156,12 +158,12 @@ Each endpoint should be documented and tested.
 We use the [OpenAPI 3.1](https://spec.openapis.org/oas/latest.html) spec to
 document API endpoints.
 
-:::tip
+<Aside type="tip">
 
 You can learn more about the libraries used and the setup
 [on this dev.to article](https://dev.to/essentialrandom/documenting-express-rest-apis-with-openapi-and-jsdoc-m68).
 
-:::
+</Aside>
 
 OpenAPI specifications are best learned by looking at existing documentation. If
 you need more exhaustive explanations (or have doubts), documentation is
@@ -303,8 +305,4 @@ Other documentation can refer to these components by using the
 
 ### Adding examples
 
-:::TODO
-
-This section is incomplete. Ask Ms. Boba to fill it out!
-
-:::
+{/* TODO: This section is incomplete. Ask Ms. Boba to fill it out! */}
