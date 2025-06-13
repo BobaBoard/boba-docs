@@ -1,5 +1,5 @@
 ---
-title: BobaEditor Codebase Guide
+title: boba-editor Codebase Guide
 sidebar:
   order: 3
 ---
@@ -9,9 +9,9 @@ For installation instructions check out
 
 ## Overview
 
-The [BobaEditor Codebase](https://github.com/BobaBoard/boba-editor) contains all
+The [boba-editor Codebase](https://github.com/BobaBoard/boba-editor) contains all
 code pertaining to BobaBoard's text editing capabilities
-([see demo](https://bobaeditor.netlify.app/)). It's written in Typescript and
+([see demo](https://boba-editor.netlify.app/)). It's written in Typescript and
 React.
 
 There are two important folders:
@@ -101,7 +101,7 @@ backend.
 
 ## Exported Methods
 
-Beside the Editor itself, BobaEditor's package exports include:
+Beside the Editor itself, boba-editor's package exports include:
 
 - `setTumblrEmbedFetcher`: must be passed a method that, given a Tumblr url,
   returns the corresponding embed. This is because Tumblr's embed library
@@ -122,7 +122,7 @@ See [How to use Storybook](./howtouse-storybook)
 
 ## Debugging
 
-BobaEditor uses the [debug](https://www.npmjs.com/package/debug) JS library. To
+boba-editor uses the [debug](https://www.npmjs.com/package/debug) JS library. To
 trigger debugging in the JavaScript console, you must set the value of the
 corresponding flag in localStorage by using one of the following commands within
 the console itself:

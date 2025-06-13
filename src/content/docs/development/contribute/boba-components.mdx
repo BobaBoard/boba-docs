@@ -50,16 +50,16 @@ Run the following command:
 git remote add upstream https://github.com/BobaBoard/boba-components.git
 ```
 
-### 3. Install BobaEditor
+### 3. Install boba-editor
 
-BobaComponents lists BobaEditor as a peer dependency. This means that, while
-BobaEditor won't be installed automatically by `yarn install`, it is required
+BobaComponents lists boba-editor as a peer dependency. This means that, while
+boba-editor won't be installed automatically by `yarn install`, it is required
 for BobaComponents to run.
 
-#### Option 1: Fetch BobaEditor through yarn
+#### Option 1: Fetch boba-editor through yarn
 
 You should follow these instructions if you don't intend to make changes to
-BobaEditor, or don't care about running the latest version of BobaEditor.
+boba-editor, or don't care about running the latest version of boba-editor.
 
 ```bash showLineNumbers
 yarn add @bobaboard/boba-editor
@@ -72,7 +72,7 @@ of incompatible changes. **Since Ms. Boba isn't regularly releasing npm updates,
 let her know if you wish to go this route.**
 
 You can
-[check when BobaEditor was last released](https://www.npmjs.com/package/@bobaboard/boba-editor)
+[check when boba-editor was last released](https://www.npmjs.com/package/@bobaboard/boba-editor)
 on its npm page.
 
 :::
@@ -80,28 +80,28 @@ on its npm page.
 You can now continue to the
 [development instructions](#development-instructions).
 
-#### Option 2: Use a local copy of BobaEditor
+#### Option 2: Use a local copy of boba-editor
 
 You should follow these instructions if you want to make parallel changes to
-BobaEditor as part of updating BobaComponents.
+boba-editor as part of updating BobaComponents.
 
-1. **[Install BobaEditor](./boba-editor).**
+1. **[Install boba-editor](./boba-editor).**
 
-   The rest of these instructions assume you're installing BobaEditor in the
+   The rest of these instructions assume you're installing boba-editor in the
    same containing folder as BobaComponents.
 
    :::danger
 
-   If you install BobaEditor _within_ BobaComponents, you're going to have a bad
+   If you install boba-editor _within_ BobaComponents, you're going to have a bad
    time.
 
    :::
 
-2. **Build and link BobaEditor.**
+2. **Build and link boba-editor.**
 
    :::caution
 
-   **Make sure you're in the BobaEditor directory!** To check the present
+   **Make sure you're in the boba-editor directory!** To check the present
    directory, you can use the `pwd` command.
 
    :::
@@ -117,7 +117,7 @@ BobaEditor as part of updating BobaComponents.
    This will create the `@bobaboard/boba-editor` package on your _local_
    machine.
 
-3. **Install BobaEditor in BobaComponents**
+3. **Install boba-editor in BobaComponents**
 
    :::caution
 
@@ -138,8 +138,8 @@ BobaEditor as part of updating BobaComponents.
 
    <Aside type="tip">
 
-   If you make changes to BobaEditor and want to see them reflected in
-   BobaComponents, run `yarn run build` in the BobaEditor folder. BobaComponents
+   If you make changes to boba-editor and want to see them reflected in
+   BobaComponents, run `yarn run build` in the boba-editor folder. BobaComponents
    should pick up the changes.
 
    </Aside>
