@@ -1,3 +1,5 @@
+import starlightOpenAPI, { openAPISidebarGroups } from "starlight-openapi";
+
 // @ts-check
 import { defineConfig } from "astro/config";
 import favicons from "astro-favicons";
@@ -81,53 +83,72 @@ export default defineConfig({
       customCss: ["./src/styles/global.css"],
       plugins: [
         starlightImageZoom(),
-        starlightSidebarTopics([
+        // Generate the OpenAPI documentation pages.
+        starlightOpenAPI([
           {
-            label: "Project Guide",
-            link: "/project/intro",
-            icon: "information",
-            items: [
-              {
-                label: "Project Guide",
-                autogenerate: { directory: "project" },
-              },
-            ],
+            base: "api",
+            schema: "./src/data/backend-open-api.json",
+            sidebar: { label: "REST API" },
+						operations: { badges: true }
           },
-          {
-            label: "Development Guide",
-            link: "/development/intro",
-            icon: "seti:powershell",
-            items: [
-              {
-                label: "Development Guide",
-                autogenerate: { directory: "development" },
-              },
-            ],
-          },
-          {
-            label: "Volunteering Guide",
-            link: "/volunteering/experience/intro",
-            icon: "heart",
-            items: [
-              {
-                label: "Volunteering Guide",
-                autogenerate: { directory: "volunteering" },
-              },
-            ],
-          },
-          {
-            label: "User Guide",
-            link: "/users/intro",
-            icon: "laptop",
-            items: [
-              { label: "User Guide", autogenerate: { directory: "users" } },
-            ],
-          },
-          //               {
-          //   label: "API",
-          //   autogenerate: { directory: "extra" },
-          // },
         ]),
+        starlightSidebarTopics(
+          [
+            {
+              label: "Project Guide",
+              link: "/project/intro",
+              icon: "information",
+              items: [
+                {
+                  label: "Project Guide",
+                  autogenerate: { directory: "project" },
+                },
+              ],
+            },
+            {
+              label: "Development Guide",
+              link: "/development/intro",
+              icon: "seti:powershell",
+              items: [
+                {
+                  label: "Development Guide",
+                  autogenerate: { directory: "development" },
+                },
+              ],
+            },
+            {
+              label: "Volunteering Guide",
+              link: "/volunteering/experience/intro",
+              icon: "heart",
+              items: [
+                {
+                  label: "Volunteering Guide",
+                  autogenerate: { directory: "volunteering" },
+                },
+              ],
+            },
+            {
+              label: "User Guide",
+              link: "/users/intro",
+              icon: "laptop",
+              items: [
+                { label: "User Guide", autogenerate: { directory: "users" } },
+              ],
+            },
+            {
+              label: "REST API",
+              id: "api",
+              link: "api",
+							icon: "seti:db",
+              items: [...openAPISidebarGroups],
+            },
+          ],
+          {
+            topics: {
+              api: ["/api/**", "/api/**/*"],
+            },
+          }
+        ),
       ],
       components: {
         SocialIcons: "./src/components/SocialLinks.astro",

@@ -1,0 +1,5372 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "BobaBoard's API documentation.",
+    "version": "0.0.1",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    },
+    "description": "\n# Intro\nWelcome to the BobaBoard's backend API. This is still a WIP.\n\n# Example Section\nThis is just to test that sections work. It will be written better later.\n        ",
+    "contact": {
+      "name": "Ms. Boba",
+      "url": "https://www.bobaboard.com",
+      "email": "ms.boba@bobaboard.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:4200",
+      "description": "Development server"
+    }
+  ],
+  "tags": [
+    {
+      "name": "/posts/",
+      "description": "APIs related to the /posts/ endpoints."
+    },
+    {
+      "name": "/threads/",
+      "description": "APIs related to the /threads/ endpoints."
+    },
+    {
+      "name": "/boards/",
+      "description": "APIs related to the /boards/ endpoints."
+    },
+    {
+      "name": "/realms/",
+      "description": "APIs related to the /realms/ endpoints."
+    },
+    {
+      "name": "/users/",
+      "description": "APIs related to the /users/ endpoints."
+    },
+    {
+      "name": "todo",
+      "description": "APIs whose documentation still needs work."
+    },
+    {
+      "name": "models",
+      "x-displayName": "Models",
+      "description": "\n## Contribution\n<SchemaDefinition schemaRef=\"#/components/schemas/Contribution\" />\n\n## Tags\n<SchemaDefinition schemaRef=\"#/components/schemas/Tags\" />\n\n## Comment\n<SchemaDefinition schemaRef=\"#/components/schemas/Comment\" />\n\n## Board Summary (logged in)\n<SchemaDefinition schemaRef=\"#/components/schemas/LoggedInBoardSummary\" />\n\n## Descriptions\n<SchemaDefinition schemaRef=\"#/components/schemas/Description\" />\n"
+    }
+  ],
+  "x-tagGroups": [
+    {
+      "name": "general",
+      "tags": [
+        "/realms/",
+        "/feeds/",
+        "/boards/",
+        "/threads/",
+        "/posts/",
+        "/users/",
+        "/subscriptions/"
+      ]
+    },
+    {
+      "name": "models",
+      "tags": ["models"]
+    },
+    {
+      "name": "unzodded",
+      "tags": ["unzodded"]
+    }
+  ],
+  "paths": {
+    "/boards/{board_id}": {
+      "get": {
+        "summary": "Fetches board metadata.",
+        "operationId": "getBoardsByExternalId",
+        "tags": ["/boards/"],
+        "security": [
+          {
+            "firebase": []
+          },
+          {}
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The external id of the board to retrieve metadata for.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "existing": {
+                "summary": "An existing board",
+                "value": "c6d3d10e-8e49-4d73-b28a-9d652b41beec"
+              },
+              "locked": {
+                "summary": "A board for logged in users only",
+                "value": "76ebaab0-6c3e-4d7b-900f-f450625a5ed3"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The board metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/BoardMetadata"
+                    },
+                    {
+                      "$ref": "#/components/schemas/LoggedInBoardMetadata"
+                    }
+                  ]
+                },
+                "examples": {
+                  "existing": {
+                    "$ref": "#/components/examples/BoardsGoreResponse"
+                  },
+                  "locked": {
+                    "$ref": "#/components/examples/BoardsRestrictedResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found and board requires authentication.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "User must be authenticated to access board."
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "User is not authorized to fetch the metadata of this board.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "User does not have required permission to access board."
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The board was not found.",
+            "$ref": "#/components/responses/default404"
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a new thread.",
+        "operationId": "createThread",
+        "description": "Creates a new thread in the specified board.",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The id for the board in which the thread will be created.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "goreboardExternalId": {
+                "summary": "The id for the gore board.",
+                "value": "c6d3d10e-8e49-4d73-b28a-9d652b41beec"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "request body",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateThread"
+              },
+              "examples": {
+                "requestBody": {
+                  "$ref": "#/components/examples/createGoreTestThread"
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Thread has been created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thread"
+                },
+                "examples": {
+                  "response": {
+                    "$ref": "#/components/examples/createGoreTestThreadResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardPermission403"
+          },
+          "404": {
+            "$ref": "#/components/responses/boardNotFound404"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update board metadata",
+        "operationId": "patchBoardsByExternalId",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The external id of the board to update metadata for.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "existing": {
+                "summary": "An existing board (gore)",
+                "value": "c6d3d10e-8e49-4d73-b28a-9d652b41beec"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "request body",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BoardDescription"
+              },
+              "examples": {
+                "gore": {
+                  "$ref": "#/components/examples/GoreMetadataUpdateBody"
+                }
+              }
+            }
+          },
+          "required": false
+        },
+        "responses": {
+          "200": {
+            "description": "The board metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoggedInBoardMetadata"
+                },
+                "examples": {
+                  "existing": {
+                    "$ref": "#/components/examples/GoreMetadataUpdateResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found.",
+            "$ref": "#/components/responses/default401"
+          },
+          "403": {
+            "description": "User is not authorized to update the metadata of this board.",
+            "$ref": "#/components/responses/default403"
+          },
+          "404": {
+            "description": "The board was not found.",
+            "$ref": "#/components/responses/default404"
+          }
+        }
+      }
+    },
+    "/boards/{board_id}/visits": {
+      "post": {
+        "summary": "Sets last visited time for board",
+        "operationId": "visitBoardsByExternalId",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The external id of the board to mark as visited.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The visit was successfully registered."
+          },
+          "401": {
+            "description": "User was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "message": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "message": "This board is unavailable to logged out users."
+                }
+              }
+            }
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardAccess403"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "$ref": "#/components/responses/default500"
+          }
+        }
+      }
+    },
+    "/boards/{board_id}/mute": {
+      "post": {
+        "summary": "Mutes a board.",
+        "operationId": "muteBoardsByExternalId",
+        "description": "Mutes the specified board for the current user.",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The external id of the board to mute.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "existing": {
+                "summary": "An existing board",
+                "value": "c6d3d10e-8e49-4d73-b28a-9d652b41beec"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The board was successfully muted."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/default404"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "$ref": "#/components/responses/default500"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Unmutes a board.",
+        "operationId": "unmuteBoardsByExternalId",
+        "description": "Unmutes the specified board for the current user.",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The name of the board to unmute.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The board was successfully unmuted."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/default404"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "$ref": "#/components/responses/default500"
+          }
+        }
+      }
+    },
+    "/boards/{board_id}/pin": {
+      "post": {
+        "summary": "Pins a board.",
+        "operationId": "pinBoardsByExternalId",
+        "description": "Pins the specified board for the current user.",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The name of the board to pin.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The board was successfully pinned."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/default404"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "$ref": "#/components/responses/default500"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Unpins a board.",
+        "operationId": "unpinBoardsByExternalId",
+        "description": "Unpins the specified board for the current user.",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The name of the board to unpin.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The board was successfully unpinned."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/default404"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "$ref": "#/components/responses/default500"
+          }
+        }
+      }
+    },
+    "/boards/{board_id}/notifications": {
+      "delete": {
+        "summary": "Dismiss all notifications for board",
+        "operationId": "dismissBoardsByExternalId",
+        "tags": ["/boards/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The external id of the board to dismiss notifications for.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "existing": {
+                "summary": "An existing board",
+                "value": "c6d3d10e-8e49-4d73-b28a-9d652b41beec"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Board notifications dismissed."
+          },
+          "401": {
+            "description": "User is not logged in.",
+            "$ref": "#/components/responses/default401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/default404"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "$ref": "#/components/responses/default500"
+          }
+        }
+      }
+    },
+    "/boards/{board_id}/roles": {
+      "get": {
+        "summary": "Fetches latest roles summary for the board.",
+        "operationId": "getBoardRolesByExternalId",
+        "tags": ["/boards/"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The id of the board.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The board roles summary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealmRoles"
+                },
+                "examples": {
+                  "twisted_minds": {
+                    "value": {
+                      "roles": [
+                        {
+                          "user_firebase_id": "a90b0809-2c57-4ff1-be7c-4b7ab1b7edcc",
+                          "username": "bobatan",
+                          "role_string_id": "3df1d417-c36a-43dd-aaba-9590316ffc32",
+                          "role_name": "The Owner",
+                          "label": "Look ma, a label"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensurePermission403"
+          },
+          "404": {
+            "description": "The board was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "There was an error fetching board roles."
+          }
+        }
+      }
+    },
+    "/feeds/realms/{realm_id}": {
+      "get": {
+        "summary": "Get latest activity on entire realm",
+        "operationId": "getRealmActivity",
+        "tags": ["/feeds/"],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The external id of the realm to fetch the activity of.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The cursor to start feeding the activity of the board from.",
+            "schema": {
+              "type": "string"
+            },
+            "allowEmptyValue": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The realm's activity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedActivity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The realm was not found."
+          }
+        }
+      }
+    },
+    "/feeds/boards/{board_id}": {
+      "get": {
+        "summary": "Get the feed for the given boards' activity.",
+        "operationId": "getBoardsFeedByExternalId",
+        "tags": ["/feeds/"],
+        "parameters": [
+          {
+            "name": "board_id",
+            "in": "path",
+            "description": "The id of the board to fetch the activity of.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "gore": {
+                "summary": "The feed for the gore board.",
+                "value": "c6d3d10e-8e49-4d73-b28a-9d652b41beec"
+              },
+              "cursor": {
+                "summary": "The feed for a board with a cursor (!long).",
+                "value": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83"
+              }
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The cursor to start feeding the activity of the board from.",
+            "schema": {
+              "type": "string"
+            },
+            "allowEmptyValue": true,
+            "examples": {
+              "gore": {
+                "summary": "The feed for the gore board.",
+                "value": ""
+              },
+              "cursor": {
+                "summary": "The feed for a board with a cursor.",
+                "value": "eyJsYXN0X2FjdGl2aXR5X2N1cnNvciI6IjIwMjAtMDQtMTVUMDU6NDI6MDAuMDAwMDAwIiwicGFnZV9zaXplIjoxMH0="
+              }
+            }
+          },
+          {
+            "name": "categoryFilter",
+            "in": "query",
+            "description": "A category to filter the feed by.",
+            "schema": {
+              "type": "string"
+            },
+            "allowEmptyValue": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The board activity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedActivity"
+                },
+                "examples": {
+                  "gore": {
+                    "$ref": "#/components/examples/FeedBoardGore"
+                  },
+                  "cursor": {
+                    "$ref": "#/components/examples/FeedBoardCursor"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The board was not found."
+          }
+        }
+      }
+    },
+    "/feeds/users/@me": {
+      "get": {
+        "summary": "Get the feed for the current user activity activity.",
+        "operationId": "getUserFeed",
+        "tags": ["/feeds/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/CursorParam"
+          },
+          {
+            "$ref": "#/components/parameters/ReadParam"
+          },
+          {
+            "$ref": "#/components/parameters/OwnOnlyParam"
+          },
+          {
+            "$ref": "#/components/parameters/RealmParam"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The board activity.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedActivity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The board was not found."
+          }
+        }
+      }
+    },
+    "/feeds/users/@me/stars": {
+      "get": {
+        "summary": "Get current users Star Feed.",
+        "operationId": "getUserStarFeed",
+        "tags": ["/feeds/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "The cursor to start feeding the activity of the user star feed from.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Star Feed activity",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/FeedActivity"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/posts/{post_id}/contributions": {
+      "post": {
+        "summary": "Replies to a contribution with another contribution.",
+        "operationId": "postContribution",
+        "description": "Posts a contribution replying to the one with id {postId}.",
+        "tags": ["/posts/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "description": "The uuid of the contribution to reply to.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the contribution to post.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "content": {
+                        "type": "string",
+                        "format": "quill-delta"
+                      }
+                    }
+                  },
+                  {
+                    "$ref": "#/components/schemas/Tags"
+                  },
+                  {
+                    "$ref": "#/components/schemas/IdentityParams"
+                  }
+                ],
+                "required": ["content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The contribution was successfully created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "contribution": {
+                      "$ref": "#/components/schemas/Contribution",
+                      "description": "Finalized details of the contributions just posted."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          },
+          "403": {
+            "description": "User is not authorized to perform the action."
+          }
+        }
+      },
+      "patch": {
+        "summary": "Edits a contribution.",
+        "operationId": "editContribution",
+        "description": "Edits a contribution (for now just its tags).",
+        "tags": ["/posts/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "description": "The uuid of the contribution to edit.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the contribution to edit.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Tags"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The contribution was successfully edited.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "contribution": {
+                      "$ref": "#/components/schemas/Contribution",
+                      "description": "Finalized details of the contributions just edited."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          },
+          "403": {
+            "description": "User is not authorized to perform the action."
+          }
+        }
+      }
+    },
+    "/posts/{post_id}/comments": {
+      "post": {
+        "summary": "Add comments to a contribution, optionally nested under another comment.",
+        "operationId": "postComment",
+        "description": "Creates a comment nested under the contribution with id {post_id}.",
+        "tags": ["/posts/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "description": "The uuid of the contribution to reply to.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The details of the comment to post.",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/CommentRequestBody"
+                  },
+                  {
+                    "$ref": "#/components/schemas/IdentityParams"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The comments were successfully created.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "comments": {
+                      "description": "Finalized details of the comments just posted.",
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Comment"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          },
+          "403": {
+            "description": "User is not authorized to perform the action."
+          }
+        }
+      }
+    },
+    "/realms/slug/{realm_slug}": {
+      "get": {
+        "summary": "Fetches the top-level realm metadata by slug.",
+        "operationId": "getRealmsBySlug",
+        "tags": ["/realms/", "unzodded"],
+        "security": [
+          {},
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_slug",
+            "in": "path",
+            "description": "The slug of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "v0": {
+                "summary": "the v0 realm",
+                "value": "v0"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The realm metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Realm"
+                },
+                "examples": {
+                  "v0": {
+                    "$ref": "#/components/examples/V0RealmResponse"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The realm was not found."
+          }
+        }
+      }
+    },
+    "/realms/{realm_id}/activity": {
+      "get": {
+        "summary": "Fetches latest activity summary for the realm.",
+        "operationId": "getRealmsActivityByExternalId",
+        "tags": ["/realms/", "unzodded"],
+        "security": [
+          {},
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The realm activity summary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealmActivity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The realm was not found."
+          }
+        }
+      }
+    },
+    "/realms/{realm_id}/notifications": {
+      "get": {
+        "summary": "Gets notifications data for the current user.",
+        "operationId": "getCurrentUserNotifications",
+        "description": "Gets notifications data for the current user, including pinned boards.\nIf `realm_id` is present, also fetch notification data for the current realm.\n",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The notifications data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NotificationsResponse"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          },
+          "403": {
+            "description": "User is not authorized to perform the action."
+          }
+        }
+      },
+      "delete": {
+        "summary": "Dismisses user notifications.",
+        "operationId": "dismissUserNotifications",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The notifications were successfully dismissed."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureBoardAccess403"
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "$ref": "#/components/responses/default500"
+          }
+        }
+      }
+    },
+    "/realms/{realm_id}/invites": {
+      "get": {
+        "summary": "List all pending invites for the realm",
+        "description": "See https://github.com/essential-randomness/bobaserver/issues/56 for future design intentions to return all invites.",
+        "operationId": "getInvitesByRealmId",
+        "tags": ["/realms/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "twisted_minds": {
+                "summary": "the twisted-minds realm id",
+                "value": "76ef4cc3-1603-4278-95d7-99c59f481d2e"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The metadata of all pending invites for the current realm.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "invites": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/InviteWithDetails"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "twisted_minds": {
+                    "value": {
+                      "invites": [
+                        {
+                          "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+                          "invite_url": "https://twisted_minds.boba.social/invites/123invite_code456",
+                          "invitee_email": "ms.boba@bobaboard.com",
+                          "own": false,
+                          "issued_at": "2021-06-09T04:20:00Z",
+                          "expires_at": "2021-06-09T16:20:00Z",
+                          "label": "This is a test invite."
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensurePermission403"
+          },
+          "404": {
+            "description": "The realm was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create invite for the realm.",
+        "operationId": "createInviteByRealmId",
+        "tags": ["/realms/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "twisted_minds": {
+                "summary": "the twisted-minds realm id",
+                "value": "76ef4cc3-1603-4278-95d7-99c59f481d2e"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The invite data.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "label": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "twisted_minds": {
+                  "value": {
+                    "email": "ms.boba@bobaboard.com"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The invite metadata.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Invite"
+                },
+                "examples": {
+                  "twisted_minds": {
+                    "value": {
+                      "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+                      "invite_url": "https://twisted_minds.boba.social/invites/123invite_code456"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensurePermission403"
+          },
+          "404": {
+            "description": "The realm was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/realms/{realm_id}/invites/{nonce}": {
+      "get": {
+        "summary": "Get an invite's realm and status.",
+        "operationId": "getInviteByNonce",
+        "tags": ["/realms/", "unzodded"],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "twisted_minds": {
+                "summary": "the twisted-minds realm id",
+                "value": "76ef4cc3-1603-4278-95d7-99c59f481d2e"
+              }
+            }
+          },
+          {
+            "name": "nonce",
+            "in": "path",
+            "description": "The invite code.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "twisted_minds": {
+                "summary": "the invite code.",
+                "value": "123invite_code456"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The realm amd status of the requested invite.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/InviteStatus"
+                },
+                "examples": {
+                  "twisted_minds": {
+                    "value": {
+                      "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+                      "realm_slug": "twisted-minds",
+                      "invite_status": "pending",
+                      "requires_email": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The invite with the given code was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Accept invite for the realm.",
+        "operationId": "acceptInviteByNonce",
+        "tags": ["/realms/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          },
+          {}
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "twisted_minds": {
+                "summary": "the twisted-minds realm id",
+                "value": "76ef4cc3-1603-4278-95d7-99c59f481d2e"
+              }
+            }
+          },
+          {
+            "name": "nonce",
+            "in": "path",
+            "description": "The invite code.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "examples": {
+              "twisted_minds": {
+                "summary": "the invite code.",
+                "value": "123invite_code456"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The user data for the invite. Only required if the user does not already have an account.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                },
+                "required": ["email", "password"]
+              },
+              "examples": {
+                "twisted_minds": {
+                  "value": {
+                    "email": "ms.boba@bobaboard.com",
+                    "password": "how_bad_can_i_be"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The invite was successfully accepted.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AcceptedInviteResponse"
+                },
+                "examples": {
+                  "twisted_minds": {
+                    "value": {
+                      "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+                      "realm_slug": "twisted-minds"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Request does not contain email and password require to create new user account.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "The invite is not valid anymore, or the user's email does not correspond to the invited one.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The invite with the given code was not found, or the requested realm does not exist.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "The user is already a member of the requested realm.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/realms/{realm_id}/roles": {
+      "get": {
+        "summary": "Fetches latest roles summary for the realm.",
+        "operationId": "getRealmsRolesByExternalId",
+        "tags": ["/realms/"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The realm roles summary.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RealmRoles"
+                },
+                "examples": {
+                  "twisted_minds": {
+                    "value": {
+                      "invites": [
+                        {
+                          "user_firebase_id": "a90b0809-2c57-4ff1-be7c-4b7ab1b7edcc",
+                          "username": "bobatan",
+                          "role_string_id": "3df1d417-c36a-43dd-aaba-9590316ffc32",
+                          "role_name": "The Owner",
+                          "label": "Look ma, a label"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensurePermission403"
+          },
+          "404": {
+            "description": "The realm was not found.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/genericResponse"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "There was an error fetching realm roles."
+          }
+        }
+      }
+    },
+    "/subscriptions/{subscription_id}": {
+      "get": {
+        "summary": "Gets data for the given subscription. Currently returns only the last update.",
+        "operationId": "getSubscription",
+        "tags": ["/subscriptions/", "unzodded"],
+        "security": [
+          {},
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "subscription_id",
+            "in": "path",
+            "description": "The external id of the subscription.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The subscription data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SubscriptionActivity"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "The subscription was not found."
+          }
+        }
+      }
+    },
+    "/threads/{thread_id}": {
+      "get": {
+        "summary": "Fetches thread data.",
+        "operationId": "getThreadByExternalId",
+        "description": "Fetches data for the specified thread.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          },
+          {}
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread to fetch.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "withcommentsthread": {
+                "summary": "A thread with a comments thread.",
+                "value": "8b2646af-2778-487e-8e44-7ae530c2549c"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The thread data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Thread"
+                },
+                "examples": {
+                  "withcommentsthread": {
+                    "$ref": "#/components/examples/ThreadWithCommentsThreadResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found and thread requires authentication.",
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update thread properties.",
+        "operationId": "updateThreadExternalId",
+        "description": "Updates the default view that the thread uses or the parent board of the thread.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread whose properties should be updated.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "updateView": {
+                "summary": "A thread from the gore board.",
+                "value": "29d1b2da-3289-454a-9089-2ed47db4967b"
+              },
+              "moveThread": {
+                "summary": "A thread from the gore board.",
+                "value": "29d1b2da-3289-454a-9089-2ed47db4967b"
+              }
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "request body",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "defaultView": {
+                    "description": "The default view that the thread should use.",
+                    "type": "string",
+                    "enum": ["thread", "gallery", "timeline"]
+                  },
+                  "parentBoardId": {
+                    "description": "The id of the board that the thread should be moved to.",
+                    "type": "string",
+                    "format": "uuid"
+                  }
+                }
+              },
+              "examples": {
+                "updateView": {
+                  "value": {
+                    "defaultView": "gallery"
+                  }
+                },
+                "moveThread": {
+                  "value": {
+                    "parentBoardId": "0e0d1ee6-f996-4415-89c1-c9dc1fe991dc"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Thread properties successfully changed.",
+            "$ref": "#/components/responses/default204"
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadPermission403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          }
+        }
+      }
+    },
+    "/threads/{thread_id}/mute": {
+      "post": {
+        "summary": "Mutes a thread.",
+        "operationId": "muteThreadByExternalId",
+        "description": "Mutes the specified thread for the current user.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread to mute.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "gorethreadExternalId": {
+                "summary": "A thread from the gore board.",
+                "value": "29d1b2da-3289-454a-9089-2ed47db4967b"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The thread was succesfully muted."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Unmutes a thread.",
+        "operationId": "unmuteThreadByExternalId",
+        "description": "Unmutes a specified thread.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread to unmute.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "gorethreadExternalId": {
+                "summary": "A thread from the gore board.",
+                "value": "29d1b2da-3289-454a-9089-2ed47db4967b"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "The thread was successfully unmuted."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          }
+        }
+      }
+    },
+    "/threads/{thread_id}/hide": {
+      "post": {
+        "summary": "Hides a thread.",
+        "operationId": "hideThreadByExternalId",
+        "description": "Hides the specified thread for the current user.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread to unhide.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "gorethreadExternalId": {
+                "summary": "A thread from the gore board.",
+                "value": "29d1b2da-3289-454a-9089-2ed47db4967b"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The thread was succesfully hidden."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Unhides a thread.",
+        "operationId": "unhideThreadByExternalId",
+        "description": "Unhides the specified thread for the current user.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread to unhide.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "gorethreadExternalId": {
+                "summary": "A thread from the gore board.",
+                "value": "29d1b2da-3289-454a-9089-2ed47db4967b"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The thread was succesfully unhidden."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          }
+        }
+      }
+    },
+    "/threads/{thread_id}/visits": {
+      "post": {
+        "summary": "Records a visit to a thread by the current user.",
+        "operationId": "visitThreadByExternalId",
+        "description": "Records a visit to a thread by the current user.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread that is being visited.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "gorethreadExternalId": {
+                "summary": "A thread from the gore board.",
+                "value": "29d1b2da-3289-454a-9089-2ed47db4967b"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Thread has been marked as visited."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          }
+        }
+      }
+    },
+    "/threads/{thread_id}/stars": {
+      "post": {
+        "summary": "Adds thread to Star Feed",
+        "operationId": "starThreadByExternalId",
+        "description": "Adds selected thread to current user Star Feed.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread to star.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Thread added to Star Feed successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "summary": "Removes thread from Star Feed",
+        "operationId": "unstarThreadByExternalId",
+        "description": "Deletes selected thread from current user Star Feed.",
+        "tags": ["/threads/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "thread_id",
+            "in": "path",
+            "description": "The id of the thread to fetch.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Thread removed from Star Feed successfully."
+          },
+          "401": {
+            "$ref": "#/components/responses/ensureLoggedIn401"
+          },
+          "403": {
+            "$ref": "#/components/responses/ensureThreadAccess403"
+          },
+          "404": {
+            "$ref": "#/components/responses/threadNotFound404"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/users/@me": {
+      "get": {
+        "summary": "Gets data for the current user.",
+        "operationId": "getCurrentUser",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The user data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "avatar_url": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          },
+          "403": {
+            "description": "User is not authorized to perform the action."
+          }
+        }
+      },
+      "patch": {
+        "summary": "Update data for the current user.",
+        "operationId": "updateCurrentUser",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "requestBody": {
+          "description": "request body",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "description": "The username of the user.",
+                    "type": "string"
+                  },
+                  "avatarUrl": {
+                    "description": "The avatar url of the user.",
+                    "type": "string",
+                    "format": "uri"
+                  }
+                },
+                "required": ["username", "avatarUrl"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The user data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "username": {
+                      "type": "string"
+                    },
+                    "avatar_url": {
+                      "type": "string",
+                      "format": "uri"
+                    }
+                  },
+                  "required": ["username", "avatar_url"]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          },
+          "403": {
+            "description": "User is not authorized to perform the action."
+          }
+        }
+      }
+    },
+    "/users/@me/pins/realms/{realm_id}": {
+      "get": {
+        "summary": "Gets pinned boards for the current user on the current realm.",
+        "operationId": "getCurrentUserPinnedBoardsForRealm",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "realm_id",
+            "in": "path",
+            "description": "The id of the realm.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "examples": {
+              "twisted_minds": {
+                "summary": "the twisted-minds realm id",
+                "value": "76ef4cc3-1603-4278-95d7-99c59f481d2e"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The user data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pinned_boards": {
+                      "description": "A map from board id to its LoggedInSummary for each pinned board.\n",
+                      "type": "object",
+                      "additionalProperties": {
+                        "allOf": [
+                          {
+                            "$ref": "#/components/schemas/LoggedInBoardSummary"
+                          },
+                          {
+                            "type": "object",
+                            "properties": {
+                              "index": {
+                                "type": "number"
+                              }
+                            },
+                            "required": ["index"]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "required": ["pinned_boards"]
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          },
+          "403": {
+            "description": "User is not authorized to perform the action."
+          }
+        }
+      }
+    },
+    "/users/@me/bobadex": {
+      "get": {
+        "summary": "Gets bobadex data for the current user.",
+        "operationId": "getCurrentUserBobadex",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The bobadex data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BobaDex"
+                },
+                "examples": {
+                  "existing": {
+                    "$ref": "#/components/examples/BobaDexResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          }
+        }
+      }
+    },
+    "/users/@me/settings": {
+      "get": {
+        "summary": "Gets settings data for the current user.",
+        "operationId": "getUserSettings",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The user settings data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSettings"
+                },
+                "examples": {
+                  "existing": {
+                    "$ref": "#/components/examples/UserSettingsResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          }
+        }
+      },
+      "patch": {
+        "summary": "Updates settings data for the current user.",
+        "operationId": "updateUserSettings",
+        "tags": ["/users/", "unzodded"],
+        "security": [
+          {
+            "firebase": []
+          }
+        ],
+        "requestBody": {
+          "description": "request body",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "oneOf": [
+                      {
+                        "type": "string"
+                      },
+                      {
+                        "type": "boolean"
+                      }
+                    ]
+                  }
+                },
+                "required": ["name", "value"]
+              },
+              "examples": {
+                "settings_update": {
+                  "$ref": "#/components/examples/UserSettingsRequest"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "The updated user settings data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserSettings"
+                },
+                "examples": {
+                  "settings_update": {
+                    "$ref": "#/components/examples/UserSettingsResponse"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "User was not found in request that requires authentication."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BoardActivitySummary": {
+        "type": "object",
+        "properties": {
+          "last_post_at": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "last_comment_at": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "last_activity_at": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "last_activity_from_others_at": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "last_visit_at": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "last_post_at",
+          "last_comment_at",
+          "last_activity_at",
+          "last_activity_from_others_at",
+          "last_visit_at"
+        ]
+      },
+      "UiBlock": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/TextBlock"
+          },
+          {
+            "$ref": "#/components/schemas/RulesBlock"
+          },
+          {
+            "$ref": "#/components/schemas/SubscriptionBlock"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "text": "#/components/schemas/TextBlock",
+            "rules": "#/components/schemas/RulesBlock",
+            "subscription": "#/components/schemas/SubscriptionBlock"
+          }
+        }
+      },
+      "BaseBlock": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "index": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "index", "title"]
+      },
+      "TextBlock": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseBlock"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["text"]
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "description"]
+          }
+        ]
+      },
+      "RulesBlock": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseBlock"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["rules"]
+              },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "index": {
+                      "type": "number"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "pinned": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": ["index", "title", "description", "pinned"]
+                }
+              }
+            },
+            "required": ["type", "rules"]
+          }
+        ]
+      },
+      "SubscriptionBlock": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseBlock"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["subscription"]
+              },
+              "subscription_id": {
+                "type": "string",
+                "format": "uuid"
+              }
+            },
+            "required": ["type", "subscription_id"]
+          }
+        ]
+      },
+      "BoardSummary": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "realm_id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "avatar_url": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "tagline": {
+            "type": "string"
+          },
+          "accent_color": {
+            "type": "string"
+          },
+          "logged_in_only": {
+            "type": "boolean"
+          },
+          "delisted": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "realm_id",
+          "slug",
+          "avatar_url",
+          "tagline",
+          "accent_color",
+          "logged_in_only",
+          "delisted"
+        ]
+      },
+      "LoggedInBoardSummary": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BoardSummary"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "muted": {
+                "type": "boolean"
+              },
+              "pinned": {
+                "type": "boolean"
+              }
+            },
+            "required": ["muted", "pinned"]
+          }
+        ]
+      },
+      "BoardMetadata": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BoardSummary"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "descriptions": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Description"
+                }
+              }
+            },
+            "required": ["descriptions"]
+          }
+        ]
+      },
+      "LoggedInBoardMetadata": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/LoggedInBoardSummary"
+          },
+          {
+            "$ref": "#/components/schemas/BoardMetadata"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "accessories": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Accessory"
+                }
+              },
+              "permissions": {
+                "$ref": "#/components/schemas/Permissions"
+              },
+              "posting_identities": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/PostingIdentity"
+                }
+              }
+            },
+            "required": ["accessories", "permissions", "posting_identities"]
+          }
+        ]
+      },
+      "BobaDexSeason": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "realm_id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "identities_count": {
+            "description": "How many identities are in this season. Note that just the array of identities isn't enough, cause it doesn't tell us how many identities are in total in the BobaDex season.\n",
+            "type": "number"
+          },
+          "caught_identities": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "number"
+                },
+                "identity": {
+                  "$ref": "#/components/schemas/PostingIdentity"
+                }
+              },
+              "required": ["index", "identity"]
+            }
+          }
+        },
+        "required": [
+          "id",
+          "realm_id",
+          "name",
+          "identities_count",
+          "caught_identities"
+        ]
+      },
+      "BobaDex": {
+        "type": "object",
+        "properties": {
+          "seasons": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BobaDexSeason"
+            }
+          }
+        },
+        "required": ["seasons"]
+      },
+      "CommentRequestBody": {
+        "type": "object",
+        "properties": {
+          "contents": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "quill-delta"
+            }
+          }
+        },
+        "required": ["contents"]
+      },
+      "Comment": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "parent_post_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "parent_comment_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "chain_parent_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "content": {
+            "type": "string",
+            "format": "quill-delta"
+          },
+          "secret_identity": {
+            "description": "The public-facing identity associated with the comment.",
+            "$ref": "#/components/schemas/SecretIdentity"
+          },
+          "user_identity": {
+            "description": "The identity of the original poster, if visible to the requester.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identity"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "own": {
+            "type": "boolean"
+          },
+          "new": {
+            "type": "boolean"
+          },
+          "friend": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "parent_post_id",
+          "parent_comment_id",
+          "chain_parent_id",
+          "content",
+          "secret_identity",
+          "user_identity",
+          "created_at",
+          "new",
+          "own",
+          "friend"
+        ]
+      },
+      "Contribution": {
+        "description": "A contribution to a thread.",
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "parent_thread_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "parent_post_id": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "content": {
+            "type": "string",
+            "format": "quill-delta"
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "secret_identity": {
+            "description": "The public-facing identity associated with the contribution.",
+            "$ref": "#/components/schemas/SecretIdentity"
+          },
+          "user_identity": {
+            "description": "The identity of the original poster, if visible to the requester.",
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/Identity"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "new": {
+            "type": "boolean"
+          },
+          "own": {
+            "type": "boolean"
+          },
+          "friend": {
+            "type": "boolean"
+          },
+          "total_comments_amount": {
+            "type": "number"
+          },
+          "new_comments_amount": {
+            "type": "number"
+          },
+          "tags": {
+            "type": "object",
+            "$ref": "#/components/schemas/Tags"
+          }
+        },
+        "required": [
+          "id",
+          "parent_post_id",
+          "parent_thread_id",
+          "content",
+          "created_at",
+          "secret_identity",
+          "user_identity",
+          "friend",
+          "own",
+          "new",
+          "total_comments_amount",
+          "new_comments_amount",
+          "tags"
+        ]
+      },
+      "Cursor": {
+        "type": "object",
+        "properties": {
+          "next": {
+            "description": "Pagination link pointing to the next page.",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": ["next"]
+      },
+      "Description": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/TextDescription"
+          },
+          {
+            "$ref": "#/components/schemas/CategoryFilterDescription"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "text": "#/components/schemas/TextDescription",
+            "category_filter": "#/components/schemas/CategoryFilterDescription"
+          }
+        }
+      },
+      "BaseDescription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "index": {
+            "type": "number"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "required": ["id", "index", "title"]
+      },
+      "TextDescription": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseDescription"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["text"]
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": ["type", "description"]
+          }
+        ]
+      },
+      "CategoryFilterDescription": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/BaseDescription"
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["category_filter"]
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": ["type", "categories"]
+          }
+        ]
+      },
+      "BoardDescription": {
+        "type": "object",
+        "properties": {
+          "descriptions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Description"
+            },
+            "description": "Array of updated description objects."
+          },
+          "accentColor": {
+            "type": "string",
+            "description": "Board accent color."
+          },
+          "tagline": {
+            "type": "string",
+            "description": "Board tagline."
+          }
+        }
+      },
+      "FeedActivity": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "$ref": "#/components/schemas/Cursor"
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ThreadSummary"
+            }
+          }
+        },
+        "required": ["cursor", "activity"]
+      },
+      "IdentityParams": {
+        "type": "object",
+        "properties": {
+          "accessory_id": {
+            "description": "The accessory to associate with the attached entity.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "identity_id": {
+            "description": "The identity to associate with the attached entity, if fixed.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "forceAnonymous": {
+            "deprecated": true,
+            "description": "Force anonymity even among friends.",
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        }
+      },
+      "Identity": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "avatar": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": ["name", "avatar"]
+      },
+      "SecretIdentity": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "color": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "color"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "accessory": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri-reference"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": ["name", "avatar"]
+      },
+      "Accessory": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "accessory": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "required": ["id", "name", "accessory"]
+      },
+      "PostingIdentity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "avatar_url": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "color": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "color"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "accessory": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": ["id", "name", "avatar"]
+      },
+      "Invite": {
+        "type": "object",
+        "properties": {
+          "realm_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "invite_url": {
+            "type": "string",
+            "format": "uri-reference"
+          }
+        },
+        "required": ["realm_id", "invite_url"]
+      },
+      "InviteWithDetails": {
+        "type": "object",
+        "properties": {
+          "realm_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "invite_url": {
+            "type": "string",
+            "format": "uri-reference"
+          },
+          "invitee_email": {
+            "type": "string",
+            "format": "email"
+          },
+          "own": {
+            "type": "boolean"
+          },
+          "issued_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "expires_at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "required": ["realm_id", "invite_url", "own", "issued_at", "expires_at"]
+      },
+      "AcceptedInviteResponse": {
+        "type": "object",
+        "properties": {
+          "realm_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "realm_slug": {
+            "type": "string"
+          }
+        },
+        "required": ["realm_id", "realm_slug"]
+      },
+      "InviteStatus": {
+        "type": "object",
+        "properties": {
+          "realm_id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "realm_slug": {
+            "type": "string"
+          },
+          "invite_status": {
+            "type": "string",
+            "enum": ["pending", "used", "expired"]
+          },
+          "requires_email": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "realm_id",
+          "realm_slug",
+          "invite_status",
+          "requires_email"
+        ]
+      },
+      "ActivityNotifications": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "has_updates": {
+            "description": "Whether the board has a notification.",
+            "type": "boolean"
+          },
+          "is_outdated": {
+            "description": "Whether the board's notifications are older than the user's last visit.",
+            "type": "boolean"
+          },
+          "last_activity_at": {
+            "description": "When the board was last updated.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "last_activity_from_others_at": {
+            "description": "When the board was last updated by someone other than the current user.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "last_visited_at": {
+            "description": "When the board was last visited by the current user.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "has_updates",
+          "is_outdated",
+          "last_activity_at",
+          "last_activity_from_others_at",
+          "last_visited_at"
+        ]
+      },
+      "NotificationsResponse": {
+        "type": "object",
+        "properties": {
+          "has_notifications": {
+            "type": "boolean"
+          },
+          "is_outdated_notifications": {
+            "type": "boolean"
+          },
+          "realm_id": {
+            "type": "string"
+          },
+          "realm_boards": {
+            "description": "A map from board id to its NotificationStatus for each realm board.\nIf `realm_id` is not present in the params, it will be empty.\n",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ActivityNotifications"
+            }
+          },
+          "pinned_boards": {
+            "description": "A map from board id to its NotiicationStatus for each pinned board.\n",
+            "type": "object",
+            "additionalProperties": {
+              "$ref": "#/components/schemas/ActivityNotifications"
+            }
+          }
+        },
+        "required": [
+          "has_notifications",
+          "is_outdated_notifications",
+          "realm_id",
+          "realm_boards",
+          "pinned_boards"
+        ]
+      },
+      "Permissions": {
+        "type": "object",
+        "properties": {
+          "board_permissions": {
+            "$ref": "#/components/schemas/BoardPermissions"
+          },
+          "post_permissions": {
+            "$ref": "#/components/schemas/PostPermissions"
+          },
+          "thread_permissions": {
+            "$ref": "#/components/schemas/ThreadPermission"
+          }
+        },
+        "required": [
+          "board_permissions",
+          "post_permissions",
+          "thread_permissions"
+        ]
+      },
+      "BoardPermissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["edit_board_details", "view_roles_on_board"]
+        }
+      },
+      "PostPermissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "edit_content",
+            "edit_whisper_tags",
+            "edit_category_tags",
+            "edit_index_tags",
+            "edit_content_notices"
+          ]
+        }
+      },
+      "ThreadPermission": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": ["move_thread"]
+        }
+      },
+      "RealmPermissions": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "enum": [
+            "create_realm_invite",
+            "post_on_realm",
+            "comment_on_realm",
+            "create_thread_on_realm",
+            "access_locked_boards_on_realm",
+            "view_roles_on_realm"
+          ]
+        }
+      },
+      "RealmSettings": {
+        "type": "object",
+        "description": "Cosmetic settings active for the Realm, merged with users' own preferences.",
+        "properties": {
+          "root": {
+            "type": "object",
+            "properties": {
+              "cursor": {
+                "type": "object"
+              }
+            }
+          },
+          "index_page": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Setting"
+            }
+          },
+          "board_page": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Setting"
+            }
+          },
+          "thread_page": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Setting"
+            }
+          }
+        },
+        "required": ["root", "index_page", "board_page", "thread_page"]
+      },
+      "Realm": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "format": "uri"
+          },
+          "homepage": {
+            "description": "Settings for the Realm homepage.",
+            "type": "object",
+            "properties": {
+              "blocks": {
+                "description": "List of UI Blocks that appear in the Realm homepage.",
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/UiBlock"
+                }
+              }
+            },
+            "required": ["blocks"]
+          },
+          "settings": {
+            "$ref": "#/components/schemas/RealmSettings"
+          },
+          "realm_permissions": {
+            "$ref": "#/components/schemas/RealmPermissions"
+          },
+          "boards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BoardSummary"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "slug",
+          "icon",
+          "settings",
+          "homepage",
+          "realm_permissions",
+          "boards"
+        ]
+      },
+      "RealmActivity": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "The Realm id.",
+            "type": "string",
+            "format": "uuid"
+          },
+          "boards": {
+            "description": "The activity summary for each board in the realm. |\nKeys are the uuid of each board.\n",
+            "type": "object",
+            "additionalProperties": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "format": "uuid"
+                    }
+                  }
+                },
+                {
+                  "$ref": "#/components/schemas/BoardActivitySummary"
+                }
+              ]
+            }
+          }
+        }
+      },
+      "RealmRoles": {
+        "type": "object",
+        "properties": {
+          "roles": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "user_id": {
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "username": {
+                  "description": "Username.",
+                  "type": "string"
+                },
+                "role_string_id": {
+                  "description": "String id of role.",
+                  "type": "string",
+                  "format": "uuid"
+                },
+                "role_name": {
+                  "description": "Name of role.",
+                  "type": "string"
+                },
+                "label": {
+                  "description": "Label associated with role assignment",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "user_firebase_id",
+                "username",
+                "role_string_id",
+                "role_name",
+                "label"
+              ]
+            }
+          }
+        }
+      },
+      "genericResponse": {
+        "description": "Generic response object",
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+      "BooleanSetting": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["BOOLEAN"]
+          },
+          "value": {
+            "type": "boolean"
+          }
+        },
+        "required": ["name", "type", "value"]
+      },
+      "Setting": {
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/BooleanSetting"
+          }
+        ],
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "BOOLEAN": "#/components/schemas/BooleanSetting"
+          }
+        }
+      },
+      "UserSettings": {
+        "type": "object",
+        "properties": {
+          "decorations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Setting"
+            }
+          }
+        }
+      },
+      "Subscription": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "name": {
+            "type": "string"
+          },
+          "last_activity_at": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": ["id", "name", "last_activity_at"]
+      },
+      "SubscriptionActivity": {
+        "type": "object",
+        "properties": {
+          "cursor": {
+            "$ref": "#/components/schemas/Cursor"
+          },
+          "subscription": {
+            "$ref": "#/components/schemas/Subscription"
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Contribution"
+            }
+          }
+        },
+        "required": ["subscription", "name", "activity"]
+      },
+      "Tags": {
+        "description": "Types of tags associated to a contribution.",
+        "type": "object",
+        "properties": {
+          "whisper_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "index_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "category_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "content_warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "required": [
+          "whisper_tags",
+          "index_tags",
+          "category_tags",
+          "content_warnings"
+        ]
+      },
+      "ThreadActivitySummary": {
+        "type": "object",
+        "properties": {
+          "new_posts_amount": {
+            "type": "number"
+          },
+          "new_comments_amount": {
+            "type": "number"
+          },
+          "total_comments_amount": {
+            "type": "number"
+          },
+          "total_posts_amount": {
+            "type": "number"
+          },
+          "direct_threads_amount": {
+            "type": "number"
+          },
+          "last_activity_at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": [
+          "new_posts_amount",
+          "new_comments_amount",
+          "total_comments_amount",
+          "total_posts_amount",
+          "direct_threads_amount",
+          "last_activity_at"
+        ]
+      },
+      "ThreadSummary": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "parent_board_slug": {
+                "type": "string"
+              },
+              "parent_board_id": {
+                "type": "string"
+              },
+              "parent_realm_slug": {
+                "type": "string"
+              },
+              "parent_realm_id": {
+                "type": "string"
+              },
+              "starter": {
+                "description": "The contribution that starts the thread.",
+                "$ref": "#/components/schemas/Contribution"
+              },
+              "default_view": {
+                "type": "string",
+                "enum": ["thread", "gallery", "timeline"]
+              },
+              "new": {
+                "type": "boolean",
+                "description": "Whether the thread is new. False when the user is logged out."
+              },
+              "muted": {
+                "description": "Whether the thread is muted. False when the user is logged out.",
+                "type": "boolean"
+              },
+              "hidden": {
+                "description": "Whether the thread is hidden. False when the user is logged out.",
+                "type": "boolean"
+              },
+              "starred": {
+                "description": "Whether the thread is starred.",
+                "type": "boolean"
+              }
+            },
+            "required": [
+              "id",
+              "parent_board_slug",
+              "parent_board_id",
+              "parent_realm_slug",
+              "parent_realm_id",
+              "starter",
+              "default_view",
+              "new",
+              "muted",
+              "hidden",
+              "starred"
+            ]
+          },
+          {
+            "$ref": "#/components/schemas/ThreadActivitySummary"
+          }
+        ]
+      },
+      "Thread": {
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "posts": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Contribution"
+                }
+              },
+              "comments": {
+                "description": "A map from post_id to its comments.",
+                "type": "object",
+                "additionalProperties": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Comment"
+                  }
+                }
+              }
+            },
+            "required": ["posts", "comments"]
+          },
+          {
+            "$ref": "#/components/schemas/ThreadSummary"
+          }
+        ]
+      },
+      "CreateThread": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "format": "quill-delta",
+            "description": "The content of the first post in the thread."
+          },
+          "forceAnonymous": {
+            "deprecated": true,
+            "description": "Force anonymity even among friends.",
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "defaultView": {
+            "type": "string",
+            "enum": ["thread", "gallery", "timeline"],
+            "description": "The default view that the thread will display as."
+          },
+          "identityId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The identity the original poster will use to create the thread."
+          },
+          "accessoryId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "The accessory that the original poster will use in the thread."
+          },
+          "whisper_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The whisper tags associated with the thread."
+          },
+          "index_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The searchable tags associated with the thread."
+          },
+          "content_warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The content warnings associated with the thread."
+          },
+          "category_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The categories associated with the thread."
+          }
+        },
+        "required": ["content"]
+      }
+    },
+    "parameters": {
+      "CursorParam": {
+        "name": "cursor",
+        "in": "query",
+        "description": "The cursor to start feeding the activity of the board from.",
+        "schema": {
+          "type": "string"
+        },
+        "allowEmptyValue": true,
+        "examples": {
+          "gore": {
+            "summary": "The feed for the gore board.",
+            "value": ""
+          },
+          "cursor": {
+            "summary": "The feed for a board with a cursor.",
+            "value": "eyJsYXN0X2FjdGl2aXR5X2N1cnNvciI6IjIwMjAtMDQtMTVUMDU6NDI6MDAuMDAwMDAwIiwicGFnZV9zaXplIjoxMH0="
+          }
+        }
+      },
+      "ReadParam": {
+        "name": "showRead",
+        "in": "query",
+        "description": "Whether to show read threads.",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
+      },
+      "OwnOnlyParam": {
+        "name": "ownOnly",
+        "in": "query",
+        "description": "Whether to only show threads started by the user.",
+        "schema": {
+          "type": "boolean"
+        },
+        "allowEmptyValue": true
+      },
+      "RealmParam": {
+        "name": "realmId",
+        "in": "query",
+        "description": "The realm id to filter by.",
+        "schema": {
+          "type": "string"
+        },
+        "allowEmptyValue": true
+      }
+    },
+    "securitySchemes": {
+      "firebase": {
+        "description": "Default bobaserver authentication, powered by firebase.",
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "x-google-issuer": "https://securetoken.google.com/bobaboard-fb",
+        "x-google-jwks_uri": "https://www.googleapis.com/service_accounts/v1/metadata/x509/securetoken@system.gserviceaccount.com",
+        "x-google-audiences": "bobaboard-fb"
+      }
+    },
+    "responses": {
+      "default204": {
+        "description": "OK",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "type": "string"
+            },
+            "example": "OK"
+          }
+        }
+      },
+      "default401": {
+        "description": "Unauthorized",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "type": "string"
+            },
+            "example": "Unauthorized"
+          }
+        }
+      },
+      "default403": {
+        "description": "Forbidden",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "type": "string"
+            },
+            "example": "Forbidden"
+          }
+        }
+      },
+      "default404": {
+        "description": "Not Found",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "type": "string"
+            },
+            "example": "Not Found"
+          }
+        }
+      },
+      "default500": {
+        "description": "Internal Server Error",
+        "content": {
+          "text/plain": {
+            "schema": {
+              "type": "string"
+            },
+            "example": "Internal Server Error"
+          }
+        }
+      },
+      "ensureLoggedIn401": {
+        "description": "User was not found in request that requires authentication.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            },
+            "examples": {
+              "MissingToken": {
+                "summary": "No authentication token given.",
+                "value": {
+                  "message": "No authenticated user found."
+                }
+              },
+              "ExpiredToken": {
+                "summary": "Expired authentication token given.",
+                "value": {
+                  "message": "Authentication token expired."
+                }
+              }
+            }
+          }
+        }
+      },
+      "ensureThreadAccess403": {
+        "description": "User is not authorized to access thread.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            },
+            "examples": {
+              "lockedThread": {
+                "summary": "User does not have required permissions to access thread.",
+                "value": {
+                  "message": "User does not have required permissions to access thread."
+                }
+              }
+            }
+          }
+        }
+      },
+      "ensureThreadPermission403": {
+        "description": "User is unauthorized to perform thread operation.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            },
+            "examples": {
+              "insufficientPermissions": {
+                "summary": "Insufficient permissions.",
+                "value": {
+                  "message": "User does not have required permissions for thread operation."
+                }
+              }
+            }
+          }
+        }
+      },
+      "threadNotFound404": {
+        "description": "The specified thread could not be found.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            },
+            "examples": {
+              "notFound": {
+                "summary": "Thread not found.",
+                "value": {
+                  "message": "The thread with id 29d1b2da-3289-454a-9089-2ed47db4967b was not found."
+                }
+              }
+            }
+          }
+        }
+      },
+      "ensurePermission403": {
+        "description": "User does not have required permissions to complete this action.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            }
+          }
+        }
+      },
+      "ensureBoardAccess403": {
+        "description": "User does not have required permissions to access board.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            },
+            "examples": {
+              "lockedBoard": {
+                "summary": "User is unauthorized to access board.",
+                "value": {
+                  "message": "User does not have required permissions to access board."
+                }
+              }
+            }
+          }
+        }
+      },
+      "ensureBoardPermission403": {
+        "description": "User is unauthorized to perform board operation.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            },
+            "examples": {
+              "insufficientPermissions": {
+                "summary": "Insufficient permissions.",
+                "value": {
+                  "message": "User does not have required permissions for board operation."
+                }
+              }
+            }
+          }
+        }
+      },
+      "boardNotFound404": {
+        "description": "The specified board could not be found.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/genericResponse"
+            },
+            "examples": {
+              "notFound": {
+                "summary": "Board not found.",
+                "value": {
+                  "message": "The board with id 29d1b2da-3289-454a-9089-2ed47db4967b was not found."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "examples": {
+      "BoardsGoreResponse": {
+        "summary": "An existing board",
+        "value": {
+          "id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+          "realm_id": "f377afb3-5c62-40cc-8f07-1f4749a780eb",
+          "slug": "gore",
+          "tagline": "Blood! Blood! Blood!",
+          "avatar_url": "/gore.png",
+          "accent_color": "#f96680",
+          "delisted": false,
+          "logged_in_only": false,
+          "descriptions": [
+            {
+              "id": "f377afb3-5c62-40cc-8f07-1f4749a780eb",
+              "type": "category_filter",
+              "index": 2,
+              "title": "Gore Categories",
+              "categories": ["blood", "bruises"],
+              "description": null
+            },
+            {
+              "id": "f377afb3-5c62-40cc-8f07-1f4749a780eb",
+              "type": "text",
+              "index": 1,
+              "title": "Gore description",
+              "categories": null,
+              "description": "[{\"insert\": \"pls b nice\"}]"
+            }
+          ]
+        }
+      },
+      "BoardsRestrictedResponse": {
+        "summary": "A restricted board",
+        "value": {
+          "id": "76ebaab0-6c3e-4d7b-900f-f450625a5ed3",
+          "realm_id": "f377afb3-5c62-40cc-8f07-1f4749a780eb",
+          "slug": "restricted",
+          "tagline": "A board to test for logged-in only view",
+          "avatar_url": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fgore%2Fe4e263cf-ee98-4902-9c14-c10299210e01.png?alt=media&token=7c170411-9401-4d4e-9f66-5d6dfee2fccd",
+          "accent_color": "#234a69",
+          "delisted": false,
+          "logged_in_only": true,
+          "descriptions": []
+        }
+      },
+      "createGoreTestThread": {
+        "summary": "The request body for making a thread on the gore board.",
+        "value": {
+          "content": "[{\"insert\":\"Gore. Gore? Gore!\"}]",
+          "forceAnonymous": false,
+          "defaultView": "thread",
+          "whisper_tags": ["whisper"],
+          "index_tags": ["search"],
+          "content_warnings": ["content notice"],
+          "category_tags": ["filter"]
+        }
+      },
+      "createGoreTestThreadResponse": {
+        "summary": "The response body for making a thread on the gore board.",
+        "value": {
+          "id": "60634506-6ab1-4083-9867-905cef85cef6",
+          "parent_board_slug": "gore",
+          "parent_board_id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+          "parent_realm_slug": "twisted-minds",
+          "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+          "starter": {
+            "id": "30f7b263-2406-495a-8ab7-4bd559738510",
+            "parent_thread_id": "60634506-6ab1-4083-9867-905cef85cef6",
+            "parent_post_id": null,
+            "created_at": "2021-11-15T13:32:26.00Z",
+            "content": "[{\"insert\":\"Gore. Gore? Gore!\"}]",
+            "secret_identity": {
+              "name": "Him Free",
+              "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fundefined%2F4e72a52a-9fdd-4a49-a7f0-ffa56a46836d?alt=media&token=153015fa-c46b-4184-a17f-10c3e609bf70",
+              "color": null,
+              "accessory": null
+            },
+            "user_identity": {
+              "name": "bobatan",
+              "avatar": "/bobatan.png"
+            },
+            "friend": false,
+            "own": true,
+            "new": false,
+            "tags": {
+              "whisper_tags": ["whisper"],
+              "index_tags": ["search"],
+              "category_tags": ["filter"],
+              "content_warnings": ["content notice"]
+            },
+            "total_comments_amount": 0,
+            "new_comments_amount": 0
+          },
+          "default_view": "thread",
+          "muted": false,
+          "hidden": false,
+          "starred": false,
+          "new": false,
+          "new_posts_amount": 0,
+          "new_comments_amount": 0,
+          "total_comments_amount": 0,
+          "total_posts_amount": 1,
+          "last_activity_at": "2021-11-15T13:32:26.00Z",
+          "direct_threads_amount": 0,
+          "posts": [
+            {
+              "id": "30f7b263-2406-495a-8ab7-4bd559738510",
+              "parent_thread_id": "60634506-6ab1-4083-9867-905cef85cef6",
+              "parent_post_id": null,
+              "created_at": "2021-11-15T13:32:26.00Z",
+              "content": "[{\"insert\":\"Gore. Gore? Gore!\"}]",
+              "secret_identity": {
+                "name": "Him Free",
+                "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fundefined%2F4e72a52a-9fdd-4a49-a7f0-ffa56a46836d?alt=media&token=153015fa-c46b-4184-a17f-10c3e609bf70",
+                "color": null,
+                "accessory": null
+              },
+              "user_identity": null,
+              "friend": false,
+              "own": true,
+              "new": false,
+              "tags": {
+                "whisper_tags": ["whisper"],
+                "index_tags": ["search"],
+                "category_tags": ["filter"],
+                "content_warnings": ["content notice"]
+              },
+              "total_comments_amount": 0,
+              "new_comments_amount": 0
+            }
+          ],
+          "comments": {
+            "30f7b263-2406-495a-8ab7-4bd559738510": []
+          }
+        }
+      },
+      "GoreMetadataUpdateBody": {
+        "summary": "Update metadata for the gore board.",
+        "value": {
+          "descriptions": [
+            {
+              "id": "680ca4ba-87b5-479c-8b1f-3b674900331a",
+              "type": "text",
+              "index": 1,
+              "title": "gore description",
+              "description": "[{\"insert\": \"pls b nice\"}]"
+            },
+            {
+              "id": "1f256747-3bd5-41c0-b9a2-760241bd7928",
+              "type": "category_filter",
+              "index": 2,
+              "title": "gore Categories",
+              "categories": ["blood", "bruises"],
+              "description": null
+            },
+            {
+              "id": "68f77b6b-3ac9-40f2-8507-7fed90c0da82",
+              "index": 3,
+              "title": "test2",
+              "type": "text",
+              "description": "[{\"insert\":\"test\\n\"}]"
+            }
+          ],
+          "accentColor": "#f68298",
+          "tagline": "Blood! Blood! BLOOD."
+        }
+      },
+      "GoreMetadataUpdateResponse": {
+        "summary": "Updated metadata for the gore board.",
+        "value": {
+          "id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+          "realm_id": "f377afb3-5c62-40cc-8f07-1f4749a780eb",
+          "slug": "gore",
+          "accent_color": "#f68298",
+          "tagline": "Blood! Blood! BLOOD.",
+          "avatar_url": "/gore.png",
+          "delisted": false,
+          "logged_in_only": false,
+          "muted": false,
+          "pinned": false,
+          "descriptions": [
+            {
+              "id": "68f77b6b-3ac9-40f2-8507-7fed90c0da82",
+              "type": "text",
+              "index": 3,
+              "title": "test2",
+              "description": "[{\"insert\":\"test\\n\"}]"
+            },
+            {
+              "id": "680ca4ba-87b5-479c-8b1f-3b674900331a",
+              "type": "category_filter",
+              "index": 2,
+              "title": "gore Categories",
+              "categories": ["blood", "bruises"],
+              "description": null
+            },
+            {
+              "id": "68f77b6b-3ac9-40f2-8507-7fed90c0da82",
+              "type": "text",
+              "index": 1,
+              "title": "gore description",
+              "description": "[{\"insert\": \"pls b nice\"}]"
+            }
+          ],
+          "permissions": {
+            "board_permissions": ["edit_board_details"],
+            "post_permissions": ["edit_category_tags", "edit_content_notices"],
+            "thread_permissions": ["move_thread"]
+          },
+          "posting_identities": [
+            {
+              "id": "3df1d417-c36a-43dd-aaba-9590316ffc32",
+              "name": "The Owner",
+              "color": "pink",
+              "accessory": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fc26e8ce9-a547-4ff4-9486-7a2faca4d873%2F7c6c9459-7fa1-4d06-8dc0-ebb5b1bd76a8.png?alt=media&token=78d812a5-b217-4afb-99f3-41b9ed7b7ed5",
+              "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fundefined%2F2df7dfb4-4c64-4370-8e74-9ee30948f05d?alt=media&token=26b16bef-0fd2-47b5-b6df-6cf2799010ca"
+            },
+            {
+              "id": "e5f86f53-6dcd-4f15-b6ea-6ca1f088e62d",
+              "name": "GoreMaster5000",
+              "color": "red",
+              "accessory": null,
+              "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fc26e8ce9-a547-4ff4-9486-7a2faca4d873%2F6518df53-2031-4ac5-8d75-57a0051ed924?alt=media&token=23df54b7-297c-42ff-a0ea-b9862c9814f8"
+            }
+          ],
+          "accessories": [
+            {
+              "id": "7071e443-4168-4afa-9454-871c48e59701",
+              "name": "Rolling",
+              "accessory": "/420accessories/weed_hands.png"
+            },
+            {
+              "id": "e495f6cc-f313-4cc4-9882-f8ac89e8c2e4",
+              "name": "Joint",
+              "accessory": "/420accessories/joint.png"
+            }
+          ]
+        }
+      },
+      "FeedBoardCursor": {
+        "value": {
+          "cursor": {
+            "next": "eyJsYXN0X2FjdGl2aXR5X2N1cnNvciI6IjIwMjAtMDQtMDVUMDU6NDI6MDAuMDAwMDAwIiwicGFnZV9zaXplIjoxMH0="
+          },
+          "activity": [
+            {
+              "starter": {
+                "id": "676f0a9a-897e-4194-9020-980cf2ac813f",
+                "parent_thread_id": "78d98a6a-c24b-4b7a-8e06-4a30862afa2d",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-15T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 16!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "78d98a6a-c24b-4b7a-8e06-4a30862afa2d",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-15T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "07a31562-c7e5-4026-b268-de758299f924",
+                "parent_thread_id": "c5004e2b-4358-43df-8078-905b608e9ceb",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-14T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 15!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "c5004e2b-4358-43df-8078-905b608e9ceb",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-14T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "07fb6be3-b4db-4e44-adaf-4d0d5214fdf8",
+                "parent_thread_id": "8d0be581-5cc7-47c1-947c-f8242898682d",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-13T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 14!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "8d0be581-5cc7-47c1-947c-f8242898682d",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-13T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "77037fd3-3a14-46ce-928c-86ab97c513df",
+                "parent_thread_id": "1c92ab43-4309-454f-be27-d85d3fd78808",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-12T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 13!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "1c92ab43-4309-454f-be27-d85d3fd78808",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-12T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "e3b05f4d-fda3-4c4e-ab5c-5f0f0afa626d",
+                "parent_thread_id": "3e9a317f-2bcd-4db3-abbb-619fa7c03f24",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-11T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 12!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "3e9a317f-2bcd-4db3-abbb-619fa7c03f24",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-11T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "7fbb6b0b-eb1d-4cbf-b610-6aaa3dbf50ba",
+                "parent_thread_id": "7006e0dc-7c7b-4cc5-8c08-61362e8d288b",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-10T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 11!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "7006e0dc-7c7b-4cc5-8c08-61362e8d288b",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-10T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "946f0408-f0a5-4b7e-90ee-a70f6c1e2082",
+                "parent_thread_id": "72470830-7984-4bf6-a0bf-dc5af7d4779b",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-09T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 10!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "72470830-7984-4bf6-a0bf-dc5af7d4779b",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-09T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "d3c57555-a40e-4036-a001-e9b6177a4ddc",
+                "parent_thread_id": "06ba998d-82d8-4e0b-8bbb-a3b3455c4167",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-08T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 9!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "06ba998d-82d8-4e0b-8bbb-a3b3455c4167",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-08T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "ec74bcfd-1660-4f84-8656-89ae52b403d7",
+                "parent_thread_id": "8d227983-7649-49c9-9fa4-b3c398f4648c",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-07T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 8!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "8d227983-7649-49c9-9fa4-b3c398f4648c",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-07T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "ce00d513-1c45-4248-8124-d18cc2174631",
+                "parent_thread_id": "bcbde425-7f84-4e68-acd5-65aaae95714c",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-06T05:42:00.00Z",
+                "content": "[{\"insert\":\"Post 7!\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "bcbde425-7f84-4e68-acd5-65aaae95714c",
+              "parent_board_slug": "long",
+              "parent_board_id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-04-06T05:42:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            }
+          ]
+        }
+      },
+      "FeedBoardGore": {
+        "value": {
+          "cursor": {
+            "next": null
+          },
+          "activity": [
+            {
+              "starter": {
+                "id": "ff9f2ae2-a254-4069-9791-3ac5e6dff5bb",
+                "parent_thread_id": "8b2646af-2778-487e-8e44-7ae530c2549c",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "GoreMaster5000",
+                  "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fc26e8ce9-a547-4ff4-9486-7a2faca4d873%2F6518df53-2031-4ac5-8d75-57a0051ed924?alt=media&token=23df54b7-297c-42ff-a0ea-b9862c9814f8",
+                  "color": "red",
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-09-25T05:42:00.00Z",
+                "content": "[{\"insert\":\"Remember to be excellent to each other and only be mean to fictional characters!\"}]",
+                "tags": {
+                  "whisper_tags": ["An announcement from your headmaster!"],
+                  "index_tags": [],
+                  "category_tags": [],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 2,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "8b2646af-2778-487e-8e44-7ae530c2549c",
+              "parent_board_slug": "gore",
+              "parent_board_id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 2,
+              "total_posts_amount": 1,
+              "last_activity_at": "2020-10-04T05:44:00.00Z",
+              "direct_threads_amount": 0,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "11b85dac-e122-40e0-b09a-8829c5e0250e",
+                "parent_thread_id": "29d1b2da-3289-454a-9089-2ed47db4967b",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fundefined%2F989f4b40-c1b8-4793-93dd-57e93df3e7ec.png?alt=media&token=cabdd8d5-b6a9-4914-bb59-eda4629f151b"
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-30T03:23:00.00Z",
+                "content": "[{\"insert\":\"Favorite character to maim?\"}]",
+                "tags": {
+                  "whisper_tags": [],
+                  "index_tags": ["evil", "bobapost"],
+                  "category_tags": ["bruises"],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 2,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "29d1b2da-3289-454a-9089-2ed47db4967b",
+              "parent_board_slug": "gore",
+              "parent_board_id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 2,
+              "total_posts_amount": 3,
+              "last_activity_at": "2020-05-23T05:52:00.00Z",
+              "direct_threads_amount": 2,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            },
+            {
+              "starter": {
+                "id": "3db477e0-57ed-491d-ba11-b3a0110b59b0",
+                "parent_thread_id": "a5c903df-35e8-43b2-a41a-208c43154671",
+                "parent_post_id": null,
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "created_at": "2020-04-24T05:42:00.00Z",
+                "content": "[{\"insert\":\"Favorite murder scene in videogames?\"}]",
+                "tags": {
+                  "whisper_tags": ["mwehehehehe"],
+                  "index_tags": [],
+                  "category_tags": ["blood", "bruises"],
+                  "content_warnings": []
+                },
+                "total_comments_amount": 0,
+                "new_comments_amount": 0,
+                "new": false,
+                "own": false
+              },
+              "default_view": "thread",
+              "id": "a5c903df-35e8-43b2-a41a-208c43154671",
+              "parent_board_slug": "gore",
+              "parent_board_id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+              "parent_realm_slug": "twisted-minds",
+              "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "new_posts_amount": 0,
+              "new_comments_amount": 0,
+              "total_comments_amount": 0,
+              "total_posts_amount": 3,
+              "last_activity_at": "2020-05-03T09:47:00.00Z",
+              "direct_threads_amount": 2,
+              "muted": false,
+              "hidden": false,
+              "starred": false,
+              "new": false
+            }
+          ]
+        }
+      },
+      "V0RealmResponse": {
+        "summary": "The data for the v0 Realm",
+        "value": {
+          "id": "0d91d28f-182c-4684-aa6c-9159059a5b49",
+          "slug": "v0",
+          "icon": "https://images-ext-1.discordapp.net/external/KLz7_JytTOB6vzGDmnAuXTgkDtWuUCluyB6VxiAL8FA/%3Fsize%3D1024/https/cdn.discordapp.com/icons/911351540504199168/d6f98ff59822c22b1ff650796c346166.png",
+          "settings": {
+            "root": {
+              "cursor": {}
+            },
+            "index_page": [],
+            "board_page": [],
+            "thread_page": []
+          },
+          "homepage": {
+            "blocks": [
+              {
+                "id": "f8cf1796-c5b4-49c9-9773-eb1a245e222c",
+                "index": 0,
+                "title": "A description block",
+                "type": "text",
+                "description": "Welcome to the Realm"
+              },
+              {
+                "id": "d829b5fb-6343-4700-bf7c-7626950f2c8d",
+                "index": 1,
+                "title": "A rules block",
+                "type": "rules",
+                "rules": [
+                  {
+                    "index": 0,
+                    "title": "Be nice to each other",
+                    "description": "What it says up there",
+                    "pinned": true
+                  },
+                  {
+                    "index": 1,
+                    "title": "This is a hidden rule",
+                    "description": "Congratulations! Here's a cookie",
+                    "pinned": false
+                  }
+                ]
+              }
+            ]
+          },
+          "realm_permissions": [
+            "create_realm_invite",
+            "post_on_realm",
+            "comment_on_realm",
+            "create_thread_on_realm",
+            "access_locked_boards_on_realm"
+          ],
+          "boards": [
+            {
+              "id": "2fb151eb-c600-4fe4-a542-4662487e5496",
+              "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "slug": "main_street",
+              "tagline": "For BobaBoard-related discussions.",
+              "avatar_url": "/villains.png",
+              "accent_color": "#ff5252",
+              "delisted": false,
+              "logged_in_only": false
+            },
+            {
+              "id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+              "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "slug": "gore",
+              "tagline": "Blood! Blood! Blood!",
+              "avatar_url": "/gore.png",
+              "accent_color": "#f96680",
+              "delisted": false,
+              "logged_in_only": false
+            },
+            {
+              "id": "4b30fb7c-2aca-4333-aa56-ae8623a92b65",
+              "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "slug": "anime",
+              "tagline": "I wish I had a funny one for this.",
+              "avatar_url": "/anime.png",
+              "accent_color": "#24d282",
+              "delisted": false,
+              "logged_in_only": false
+            },
+            {
+              "id": "db8dc5b3-5b4a-4bfe-a303-e176c9b00b83",
+              "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "slug": "long",
+              "tagline": "A board to test with many posts.",
+              "avatar_url": "/onceler-board.png",
+              "accent_color": "#00b8ff",
+              "delisted": false,
+              "logged_in_only": false
+            },
+            {
+              "id": "0e0d1ee6-f996-4415-89c1-c9dc1fe991dc",
+              "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "slug": "memes",
+              "tagline": "A board to test collections view.",
+              "avatar_url": "/kink-meme.png",
+              "accent_color": "#7b00ff",
+              "delisted": false,
+              "logged_in_only": false
+            },
+            {
+              "id": "2bdce2fa-12e0-461b-b0fb-1a2e67227434",
+              "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "slug": "muted",
+              "tagline": "A board to test for muting.",
+              "avatar_url": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fc26e8ce9-a547-4ff4-9486-7a2faca4d873%2Feded338a-e0e5-4a97-a368-5ae525c0eec4?alt=media&token=914f84b7-a581-430e-bb09-695f653e8e02",
+              "accent_color": "#9b433b",
+              "delisted": false,
+              "logged_in_only": false
+            },
+            {
+              "id": "76ebaab0-6c3e-4d7b-900f-f450625a5ed3",
+              "realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+              "slug": "restricted",
+              "tagline": "A board to test for logged-in only view",
+              "avatar_url": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fgore%2Fe4e263cf-ee98-4902-9c14-c10299210e01.png?alt=media&token=7c170411-9401-4d4e-9f66-5d6dfee2fccd",
+              "accent_color": "#234a69",
+              "delisted": false,
+              "logged_in_only": true
+            }
+          ]
+        }
+      },
+      "ThreadWithCommentsThreadResponse": {
+        "summary": "A thread with a comments thread with nested comments.",
+        "value": {
+          "id": "8b2646af-2778-487e-8e44-7ae530c2549c",
+          "parent_board_slug": "gore",
+          "parent_board_id": "c6d3d10e-8e49-4d73-b28a-9d652b41beec",
+          "parent_realm_slug": "twisted-minds",
+          "parent_realm_id": "76ef4cc3-1603-4278-95d7-99c59f481d2e",
+          "starter": {
+            "id": "ff9f2ae2-a254-4069-9791-3ac5e6dff5bb",
+            "parent_thread_id": "8b2646af-2778-487e-8e44-7ae530c2549c",
+            "parent_post_id": null,
+            "created_at": "2020-09-25T05:42:00.00Z",
+            "content": "[{\"insert\":\"Remember to be excellent to each other and only be mean to fictional characters!\"}]",
+            "secret_identity": {
+              "name": "GoreMaster5000",
+              "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fc26e8ce9-a547-4ff4-9486-7a2faca4d873%2F6518df53-2031-4ac5-8d75-57a0051ed924?alt=media&token=23df54b7-297c-42ff-a0ea-b9862c9814f8",
+              "color": "red",
+              "accessory": null
+            },
+            "user_identity": null,
+            "friend": false,
+            "own": false,
+            "new": false,
+            "tags": {
+              "whisper_tags": ["An announcement from your headmaster!"],
+              "index_tags": [],
+              "category_tags": [],
+              "content_warnings": []
+            },
+            "total_comments_amount": 2,
+            "new_comments_amount": 0
+          },
+          "posts": [
+            {
+              "id": "ff9f2ae2-a254-4069-9791-3ac5e6dff5bb",
+              "parent_thread_id": "8b2646af-2778-487e-8e44-7ae530c2549c",
+              "parent_post_id": null,
+              "created_at": "2020-09-25T05:42:00.00Z",
+              "content": "[{\"insert\":\"Remember to be excellent to each other and only be mean to fictional characters!\"}]",
+              "secret_identity": {
+                "name": "GoreMaster5000",
+                "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fc26e8ce9-a547-4ff4-9486-7a2faca4d873%2F6518df53-2031-4ac5-8d75-57a0051ed924?alt=media&token=23df54b7-297c-42ff-a0ea-b9862c9814f8",
+                "color": "red",
+                "accessory": null
+              },
+              "user_identity": null,
+              "friend": false,
+              "own": false,
+              "new": false,
+              "tags": {
+                "whisper_tags": ["An announcement from your headmaster!"],
+                "index_tags": [],
+                "category_tags": [],
+                "content_warnings": []
+              },
+              "total_comments_amount": 2,
+              "new_comments_amount": 0
+            }
+          ],
+          "comments": {
+            "ff9f2ae2-a254-4069-9791-3ac5e6dff5bb": [
+              {
+                "id": "d3c21e0c-7ab9-4cb6-b1ed-1b7e558ba375",
+                "parent_comment_id": null,
+                "chain_parent_id": null,
+                "parent_post_id": "ff9f2ae2-a254-4069-9791-3ac5e6dff5bb",
+                "created_at": "2020-10-02T05:43:00.00Z",
+                "content": "[{\"insert\":\"But can we be mean to you?\"}]",
+                "secret_identity": {
+                  "name": "DragonFucker",
+                  "avatar": "https://pbs.twimg.com/profile_images/473496567366705152/JyHRKG7g.jpeg",
+                  "color": null,
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "own": false,
+                "new": false
+              },
+              {
+                "id": "146d4087-e11e-4912-9d67-93065b9a0c78",
+                "parent_comment_id": "d3c21e0c-7ab9-4cb6-b1ed-1b7e558ba375",
+                "chain_parent_id": null,
+                "parent_post_id": "ff9f2ae2-a254-4069-9791-3ac5e6dff5bb",
+                "created_at": "2020-10-04T05:44:00.00Z",
+                "content": "[{\"insert\":\"BobaNitro users can be mean to the webmaster once a month.\"}]",
+                "secret_identity": {
+                  "name": "GoreMaster5000",
+                  "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fbobaland%2Fc26e8ce9-a547-4ff4-9486-7a2faca4d873%2F6518df53-2031-4ac5-8d75-57a0051ed924?alt=media&token=23df54b7-297c-42ff-a0ea-b9862c9814f8",
+                  "color": "red",
+                  "accessory": null
+                },
+                "user_identity": null,
+                "friend": false,
+                "own": false,
+                "new": false
+              }
+            ]
+          },
+          "default_view": "thread",
+          "muted": false,
+          "hidden": false,
+          "starred": false,
+          "new": false,
+          "last_activity_at": "2020-10-04T05:44:00.00Z",
+          "new_posts_amount": 0,
+          "new_comments_amount": 0,
+          "total_comments_amount": 2,
+          "total_posts_amount": 1,
+          "direct_threads_amount": 0
+        }
+      },
+      "BobaDexResponse": {
+        "summary": "A BobaDex with multiple seasons",
+        "value": {
+          "seasons": [
+            {
+              "id": "8d64d742-48d5-43e8-9378-bd73c7bfa871",
+              "realm_id": "v0",
+              "name": "Default",
+              "identities_count": 3,
+              "caught_identities": [
+                {
+                  "index": 1,
+                  "identity": {
+                    "id": "3f0d24b8-decc-4413-8f9d-eace821116a8",
+                    "name": "Old Time-y Anon",
+                    "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fgore%2F5c2c3867-2323-4209-8bd4-9dfcc88808f3%2Fd931f284-5c22-422d-9343-e509cfb44ffc.png?alt=media&token=94e52fff-4e6b-4110-94c3-90b8800f541c"
+                  }
+                },
+                {
+                  "index": 3,
+                  "identity": {
+                    "id": "02be1cb0-e685-4dcb-a05c-adc1054e6fb2",
+                    "name": "Outdated Meme",
+                    "avatar": "https://firebasestorage.googleapis.com/v0/b/bobaboard-fb.appspot.com/o/images%2Fgore%2F5c2c3867-2323-4209-8bd4-9dfcc88808f3%2Fd931f284-5c22-422d-9343-e509cfb44ffc.png?alt=media&token=94e52fff-4e6b-4110-94c3-90b8800f541c"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "UserSettingsRequest": {
+        "summary": "A sample user settings update request",
+        "value": {
+          "name": "FESTIVE_BACKGROUND_FEED",
+          "value": false
+        }
+      },
+      "UserSettingsResponse": {
+        "summary": "A sample user settings response",
+        "value": {
+          "decorations": [
+            {
+              "name": "FESTIVE_BACKGROUND_FEED",
+              "type": "BOOLEAN",
+              "value": true
+            },
+            {
+              "name": "FESTIVE_BACKGROUND_SIDEBAR",
+              "type": "BOOLEAN",
+              "value": true
+            },
+            {
+              "name": "FESTIVE_CURSOR",
+              "type": "BOOLEAN",
+              "value": false
+            }
+          ]
+        }
+      }
+    }
+  }
+}
