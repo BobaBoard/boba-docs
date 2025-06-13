@@ -1,7 +1,7 @@
 ---
 title: BobaDex
 sidebar:
-  order: 2
+  order: 5
 ---
 
 Each `Realm` that supports `Anonymity` must have an associated `BobaDex`,

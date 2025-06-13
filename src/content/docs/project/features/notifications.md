@@ -1,5 +1,7 @@
 ---
 title: Notifications
+sidebar:
+  order: 6
 ---
 
 This page acts as documentation for the features (and logic) associated with

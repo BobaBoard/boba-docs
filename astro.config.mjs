@@ -100,9 +100,32 @@ export default defineConfig({
               icon: "information",
               items: [
                 {
-                  label: "Project Guide",
-                  autogenerate: { directory: "project" },
+                  label: "Introduction",
+                  link: "/project/intro",
                 },
+								{
+									label: "Roadmap",
+									autogenerate: {directory: "/project/roadmap"}
+								},
+								{
+                  label: "Features",
+                  items: [{
+										label: "Notifications",
+										link: "/project/features/notifications"
+									},
+									{label: "Identities",
+										autogenerate: {directory: "/project/features/identities"}
+									}
+								],
+                },
+																{
+									label: "WIPs",
+									autogenerate: {directory: "/project/wips"}
+								},
+																{
+									label: "Mockups",
+									autogenerate: {directory: "/project/mockups"}
+								}
               ],
             },
             {

@@ -1,5 +1,7 @@
 ---
 title: '"Native" Gif Search'
+sidebar:
+  order: 7
 ---
 
 ## Problem Summary

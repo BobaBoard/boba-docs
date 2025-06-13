@@ -1,7 +1,7 @@
 ---
 title: Identity Management
 sidebar:
-  order: 1
+  order: 4
 ---
 
 :::caution
