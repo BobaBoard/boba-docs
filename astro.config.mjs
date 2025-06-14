@@ -89,7 +89,7 @@ export default defineConfig({
             base: "api",
             schema: "./src/data/backend-open-api.json",
             sidebar: { label: "REST API" },
-						operations: { badges: true }
+            operations: { badges: true },
           },
         ]),
         starlightSidebarTopics(
@@ -103,29 +103,25 @@ export default defineConfig({
                   label: "Introduction",
                   link: "/project/intro",
                 },
-								{
-									label: "Roadmap",
-									autogenerate: {directory: "/project/roadmap"}
-								},
-								{
-                  label: "Features",
-                  items: [{
-										label: "Notifications",
-										link: "/project/features/notifications"
-									},
-									{label: "Identities",
-										autogenerate: {directory: "/project/features/identities"}
-									}
-								],
+                {
+                  label: "Roadmap",
+                  autogenerate: { directory: "/project/roadmap" },
                 },
-																{
-									label: "WIPs",
-									autogenerate: {directory: "/project/wips"}
-								},
-																{
-									label: "Mockups",
-									autogenerate: {directory: "/project/mockups"}
-								}
+                {
+                  label: "Features",
+                  autogenerate: {
+                    directory: "/project/features/",
+                  },
+                },
+                {
+                  label: "WIPs",
+									collapsed: true,
+                  autogenerate: { directory: "/project/wips" },
+                },
+                {
+                  label: "Mockups",
+                  autogenerate: { directory: "/project/mockups" },
+                },
               ],
             },
             {
@@ -134,8 +130,78 @@ export default defineConfig({
               icon: "seti:powershell",
               items: [
                 {
-                  label: "Development Guide",
-                  autogenerate: { directory: "development" },
+                  label: "Codebase Overview",
+                  link: "/development/intro",
+                },
+                {
+                  label: "Contribute",
+                  autogenerate: { directory: "/development/contribute" },
+                },
+                {
+                  label: "Boba-Editor",
+                  autogenerate: { directory: "/development/boba-editor" },
+                },
+                {
+                  label: "Boba-Backend",
+                  items: [
+                    {
+                      label: "Getting Started",
+                      link: "/development/boba-backend/getting-started",
+                    },
+                    {
+                      label: "APIs",
+                      autogenerate: {
+                        directory: "/development/boba-backend/apis",
+                      },
+                    },
+										{
+                      label: "Features",
+                      autogenerate: {
+                        directory: "/development/boba-backend/features",
+                      },
+                    },
+										{
+                      label: "Permissions",
+                      autogenerate: {
+                        directory: "/development/boba-backend/permissions",
+                      },
+                    },
+										{
+                      label: "Testing",
+                      link: "/development/boba-backend/testing",
+                    },
+										{
+                      label: "Using Postman",
+                      link: "/development/boba-backend/using-postman",
+                    },
+                  ],
+                },
+                {
+                  label: "Boba-Frontend",
+                  autogenerate: { directory: "/development/boba-frontend" },
+                },
+								{
+                  label: "Boba-Docs",
+                  link: "/development/boba-docs",
+                },
+								{
+                  label: "Development Philosophy",
+                  link: "/development/philosophy",
+                },
+								{
+                  label: "Knowledge Base",
+                  autogenerate: { directory: "/development/knowledge-base" },
+                },
+								{
+                  label: "Legacy Overview",
+									badge: { text: 'Deprecated', variant: 'danger' },
+									collapsed: true,
+                  autogenerate: { directory: "/development/legacy-pages" },
+                },
+								{
+                  label: "WIPs",
+									collapsed: true,
+                  autogenerate: { directory: "/development/wips" },
                 },
               ],
             },
@@ -162,7 +228,7 @@ export default defineConfig({
               label: "REST API",
               id: "api",
               link: "api",
-							icon: "seti:db",
+              icon: "seti:db",
               items: [...openAPISidebarGroups],
             },
           ],
