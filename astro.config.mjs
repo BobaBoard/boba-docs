@@ -217,7 +217,7 @@ export default defineConfig({
               items: [
                 {
                   label: "Volunteering Guide",
-                  autogenerate: { directory: "volunteering" },
+                  autogenerate: { directory: "/volunteering/" },
                 },
               ],
             },
@@ -226,7 +226,42 @@ export default defineConfig({
               link: "/users/intro",
               icon: "laptop",
               items: [
-                { label: "User Guide", autogenerate: { directory: "users" } },
+                {
+                  label: "BobaBoard Basics",
+                  link: "/users/intro/",
+                },
+                {
+                  label: "Development Status",
+                  link: "/users/status/",
+                },
+                {
+                  label: "General BobaBoard Etiquette",
+                  link: "/users/etiquette/",
+                },
+                {
+                  label: "How to Use BobaBoard",
+                  autogenerate: { directory: "/users/how-to" },
+                },
+                {
+                  label: "Galaxy & Realm Admins",
+                  link: "/users/admins/",
+                },
+                {
+                  label: "V0: The Alpha",
+                  autogenerate: { directory: "/users/v0" },
+                },
+                {
+                  label: "Fandom Coders",
+                  autogenerate: { directory: "/users/fandom-coders" },
+                },
+                {
+                  label: "Self-Hosting",
+                  autogenerate: { directory: "/users/self-hosting" },
+                },
+                {
+                  label: "DMCA Policy",
+                  link: "/users/dmca-policy",
+                },
               ],
             },
             {
