@@ -6,12 +6,12 @@ sidebar:
 
 import { Aside } from '@astrojs/starlight/components';
 
-:::warning
+<Aside type="caution">
 
 **Make sure you have [Docker](https://www.docker.com/products/docker-desktop)
 installed.** This is the only codebase that needs it.
 
-:::
+</Aside>
 
 ## Install Instructions
 
@@ -74,13 +74,13 @@ touch firebase-sdk.json
 
 ### 4 — Set up your FirebaseSDK credentials
 
-:::warning
+<Aside type="caution">
 
 **This is an INVALIDATED Firebase service account key.** It will allow the
 firebase admin SDK to be correctly initialized, but doesn't grant any further
 privilege.
 
-:::
+</Aside>
 
 Open `firebase-sdk.json` and paste the following content within it:
 

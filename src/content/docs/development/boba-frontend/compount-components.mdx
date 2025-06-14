@@ -2,6 +2,8 @@
 title: Compound Components
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 Compound components are a common React design pattern where a component (the
 parent) also defines other subcomponents (its children) as part of its
 interface. Usually, this pattern allows the parent component and the smaller
@@ -31,11 +33,11 @@ If we consider layout a compound component, it might look like this:
 </Layout>
 ```
 
-:::note
+<Aside type="note">
 
-Not how this actually looks like
+Not how this actually looks.
 
-:::
+</Aside>
 
 ### Advantage 1: Props can go on the component where they belong
 
@@ -173,7 +175,7 @@ const Layout: LayoutCompound = (props: LayoutProps) => {
 };
 ```
 
-:::warning
+<Aside type="caution">
 
 Unless you write code _specifically_ to allow this, there shouldn't be any
 additional component between a parent and its subcomponents, not even a
@@ -189,4 +191,4 @@ fail.
 </Layout>
 ```
 
-:::
+</Aside>

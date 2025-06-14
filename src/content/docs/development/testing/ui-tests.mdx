@@ -2,7 +2,7 @@
 title: UI Tests with Jest and Storybook
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
 
 This guide will cover how to write tests for the bobaboard-ui codebase. It
 assumes that you have some familiarity with Bobaboard as a user of the site,
@@ -47,11 +47,14 @@ it will open in your browser looking more or less like
 [this](https://bobaboard-ui.netlify.app/), but will update live with any changes
 you make to the src code.
 
-:::caution Known Issue There is currently an issue with the bobaboard-ui
-codebase and Storybook where after a few minutes Storybook starts running really
-slowly. Ms. Boba is trying to get it figured out. In the meantime, you may need
-to close it (ctrl+C in your terminal) and restart it when it becomes unusable.
-:::
+<Aside type="caution">
+
+Known Issue There is currently an issue with the bobaboard-ui codebase and
+Storybook where after a few minutes Storybook starts running really slowly. Ms.
+Boba is trying to get it figured out. In the meantime, you may need to close it
+(ctrl+C in your terminal) and restart it when it becomes unusable.
+
+</Aside>
 
 In order for Storybook to render our components, we need to compose stories
 files for them that let us directly pass the appropriate props to model the
@@ -118,11 +121,11 @@ need to test.
 
 <Aside type="tip" title="Typescript Tip">
 
-If you ever want to see exactly what all the props a given
-component should or could have are, typescript has your back. Look in the src
-file for the component and find the `interface` and/or `type` declarations where
-the types are defined for the component's props. Here's an example from the
-BoardMenuItem component of Boba's Side Menu:
+If you ever want to see exactly what all the props a given component should or
+could have are, typescript has your back. Look in the src file for the component
+and find the `interface` and/or `type` declarations where the types are defined
+for the component's props. Here's an example from the BoardMenuItem component of
+Boba's Side Menu:
 
 ```typescript
 export interface BoardMenuItemProps {
@@ -434,8 +437,8 @@ point, they don't have to also update the length value in the test.
 
 <Aside type="tip" title="Typescript Tip">
 
-When you are trying to access the value of a story prop
-with `Story.args.value` you may run in two sorts of related typescript errors:
+When you are trying to access the value of a story prop with `Story.args.value`
+you may run in two sorts of related typescript errors:
 
 1. The prop is of a type that is actually `TypeA | TypeB`. We can tell it which
    type it is explicitly by saying `(Story.args as TypeA).value`.
@@ -515,9 +518,11 @@ labels.
 
 </Aside>
 
-:::caution Aria in React Aria labels, rolls, and attributes need to go on the
-actual basic html elements in jsx, but Typescript/VScode won't catch it as a
-problem if you accidentally try to put them on a component.
+<Aside type="caution">
+
+Aria in React Aria labels, rolls, and attributes need to go on the actual basic
+html elements in jsx, but Typescript/VScode won't catch it as a problem if you
+accidentally try to put them on a component.
 
 ```typescript title="Within BoardMenuSection.tsx"
 // These won't work, but also wont give helpful red squiggly underlines :(
@@ -542,9 +547,13 @@ and add the label there, or even farther down.
 As time goes on, more and more of the common base components should have label
 and other accessibility props already defined and implemented in them, and you
 will just have to pass your prop to them, but if one you need isn't there,
-please go ahead and add it. :::
+please go ahead and add it.
 
-:::note Tests without stories We use
+</Aside>
+
+<Aside type="note" title="Tests without stories">
+
+We use
 [@storybook/testing-react](https://storybook.js.org/addons/@storybook/testing-react)
 to let our tests render our pre-existing stories so we don't have to repeat work
 and can simply use `render(<Story />);` in our tests, but you can also directly
@@ -578,15 +587,19 @@ test("Doesn't render items in empty section", async () => {
 });
 ```
 
-:::
+</Aside>
 
-:::caution If you want to query that an element is not in the document, you need
-to use `.queryBy...` instead of `.getBy...`.
+<Aside type="caution">
+
+If you want to query that an element is not in the document, you need to use
+`.queryBy...` instead of `.getBy...`.
 
 `.getBy...` throws an error if it can't find the thing it's looking for and your
 test will fail immediately, where as `.queryBy...` returns null (or an empty
 array in the case of `.queryAllBy...`) which can then successfully be compared
-to the matcher `.not.toBeInTheDocument`. :::
+to the matcher `.not.toBeInTheDocument`.
+
+</Aside>
 
 ### Mock Functions and userEvent
 
@@ -596,11 +609,15 @@ of the UI. To do this we use Jest's
 [user-event](https://testing-library.com/docs/ecosystem-user-event) library from
 Testing Library in conjunction with the [actions](#actions) from our stories.
 
-:::caution Bobaboard-ui is currently using the older 13.5.0 version of
-user-event, the docs for which can be found
+<Aside type="caution">
+
+Bobaboard-ui is currently using the older 13.5.0 version of user-event, the docs
+for which can be found
 [here](https://testing-library.com/docs/ecosystem-user-event), not the
 14.0.0-beta version described in the rest of the User Interactions section of
-the Testing Library docs. :::
+the Testing Library docs.
+
+</Aside>
 
 Jest mock functions can do a number of things, but for UI tests we most often
 use them to mock an action from a story, which we set up like this:
@@ -614,9 +631,13 @@ Then we can use a userEvent on the element in question to simulate how the user
 would interact with it. We mostly use `userEvent.click()` or `userEvent.type()`
 but there are a number of other helper methods available as well.
 
-:::info Testing Library also has a fireEvent method, but most of the time it's
-better to use userEvent which more accurately simulates how a user would
-interact with the component. :::
+<Aside type="note">
+
+Testing Library also has a fireEvent method, but most of the time it's better to
+use userEvent which more accurately simulates how a user would interact with the
+component.
+
+</Aside>
 
 If a function is being called or a change is happening in the DOM as a result of
 our userEvent, we then want to use `await` and wrap our `expect()`s for the

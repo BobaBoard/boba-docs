@@ -33,12 +33,12 @@ page to make it less scary for newcomers.
 
 ### Windows Subsystem for Linux (WSL) [Windows Only]
 
-:::warning
+<Aside type="caution">
 
 This is only for Window users. It's optional, but **highly recommended**.
 Without this, it might be harder to help you in case of errors.
 
-:::
+</Aside>
 
 **[WSL](https://docs.microsoft.com/en-us/windows/wsl/install) allows you to run
 Linux commands on Windows**, and will save you many, many headaches. We
@@ -46,12 +46,12 @@ recommend using the latest version of WSL (WSL2). The default Ubuntu
 distribution is the most commonly used, but if you're more familiar with another
 distribution, you're welcome to use it.
 
-:::caution
+<Aside type="caution">
 
 If you need Docker (see below) and have Windows 10 Home Edition, you **must**
 install WSL.
 
-:::
+</Aside>
 
 For a step-by-step guide to setting up WSL, installing the below pre-requisites,
 and getting set-up to develop for BobaBoard using WSL see
@@ -77,13 +77,13 @@ should be installed via the
 [**Node Version Manager**](https://github.com/nvm-sh/nvm) (NVM), which allows
 you to manage multiple versions of NodeJS on the same machine.
 
-:::caution
+<Aside type="caution">
 
 You can also install NodeJS directly through the installer, but you won't be
 able to switch between versions. It is **highly, highly recommended** that you
 install NVM.
 
-:::
+</Aside>
 
 <Aside type="tip">
 
@@ -117,14 +117,14 @@ Trust me, you don't need to understand Docker to use it.
   comes for free with the above in Windows and Mac, but might need additional
   steps on Linux.
 
-:::warning
+<Aside type="caution">
 
 **[Windows Only]** You should run docker in a WSL2 instance. There's a checkbox
 in Docker settings for this. (This is required if you have Windows 10 Home
 Edition, and only recommended for other versions of Windows 10.) If Docker is
 failing to start, make sure you have WSL2 installed.
 
-:::
+</Aside>
 
 Docker will be used to run BobaBoard's
 [**PostgreSQL**](https://www.postgresql.org/) database and the

@@ -4,18 +4,18 @@ sidebar:
   order: 1
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
 
-:::important
+<Aside type="note" title="Important">
 
 Before continuing with this section, **follow the installation instructions** in
 our [Contribute section](/docs/development/start-developing/boba-backend).
 
-:::
+</Aside>
 
 ## Development Instructions
 
-:::warning
+<Aside type="caution">
 
 This codebase requires Node **18**. If you're using
 [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version
@@ -23,7 +23,7 @@ This codebase requires Node **18**. If you're using
 
 You can check the current Node version by running `node -v`.
 
-:::
+</Aside>
 
 boba-backend needs 3 different components to run:
 
@@ -36,11 +36,11 @@ running tests, you'll likely want to start them all together.
 
 ### Quickstart (single command)
 
-:::warning
+<Aside type="caution">
 
 Make sure you have Docker installed and running
 
-:::
+</Aside>
 
 In a terminal, run the following command:
 
@@ -66,11 +66,11 @@ yarn run server:dev
 
 #### Run tests
 
-:::warning
+<Aside type="caution">
 
 You should start the database independently before running tests
 
-:::
+</Aside>
 
 ```
 yarn run test
@@ -96,8 +96,9 @@ same URL through [Postman](/docs/development/boba-backend/using-postman).
 you make. **
 
 <details>
-<summary><strong>How to manually restart the development server</strong>
-</summary>
+  <summary>
+    <strong>How to manually restart the development server</strong>
+  </summary>
 
 Both of these actions need to be performed on the console where
 `yarn run dev:watch` is currently running.

@@ -4,7 +4,9 @@ sidebar:
   order: 5
 ---
 
-:::warning
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="caution">
 
 This codebase requires Node **18**. If you're using
 [Node Version Manager](https://github.com/nvm-sh/nvm), you can switch to version
@@ -12,7 +14,7 @@ This codebase requires Node **18**. If you're using
 
 You can check the current Node version by running `node -v`.
 
-:::
+</Aside>
 
 ## Clone project
 
@@ -39,12 +41,12 @@ To connect to a local `boba-backend` instance, make sure that the instance is
 up, then run `yarn run dev`. Going to `http://localhost:3000` will show the
 default Realm (`twisted-minds`).
 
-:::info Logging in
+<Aside type="note" title="Logging in">
 
 You can login with your BobaBoard credentials, although your test user will
 appear as "boba-tan".
 
-:::
+</Aside>
 
 ### Connect to a local `boba-backend` (multiple Realms)
 
@@ -57,12 +59,12 @@ use `http://REALM_NAME_boba.local` addresses to simulate multiple realms.
 1. Run `yarn run dev:bonjour`
 2. Go to `http://twisted-minds_boba.local:3000` in your browser.
 
-:::warning
+<Aside type="caution">
 
 Do ask for help if you encounter problems! If you're on a Linux machine, you may
 need to start the Avahi daemon.
 
-:::
+</Aside>
 
 ### Connect to a different backend
 
@@ -102,14 +104,14 @@ cd boba-frontend
 yarn link @bobaboard/ui-components
 ```
 
-:::warning
+<Aside type="caution">
 
 To see changes to boba-components reflected in boba-frontend, you must run
 `yarn run build` in the `boba-components` folder. boba-frontend should then pick
 up the changes when the page is reloaded. Loading may be slower the first time
 after new changes.
 
-:::
+</Aside>
 
 ## Troubleshooting
 

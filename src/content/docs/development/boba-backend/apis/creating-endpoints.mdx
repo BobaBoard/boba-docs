@@ -12,16 +12,16 @@ resource they refer to (e.g. boards, threads, users). Their naming and
 structure, which reflects their external URL, should follow the principles
 defined in our [API guidelines](API-guidelines).
 
-:::note
+<Aside type="note">
 
 The same endpoint can be called with different HTTP methods, each of which
 corresponds (when defined) to a different operation on the associated resources.
 
 You can learn more in our [intro to APIs](./API-guidelines.md).
 
-:::
+</Aside>
 
-## Routes and endpoint structure {#structure}
+## Routes and endpoint structure
 
 Each subfolder in the
 [`server/` directory](https://github.com/BobaBoard/boba-backend/tree/master/server)
@@ -63,12 +63,12 @@ A more general explanation of Express routing is available
    endpoint to. It will be contained within the `server/[resource_name]`
    directory.
 
-   :::note
+   <Aside type="note">
 
    If you're adding a new top-level route, follow the instruction in the
    [creating a new top-level route](#top-level-route) section.
 
-   :::
+   </Aside>
 
 2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will
    use. The [REST API example](./intro.md#api-example) includes examples of
@@ -118,13 +118,13 @@ router.post("/:post_id/comment", ensureLoggedIn, async (req, res) => {
 }
 ```
 
-:::warning
+<Aside type="caution">
 
 Each endpoint should be documented and tested.
 
-:::
+</Aside>
 
-### Creating a new top-level route {#top-level-route}
+### Creating a new top-level route
 
 1. Create the corresponding folders and files as defined in the
    [structure](#structure) section. Don't forget to export an
@@ -153,7 +153,7 @@ Each endpoint should be documented and tested.
    };
    ```
 
-## Documenting endpoints {#documentation}
+## Documenting endpoints
 
 We use the [OpenAPI 3.1](https://spec.openapis.org/oas/latest.html) spec to
 document API endpoints.

@@ -21,12 +21,12 @@ introduce you to technical vocabulary you might run into. For more information
 on these subjects you can look at our
 [Git Notes](/docs/development/legacy-pages/git-notes.md) page.
 
-:::note
+<Aside type="note">
 
 We will use GitHub as our example platform since BobaBoard's code is hosted
 there. However, there are alternative platforms that serve similar purposes.
 
-:::
+</Aside>
 
 ## Overview
 
@@ -99,7 +99,7 @@ includes your latest edits! You need to 'pull' the changes.
 The following is a more in-depth guide to the steps one would follow to
 contribute to one of Boba's codebases.
 
-:::note
+<Aside type="note">
 
 If you've looked at our
 [Recommended Tools](/docs/development/knowledge-base/recommended-tools.md)
@@ -108,7 +108,7 @@ editor. One reason for this is its excellent integration with git. This lets you
 perform various tasks using the editor's user interface instead of typing
 commands in your terminal. Feel free to use integrations if you prefer.
 
-:::
+</Aside>
 
 ### 1. Fork the repository on GitHub
 
@@ -128,12 +128,12 @@ the owner of the repository, and `boba-docs` is the repository's name.
 Once you've created a fork, this copy will live somewhere that looks like so:
 `https://www.github.com/<YOUR_GITHUB_USERNAME>/<REPOSITORY_NAME>`
 
-:::info
+<Aside type="note">
 
 The name of your fork doesn't have to match the name of the original project.
 For this guide, however, we'll assume you have kept the same name.
 
-:::
+</Aside>
 
 ### 2. Clone your fork to your machine
 
@@ -142,7 +142,7 @@ local machine. It doesn't really matter where you want to do this, as long as
 you have permission to create files. We suggest suggest creating a folder to
 keep all your BobaBoard-related coding in.
 
-:::danger Windows Subsystem for Linux (WSL)
+<Aside type="danger" title="Windows Subsystem for Linux (WSL)">
 
 If you are coding for BobaBoard on Windows, we recommend setting up Windows
 Subsystem for Linux (WSL). When you create your folders for your BobaBoard
@@ -150,7 +150,7 @@ project, they will need to be in the WSL file tree, not your normal Windows file
 explorer. For more in depth information please see
 [](/docs/development/start-developing/wsl).
 
-:::
+</Aside>
 
 To clone the repository you need to tell git where the code you want to copy is
 stored. Simply put, you need a URL. Your repository's URL is the web address you
@@ -335,7 +335,7 @@ The review process may entail multiple rounds of back and forth between the pull
 requester and the maintainers, and the developer often adds new commits to the
 pull request with the requested changes as the process is repeated.
 
-:::note How to Make Requested Changes
+<Aside type="note" title="How to Make Requested Changes">
 
 When changes are requested, you will see comments on the pull request you have
 submitted. Simply write code, commit and push until all comments are resolved.
@@ -343,7 +343,7 @@ Then go back to the pull request, check that everything is in order, and request
 for another review. You should mark the comments you have addressed as done by
 using the "resolve conversation" button.
 
-:::
+</Aside>
 
 Once the pull request is approved, the pull request is "merged" and "closed".
 Once merged, your code becomes part of the `main` branch in the original
@@ -386,13 +386,13 @@ original codebase) run:
 git pull upstream main
 ```
 
-:::caution
+<Aside type="caution">
 
 Do not use `git pull` when there are uncommitted changes in your worktree. In
 this case you'll want to use `git fetch upstream main`, and then merge after
 you've committed.
 
-:::
+</Aside>
 
 ### 9. Continuing your work
 

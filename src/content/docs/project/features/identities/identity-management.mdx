@@ -4,88 +4,103 @@ sidebar:
   order: 1
 ---
 
-Identity management is one of the mechanisms that set BobaBoard apart from other social networks. In particular, rather than surfacing
-`user data` in its APIs, BobaBoard surfaces `identity data`.
+Identity management is one of the mechanisms that set BobaBoard apart from other
+social networks. In particular, rather than surfacing `user data` in its APIs,
+BobaBoard surfaces `identity data`.
 
 ## Benefits
 
-Decoupling `Identity` from the underlying `User` allows for the following benefits:
+Decoupling `Identity` from the underlying `User` allows for the following
+benefits:
 
 ### Identities can be managed as independent entities.
 
-By default, there is no world-visible connection between `Identities` belonging to the same user account. These connections can, however, be revealed to other users through the [Identity Reveal System](#revealing-identities).
+By default, there is no world-visible connection between `Identities` belonging
+to the same user account. These connections can, however, be revealed to other
+users through the [Identity Reveal System](#revealing-identities).
 
 ### Fine-grained data access
 
-A user can maintain multiple, separate `Identities` on a single account. Each of these `Identities` can be used across different `Realms`, `Boards` or `Threads`.
+A user can maintain multiple, separate `Identities` on a single account. Each of
+these `Identities` can be used across different `Realms`, `Boards` or `Threads`.
 
-Users can independently decide which `Realm`, `Board`(?) or `User` has access to each `Identity`'s activity and data. Users can also choose to
-selectively reveal which identities belong to the same `User`.
+Users can independently decide which `Realm`, `Board`(?) or `User` has access to
+each `Identity`'s activity and data. Users can also choose to selectively reveal
+which identities belong to the same `User`.
 
 ### User identities can be optional
 
-A user can choose not to reveal _any_ identity data on `Realms` and `Boards` that support `Anonymity`.
+A user can choose not to reveal _any_ identity data on `Realms` and `Boards`
+that support `Anonymity`.
 
 ### Identities can be shared across different users
 
-While this feature isn't currently designed (or planned), the separation of identities theoretically allows the same `Identity` to be associated
-with separate accounts.
+While this feature isn't currently designed (or planned), the separation of
+identities theoretically allows the same `Identity` to be associated with
+separate accounts.
 
 ## Creating Identities
 
-**This feature still in the design phase!** More information will be available in the future.
+**This feature still in the design phase!** More information will be available
+in the future.
 
-:::danger
+<Aside type="danger">
 
-When a friendship relationship is present, the current implementation reveals the `user data` rather than the data of the `Identity`
-associated with the `User`. Fixing this should be trivial once the design is finalized.
+When a friendship relationship is present, the current implementation reveals
+the `user data` rather than the data of the `Identity` associated with the
+`User`. Fixing this should be trivial once the design is finalized.
 
-:::
+</Aside>
 
 ## Managing Identities
 
 ### Anonymous Boards/Realms
 
-When a `Realm` or a `Board` supports anonymity, BobaBoard randomly selects an `Identity` to associate with the user's activity. You can read more
-about anonymous identity selection in the [BobaDex page](bobadex.md).
+When a `Realm` or a `Board` supports anonymity, BobaBoard randomly selects an
+`Identity` to associate with the user's activity. You can read more about
+anonymous identity selection in the [BobaDex page](bobadex.md).
 
 ### Non-Anonymous Boards/Realms
 
-**This feature still in the design phase!** More information will be available in the future.
+**This feature still in the design phase!** More information will be available
+in the future.
 
-:::OPEN QUESTION
+#### Open Questions
 
-- How does the user decide which identity to join the board/realm with? When do they make the decision?
-  - How does this work in Realms that allow both personal and multiple identities?
-- Can a user join a Realm with multiple identities? Are there pitfalls in allowing them to do so?
-  - **WARNING:** Not allowing this possibility creates a danger of identity connection.
+- How does the user decide which identity to join the board/realm with? When do
+  they make the decision?
+  - How does this work in Realms that allow both personal and multiple
+    identities?
+- Can a user join a Realm with multiple identities? Are there pitfalls in
+  allowing them to do so?
+  - **WARNING:** Not allowing this possibility creates a danger of identity
+    connection.
     <details>
-      <summary>
-        Example
-      </summary>
+      <summary>Example</summary>
       <div>
-        Alice asks Bob to join their Realm with a specific identity. Bob has already joined the Realm with a different one, 
-        and is unable to do accept Alice's request. Alice can now infer that one of the identities already in the Realm belongs
-        to Bob.
+        Alice asks Bob to join their Realm with a specific identity. Bob has
+        already joined the Realm with a different one, and is unable to do
+        accept Alice's request. Alice can now infer that one of the identities
+        already in the Realm belongs to Bob.
       </div>
     </details>
 
-:::
-
 ## Revealing Identities
 
-While the codebase already accounts for this system, the exact mechanics governing identity reveal are not currently defined.
+While the codebase already accounts for this system, the exact mechanics
+governing identity reveal are not currently defined.
 
-In the current setup, personal identity is revealed to users with a `friends` relationship in the database. No mechanism to create a friendship
-is available in the API.
+In the current setup, personal identity is revealed to users with a `friends`
+relationship in the database. No mechanism to create a friendship is available
+in the API.
 
 ### Identity Data Management
 
-**This feature still in the design phase!** More information will be available in the future.
+**This feature still in the design phase!** More information will be available
+in the future.
 
-:::OPEN QUESTION
+#### Open Questions
 
 - How do we decide which subset of the identity data is available to who?
-- How do we allow users to not repeat the same information over and over for which identity?
-
-:::
+- How do we allow users to not repeat the same information over and over for
+  which identity?

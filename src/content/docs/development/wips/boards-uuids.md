@@ -264,7 +264,6 @@ uniquely identify the board, regardless of what realm it may be in.
   - [ ] LOCK BOARD
     - [ ] WHERE uses slug to reference volunteers board
 - [ ] utils/
-
   - [x] permission-utils.ts
   - [x] queries-utils.ts
   - [ ] response-utils.ts

@@ -4,6 +4,8 @@ sidebar:
   order: 3
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 BobaBoard has four types of tags for threads. Each type of tag allows you to
 communicate additional information to readers or organize threads in a board.
 
@@ -14,11 +16,11 @@ communicate additional information to readers or organize threads in a board.
 | [Categories](#categories) |               ![a blue pill tag with "+ even" in white text][categories]               | bottom of thread |  `+`   | canonical tags for filtering |
 |  [Content Notices](#cn)   |        ![an orange-yellow pill tag with "cn: harassment psa" in dark text][cn]         | top of thread    | `cn:`  | warnings                     |
 
-:::info
+<Aside type="note">
 
 At this time, we cannot sort, filter, or search on tags other than categories.
 
-:::
+</Aside>
 
 #### Whisper Tags
 
@@ -53,7 +55,7 @@ Canonical categories are set by the development team currently.
 
 Categories have a blue pill-shaped background and have white text.
 
-#### Content Notices {#cn}
+#### Content Notices
 
 Set by putting `cn:` at the beginning of a tag, content notices are moved above
 the thread to give people a warning about potentially NSFW, triggering, or

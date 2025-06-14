@@ -5,16 +5,16 @@ sidebar:
 ---
 
 import { Icon } from "@astrojs/starlight/components";
-import { Aside } from '@astrojs/starlight/components';
+import { Aside } from "@astrojs/starlight/components";
 
-:::warning
+<Aside type="caution">
 
 The following instructions are for Windows users only. If you use Linux or Mac
 and have already completed the steps in
 [Setup Your Development Environment](/docs/development/start-developing/setting-up-dev-env),
 you can skip forward to the next section.
 
-:::
+</Aside>
 
 ## Guide Introduction
 
@@ -33,18 +33,19 @@ estimates appear as [<Icon name="seti:clock" class="inline-icon" /> time].
 If you currently have WSL feel free to skip around as needed. We recommend
 running WSL2 with an Ubuntu distro. You can upgrade to WSL2 by following the
 [instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2).
-[<Icon name="seti:clock" class="inline-icon" /> 1 min] If you're using another Linux distro you can
-add a second distro by
+[<Icon name="seti:clock" class="inline-icon" /> 1 min] If you're using another
+Linux distro you can add a second distro by
 [following these instructions](https://learn.microsoft.com/en-us/windows/wsl/install#change-the-default-linux-distribution-installed)
 [<Icon name="seti:clock" class="inline-icon" /> 1 min].
 
-:::note
+<Aside type="note">
 
-The guide uses the Windows logo <Icon name="seti:windows" class="inline-icon" /> to indicate items
-that should be installed directly to Windows, while the Linux logo indicates
-items that should be installed into your chosen Linux distro (Ubuntu).
+The guide uses the Windows logo <Icon name="seti:windows" class="inline-icon" />
+to indicate items that should be installed directly to Windows, while the Linux
+logo indicates items that should be installed into your chosen Linux distro
+(Ubuntu).
 
-:::
+</Aside>
 
 ## What Is WSL?
 
@@ -80,16 +81,16 @@ listed near at top of the list.
 
 Follow
 [these instructions](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows?view=powershell-7.3#install-powershell-using-winget-recommended)
-[<Icon name="seti:clock" class="inline-icon" /> 2 min] to install the most recent version of
-Powershell. Note that installing Powershell 7 _will not_ remove your Powershell
-5 install. If you also have Powershell 5 installed, we recommend that you
-manually uninstall it, as Windows occasionally gets confused concerning your
-default terminal.
+[<Icon name="seti:clock" class="inline-icon" /> 2 min] to install the most
+recent version of Powershell. Note that installing Powershell 7 _will not_
+remove your Powershell 5 install. If you also have Powershell 5 installed, we
+recommend that you manually uninstall it, as Windows occasionally gets confused
+concerning your default terminal.
 
 After that's complete,
 [install Terminal](https://learn.microsoft.com/en-us/windows/terminal/install)
-[<Icon name="seti:clock" class="inline-icon" /> 4 min] and follow the instructions to set Powershell
-7 as your default profile.
+[<Icon name="seti:clock" class="inline-icon" /> 4 min] and follow the
+instructions to set Powershell 7 as your default profile.
 
 ## <Icon name="seti:windows" class="inline-icon" /> WSL Set-up
 
@@ -103,8 +104,8 @@ After that's complete,
 
 3. Follow the
    [instructions here](https://learn.microsoft.com/en-us/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2)
-   [<Icon name="seti:clock" class="inline-icon" /> 1 min] to verify you've installed WSL2 or to
-   upgrade from WSL to WSL2, if needed.
+   [<Icon name="seti:clock" class="inline-icon" /> 1 min] to verify you've
+   installed WSL2 or to upgrade from WSL to WSL2, if needed.
 
 4. [Upgrade and update Ubuntu packages](https://learn.microsoft.com/en-us/windows/wsl/setup/environment#update-and-upgrade-packages)
    [<Icon name="seti:clock" class="inline-icon" /> 1 min].
@@ -129,8 +130,9 @@ There are two ways to access your WSL terminal:
    "Debian on Windows").
 
 2. If you have Windows Terminal open already, click the
-   <Icon name="down-caret" class="inline-icon" /> to access the dropdown menu and display the
-   profiles you can open. Then select Ubuntu or your Linux distro from the list.
+   <Icon name="down-caret" class="inline-icon" /> to access the dropdown menu and
+   display the profiles you can open. Then select Ubuntu or your Linux distro from
+   the list.
 
 ![](../../../../assets/img/development/wsl/powershell_profiles.png)
 ![](../../../../assets/img/development/wsl/powershell_wsl_tab.png)
@@ -141,14 +143,14 @@ use. The rest of this guide will refer to this terminal as "Linux terminal" or
 
 ## Installing BobaBoard Pre-requisites
 
-:::caution
+<Aside type="caution">
 
 **DO NOT** skip over installing a pre-requisite listed below just because it is
 installed on your Windows side. WSL will not be able to access things like git,
 NodeJS, etc, if they are only installed on Windows. Please follow the
 instructions below _carefully_.
 
-:::
+</Aside>
 
 ### <Icon name="linux" class="inline-icon" /> Installing Git
 
@@ -266,8 +268,8 @@ database on your local server. From the Docker resources:
 If you're interested on more information on containers, please see
 [What is a container?](https://www.docker.com/resources/what-container/).
 
-**You should install this if you plan working on boba-backend, boba-frontend, etc.
-It is not needed for boba-docs! If you're confused about whether you need
+**You should install this if you plan working on boba-backend, boba-frontend,
+etc. It is not needed for boba-docs! If you're confused about whether you need
 Docker, please reach out in the Volunteer Server!**
 
 Docker should be installed on **Windows** and not on WSL. Please be sure to
@@ -285,14 +287,14 @@ Docker.
 Before you begin to set-up the local BobaBoard environment, you'll need to
 create a folder on your WSL to use for your repos.
 
-:::caution
+<Aside type="caution">
 
 WSL does not like it if you create or delete folders using file explorer. The
 majority of your navigation through the WSL file tree will be done via the
 terminal. For help with useful terminal commands see the
 [Quick Command Line Guide](#quick-command-line-guide) below.
 
-:::
+</Aside>
 
 1. In your Linux shell type:
 
@@ -318,15 +320,15 @@ Now that you've navigated into your directory, you're ready to start cloning the
 various BobaBoard repos. See
 [Install boba-frontend](/docs/development/start-developing/boba-frontend),
 [Install boba-backend](/docs/development/start-developing/boba-backend), or
-[Install boba-components](/docs/development/start-developing/boba-components) for
-more details.
+[Install boba-components](/docs/development/start-developing/boba-components)
+for more details.
 
-:::note
+<Aside type="note">
 
 If you're unsure which repos you should install, feel free to reach out to Ms.
 Boba or another volunteer in the volunteer server for more guidance!
 
-:::
+</Aside>
 
 ## Other WSL Tools
 
@@ -342,13 +344,13 @@ and WSL.
   automatically using a Linux terminal inside the editor (if you use the
   extension below).
 
-  :::info
+  <Aside type="note">
 
   When prompted to **Select Additional Tasks** during installation, be sure to
   check the **Add to PATH** option so you can easily open a folder in WSL using
   the `code` command.
 
-  :::
+  </Aside>
 
   <Aside type="tip">
 
@@ -357,7 +359,7 @@ and WSL.
   the `WSL: Ubuntu - Installed` title. This will re-install all of your local
   extensions to WSL.
 
- </Aside>
+  </Aside>
 
 - [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack)<br />Add
   the Remote Development extension to open any folder in a container, on a
@@ -380,7 +382,7 @@ and WSL.
 
 ## Quick Command Line Guide
 
-:::note
+<Aside type="note">
 
 These commands are the ones you should use in your Linux terminal in WSL. In
 general, when researching what commands to use or how to install things for WSL,
@@ -390,7 +392,7 @@ to ask in the Volunteer Server and we'll be happy to help!
 Please keep in mind that these may not be the same as the commands which should
 be used in a Windows terminal!
 
-:::
+</Aside>
 
 - `cd [folder_name]` or `cd [path]` **c**hanges **d**irectory to the folder or
   path provided. (Note: For folders with spaces you should enclose the folder
@@ -423,13 +425,13 @@ be used in a Windows terminal!
 - `rm` removes the provided file or folder. Please see the options below for
   more details!
 
-  :::warning
+  <Aside type="caution">
 
   Deleting files and folders from WSL **DOES NOT** place them into the recycle
   bin. They are permanently deleted when you run the below commands. Please be
   certain you want to delete before you do so!
 
-  :::
+  </Aside>
 
   - `rm [file.ext]` deletes the provided file.
   - `rm -d [folder_name]` deletes an empty folder.

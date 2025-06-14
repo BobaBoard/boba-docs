@@ -4,12 +4,16 @@ sidebar:
   order: 1
 ---
 
-:::warning
+import { Aside } from "@astrojs/starlight/components";
+
+<Aside type="caution">
 
 The ability to self-host is still new and experimental. We'd love for people to
 try it out and let us know how it goes, but we currently can't dedicate a lot of
 engineering resources to helping you if you run into difficulties. Host at your
-own risk! :::
+own risk!
+
+</Aside>
 
 ## What is self-hosting, again?
 
@@ -53,13 +57,17 @@ To follow these instructions, you will need:
 
 ## Creating a Server
 
-:::warning In our self-hosting demo livestream, Ms Boba showed viewers how to
-install NixOS on a [Hetzner](https://www.hetzner.com/cloud/) VPS (virtual
-private server). While the instructions provided below assume you're also using
-Hetzner, it's not required! Other server options include
+<Aside type="caution">
+
+In our self-hosting demo livestream, Ms Boba showed viewers how to install NixOS
+on a [Hetzner](https://www.hetzner.com/cloud/) VPS (virtual private server).
+While the instructions provided below assume you're also using Hetzner, it's not
+required! Other server options include
 [DigitalOcean](https://www.digitalocean.com/products/droplets/),
 [Vultr](https://www.vultr.com/), and even your own physical computer in your
-home (if you don't mind leaving your computer on 100% of the time!) :::
+home (if you don't mind leaving your computer on 100% of the time!)
+
+</Aside>
 
 For the most up-to-date information on how to create a server, refer to the
 instructions offered by your service provider. If you're using our recommended
@@ -99,10 +107,14 @@ server what to do when it first comes to life. These instructions will:
 
 #### Creating your SSH key file
 
-:::danger The server's first instructions **must** include your public SSH
-key—without your public SSH key as part of the initial configuration, you won't
-be able to use your public key to give the server any further instructions, so
-you'll be locked out and forced to start over. :::
+<Aside type="danger">
+
+The server's first instructions **must** include your public SSH key—without
+your public SSH key as part of the initial configuration, you won't be able to
+use your public key to give the server any further instructions, so you'll be
+locked out and forced to start over.
+
+</Aside>
 
 Copy and paste the following `YAML` data into the cloud config field. Then
 replace everything between the bracketed quotation marks with your public SSH
@@ -249,12 +261,16 @@ server's name. There should be two instances of "boba-example" to replace.
 
 ##### Set up your root account
 
-:::danger The "root" account is the user with the highest level of authority in
-a Linux server, often referred to as the "administrator" (or "superuser.") An
+<Aside type="danger">
+
+The "root" account is the user with the highest level of authority in a Linux
+server, often referred to as the "administrator" (or "superuser.") An
 administrator has the power to alter or overwrite fundamental building blocks of
 the server. It's good practice to use a non-administrator account for day-to-day
 configuration tasks, to reduce the risk of making irrevocable and unwanted
-changes by accident. :::
+changes by accident.
+
+</Aside>
 
 Replace the public key in the `flake.nix` file with the public key you used in
 the `YAML` cloud config [up here](#Creating-your-SSH-key-file).
@@ -437,12 +453,16 @@ In the final step of configuring your new NixOS server, you will:
 
 ### Connect to `tailscale`
 
-:::note If you don't already have a `tailscale` account, you can quickly set one
+<Aside type="note">
+
+If you don't already have a `tailscale` account, you can quickly set one
 up [here](https://tailscale.com/pricing) for free. Tailscale allows you to do
 useful things like:
 
 - easily access your new server remotely
-- edit your server configuration files directly on the server :::
+- edit your server configuration files directly on the server
+
+</Aside>
 
 Connect your tailscale account to your new server with the followiing command:
 

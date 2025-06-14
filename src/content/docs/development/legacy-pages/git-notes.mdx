@@ -4,6 +4,8 @@ sidebar:
   order: 8
 ---
 
+import { Aside } from "@astrojs/starlight/components";
+
 Here are some notes on git concepts that might be useful to newcomers.
 
 ## On Commits
@@ -96,7 +98,9 @@ that belongs to the BobaBoard account is the `upstream`, the fork that lives on
 your own GitHub account is the `origin` and the clone of _that_ living in your
 PC is your `local`.\*\*\*\*
 
-:::note Uhm. What's the point of all this? Glad you asked! The point of
+<Aside type="note">
+
+Uhm. What's the point of all this? Glad you asked! The point of
 **forking** a repository is being able to push (meaning upload) changes in
 isolation until you're ready to actually request the original project's owner to
 review your edits. You'll also most often find that you don't have permission to
@@ -109,7 +113,7 @@ interface, especially for markdown files like README's or the boba-docs
 documentation files - but for the most part you'll want to have a copy in your
 own system to play with.
 
-:::
+</Aside>
 
 ### branch
 

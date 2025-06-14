@@ -4,6 +4,8 @@ sidebar:
   order: 2
 ---
 
+import { Aside } from '@astrojs/starlight/components';
+
 ## On the server
 
 [Permission handlers](https://github.com/BobaBoard/boba-backend/blob/main/handlers/permissions.ts)
@@ -35,12 +37,12 @@ router.patch(
 );
 ```
 
-:::warning
+<Aside type="caution">
 
 If the route has no `:thread_id` param, the `withThreadPermissions` handler will
 throw an error.
 
-:::
+</Aside>
 
 ### Generic permission checkers
 
@@ -68,12 +70,12 @@ router.post(
 );
 ```
 
-:::warning
+<Aside type="caution">
 
 If the route has no `:board_id` param, the `ensureBoardPermission` handler will
 throw an error.
 
-:::
+</Aside>
 
 ### Complex permission checkers
 
