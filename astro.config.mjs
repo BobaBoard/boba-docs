@@ -149,6 +149,10 @@ export default defineConfig({
                       link: "/development/boba-backend/getting-started",
                     },
                     {
+                      label: "Backend Development Overview",
+                      link: "/development/boba-backend/backend-development-overview",
+                    },
+                    {
                       label: "APIs",
                       autogenerate: {
                         directory: "/development/boba-backend/apis",
@@ -183,6 +187,10 @@ export default defineConfig({
                 {
                   label: "Boba-Docs",
                   link: "/development/boba-docs",
+                },
+                {
+                  label: "Testing",
+                  autogenerate: { directory: "/development/testing" },
                 },
                 {
                   label: "Development Philosophy",
