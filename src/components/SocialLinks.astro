@@ -2,19 +2,18 @@
 import Default from "@astrojs/starlight/components/SocialIcons.astro";
 import { Icon } from "astro-icon/components";
 ---
-<a href="https://bobaboard.com"><Icon name="lucide:home" class="mt-2" /></a
->
+
+<a href="https://bobaboard.com"><Icon name="lucide:home" class="mt-2" /></a>
 <a href="mailto:contact@bobaboard.com"
-  ><Icon name="lucide:at-sign"  class="mt-2" /></a
+  ><Icon name="lucide:at-sign" class="mt-2" /></a
 >
 <a href="https://bobaboard.tumblr.com"
-  ><Icon name="simple-icons:tumblr"  class="mt-2"
-	/></a
+  ><Icon name="simple-icons:tumblr" class="mt-2" /></a
 >
 <Default><slot /></Default>
 
 <style>
-[data-icon] {
+  [data-icon] {
     color: var(--sl-color-text-accent);
   }
 </style>

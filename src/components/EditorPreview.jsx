@@ -1,5 +1,5 @@
 import Editor from "@bobaboard/boba-editor";
-import { Highlight } from "prism-react-renderer"
+import { Highlight } from "prism-react-renderer";
 import React from "react";
 import styles from "./EditorPreview.module.css";
 

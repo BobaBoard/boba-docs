@@ -118,8 +118,10 @@ const SidebarSection: React.FC<SidebarSectionProps> = (props) => {
   log("this is a component sample!");
   return (
     <div
-      className={classnames("sidebar-section", { editable: props.editable })}>
-      Component Sample with {props.sampleProp}!<style jsx>{`
+      className={classnames("sidebar-section", { editable: props.editable })}
+    >
+      Component Sample with {props.sampleProp}!
+      <style jsx>{`
         .sidebar-section {
           font-size: large;
           color: red;
@@ -157,10 +159,10 @@ or
 
 ## Debugging
 
-boba-components uses the [debug](https://www.npmjs.com/package/debug) JS library.
-To trigger debugging in the JavaScript console, you must set the value of the
-corresponding flag in localStorage by using one of the following commands within
-the console itself:
+boba-components uses the [debug](https://www.npmjs.com/package/debug) JS
+library. To trigger debugging in the JavaScript console, you must set the value
+of the corresponding flag in localStorage by using one of the following commands
+within the console itself:
 
 ```jsx
 // Print all the debug logs related to the ui

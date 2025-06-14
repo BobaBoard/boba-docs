@@ -115,7 +115,7 @@ export default defineConfig({
                 },
                 {
                   label: "WIPs",
-									collapsed: true,
+                  collapsed: true,
                   autogenerate: { directory: "/project/wips" },
                 },
                 {
@@ -154,23 +154,23 @@ export default defineConfig({
                         directory: "/development/boba-backend/apis",
                       },
                     },
-										{
+                    {
                       label: "Features",
                       autogenerate: {
                         directory: "/development/boba-backend/features",
                       },
                     },
-										{
+                    {
                       label: "Permissions",
                       autogenerate: {
                         directory: "/development/boba-backend/permissions",
                       },
                     },
-										{
+                    {
                       label: "Testing",
                       link: "/development/boba-backend/testing",
                     },
-										{
+                    {
                       label: "Using Postman",
                       link: "/development/boba-backend/using-postman",
                     },
@@ -180,27 +180,27 @@ export default defineConfig({
                   label: "Boba-Frontend",
                   autogenerate: { directory: "/development/boba-frontend" },
                 },
-								{
+                {
                   label: "Boba-Docs",
                   link: "/development/boba-docs",
                 },
-								{
+                {
                   label: "Development Philosophy",
                   link: "/development/philosophy",
                 },
-								{
+                {
                   label: "Knowledge Base",
                   autogenerate: { directory: "/development/knowledge-base" },
                 },
-								{
+                {
                   label: "Legacy Overview",
-									badge: { text: 'Deprecated', variant: 'danger' },
-									collapsed: true,
+                  badge: { text: "Deprecated", variant: "danger" },
+                  collapsed: true,
                   autogenerate: { directory: "/development/legacy-pages" },
                 },
-								{
+                {
                   label: "WIPs",
-									collapsed: true,
+                  collapsed: true,
                   autogenerate: { directory: "/development/wips" },
                 },
               ],
