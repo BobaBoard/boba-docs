@@ -76,9 +76,6 @@ export default defineConfig({
           href: "https://twitter.com/BobaBoard",
         },
       ],
-      editLink: {
-        baseUrl: "https://github.com/BobaBoard/boba-docs/edit/main/",
-      },
       lastUpdated: true,
       customCss: ["./src/styles/global.css"],
       plugins: [
