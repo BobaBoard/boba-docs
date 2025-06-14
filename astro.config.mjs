@@ -4,8 +4,10 @@ import starlightOpenAPI, { openAPISidebarGroups } from "starlight-openapi";
 import { defineConfig } from "astro/config";
 import favicons from "astro-favicons";
 import icon from "astro-icon";
+import mdx from "@astrojs/mdx";
 import metaTags from "astro-meta-tags";
 import react from "@astrojs/react";
+import remarkCapitalizeTitles from "@fujocoded/remark-capitalize-titles";
 import robotsTxt from "astro-robots-txt";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
@@ -242,11 +244,11 @@ export default defineConfig({
                     },
                   ],
                 },
-								{
+                {
                   label: "Communications Team",
                   autogenerate: { directory: "/volunteering/communications" },
                 },
-								{
+                {
                   label: "Community Team",
                   autogenerate: { directory: "/volunteering/community" },
                 },
@@ -316,6 +318,16 @@ export default defineConfig({
     }),
     icon(),
     react(),
+    mdx({
+      remarkPlugins: [
+        [
+          remarkCapitalizeTitles,
+          {
+            componentNames: ["Aside"],
+          },
+        ],
+      ],
+    }),
   ],
 
   vite: {

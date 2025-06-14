@@ -10,10 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.0",
     "@astrojs/react": "^4.3.0",
     "@astrojs/starlight": "^0.34.3",
     "@astrojs/starlight-tailwind": "^4.0.1",
     "@bobaboard/boba-editor": "^0.2.0",
+    "@fujocoded/remark-capitalize-titles": "^0.0.13",
     "@iconify-json/lucide": "^1.2.47",
     "@iconify-json/simple-icons": "^1.2.38",
     "@tailwindcss/vite": "^4.1.8",
