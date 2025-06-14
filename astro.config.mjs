@@ -216,8 +216,39 @@ export default defineConfig({
               icon: "heart",
               items: [
                 {
-                  label: "Volunteering Guide",
-                  autogenerate: { directory: "/volunteering/" },
+                  label: "The Volunteer Experience™",
+                  autogenerate: { directory: "/volunteering/experience" },
+                },
+                {
+                  label: "The BobaBoard Team(s)",
+                  link: "/volunteering/team",
+                },
+                {
+                  label: "General Info",
+                  autogenerate: { directory: "/volunteering/general" },
+                },
+                {
+                  label: "Coding Team",
+                  items: [
+                    {
+                      label: "Using GitHub",
+                      autogenerate: {
+                        directory: "/volunteering/coding/github",
+                      },
+                    },
+                    {
+                      label: "Joining a sprint",
+                      link: "/volunteering/coding/sprints",
+                    },
+                  ],
+                },
+								{
+                  label: "Communications Team",
+                  autogenerate: { directory: "/volunteering/communications" },
+                },
+								{
+                  label: "Community Team",
+                  autogenerate: { directory: "/volunteering/community" },
                 },
               ],
             },
