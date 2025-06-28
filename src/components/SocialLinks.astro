@@ -3,11 +3,13 @@ import Default from "@astrojs/starlight/components/SocialIcons.astro";
 import { Icon } from "astro-icon/components";
 ---
 
-<a href="https://bobaboard.com"><Icon name="lucide:home" class="mt-2" /></a>
-<a href="mailto:contact@bobaboard.com"
+<a href="https://bobaboard.com" aria-label="bobaboard.com"
+  ><Icon name="lucide:home" class="mt-2" /></a
+>
+<a href="mailto:contact@bobaboard.com" aria-label="e-mail"
   ><Icon name="lucide:at-sign" class="mt-2" /></a
 >
-<a href="https://bobaboard.tumblr.com"
+<a href="https://bobaboard.tumblr.com" aria-label="tumblr"
   ><Icon name="simple-icons:tumblr" class="mt-2" /></a
 >
 <Default><slot /></Default>

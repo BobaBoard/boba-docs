@@ -95,6 +95,7 @@ export default defineConfig({
           [
             {
               label: "Project Guide",
+              id: "project",
               link: "/project/intro",
               icon: "information",
               items: [
