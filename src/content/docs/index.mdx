@@ -1,0 +1,38 @@
+---
+title: Welcome to BobaBoard Docs
+topic: project # Needed for sidebar topic plugin to work if template is set to doc so sidebar will show on landing page
+template: doc
+tableOfContents: false
+lastUpdated: false
+pagefind: false
+---
+
+import { LinkCard, CardGrid } from "@astrojs/starlight/components";
+
+<CardGrid>
+  <LinkCard
+    title="Project Guide"
+    href="/project/intro"
+    description="Information on the BobaBoard's status and its features."
+  />
+  <LinkCard
+    title="Development Guide"
+    href="/development/intro"
+    description="How to develop BobaBoard on your local system."
+  />
+  <LinkCard
+    title="Volunteering Guide"
+    href="volunteering/experience/intro"
+    description="Interested in Volunteering? Start here."
+  />
+  <LinkCard
+    title="User Guide"
+    href="/users/intro"
+    description="Explore the BobaBoard user experience."
+  />
+  <LinkCard
+    title="REST API"
+    href="/api"
+    description="See all existing endpoints in the REST API for BobaBoard."
+  />
+</CardGrid>
