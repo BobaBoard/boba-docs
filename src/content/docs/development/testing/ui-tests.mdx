@@ -1,5 +1,6 @@
 ---
 title: UI Tests with Jest and Storybook
+lastUpdated: 2025-04-20
 ---
 
 import { Aside } from "@astrojs/starlight/components";
@@ -119,7 +120,7 @@ component, it should already have stories written, but you may find that you
 have to tweak them a bit, or add additional props, to cover all the cases you
 need to test.
 
-<Aside type="tip" title="Typescript Tip">
+<Aside type="tip" icon="star" title="Typescript Tip">
 
 If you ever want to see exactly what all the props a given component should or
 could have are, typescript has your back. Look in the src file for the component
@@ -435,7 +436,7 @@ expect(screen.getAllByRole("link")).toHaveLength(8);
 That way if someone goes and adds an extra item into the story array at some
 point, they don't have to also update the length value in the test.
 
-<Aside type="tip" title="Typescript Tip">
+<Aside type="tip" icon="star" title="Typescript Tip">
 
 When you are trying to access the value of a story prop with `Story.args.value`
 you may run in two sorts of related typescript errors:
@@ -494,7 +495,7 @@ test("Correctly marks boards with updates", async () => {
 });
 ```
 
-<Aside type="tip" title="Accessibility - Aria Labels, Rolls, and Attributes">
+<Aside type="tip" icon="star" title="Accessibility - Aria Labels, Rolls, and Attributes">
 You may have noticed that Testing Library queries rely heavily on accessible labels, roles, and
 attributes. This is good because it reminds us to use them properly in our
 components.

@@ -1,5 +1,6 @@
 ---
 title: Introduction to APIs
+lastUpdated: 2025-04-20
 sidebar:
   order: 1
 ---
@@ -28,7 +29,7 @@ understanding, definition, and scalability of APIs. You can find more details
 about the REST principles followed by boba-backend in the
 [API guidelines](./API-guidelines) page.
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 You can explore the full boba-backend API on the
 [REST API documentation page](/api/).
@@ -45,7 +46,7 @@ or request data.
 A REST API also specifies the format of the data the client needs to send for
 the operation and the format of the data it will receive in response.
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 When running `boba-backend` locally, you can send an API request and see an
 example of an API response by opening your browser and going to the
@@ -114,7 +115,7 @@ Remember that endpoints often accept only a subset of these operations. Make
 sure to check the documentation of the APIs you're using before sending
 requests!
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 For a refresher on HTTP Status codes,
 [MDN is your friend](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)!
@@ -140,7 +141,7 @@ Possible responses include:
 - **Authentication needed:** An HTTP Status Code of `401` if the access requires
   authentication data and none was found in the request.
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 `GET` requests are the default type of request the browser sends when you access
 a web page. This means you can access `GET` endpoints through your browsers!
@@ -188,7 +189,7 @@ Possible responses include:
 - **Conflict:** An HTTP Status Code of `409` if a contribution with the given id
   already exists.
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 `POST` requests are often used by browsers when submitting forms.
 
@@ -218,7 +219,7 @@ Possible responses include:
 - **Not found:** An HTTP Status Code of `404` if the contribution does not
   exist.
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 `PUT` requests are not easily accessible through browsers! To issue one, you can
 use a tool like [Postman](docs/development/boba-backend/using-postman) or write
@@ -246,7 +247,7 @@ Possible responses include:
 - **Not found:** An HTTP Status Code of `404` if the contribution does not
   exist.
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 `DELETE` requests are not easily accessible through browsers! To issue one, you
 can use a tool like [Postman](docs/development/boba-backend/using-postman) or
