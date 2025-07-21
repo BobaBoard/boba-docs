@@ -12,6 +12,7 @@ import remarkExcalidraw from "@fujocoded/remark-excalidraw";
 import robotsTxt from "astro-robots-txt";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
+import starlightLinksValidator from "starlight-links-validator";
 import starlightSidebarTopics from "starlight-sidebar-topics";
 import tailwindcss from "@tailwindcss/vite";
 
@@ -82,6 +83,7 @@ export default defineConfig({
       lastUpdated: true,
       customCss: ["./src/styles/global.css"],
       plugins: [
+				starlightLinksValidator(),
         starlightImageZoom(),
         // Generate the OpenAPI documentation pages.
         starlightOpenAPI([
