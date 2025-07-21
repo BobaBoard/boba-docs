@@ -1,5 +1,6 @@
 ---
 title: Boards UUIDs
+lastUpdated: 2025-04-20
 ---
 
 [Thanks to Sel for the work!]

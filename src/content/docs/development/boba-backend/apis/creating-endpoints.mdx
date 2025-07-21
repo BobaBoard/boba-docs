@@ -1,5 +1,6 @@
 ---
 title: How to work with endpoints
+lastUpdated: 2025-04-20
 sidebar:
   order: 2
 ---
@@ -52,7 +53,7 @@ The `server/all-routes.ts` file associates the routers exported by the
 
 ## Adding a new endpoint
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 A more general explanation of Express routing is available
 [on MDN](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/routes#routes_primer).
@@ -88,7 +89,7 @@ Each route follows the same general structure:
 router.HTTP_METHOD("relative/path/to/route/", [middlewares], [routeHandler]);
 ```
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 An express middleware is a function that runs before `routeHandler` is executed.
 You can read more about middlewares on the
@@ -158,7 +159,7 @@ Each endpoint should be documented and tested.
 We use the [OpenAPI 3.1](https://spec.openapis.org/oas/latest.html) spec to
 document API endpoints.
 
-<Aside type="tip">
+<Aside type="tip" icon="star">
 
 You can learn more about the libraries used and the setup
 [on this dev.to article](https://dev.to/essentialrandom/documenting-express-rest-apis-with-openapi-and-jsdoc-m68).
