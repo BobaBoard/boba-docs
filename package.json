@@ -16,6 +16,7 @@
     "@astrojs/starlight-tailwind": "^4.0.1",
     "@bobaboard/boba-editor": "^0.2.0",
     "@fujocoded/remark-capitalize-titles": "^0.0.13",
+    "@fujocoded/remark-excalidraw": "^0.0.2",
     "@iconify-json/lucide": "^1.2.57",
     "@iconify-json/simple-icons": "^1.2.44",
     "@tailwindcss/vite": "^4.1.11",

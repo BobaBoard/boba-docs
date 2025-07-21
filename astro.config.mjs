@@ -8,6 +8,7 @@ import mdx from "@astrojs/mdx";
 import metaTags from "astro-meta-tags";
 import react from "@astrojs/react";
 import remarkCapitalizeTitles from "@fujocoded/remark-capitalize-titles";
+import remarkExcalidraw from "@fujocoded/remark-excalidraw";
 import robotsTxt from "astro-robots-txt";
 import starlight from "@astrojs/starlight";
 import starlightImageZoom from "starlight-image-zoom";
@@ -322,6 +323,7 @@ export default defineConfig({
     mdx({
       remarkPlugins: [
         [
+					remarkExcalidraw,
           remarkCapitalizeTitles,
           {
             componentNames: ["Aside"],
