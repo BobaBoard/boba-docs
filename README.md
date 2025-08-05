@@ -40,11 +40,12 @@ boba-docs is a repo containing the documentation for
 
 > [!Important]
 > Our issue tracker is not up-to-date and we are specifically looking for 
-people to help us wrangle issues into order. If you're very eager to start 
-working, please email Ms Boba: [contacts@fujocoded.com](mailto:contacts@fujocoded.com?subject=Volunteering%20with%20BobaBoard). 
-If you would like to contacted later (and possibly make some money) please 
-drop off your info via our [FujoCoded hiring form(s)](https://fujocoded.com/hiring) and note 
-that you're interested in volunteering.
+people to help us wrangle issues into order. If you're very eager to get 
+volunteering, please email Ms Boba: [contacts@fujocoded.com](mailto:contacts@fujocoded.com?subject=Volunteering%20with%20BobaBoard). 
+If you would like to signal your interest for the future AND throw your hat
+in the ring for some small paid gigs, please drop off your info via our 
+[FujoCoded hiring form(s)](https://fujocoded.com/hiring) and note that you're interested in volunteering. 
+If you want to be notified when volunteering opportunities open up, [subscribe to the FujoCoded newsletter](https://fujocoded.com/#newsletter).
 
 BobaBoard welcomes one-time contributions. Our volunteer
 [Code of Conduct](https://docs.bobaboard.com/volunteering/experience/code-of-conduct/) applies in all of our social spaces, 
