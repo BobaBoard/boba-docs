@@ -11,14 +11,14 @@ An API `endpoint` is a URL clients can request to execute operations. Following
 REST principles, BobaBoard's server endpoints are grouped by the type of
 resource they refer to (e.g. boards, threads, users). Their naming and
 structure, which reflects their external URL, should follow the principles
-defined in our [API guidelines](API-guidelines).
+defined in our [API guidelines](../api-guidelines).
 
 <Aside type="note">
 
 The same endpoint can be called with different HTTP methods, each of which
 corresponds (when defined) to a different operation on the associated resources.
 
-You can learn more in our [intro to APIs](./API-guidelines.md).
+You can learn more in our [intro to APIs](../intro).
 
 </Aside>
 
@@ -44,7 +44,7 @@ Each subfolder in the `server/` directory contains at least the following files:
   `queries.ts`.
 - A `tests/` folder, containing tests for the routes and queries. You can read
   more about defining tests in our
-  [testing endpoints guide](./testing-endpoints.md).
+  [testing endpoints guide](../testing-endpoints).
 - A `examples/` folder (optional), containing examples used within our REST API
   documentation (see the [adding examples](#adding-examples) section)
 
@@ -72,7 +72,7 @@ A more general explanation of Express routing is available
    </Aside>
 
 2. Decide which HTTP Method (`GET`, `POST`, `PATCH`, etc.) your endpoint will
-   use. The [REST API example](./intro.md#api-example) includes examples of
+   use. The [REST API example](../intro#rest-api-example) includes examples of
    different methods and their semantic. You can also consult the
    [Zalando API guidelines](https://opensource.zalando.com/restful-api-guidelines/#148)
    for an in-depth explanation.

@@ -28,7 +28,7 @@ CREATE UNIQUE INDEX user_thread_entry on user_thread_last_visits(user_id, thread
 
 Visits are registered through the `/threads/[thread_id]/visit` endpoint, and the
 database update query is defined in
-[`server/threads/sql/visit-thread-by-string-id.sql`](https://github.com/BobaBoard/boba-backend/blob/master/server/threads/sql/visit-thread-by-string-id.sql).
+[`server/threads/sql/visit-thread-by-string-id.sql`](https://github.com/BobaBoard/boba-backend/blob/main/server/threads/sql/visit-thread-by-external-id.sql).
 
 ## Changes
 

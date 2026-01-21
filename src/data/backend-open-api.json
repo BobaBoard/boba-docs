@@ -10,7 +10,7 @@
     "description": "\n# Intro\nWelcome to the BobaBoard's backend API. This is still a WIP.\n\n# Example Section\nThis is just to test that sections work. It will be written better later.\n        ",
     "contact": {
       "name": "Ms. Boba",
-      "url": "https://www.bobaboard.com",
+      "url": "https://bobaboard.com",
       "email": "ms.boba@bobaboard.com"
     }
   },
@@ -1239,7 +1239,7 @@
     "/realms/{realm_id}/invites": {
       "get": {
         "summary": "List all pending invites for the realm",
-        "description": "See https://github.com/essential-randomness/bobaserver/issues/56 for future design intentions to return all invites.",
+        "description": "See https://github.com/BobaBoard/boba-backend/issues/56 for future design intentions to return all invites.",
         "operationId": "getInvitesByRealmId",
         "tags": ["/realms/", "unzodded"],
         "security": [

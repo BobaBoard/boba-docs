@@ -7,7 +7,7 @@ import { Aside } from "@astrojs/starlight/components";
 
 BobaBoard's frontend uses [React Query](https://react-query.tanstack.com/) as
 its query caching mechanism. See our knowledge base for basic information on
-[caches](../knowledge-base/caching).
+[caches](../../knowledge-base/caching).
 
 ## Manual Cache Operations
 
@@ -15,7 +15,7 @@ its query caching mechanism. See our knowledge base for basic information on
 caching and refetching of queries. That said, manual operations are required on
 occasion:
 
-1. **[Optimistic Updates](../knowledge-base/caching.md#optimistic-updates):** we
+1. **[Optimistic Updates](../../knowledge-base/caching#optimistic-updates):** we
    manually write the updated values in the existing cache after receiving new
    data from the user. This gives the illusion of an immediate update while we
    wait for server confirmation.
@@ -129,8 +129,8 @@ const setBoardVisibleInCache = ({
 If you're working with the cache, it might be useful to familiarize yourself
 with the following methods:
 
-- [QueryClient.setQueriesData](https://react-query.tanstack.com/reference/QueryClient#queryclientsetqueriesdata)
-- [QueryClient.getQueriesData](https://react-query.tanstack.com/reference/QueryClient#queryclientgetqueriesdata)
+- [QueryClient.setQueriesData](https://tanstack.com/query/latest/docs/reference/QueryClient?from=reactQueryV3#queryclientsetqueriesdata)
+- [QueryClient.getQueriesData](https://tanstack.com/query/latest/docs/reference/QueryClient?from=reactQueryV3#queryclientgetqueriesdata)
 
 The best way to understand how to use them is to look at the existing
 implementations of `set[Entity]InCache`cache methods.

@@ -27,7 +27,7 @@ access different web pages through their addresses.
 Following REST principles has several advantages, including easier
 understanding, definition, and scalability of APIs. You can find more details
 about the REST principles followed by boba-backend in the
-[API guidelines](./API-guidelines) page.
+[API guidelines](../api-guidelines) page.
 
 <Aside type="tip" icon="star">
 
@@ -69,14 +69,14 @@ Response details (assuming success):
   [200 (success)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/200)
 - **HTTP Response payload:** what you see in the browser
 - **HTTP Response type:**
-  [See endpoint documentation](/development/rest-api/#tag/realms/operation/getRealmsBySlug)
+  [See endpoint documentation](/api/operations/getrealmsbyslug)
 
 </details>
 
 </Aside>
 
 When a client makes a request to a REST API, it uses different
-[`HTTP methods`](https://www.restapitutorial.com/lessons/httpmethods.html) to
+[`HTTP methods`](https://restapitutorial.com/introduction/httpmethods) to
 perform specific operations on the resource associated with an endpoint. When
 the server responds to a request, it uses
 [`HTTP Status Codes`](https://httpstatuses.com/) to indicate whether the
@@ -222,7 +222,7 @@ Possible responses include:
 <Aside type="tip" icon="star">
 
 `PUT` requests are not easily accessible through browsers! To issue one, you can
-use a tool like [Postman](docs/development/boba-backend/using-postman) or write
+use a tool like [Postman](../../using-postman) or write
 a test for your endpoint.
 
 </Aside>
@@ -250,7 +250,7 @@ Possible responses include:
 <Aside type="tip" icon="star">
 
 `DELETE` requests are not easily accessible through browsers! To issue one, you
-can use a tool like [Postman](docs/development/boba-backend/using-postman) or
+can use a tool like [Postman](../../using-postman) or
 write a test for your endpoint.
 
 </Aside>

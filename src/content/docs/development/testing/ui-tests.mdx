@@ -13,7 +13,7 @@ and have a basic understanding of javascript,
 [Typescript](https://www.typescriptlang.org/docs/handbook/typescript-from-scratch.html),
 and React components and props. If you would like to brush up on React, the
 React docs offer a number of great
-[resources for learning](https://reactjs.org/docs/getting-started.html#learn-react).
+[resources for learning](https://react.dev/learn#learn-react).
 
 ## Tools
 
@@ -28,19 +28,19 @@ go, but here are links to all the docs in one place so they're easy to find:
   Gives our tests ways to find elements in our rendered components that match as
   closely as possible to how the user would interact with the component on the
   the real site.
-- [Storybook](https://storybook.js.org/docs/react/get-started/introduction) -
+- [Storybook](https://storybook.js.org/docs/get-started/install) -
   Lets us render and test our ui components independently. For Bobaboard it
   looks like [this](https://bobaboard-ui.netlify.app/).
 - **Storybook Add-ons:**
   - [@storybook/testing-react](https://storybook.js.org/addons/@storybook/testing-react) -
     Lets us use our stories in Jest tests.
-  - [Actions](https://storybook.js.org/docs/react/essentials/actions) - Lets us
+  - [Actions](https://storybook.js.org/docs/essentials/actions) - Lets us
     rig buttons and the like (that would normally interact with things outside
     of the current component) to tell us a certain thing happens when triggered.
 
 ## Stories
 
-[Storybook](https://storybook.js.org/docs/react/get-started/introduction) lets
+[Storybook](https://storybook.js.org/docs/get-started/install) lets
 us render and test our UI components independently from the business logic that
 weaves them together into the full site. When you run Storybook from the command
 line (bash terminal) in your bobaboard-ui directory with `yarn run storybook`,
@@ -147,7 +147,7 @@ export interface BoardMenuItemProps {
 ### Actions
 
 If a component has props that are links or functions, we can use
-[actions](https://storybook.js.org/docs/react/essentials/actions) to model what
+[actions](https://storybook.js.org/docs/essentials/actions) to model what
 happens when they are triggered.
 
 For example, for a link, your `Story.args` might include:
